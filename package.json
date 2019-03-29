@@ -1,14 +1,31 @@
 {
-    "name": "axe-sarif-converter",
-    "description": "axe-core reporter that outputs axe scan results in SARIF format",
-    "version": "0.0.1",
-    "scripts": {
-        "build": "node ../../scripts/just.js build-commonjs-only"
-    },
-    "dependencies": {
-        "axe-core": "^3.2.2"
-    },
-    "devDependencies": {
-        "@types/jest": "23.0.0"
-    }
+  "name": "axe-sarif-converter",
+  "version": "0.0.1",
+  "description": "An axe-core reporter that outputs axe scan results in SARIF format",
+  "main": "index.js",
+  "dependencies": {
+    "axe-core": "^3.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "tslint-microsoft-contrib": "^6.1.0"
+  },
+  "scripts": {
+    "format": "prettier --config prettier.config.js --write \"**/*\"",
+    "format-check": "prettier --config prettier.config.js --check \"**/*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/axe-sarif-converter.git"
+  },
+  "keywords": [
+    "MIT",
+    "axe-core"
+  ],
+  "author": "Microsoft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/axe-sarif-converter/issues"
+  },
+  "homepage": "https://github.com/Microsoft/axe-sarif-converter#readme"
 }

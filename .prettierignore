@@ -1,0 +1,10 @@
+.github/
+.DS_Store
+LICENSE
+package-lock.json
+.prettierignore
+**/*.snap
+**/*.png
+**/*.ico
+**/*.gitignore
+**/*.gitattributes
