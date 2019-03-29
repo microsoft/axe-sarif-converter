@@ -93,6 +93,6 @@ export interface IChiselResults {
 }
 
 export interface IChiselDecorations {
-  MAS?: WCAG[];
+  WCAG?: WCAG[];
   chiselHelpUrl?: string;
 }

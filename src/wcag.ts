@@ -42,7 +42,6 @@ export interface WCAGData {
   WCAG3_3_4: WCAG;
   WCAG4_1_1: WCAG;
   WCAG4_1_2: WCAG;
-  WCAG4_3_1: WCAG;
   WCAG2_4_4: WCAG;
   WCAGBest_Practice: WCAG;
 }

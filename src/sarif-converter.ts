@@ -8,10 +8,10 @@ import * as Sarif from './sarif/sarifv2';
 import { StringUtils } from './string-utils';
 
 export class SarifConverter {
-  private masList: WCAGData;
+  private wcagList: WCAGData;
 
-  constructor(masList: WCAGData) {
-    this.masList = masList;
+  constructor(wcagList: WCAGData) {
+    this.wcagList = wcagList;
   }
 
   public convert(results: IChiselResults, options: IChiselOptions): ISarifLog {
@@ -248,18 +248,18 @@ export class SarifConverter {
         },
         helpUri: ruleResult.chiselHelpUrl,
         properties: {
-          standards: this._convertStandardsForRule(ruleResult.MAS!)
+          standards: this._convertStandardsForRule(ruleResult.WCAG!)
         }
       };
       rulesDictionary[ruleResult.id] = rule;
     }
   }
 
-  private _convertStandardsForRule(masList: WCAG[]): string[] {
+  private _convertStandardsForRule(wcagList: WCAG[]): string[] {
     const standards: string[] = [];
-    if (masList !== undefined) {
-      for (const mas of masList) {
-        standards.push(mas.text);
+    if (wcagList !== undefined) {
+      for (const wcag of wcagList) {
+        standards.push(wcag.text);
       }
     }
     return standards;
@@ -268,21 +268,21 @@ export class SarifConverter {
   private _convertStandards(): IDictionaryStringTo<KerosStandard> {
     const standards: IDictionaryStringTo<KerosStandard> = {};
     // tslint:disable-next-line:forin
-    for (const key in this.masList) {
-      const mas = this.masList[key];
-      if (mas.title === undefined) {
+    for (const key in this.wcagList) {
+      const wcag = this.wcagList[key];
+      if (wcag.title === undefined) {
         continue;
       }
 
-      standards[mas.text] = {
+      standards[wcag.text] = {
         standardName: {
-          text: 'MAS'
+          text: 'WCAG'
         },
         requirementName: {
-          text: mas.title
+          text: wcag.title
         },
-        requirementId: mas.text,
-        requirementUri: mas.url!
+        requirementId: wcag.text,
+        requirementUri: wcag.url!
       };
     }
     return standards;

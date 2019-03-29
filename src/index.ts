@@ -17,7 +17,7 @@ export function axeToSarif(axeResults: Axe.AxeResults): ISarifLog {
   const resultDecorator = new ResultDecorator(new DocumentUtils(), messageDecorator, ruleId =>
     chiselHelpUrlGetter.getChiselHelpUrl(ruleId)
   );
-  resultDecorator.setMasConfiguration(rulesWCAGConfiguration);
+  resultDecorator.setWCAGConfiguration(rulesWCAGConfiguration);
   const sarifConverter = new SarifConverter(wcagLinkData);
 
   // AxeResults -> IChiselResults

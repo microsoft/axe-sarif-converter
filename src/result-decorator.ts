@@ -7,7 +7,7 @@ import { MessageDecorator } from './message-decorator';
 import { Processor } from './processor';
 
 export class ResultDecorator {
-  private _masConfiguration!: IDictionaryStringTo<WCAG[]>;
+  private wcagConfiguration!: IDictionaryStringTo<WCAG[]>;
   private _documentUtils: DocumentUtils;
   private _messageDecorator: MessageDecorator;
 
@@ -30,8 +30,8 @@ export class ResultDecorator {
     return chiselResults;
   }
 
-  public setMasConfiguration(configuration: IDictionaryStringTo<WCAG[]>): void {
-    this._masConfiguration = configuration;
+  public setWCAGConfiguration(configuration: IDictionaryStringTo<WCAG[]>): void {
+    this.wcagConfiguration = configuration;
   }
 
   private _decorateAxeRuleResults(ruleResults: AxeRule[], isInapplicable: boolean = false): IChiselRuleResult[] {
@@ -42,7 +42,7 @@ export class ResultDecorator {
       if (processedResult !== undefined) {
         filteredArray.push({
           ...processedResult,
-          MAS: this._getRelatedMasByRuleId(result.id),
+          WCAG: this.getRelatedWCAGByRuleId(result.id),
           chiselHelpUrl: this.getChiselHelpUrl(result.id)
         });
       }
@@ -51,7 +51,7 @@ export class ResultDecorator {
     }, []);
   }
 
-  private _getRelatedMasByRuleId(ruleId: string): WCAG[] {
-    return this._masConfiguration[ruleId];
+  private getRelatedWCAGByRuleId(ruleId: string): WCAG[] {
+    return this.wcagConfiguration[ruleId];
   }
 }
