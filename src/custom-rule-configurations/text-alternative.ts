@@ -5,37 +5,41 @@ import { isImage } from './image-rule';
 import { IKerosRuleConfiguration } from '../iruleresults';
 
 export const textAlternativeConfiguration: IKerosRuleConfiguration = {
-  checks: [
-    {
-      id: 'text-alternative-data-collector',
-      evaluate: evaluateTextAlternative
-    }
-  ],
-  rule: {
-    id: 'accessible-image',
-    selector: '*',
-    any: ['text-alternative-data-collector'],
-    all: [],
-    matches: matches,
-    enabled: false
-  }
+    checks: [
+        {
+            id: 'text-alternative-data-collector',
+            evaluate: evaluateTextAlternative,
+        },
+    ],
+    rule: {
+        id: 'accessible-image',
+        selector: '*',
+        any: ['text-alternative-data-collector'],
+        all: [],
+        matches: matches,
+        enabled: false,
+    },
 };
 
 function matches(node: HTMLElement, virtualNode: HTMLElement): boolean {
-  // @ts-ignore
-  return isImage(node, null) && AxeUtils.getImageCodedAs(node) === 'Meaningful';
+    // @ts-ignore
+    return (
+        isImage(node, null) && AxeUtils.getImageCodedAs(node) === 'Meaningful'
+    );
 }
 
 function evaluateTextAlternative(node: HTMLElement): boolean {
-  const accessibleName: string = AxeUtils.getAccessibleText(node, false);
-  const accessibleDescription: string = AxeUtils.getAccessibleDescription(node);
-  const imageType: string = AxeUtils.getImageType(node);
+    const accessibleName: string = AxeUtils.getAccessibleText(node, false);
+    const accessibleDescription: string = AxeUtils.getAccessibleDescription(
+        node,
+    );
+    const imageType: string = AxeUtils.getImageType(node);
 
-  this.data({
-    imageType,
-    accessibleName,
-    accessibleDescription
-  });
+    this.data({
+        imageType,
+        accessibleName,
+        accessibleDescription,
+    });
 
-  return true;
+    return true;
 }

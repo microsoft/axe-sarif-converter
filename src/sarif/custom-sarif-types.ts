@@ -1,16 +1,16 @@
 export const enum SarifLogVersion {
-  v2 = '2.0.0'
+    v2 = '2.0.0',
 }
 
 export namespace Result {
-  export const enum level {
-    notApplicable = 'notApplicable',
-    pass = 'pass',
-    note = 'note',
-    warning = 'warning',
-    error = 'error',
-    open = 'open'
-  }
+    export const enum level {
+        notApplicable = 'notApplicable',
+        pass = 'pass',
+        note = 'note',
+        warning = 'warning',
+        error = 'error',
+        open = 'open',
+    }
 }
 
 /**
@@ -18,28 +18,28 @@ export namespace Result {
  */
 // tslint:disable-next-line:interface-name
 export interface Message {
-  /**
-   * A plain text message string.
-   */
-  text?: string;
+    /**
+     * A plain text message string.
+     */
+    text?: string;
 
-  /**
-   * The resource id for a plain text message string.
-   */
-  messageId?: string;
+    /**
+     * The resource id for a plain text message string.
+     */
+    messageId?: string;
 
-  /**
-   * A rich text message string.
-   */
-  richText?: string;
+    /**
+     * A rich text message string.
+     */
+    richText?: string;
 
-  /**
-   * The resource id for a rich text message string.
-   */
-  richMessageId?: string;
+    /**
+     * The resource id for a rich text message string.
+     */
+    richMessageId?: string;
 
-  /**
-   * An array of strings to substitute into the message string.
-   */
-  arguments?: string[];
+    /**
+     * An array of strings to substitute into the message string.
+     */
+    arguments?: string[];
 }
