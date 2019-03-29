@@ -1,0 +1,14 @@
+{
+    "name": "axe-sarif-converter",
+    "description": "axe-core reporter that outputs axe scan results in SARIF format",
+    "version": "0.0.1",
+    "scripts": {
+        "build": "node ../../scripts/just.js build-commonjs-only"
+    },
+    "dependencies": {
+        "axe-core": "^3.2.2"
+    },
+    "devDependencies": {
+        "@types/jest": "23.0.0"
+    }
+}
