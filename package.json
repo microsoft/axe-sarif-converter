@@ -15,7 +15,9 @@
     },
     "scripts": {
         "format": "prettier --config prettier.config.js --write \"**/*\"",
-        "format-check": "prettier --config prettier.config.js --check \"**/*\""
+        "format-check": "prettier --config prettier.config.js --check \"**/*\"",
+        "tslint": "tslint -c ./tslint.json",
+        "tslint:fix": "tslint --fix -c ./tslint.json"
     },
     "repository": {
         "type": "git",

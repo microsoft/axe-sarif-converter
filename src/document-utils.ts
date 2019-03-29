@@ -1,5 +1,4 @@
 export class DocumentUtils {
-    // @ts-ignore
     private dom?: Document;
 
     constructor(dom?: Document) {
