@@ -61,4 +61,5 @@ typings/
 .next
 
 # build output
-/dist
+/dist/
+/test-results/
