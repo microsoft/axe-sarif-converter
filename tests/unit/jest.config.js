@@ -7,23 +7,18 @@ module.exports = {
     clearMocks: true,
     testRunner: 'jest-circus/runner',
     transform: {
-        '^.+\\.(ts|tsx)$': 'ts-jest',
+        '^.+\\.(ts)$': 'ts-jest',
     },
     verbose: false,
     coverageDirectory: '<rootDir>/test-results/unit/coverage',
     displayName: 'unit tests',
-    moduleFileExtensions: ['ts', 'tsx', 'js'],
+    moduleFileExtensions: ['ts', 'js'],
     rootDir: rootDir,
     roots: [currentDir],
     collectCoverage: true,
-    collectCoverageFrom: [
-        '<rootDir>/src/**/*.{ts,tsx}',
-        '!<rootDir>/tests/**/*',
-        '!<rootDir>/src/**/*.d.ts',
-    ],
+    collectCoverageFrom: ['<rootDir>/src/**/*.{ts}', '!<rootDir>/tests/**/*'],
     coverageReporters: ['json', 'lcov', 'text', 'cobertura'],
-    testEnvironment: 'jsdom',
-    testMatch: [`${currentDir}/**/*.test.(ts|tsx|js)`],
+    testMatch: [`${currentDir}/**/*.test.(ts|js)`],
     reporters: [
         'default',
         [
