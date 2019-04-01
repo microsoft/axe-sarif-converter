@@ -4,11 +4,13 @@
         "baseUrl": ".",
         "declaration": true,
         "forceConsistentCasingInFileNames": true,
+        "lib": ["es2015"],
         "module": "commonjs",
         "moduleResolution": "node",
         "outDir": "./dist/",
         "strict": true,
         "target": "es5"
     },
-    "include": ["src"]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.test.ts"]
 }
