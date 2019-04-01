@@ -60,4 +60,6 @@ typings/
 # next.js build output
 .next
 
-test-results/
+# build output
+/dist/
+/test-results/
