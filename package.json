@@ -1,29 +1,35 @@
 {
-  "name": "axe-sarif-converter",
-  "version": "0.0.1",
-  "description": "An axe-core reporter that outputs axe scan results in SARIF format",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "^1.16.4",
-    "tslint-microsoft-contrib": "^6.1.0"
-  },
-  "scripts": {
-    "format": "prettier --config prettier.config.js --write \"**/*\"",
-    "format-check": "prettier --config prettier.config.js --check \"**/*\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Microsoft/axe-sarif-converter.git"
-  },
-  "keywords": [
-    "MIT",
-    "axe-core"
-  ],
-  "author": "Microsoft",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Microsoft/axe-sarif-converter/issues"
-  },
-  "homepage": "https://github.com/Microsoft/axe-sarif-converter#readme"
+    "name": "axe-sarif-converter",
+    "version": "0.0.1",
+    "description": "An axe-core reporter that outputs axe scan results in SARIF format",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "^1.0.4",
+        "grunt-cli": "^1.3.2",
+        "grunt-contrib-concat": "^1.0.1",
+        "license-check-and-add": "^2.3.6",
+        "prettier": "^1.16.4",
+        "tslint-microsoft-contrib": "^6.1.0"
+    },
+    "scripts": {
+        "format": "prettier --config prettier.config.js --write \"**/*\"",
+        "format-check": "prettier --config prettier.config.js --check \"**/*\"",
+        "copyrightheaders": "grunt copyright-check",
+        "copyrightheaders:fix": "grunt copyright-add"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/axe-sarif-converter.git"
+    },
+    "keywords": [
+        "MIT",
+        "axe-core"
+    ],
+    "author": "Microsoft",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Microsoft/axe-sarif-converter/issues"
+    },
+    "homepage": "https://github.com/Microsoft/axe-sarif-converter#readme"
 }
