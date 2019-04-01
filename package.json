@@ -4,6 +4,11 @@
     "description": "An axe-core reporter that outputs axe scan results in SARIF format (http://sarifweb.azurewebsites.net/)",
     "main": "dist/index.js",
     "types": "dist/index.d.js",
+    "files": [
+        "dist/",
+        "LICENSE",
+        "README.md"
+    ],
     "dependencies": {},
     "devDependencies": {
         "prettier": "^1.16.4",
@@ -17,7 +22,8 @@
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "prebuild": "npm run clean",
-        "prepublishOnly": "npm run format-check && npm run build"
+        "prepack": "npm run format-check && npm run build",
+        "watch:build": "tsc -p . --watch"
     },
     "repository": {
         "type": "git",
