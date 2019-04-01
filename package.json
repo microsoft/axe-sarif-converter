@@ -16,7 +16,8 @@
     "scripts": {
         "test": "jest --projects tests/unit",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
-        "format-check": "prettier --config prettier.config.js --check \"**/*\""
+        "format-check": "prettier --config prettier.config.js --check \"**/*\"",
+        "watch:test": "jest --watch --coverage false --colors"
     },
     "repository": {
         "type": "git",
