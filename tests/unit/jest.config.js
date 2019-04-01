@@ -18,7 +18,7 @@ module.exports = {
     collectCoverage: true,
     collectCoverageFrom: [
         '<rootDir>/src/**/*.{ts,tsx}',
-        '!<rootDir>/src/tests/**/*',
+        '!<rootDir>/tests/**/*',
         '!<rootDir>/src/**/*.d.ts',
     ],
     coverageReporters: ['json', 'lcov', 'text', 'cobertura'],
