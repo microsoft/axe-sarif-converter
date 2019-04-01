@@ -24,7 +24,7 @@
     "scripts": {
         "prebuild": "npm run clean",
         "build": "tsc -p .",
-        "clean": "rimraf dist/*",
+        "clean": "rimraf dist/* test-results/*",
         "test": "jest",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
