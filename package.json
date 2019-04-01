@@ -14,7 +14,7 @@
         "tslint-microsoft-contrib": "^6.1.0"
     },
     "scripts": {
-        "test": "jest --projects ./",
+        "test": "jest",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
         "watch:test": "jest --watch --coverage false --colors"
