@@ -6,6 +6,8 @@
 **/*.ico
 **/*.png
 **/*.snap
+**/*.tgz
 dist/
+test-results/
 LICENSE
 package-lock.json
