@@ -1,0 +1,80 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+jobs:
+  - job: 'tests_and_checks'
+
+    pool:
+        vmImage: 'macOS-10.13'
+
+    steps:
+      - task: NodeTool@0
+        inputs:
+            versionSpec: '10.15.0'
+        displayName: use node 10.15.0
+
+      - task: Npm@1
+        inputs:
+            command: custom
+            customCommand: ci
+        displayName: npm ci
+
+      - task: Npm@1
+        inputs:
+            command: custom
+            customCommand: run tslint
+        displayName: npm run tslint
+
+      - task: Npm@1
+        inputs:
+            command: custom
+            customCommand: run format-check
+        displayName: check code formatting
+
+      - task: Npm@1
+        displayName: check copyright headers
+        inputs:
+            command: custom
+            customCommand: run copyrightheaders
+
+      - task: Npm@1
+        inputs:
+            command: custom
+            customCommand: run test -- --ci
+        displayName: run unit tests
+
+      - task: PublishTestResults@2
+        inputs:
+            testResultsFiles: $(System.DefaultWorkingDirectory)/test-results/junit.xml
+            testRunTitle: accessibility-insights-web
+        condition: always()
+        displayName: publish test results
+
+      - task: PublishCodeCoverageResults@1
+        inputs:
+            codeCoverageTool: Cobertura
+            summaryFileLocation: $(System.DefaultWorkingDirectory)/test-results/coverage/cobertura-coverage.xml
+            failIfCoverageEmpty: true
+        displayName: publish code coverage
+
+  - job: 'build_check'
+
+    pool:
+        vmImage: 'macOS-10.13'
+
+    steps:
+     - task: NodeTool@0
+        inputs:
+            versionSpec: '10.15.0'
+        displayName: use node 10.15.0
+
+      - task: Npm@1
+        inputs:
+            command: custom
+            customCommand: ci
+        displayName: npm ci
+
+      - task: Npm@1
+        inputs:
+            command: custom
+            customCommand: run build:all
+        displayName: npm run build:all

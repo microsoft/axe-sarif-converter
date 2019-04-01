@@ -8,3 +8,4 @@ package-lock.json
 **/*.ico
 **/*.gitignore
 **/*.gitattributes
+test-results/**/*
