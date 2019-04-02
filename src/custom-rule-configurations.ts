@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import { colorConfiguration } from './custom-rule-configurations/color-rule';
 import { cuesConfiguration } from './custom-rule-configurations/cues-rule';
 import { customWidgetConfiguration } from './custom-rule-configurations/custom-widget-configuration';

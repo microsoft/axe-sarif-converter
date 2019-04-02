@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import { getAttributes } from './axe-utils';
 import { DictionaryStringTo } from './dictionary-types';
 

@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import * as Axe from 'axe-core';
 import { CheckMessageTransformer } from './check-message-transformer';
 import { CustomRuleConfigurations } from './custom-rule-configurations';

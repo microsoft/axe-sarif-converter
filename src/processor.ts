@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import { AxeNodeResult, AxeRule } from './ruleresults';
 
 export namespace Processor {

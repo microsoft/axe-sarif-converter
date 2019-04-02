@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import * as AxeUtils from '../axe-utils';
 import { RoleUtils } from '../role-utils';
 import { RulesConfiguration } from '../ruleresults';

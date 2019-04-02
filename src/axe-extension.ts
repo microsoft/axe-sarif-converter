@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import { CheckConfiguration, RuleConfiguration } from './ruleresults';
 
 declare module 'axe-core/axe' {

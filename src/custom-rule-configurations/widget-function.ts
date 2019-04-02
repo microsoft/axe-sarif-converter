@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 /// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
 import { RulesConfiguration } from '../ruleresults';

@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import * as Axe from 'axe-core';
 import { DictionaryStringTo } from './dictionary-types';
 import { DocumentUtils } from './document-utils';

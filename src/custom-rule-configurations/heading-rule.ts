@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import { AxeCheckResultExtraData, RulesConfiguration } from '../ruleresults';
 
 const headingCheckId: string = 'collect-headings';

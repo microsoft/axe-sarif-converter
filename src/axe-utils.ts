@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 /// <reference path="./axe-extension.ts" />
 import * as axe from 'axe-core';
 
