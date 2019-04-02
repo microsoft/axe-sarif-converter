@@ -21,8 +21,8 @@ jobs:
           - task: Npm@1
             inputs:
                 command: custom
-                customCommand: run tslint
-            displayName: npm run tslint
+                customCommand: run lint
+            displayName: Check for Lint
 
           - task: Npm@1
             inputs:
