@@ -26,8 +26,6 @@
         "build": "tsc -p .",
         "clean": "rimraf dist/* test-results/*",
         "test": "jest",
-        "tslint": "tslint -c ./tslint.json -p ./tsconfig.json",
-        "tslint:fix": "tslint --fix -c ./tslint.json -p ./tsconfig.json",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
         "prepack": "npm run format-check && npm run build",

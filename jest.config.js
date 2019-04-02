@@ -15,7 +15,7 @@ module.exports = {
     moduleFileExtensions: ['ts', 'js'],
     rootDir: rootDir,
     collectCoverage: true,
-    collectCoverageFrom: [`./**/*.ts`, `!./**/*.test.ts`],
+    collectCoverageFrom: ['./**/*.ts', '!./**/*.test.ts'],
     coverageReporters: ['json', 'lcov', 'text', 'cobertura'],
     testMatch: [`${currentDir}/**/*.test.(ts|js)`],
     reporters: [

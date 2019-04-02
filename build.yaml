@@ -4,13 +4,13 @@ jobs:
     - job: 'tests_and_checks'
 
       pool:
-          vmImage: 'macOS-10.13'
+          vmImage: 'ubuntu-16.04'
 
       steps:
           - task: NodeTool@0
             inputs:
-                versionSpec: '10.15.0'
-            displayName: use node 10.15.0
+                versionSpec: '10.15.3'
+            displayName: use node 10.15.3
 
           - task: Npm@1
             inputs:
@@ -45,7 +45,7 @@ jobs:
           - task: PublishTestResults@2
             inputs:
                 testResultsFiles: $(System.DefaultWorkingDirectory)/test-results/junit.xml
-                testRunTitle: accessibility-insights-web
+                testRunTitle: axe-sarif-converter
             condition: always()
             displayName: publish test results
 
@@ -56,25 +56,8 @@ jobs:
                 failIfCoverageEmpty: true
             displayName: publish code coverage
 
-    - job: 'build_check'
-
-      pool:
-          vmImage: 'macOS-10.13'
-
-      steps:
-          - task: NodeTool@0
-            inputs:
-                versionSpec: '10.15.0'
-                displayName: use node 10.15.0
-
           - task: Npm@1
             inputs:
                 command: custom
-                customCommand: ci
-            displayName: npm ci
-
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run build:all
-            displayName: npm run build:all
+                customCommand: run build
+            displayName: npm run build
