@@ -1,5 +1,5 @@
 import * as Axe from 'axe-core';
-import { IDictionaryStringTo } from './dictionary-types';
+import { DictionaryStringTo } from './dictionary-types';
 import { DocumentUtils } from './document-utils';
 import { AxeRule, ScannerResults, AxeCoreRuleResult } from './ruleresults';
 import { WCAG } from './wcag';
@@ -7,7 +7,7 @@ import { MessageDecorator } from './message-decorator';
 import { Processor } from './processor';
 
 export class ResultDecorator {
-    private wcagConfiguration!: IDictionaryStringTo<WCAG[]>;
+    private wcagConfiguration!: DictionaryStringTo<WCAG[]>;
     private _documentUtils: DocumentUtils;
     private _messageDecorator: MessageDecorator;
 
@@ -38,7 +38,7 @@ export class ResultDecorator {
     }
 
     public setWCAGConfiguration(
-        configuration: IDictionaryStringTo<WCAG[]>,
+        configuration: DictionaryStringTo<WCAG[]>,
     ): void {
         this.wcagConfiguration = configuration;
     }

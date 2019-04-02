@@ -1,7 +1,7 @@
-import { IDictionaryStringTo } from './dictionary-types';
+import { DictionaryStringTo } from './dictionary-types';
 import { WCAG, wcagLinkData } from './wcag';
 
-export const rulesWCAGConfiguration: IDictionaryStringTo<WCAG[]> = {
+export const rulesWCAGConfiguration: DictionaryStringTo<WCAG[]> = {
     'area-alt': [wcagLinkData.WCAG1_1_1],
     'image-alt': [wcagLinkData.WCAG1_1_1],
     'image-redundant-alt': [wcagLinkData.WCAGBest_Practice],

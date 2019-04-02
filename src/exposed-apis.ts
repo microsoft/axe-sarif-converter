@@ -1,4 +1,4 @@
-export interface IChiselOptions {
+export interface ScannerOptions {
     testsToRun?: string[];
     dom?: NodeSelector & Node | NodeList;
     selector?: string;

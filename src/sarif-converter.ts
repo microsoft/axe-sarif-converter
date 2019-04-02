@@ -1,5 +1,5 @@
-import { IDictionaryStringTo } from './dictionary-types';
-import { IChiselOptions } from './exposed-apis';
+import { DictionaryStringTo } from './dictionary-types';
+import { ScannerOptions } from './exposed-apis';
 import {
     AxeNodeResult,
     FormattedCheckResult,
@@ -21,7 +21,7 @@ export class SarifConverter {
 
     public convert(
         results: ScannerResults,
-        options: IChiselOptions,
+        options: ScannerOptions,
     ): ISarifLog {
         const log: ISarifLog = {
             version: CustomSarif.SarifLogVersion.v2,
@@ -32,9 +32,9 @@ export class SarifConverter {
 
     private _convertRun(
         results: ScannerResults,
-        options: IChiselOptions,
+        options: ScannerOptions,
     ): Sarif.Run {
-        const files: IDictionaryStringTo<Sarif.File> = {};
+        const files: DictionaryStringTo<Sarif.File> = {};
         files[results.targetPageUrl] = {
             mimeType: 'text/html',
             properties: {
@@ -43,7 +43,7 @@ export class SarifConverter {
             },
         };
 
-        let properties: IDictionaryStringTo<string> = {};
+        let properties: DictionaryStringTo<string> = {};
 
         if (options && options.scanName !== undefined) {
             properties = {
@@ -53,12 +53,12 @@ export class SarifConverter {
 
         const run: Sarif.Run = {
             tool: {
-                name: 'Chisel',
-                fullName: 'Chisel',
+                name: 'Scanner',
+                fullName: 'Scanner',
                 semanticVersion: '1.0.0',
                 version: '1.0.0',
                 properties: {
-                    downloadUri: 'https://aka.ms/keros',
+                    downloadUri: 'https://accessibilityinsights.io',
                 },
             },
             invocations: [
@@ -90,7 +90,7 @@ export class SarifConverter {
 
     private _convertResults(
         results: ScannerResults,
-        properties: IDictionaryStringTo<string>,
+        properties: DictionaryStringTo<string>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
 
@@ -130,7 +130,7 @@ export class SarifConverter {
         ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
         targetPageUrl: string,
-        properties: IDictionaryStringTo<string>,
+        properties: DictionaryStringTo<string>,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -150,9 +150,9 @@ export class SarifConverter {
         ruleResult: AxeCoreRuleResult,
         level: CustomSarif.Result.level,
         targetPageUrl: string,
-        properties: IDictionaryStringTo<string>,
+        properties: DictionaryStringTo<string>,
     ): void {
-        const partialFingerprints: IDictionaryStringTo<
+        const partialFingerprints: DictionaryStringTo<
             string
         > = this._getPartialFingerprintsFromRule(ruleResult);
 
@@ -193,7 +193,7 @@ export class SarifConverter {
 
     private _getPartialFingerprintsFromRule(
         ruleResult: AxeCoreRuleResult,
-    ): IDictionaryStringTo<string> {
+    ): DictionaryStringTo<string> {
         return {
             ruleId: ruleResult.id,
         };
@@ -271,7 +271,7 @@ export class SarifConverter {
         resultArray: Sarif.Result[],
         ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
-        properties: IDictionaryStringTo<string>,
+        properties: DictionaryStringTo<string>,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -293,8 +293,8 @@ export class SarifConverter {
 
     private _convertResultsToRules(
         results: ScannerResults,
-    ): IDictionaryStringTo<Sarif.Rule> {
-        const rulesDictionary: IDictionaryStringTo<Sarif.Rule> = {};
+    ): DictionaryStringTo<Sarif.Rule> {
+        const rulesDictionary: DictionaryStringTo<Sarif.Rule> = {};
 
         this._convertRuleResultsToRules(rulesDictionary, results.violations);
         this._convertRuleResultsToRules(rulesDictionary, results.passes);
@@ -305,7 +305,7 @@ export class SarifConverter {
     }
 
     private _convertRuleResultsToRules(
-        rulesDictionary: IDictionaryStringTo<Sarif.Rule>,
+        rulesDictionary: DictionaryStringTo<Sarif.Rule>,
         ruleResults: AxeCoreRuleResult[],
     ): void {
         if (ruleResults) {
@@ -316,7 +316,7 @@ export class SarifConverter {
     }
 
     private _convertRuleResultToRule(
-        rulesDictionary: IDictionaryStringTo<Sarif.Rule>,
+        rulesDictionary: DictionaryStringTo<Sarif.Rule>,
         ruleResult: AxeCoreRuleResult,
     ): void {
         if (!rulesDictionary.hasOwnProperty(ruleResult.id)) {
@@ -347,8 +347,8 @@ export class SarifConverter {
         return standards;
     }
 
-    private _convertStandards(): IDictionaryStringTo<KerosStandard> {
-        const standards: IDictionaryStringTo<KerosStandard> = {};
+    private _convertStandards(): DictionaryStringTo<KerosStandard> {
+        const standards: DictionaryStringTo<KerosStandard> = {};
         // tslint:disable-next-line:forin
         for (const key in this.wcagList) {
             const wcag = this.wcagList[key];
