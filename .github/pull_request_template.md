@@ -1,5 +1,3 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
 #### Pull request checklist
 
 - [ ] Addresses an existing issue: Fixes #0000
