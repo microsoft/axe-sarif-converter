@@ -22,7 +22,7 @@ jobs:
             inputs:
                 command: custom
                 customCommand: run lint
-            displayName: Check for lint
+            displayName: check for lint
 
           - task: Npm@1
             inputs:
