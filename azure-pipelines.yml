@@ -22,7 +22,7 @@ jobs:
             inputs:
                 command: custom
                 customCommand: run lint
-            displayName: Check for Lint
+            displayName: Check for lint
 
           - task: Npm@1
             inputs:
@@ -31,10 +31,10 @@ jobs:
             displayName: check code formatting
 
           - task: Npm@1
-            displayName: check copyright headers
             inputs:
                 command: custom
                 customCommand: run copyrightheaders
+            displayName: check copyright headers
 
           - task: Npm@1
             inputs:
