@@ -4,7 +4,6 @@ import { textContrastConfiguration } from './custom-rule-configurations/text-con
 import { textAlternativeConfiguration } from './custom-rule-configurations/text-alternative';
 import { colorConfiguration } from './custom-rule-configurations/color-rule';
 import { headingConfiguration } from './custom-rule-configurations/heading-rule';
-import { uniqueLandmarkConfiguration } from './custom-rule-configurations/unique-landmark';
 import { imageConfiguration } from './custom-rule-configurations/image-rule';
 import { landmarkConfiguration } from './custom-rule-configurations/landmark-rule';
 import { linkPurposeConfiguration } from './custom-rule-configurations/link-purpose';
@@ -20,7 +19,6 @@ export const configuration: RulesConfiguration[] = [
     headingConfiguration,
     colorConfiguration,
     landmarkConfiguration,
-    uniqueLandmarkConfiguration,
     imageConfiguration,
     textAlternativeConfiguration,
     textContrastConfiguration,
