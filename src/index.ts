@@ -31,5 +31,6 @@ export function axeToSarif(axeResults: Axe.AxeResults): SarifLog {
     const scannerResults = resultDecorator.decorateResults(axeResults);
 
     // ScannerResults -> ISarifLog
-    return sarifConverter.convert(scannerResults, {}); // TODO - ScannerOptions w/ scanName, testCaseId, scanId
+    // TODO - ScannerOptions w/ scanName, testCaseId, scanId
+    return sarifConverter.convert(scannerResults, {});
 }
