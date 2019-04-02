@@ -8,7 +8,7 @@ import {
 } from './ruleresults';
 import { WCAG, WCAGData } from './wcag';
 import * as CustomSarif from './sarif/custom-sarif-types';
-import { ISarifLog } from './sarif/isarflog';
+import { SarifLog } from './sarif/sarifLog';
 import * as Sarif from './sarif/sarifv2';
 import { StringUtils } from './string-utils';
 
@@ -19,11 +19,8 @@ export class SarifConverter {
         this.wcagList = wcagList;
     }
 
-    public convert(
-        results: ScannerResults,
-        options: ScannerOptions,
-    ): ISarifLog {
-        const log: ISarifLog = {
+    public convert(results: ScannerResults, options: ScannerOptions): SarifLog {
+        const log: SarifLog = {
             version: CustomSarif.SarifLogVersion.v2,
             runs: [this._convertRun(results, options)],
         };
@@ -328,7 +325,7 @@ export class SarifConverter {
                 fullDescription: {
                     text: ruleResult.description,
                 },
-                helpUri: ruleResult.chiselHelpUrl,
+                helpUri: ruleResult.helpUrl,
                 properties: {
                     standards: this._convertStandardsForRule(ruleResult.WCAG!),
                 },
@@ -347,8 +344,8 @@ export class SarifConverter {
         return standards;
     }
 
-    private _convertStandards(): DictionaryStringTo<KerosStandard> {
-        const standards: DictionaryStringTo<KerosStandard> = {};
+    private _convertStandards(): DictionaryStringTo<AxeCoreStandard> {
+        const standards: DictionaryStringTo<AxeCoreStandard> = {};
         // tslint:disable-next-line:forin
         for (const key in this.wcagList) {
             const wcag = this.wcagList[key];
@@ -371,8 +368,7 @@ export class SarifConverter {
     }
 }
 
-// tslint:disable-next-line:interface-name
-export interface KerosStandard {
+export interface AxeCoreStandard {
     standardName: CustomSarif.Message;
     requirementName: CustomSarif.Message;
     requirementId: string;

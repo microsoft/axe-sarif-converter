@@ -96,5 +96,5 @@ export interface ScannerResults {
 
 export interface AxeCoreDecorations {
     WCAG?: WCAG[];
-    chiselHelpUrl?: string;
+    helpUrl?: string;
 }

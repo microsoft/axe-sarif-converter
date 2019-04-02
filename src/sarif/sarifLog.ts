@@ -1,3 +1,3 @@
 import { StaticAnalysisResultsFormatSarifVersion200JsonSchema } from './sarifv2';
-export interface ISarifLog
+export interface SarifLog
     extends StaticAnalysisResultsFormatSarifVersion200JsonSchema {}

@@ -8,28 +8,28 @@ import { MessageDecorator } from './message-decorator';
 import { configuration } from './custom-rule-configurations';
 import { CheckMessageTransformer } from './check-message-transformer';
 import { HelpUrlGetter } from './help-url-getter';
-import { ISarifLog } from './sarif/isarflog';
+import { SarifLog } from './sarif/sarifLog';
 
-export function axeToSarif(axeResults: Axe.AxeResults): ISarifLog {
+export function axeToSarif(axeResults: Axe.AxeResults): SarifLog {
     const messageDecorator = new MessageDecorator(
         configuration,
         new CheckMessageTransformer(),
     );
 
-    const chiselHelpUrlGetter = new HelpUrlGetter(configuration);
+    const helpUrlGetter = new HelpUrlGetter(configuration);
     const resultDecorator = new ResultDecorator(
         new DocumentUtils(),
         messageDecorator,
-        ruleId => chiselHelpUrlGetter.getHelpUrl(ruleId),
+        ruleId => helpUrlGetter.getHelpUrl(ruleId),
     );
 
     resultDecorator.setWCAGConfiguration(rulesWCAGConfiguration);
 
     const sarifConverter = new SarifConverter(wcagLinkData);
 
-    // AxeResults -> IChiselResults
-    const chiselResults = resultDecorator.decorateResults(axeResults);
+    // AxeResults -> ScannerResults
+    const scannerResults = resultDecorator.decorateResults(axeResults);
 
-    // IChiselResults -> ISarifLog
-    return sarifConverter.convert(chiselResults, {}); // TODO - IChiselOptions w/ scanName, testCaseId, scanId
+    // ScannerResults -> ISarifLog
+    return sarifConverter.convert(scannerResults, {}); // TODO - ScannerOptions w/ scanName, testCaseId, scanId
 }

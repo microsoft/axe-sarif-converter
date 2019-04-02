@@ -14,14 +14,14 @@ export class ResultDecorator {
     constructor(
         documentUtils: DocumentUtils,
         messageDecorator: MessageDecorator,
-        private getChiselHelpUrl: (rule: string) => string,
+        private getHelpUrl: (rule: string) => string,
     ) {
         this._documentUtils = documentUtils;
         this._messageDecorator = messageDecorator;
     }
 
     public decorateResults(results: Axe.AxeResults): ScannerResults {
-        const chiselResults: ScannerResults = {
+        const scannerResults: ScannerResults = {
             passes: this._decorateAxeRuleResults(results.passes),
             violations: this._decorateAxeRuleResults(results.violations),
             inapplicable: this._decorateAxeRuleResults(
@@ -34,7 +34,7 @@ export class ResultDecorator {
             targetPageTitle: '', // TODO - missing title
         };
 
-        return chiselResults;
+        return scannerResults;
     }
 
     public setWCAGConfiguration(
@@ -59,7 +59,7 @@ export class ResultDecorator {
                     filteredArray.push({
                         ...processedResult,
                         WCAG: this.getRelatedWCAGByRuleId(result.id),
-                        chiselHelpUrl: this.getChiselHelpUrl(result.id),
+                        helpUrl: this.getHelpUrl(result.id),
                     });
                 }
 
