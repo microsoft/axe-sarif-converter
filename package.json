@@ -19,6 +19,7 @@
         "prettier": "^1.16.4",
         "rimraf": "^2.6.3",
         "ts-jest": "^24.0.1",
+        "tslint": "^5.15.0",
         "tslint-microsoft-contrib": "^6.1.0",
         "typescript": "^3.4.1"
     },
@@ -27,9 +28,10 @@
         "build": "tsc -p .",
         "clean": "rimraf dist/* test-results/*",
         "test": "jest",
+        "lint": "tslint -p .",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
-        "prepack": "npm run format-check && npm run build && npm run copyrightheaders",
+        "prepack": "npm run format-check && npm run lint && npm run build && npm run copyrightheaders",
         "watch:build": "tsc -p . --watch",
         "watch:test": "jest --watch --coverage false --colors",
         "copyrightheaders": "license-check-and-add"
