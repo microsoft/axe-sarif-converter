@@ -4,6 +4,14 @@
     "rules": {
         "export-name": false,
         "no-relative-imports": false,
-        "ordered-imports": true
+        "ordered-imports": true,
+        "no-suspicious-comment": false,
+        "function-name": [
+            true,
+            {
+                "static-method-regex": "^[a-z][\\w\\d]+$"
+            }
+        ],
+        "no-banned-terms": false
     }
 }
