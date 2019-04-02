@@ -21,10 +21,10 @@ export const textAlternativeConfiguration: RulesConfiguration = {
     },
 };
 
-function matches(node: HTMLElement, virtualNode: HTMLElement): boolean {
-    // @ts-ignore
+function matches(node: HTMLElement, virtualNode?: HTMLElement): boolean {
     return (
-        isImage(node, null) && AxeUtils.getImageCodedAs(node) === 'Meaningful'
+        isImage(node, undefined) &&
+        AxeUtils.getImageCodedAs(node) === 'Meaningful'
     );
 }
 
@@ -35,6 +35,7 @@ function evaluateTextAlternative(node: HTMLElement): boolean {
     );
     const imageType: string = AxeUtils.getImageType(node);
 
+    //@ts-ignore
     this.data({
         imageType,
         accessibleName,

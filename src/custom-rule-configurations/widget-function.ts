@@ -36,7 +36,7 @@ export function evaluateWidgetFunction(node: HTMLElement): boolean {
         'aria-valuetext',
     ];
 
-    // tslint:disable-next-line:no-invalid-this
+    //@ts-ignore
     this.data({
         element: getNativeWidgetElementType(node),
         accessibleName: AxeUtils.getAccessibleText(node, false),

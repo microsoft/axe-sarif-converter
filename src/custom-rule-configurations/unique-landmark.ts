@@ -102,6 +102,8 @@ function evaluate(node: any, options: any) {
     const selectors = getRoleSelectors(role);
     const selectorsLength = selectors.length;
     label = label ? label.toLowerCase() : null;
+
+    //@ts-ignore
     this.data({ role: role, label: label });
     for (let selectorPos = 0; selectorPos < selectorsLength; selectorPos++) {
         candidates = candidates.concat(

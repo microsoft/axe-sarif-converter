@@ -61,11 +61,11 @@ export function getAttributes(
     const retDict: DictionaryStringTo<string> = {};
     attributes
         .filter(atributeName => node.hasAttribute(atributeName))
-        .forEach(attributeName => {
+        .forEach((attributeName: string) => {
             const attributeValue = node.getAttribute(attributeName);
+
             // @ts-ignore
-            retDict[attributeName] =
-                attributeValue.length > 0 ? attributeValue : null;
+            retDict[attributeName] = attributeValue || null;
         });
 
     return retDict;

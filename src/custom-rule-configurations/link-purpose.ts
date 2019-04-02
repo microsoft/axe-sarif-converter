@@ -45,6 +45,7 @@ function evaluateLinkPurpose(
         url,
     };
 
+    // @ts-ignore
     this.data(data);
     return true;
 }

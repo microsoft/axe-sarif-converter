@@ -71,7 +71,7 @@ function evaluateCustomWidget(node: HTMLElement): boolean {
         ariaCues,
     };
 
-    // tslint:disable-next-line:no-invalid-this
+    //@ts-ignore
     this.data(data);
 
     return true;

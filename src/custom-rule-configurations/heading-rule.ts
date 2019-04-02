@@ -19,9 +19,9 @@ export const headingConfiguration: RulesConfiguration = {
 
 function evaluateCodedHeadings(node: HTMLElement, options: any): boolean {
     const headingText: string = node.innerText;
-    let headingLevel: number;
-    // @ts-ignore
-    const ariaHeadingLevel: string = node.getAttribute('aria-level');
+    let headingLevel: number | undefined = undefined;
+
+    const ariaHeadingLevel: string | null = node.getAttribute('aria-level');
     if (ariaHeadingLevel !== null) {
         headingLevel = parseInt(ariaHeadingLevel, 10);
     } else {
@@ -30,11 +30,13 @@ function evaluateCodedHeadings(node: HTMLElement, options: any): boolean {
             headingLevel = parseInt(codedHeadingLevel[1], 10);
         }
     }
+
     const headingResultData: AxeCheckResultExtraData = {
-        // @ts-ignore
         headingLevel: headingLevel,
         headingText: headingText,
     };
+
+    //@ts-ignore
     this.data(headingResultData);
     return true;
 }

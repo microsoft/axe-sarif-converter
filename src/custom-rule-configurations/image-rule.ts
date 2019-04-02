@@ -21,7 +21,7 @@ export const imageConfiguration: RulesConfiguration = {
     },
 };
 
-export function isImage(node: HTMLElement, virtualNode: HTMLElement): boolean {
+export function isImage(node: HTMLElement, virtualNode?: HTMLElement): boolean {
     const selector: string = 'img, [role=img], svg';
     if (axe.utils.matchesSelector(node, selector)) {
         return true;
@@ -41,6 +41,7 @@ export function evaluateImageFunction(node: HTMLElement): boolean {
     const codedAs: string = AxeUtils.getImageCodedAs(node);
     const imageType: string = AxeUtils.getImageType(node);
 
+    //@ts-ignore
     this.data({
         imageType,
         accessibleName,

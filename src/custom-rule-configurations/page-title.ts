@@ -25,6 +25,7 @@ function evaluateTitle(node: HTMLElement, options: any): boolean {
     const docUtil = new DocumentUtils(document);
     const title = docUtil.title();
     if (title) {
+        //@ts-ignore
         this.data({ pageTitle: title });
     }
     return true;

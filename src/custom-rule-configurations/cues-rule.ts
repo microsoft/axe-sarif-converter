@@ -16,7 +16,7 @@ export const cuesConfiguration: RulesConfiguration = createNativeWidgetConfigura
 );
 
 export function evaluateCues(node: HTMLElement): boolean {
-    // tslint:disable-next-line:no-invalid-this
+    //@ts-ignore
     this.data({
         element: getNativeWidgetElementType(node),
         accessibleName: AxeUtils.getAccessibleText(node, false),

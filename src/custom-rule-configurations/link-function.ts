@@ -51,23 +51,23 @@ function evaluateLinkFunction(
     const tabIndex = node.getAttribute('tabindex');
     const url = node.getAttribute('href');
 
-    const data = {
+    const missingNameOrUrl = !accessibleName || !url;
+
+    const parentOuterHtml = node.parentElement
+        ? node.parentElement.outerHTML
+        : null;
+
+    const snippet = missingNameOrUrl ? parentOuterHtml : node.outerHTML;
+
+    // @ts-ignore
+    this.data({
         accessibleName,
         ariaAttributes: ariaValues,
         role,
         tabIndex,
         url,
-    };
-
-    const missingNameOrUrl = !accessibleName || !url;
-    // @ts-ignore
-    const snippet = missingNameOrUrl
-        ? node.parentElement.outerHTML
-        : node.outerHTML;
-
-    // @ts-ignore
-    data[snippetKey] = snippet;
-    this.data(data);
+        snippetKey: snippet,
+    });
 
     return true;
 }

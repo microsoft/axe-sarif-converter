@@ -31,6 +31,7 @@ function evaluateTextContrast(
     context: any,
 ): boolean {
     const checkResult = AxeUtils.getEvaluateFromCheck('color-contrast').call(
+        //@ts-ignore
         this,
         node,
         options,
@@ -49,6 +50,7 @@ function evaluateTextContrast(
         size: isLargeText(fontSize, bold) ? 'large' : 'regular',
     };
 
+    //@ts-ignore
     this.data(data);
     return checkResult;
 }

@@ -45,6 +45,7 @@ export function createNativeWidgetConfiguration(
 }
 
 export function evaluateNativeWidget(node: HTMLElement): boolean {
+    //@ts-ignore
     this.data({
         element: getNativeWidgetElementType(node),
         accessibleName: AxeUtils.getAccessibleText(node, false),
