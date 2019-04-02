@@ -15,14 +15,10 @@ export namespace Processor {
     ): AxeRule | undefined {
         rule.nodes = rule.nodes.filter((nodeResult: AxeNodeResult) => {
             nodeResult.any = nodeResult.any.filter((check: any) => {
-                const checkShown =
-                    check.message !== undefined
-                        ? suppressedMessages.indexOf(
-                              normalizeText(check.message),
-                          ) < 0
-                        : true;
-
-                return checkShown;
+                return check.message !== undefined
+                    ? suppressedMessages.indexOf(normalizeText(check.message)) <
+                          0
+                    : true;
             });
 
             return (

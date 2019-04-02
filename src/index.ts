@@ -1,6 +1,6 @@
 import * as Axe from 'axe-core';
 import { CheckMessageTransformer } from './check-message-transformer';
-import { configuration } from './custom-rule-configurations';
+import { CustomRuleConfigurations } from './custom-rule-configurations';
 import { DocumentUtils } from './document-utils';
 import { HelpUrlGetter } from './help-url-getter';
 import { MessageDecorator } from './message-decorator';
@@ -12,11 +12,11 @@ import { rulesWCAGConfiguration } from './wcag-mappings';
 
 export function axeToSarif(axeResults: Axe.AxeResults): SarifLog {
     const messageDecorator = new MessageDecorator(
-        configuration,
+        CustomRuleConfigurations,
         new CheckMessageTransformer(),
     );
 
-    const helpUrlGetter = new HelpUrlGetter(configuration);
+    const helpUrlGetter = new HelpUrlGetter(CustomRuleConfigurations);
     const resultDecorator = new ResultDecorator(
         new DocumentUtils(),
         messageDecorator,

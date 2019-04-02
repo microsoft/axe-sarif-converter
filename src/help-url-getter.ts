@@ -4,11 +4,10 @@ export class HelpUrlGetter {
     constructor(private readonly ruleConfigs: RulesConfiguration[]) {}
 
     public getHelpUrl(ruleId: string): string {
-        const customHelpUrl = this._getCustomHelpUrl(ruleId);
-        return customHelpUrl;
+        return this.getCustomHelpUrl(ruleId);
     }
 
-    private _getCustomHelpUrl(ruleId: string): string {
+    private getCustomHelpUrl(ruleId: string): string {
         for (let index = 0; index < this.ruleConfigs.length; index++) {
             const config = this.ruleConfigs[index];
             if (

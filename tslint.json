@@ -2,6 +2,8 @@
     "extends": ["tslint-microsoft-contrib/recommended"],
     "rulesDirectory": ["node_modules/tslint-microsoft-contrib"],
     "rules": {
+        "export-name": false,
+        "no-relative-imports": false,
         "ordered-imports": true
     }
 }

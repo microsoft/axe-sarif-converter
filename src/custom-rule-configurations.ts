@@ -1,6 +1,6 @@
 import { colorConfiguration } from './custom-rule-configurations/color-rule';
 import { cuesConfiguration } from './custom-rule-configurations/cues-rule';
-import { customWidgetConfiguration } from './custom-rule-configurations/custom-widget';
+import { customWidgetConfiguration } from './custom-rule-configurations/custom-widget-configuration';
 import { frameTitleConfiguration } from './custom-rule-configurations/frame-title';
 import { headingConfiguration } from './custom-rule-configurations/heading-rule';
 import { imageConfiguration } from './custom-rule-configurations/image-rule';
@@ -14,7 +14,7 @@ import { textContrastConfiguration } from './custom-rule-configurations/text-con
 import { widgetFunctionConfiguration } from './custom-rule-configurations/widget-function';
 import { RulesConfiguration } from './ruleresults';
 
-export const configuration: RulesConfiguration[] = [
+export const CustomRuleConfigurations: RulesConfiguration[] = [
     headingConfiguration,
     colorConfiguration,
     landmarkConfiguration,

@@ -20,14 +20,13 @@ export class SarifConverter {
     }
 
     public convert(results: ScannerResults, options: ScannerOptions): SarifLog {
-        const log: SarifLog = {
+        return {
             version: CustomSarif.SarifLogVersion.v2,
-            runs: [this._convertRun(results, options)],
+            runs: [this.convertRun(results, options)],
         };
-        return log;
     }
 
-    private _convertRun(
+    private convertRun(
         results: ScannerResults,
         options: ScannerOptions,
     ): Sarif.Run {
@@ -65,12 +64,12 @@ export class SarifConverter {
                 },
             ],
             files: files,
-            results: this._convertResults(results, properties),
+            results: this.convertResults(results, properties),
             resources: {
-                rules: this._convertResultsToRules(results),
+                rules: this.convertResultsToRules(results),
             },
             properties: {
-                standards: this._convertStandards(),
+                standards: this.convertStandards(),
             },
         };
 
@@ -85,34 +84,34 @@ export class SarifConverter {
         return run;
     }
 
-    private _convertResults(
+    private convertResults(
         results: ScannerResults,
         properties: DictionaryStringTo<string>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
 
-        this._convertRuleResults(
+        this.convertRuleResults(
             resultArray,
             results.violations,
             CustomSarif.Result.level.error,
             results.targetPageUrl,
             properties,
         );
-        this._convertRuleResults(
+        this.convertRuleResults(
             resultArray,
             results.passes,
             CustomSarif.Result.level.pass,
             results.targetPageUrl,
             properties,
         );
-        this._convertRuleResults(
+        this.convertRuleResults(
             resultArray,
             results.incomplete,
             CustomSarif.Result.level.open,
             results.targetPageUrl,
             properties,
         );
-        this._convertRuleResultsWithoutNodes(
+        this.convertRuleResultsWithoutNodes(
             resultArray,
             results.inapplicable,
             CustomSarif.Result.level.notApplicable,
@@ -122,7 +121,7 @@ export class SarifConverter {
         return resultArray;
     }
 
-    private _convertRuleResults(
+    private convertRuleResults(
         resultArray: Sarif.Result[],
         ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
@@ -131,7 +130,7 @@ export class SarifConverter {
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
-                this._convertRuleResult(
+                this.convertRuleResult(
                     resultArray,
                     ruleResult,
                     level,
@@ -142,7 +141,7 @@ export class SarifConverter {
         }
     }
 
-    private _convertRuleResult(
+    private convertRuleResult(
         resultArray: Sarif.Result[],
         ruleResult: AxeCoreRuleResult,
         level: CustomSarif.Result.level,
@@ -151,14 +150,14 @@ export class SarifConverter {
     ): void {
         const partialFingerprints: DictionaryStringTo<
             string
-        > = this._getPartialFingerprintsFromRule(ruleResult);
+        > = this.getPartialFingerprintsFromRule(ruleResult);
 
         for (const node of ruleResult.nodes) {
             const selector = node.target.join(';');
             resultArray.push({
                 ruleId: ruleResult.id,
                 level: level,
-                message: this._convertMessage(node, level),
+                message: this.convertMessage(node, level),
                 locations: [
                     {
                         physicalLocation: {
@@ -188,7 +187,7 @@ export class SarifConverter {
         }
     }
 
-    private _getPartialFingerprintsFromRule(
+    private getPartialFingerprintsFromRule(
         ruleResult: AxeCoreRuleResult,
     ): DictionaryStringTo<string> {
         return {
@@ -196,7 +195,7 @@ export class SarifConverter {
         };
     }
 
-    private _convertMessage(
+    private convertMessage(
         node: AxeNodeResult,
         level: CustomSarif.Result.level,
     ): CustomSarif.Message {
@@ -205,13 +204,13 @@ export class SarifConverter {
 
         if (level === CustomSarif.Result.level.error) {
             const allAndNone = node.all.concat(node.none);
-            this._convertMessageChecks(
+            this.convertMessageChecks(
                 'Fix all of the following:',
                 allAndNone,
                 textArray,
                 richTextArray,
             );
-            this._convertMessageChecks(
+            this.convertMessageChecks(
                 'Fix any of the following:',
                 node.any,
                 textArray,
@@ -219,7 +218,7 @@ export class SarifConverter {
             );
         } else {
             const allNodes = node.all.concat(node.none).concat(node.any);
-            this._convertMessageChecks(
+            this.convertMessageChecks(
                 'The following tests passed:',
                 allNodes,
                 textArray,
@@ -233,7 +232,7 @@ export class SarifConverter {
         };
     }
 
-    private _convertMessageChecks(
+    private convertMessageChecks(
         heading: string,
         checkResults: FormattedCheckResult[],
         textArray: string[],
@@ -244,7 +243,7 @@ export class SarifConverter {
             const richTextLines: string[] = [];
 
             textLines.push(heading);
-            richTextLines.push(this._escapeForMarkdown(heading));
+            richTextLines.push(this.escapeForMarkdown(heading));
 
             for (const checkResult of checkResults) {
                 const message = StringUtils.isNotEmpty(checkResult.message)
@@ -252,7 +251,7 @@ export class SarifConverter {
                     : checkResult.id;
 
                 textLines.push(message + '.');
-                richTextLines.push('- ' + this._escapeForMarkdown(message));
+                richTextLines.push('- ' + this.escapeForMarkdown(message));
             }
 
             textArray.push(textLines.join(' '));
@@ -260,11 +259,11 @@ export class SarifConverter {
         }
     }
 
-    private _escapeForMarkdown(s: string): string {
+    private escapeForMarkdown(s: string): string {
         return s ? s.replace(/</g, '&lt;') : '';
     }
 
-    private _convertRuleResultsWithoutNodes(
+    private convertRuleResultsWithoutNodes(
         resultArray: Sarif.Result[],
         ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
@@ -272,7 +271,7 @@ export class SarifConverter {
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
-                const partialFingerprints = this._getPartialFingerprintsFromRule(
+                const partialFingerprints = this.getPartialFingerprintsFromRule(
                     ruleResult,
                 );
                 resultArray.push({
@@ -288,31 +287,31 @@ export class SarifConverter {
         }
     }
 
-    private _convertResultsToRules(
+    private convertResultsToRules(
         results: ScannerResults,
     ): DictionaryStringTo<Sarif.Rule> {
         const rulesDictionary: DictionaryStringTo<Sarif.Rule> = {};
 
-        this._convertRuleResultsToRules(rulesDictionary, results.violations);
-        this._convertRuleResultsToRules(rulesDictionary, results.passes);
-        this._convertRuleResultsToRules(rulesDictionary, results.inapplicable);
-        this._convertRuleResultsToRules(rulesDictionary, results.incomplete);
+        this.convertRuleResultsToRules(rulesDictionary, results.violations);
+        this.convertRuleResultsToRules(rulesDictionary, results.passes);
+        this.convertRuleResultsToRules(rulesDictionary, results.inapplicable);
+        this.convertRuleResultsToRules(rulesDictionary, results.incomplete);
 
         return rulesDictionary;
     }
 
-    private _convertRuleResultsToRules(
+    private convertRuleResultsToRules(
         rulesDictionary: DictionaryStringTo<Sarif.Rule>,
         ruleResults: AxeCoreRuleResult[],
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
-                this._convertRuleResultToRule(rulesDictionary, ruleResult);
+                this.convertRuleResultToRule(rulesDictionary, ruleResult);
             }
         }
     }
 
-    private _convertRuleResultToRule(
+    private convertRuleResultToRule(
         rulesDictionary: DictionaryStringTo<Sarif.Rule>,
         ruleResult: AxeCoreRuleResult,
     ): void {
@@ -327,14 +326,14 @@ export class SarifConverter {
                 },
                 helpUri: ruleResult.helpUrl,
                 properties: {
-                    standards: this._convertStandardsForRule(ruleResult.WCAG!),
+                    standards: this.convertStandardsForRule(ruleResult.WCAG!),
                 },
             };
             rulesDictionary[ruleResult.id] = rule;
         }
     }
 
-    private _convertStandardsForRule(wcagList: WCAG[]): string[] {
+    private convertStandardsForRule(wcagList: WCAG[]): string[] {
         const standards: string[] = [];
         if (wcagList !== undefined) {
             for (const wcag of wcagList) {
@@ -344,26 +343,24 @@ export class SarifConverter {
         return standards;
     }
 
-    private _convertStandards(): DictionaryStringTo<AxeCoreStandard> {
+    private convertStandards(): DictionaryStringTo<AxeCoreStandard> {
         const standards: DictionaryStringTo<AxeCoreStandard> = {};
-        // tslint:disable-next-line:forin
-        for (const key in this.wcagList) {
-            const wcag = this.wcagList[key];
-            if (wcag.title === undefined) {
-                continue;
-            }
 
-            standards[wcag.text] = {
-                standardName: {
-                    text: 'WCAG',
-                },
-                requirementName: {
-                    text: wcag.title,
-                },
-                requirementId: wcag.text,
-                requirementUri: wcag.url!,
-            };
-        }
+        Object.keys(this.wcagList).forEach(key => {
+            const wcag = this.wcagList[key];
+            if (wcag.title) {
+                standards[wcag.text] = {
+                    standardName: {
+                        text: 'WCAG',
+                    },
+                    requirementName: {
+                        text: wcag.title,
+                    },
+                    requirementId: wcag.text,
+                    requirementUri: wcag.url!,
+                };
+            }
+        });
         return standards;
     }
 }

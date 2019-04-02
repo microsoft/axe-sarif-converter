@@ -21,20 +21,18 @@ export class ResultDecorator {
     }
 
     public decorateResults(results: Axe.AxeResults): ScannerResults {
-        const scannerResults: ScannerResults = {
-            passes: this._decorateAxeRuleResults(results.passes),
-            violations: this._decorateAxeRuleResults(results.violations),
-            inapplicable: this._decorateAxeRuleResults(
+        return {
+            passes: this.decorateAxeRuleResults(results.passes),
+            violations: this.decorateAxeRuleResults(results.violations),
+            inapplicable: this.decorateAxeRuleResults(
                 results.inapplicable,
                 true,
             ),
-            incomplete: this._decorateAxeRuleResults(results.incomplete),
+            incomplete: this.decorateAxeRuleResults(results.incomplete),
             timestamp: results.timestamp,
             targetPageUrl: results.url,
             targetPageTitle: '', // TODO - missing title
         };
-
-        return scannerResults;
     }
 
     public setWCAGConfiguration(
@@ -43,7 +41,7 @@ export class ResultDecorator {
         this.wcagConfiguration = configuration;
     }
 
-    private _decorateAxeRuleResults(
+    private decorateAxeRuleResults(
         ruleResults: AxeRule[],
         isInapplicable: boolean = false,
     ): AxeCoreRuleResult[] {
