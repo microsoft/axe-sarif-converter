@@ -1,3 +1,8 @@
+<!--
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the MIT License.
+-->
+
 # axe-sarif-converter
 
 **An [axe-core](https://github.com/dequelabs/axe-core) reporter that outputs axe scan results in [SARIF format](http://sarifweb.azurewebsites.net/).**
