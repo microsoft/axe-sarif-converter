@@ -1,8 +1,8 @@
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 
 const landmarkCheckId: string = 'unique-landmark';
 
-export const landmarkConfiguration: IKerosRuleConfiguration = {
+export const landmarkConfiguration: RulesConfiguration = {
     checks: [],
     rule: {
         id: 'main-landmark',

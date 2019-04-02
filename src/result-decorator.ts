@@ -1,7 +1,7 @@
 import * as Axe from 'axe-core';
 import { IDictionaryStringTo } from './dictionary-types';
 import { DocumentUtils } from './document-utils';
-import { AxeRule, IChiselResults, IChiselRuleResult } from './iruleresults';
+import { AxeRule, IChiselResults, AxeCoreRuleResult } from './ruleresults';
 import { WCAG } from './wcag';
 import { MessageDecorator } from './message-decorator';
 import { Processor } from './processor';
@@ -46,8 +46,8 @@ export class ResultDecorator {
     private _decorateAxeRuleResults(
         ruleResults: AxeRule[],
         isInapplicable: boolean = false,
-    ): IChiselRuleResult[] {
-        return ruleResults.reduce<IChiselRuleResult[]>(
+    ): AxeCoreRuleResult[] {
+        return ruleResults.reduce<AxeCoreRuleResult[]>(
             (filteredArray, result: AxeRule) => {
                 this._messageDecorator.decorateResultWithMessages(result);
                 const processedResult = Processor.suppressChecksByMessages(

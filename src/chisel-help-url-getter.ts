@@ -1,7 +1,7 @@
-import { IKerosRuleConfiguration } from './iruleresults';
+import { RulesConfiguration } from './ruleresults';
 
 export class ChiselHelpUrlGetter {
-    constructor(private readonly ruleConfigs: IKerosRuleConfiguration[]) {}
+    constructor(private readonly ruleConfigs: RulesConfiguration[]) {}
 
     public getChiselHelpUrl(ruleId: string): string {
         const customHelpUrl = this._getCustomHelpUrl(ruleId);

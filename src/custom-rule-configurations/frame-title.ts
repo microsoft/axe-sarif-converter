@@ -1,11 +1,11 @@
 import {
-    IAxeCheckResultFrameExtraData,
-    IKerosRuleConfiguration,
-} from '../iruleresults';
+    AxeCheckResultFrameExtraData,
+    RulesConfiguration,
+} from '../ruleresults';
 
 const frameTitleId: string = 'get-frame-title';
 
-export const frameTitleConfiguration: IKerosRuleConfiguration = {
+export const frameTitleConfiguration: RulesConfiguration = {
     checks: [
         {
             id: frameTitleId,
@@ -23,7 +23,7 @@ export const frameTitleConfiguration: IKerosRuleConfiguration = {
 function evaluateTitle(node: HTMLElement, options: any): boolean {
     const frameTitle = node.title ? node.title.trim() : '';
 
-    const frameResultData: IAxeCheckResultFrameExtraData = {
+    const frameResultData: AxeCheckResultFrameExtraData = {
         frameType: node.tagName.toLowerCase(),
         frameTitle,
     };

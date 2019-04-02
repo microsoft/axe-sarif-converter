@@ -1,9 +1,9 @@
 /// <reference path="../axe-extension.d.ts" />
 import * as AxeUtils from '../axe-utils';
 
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 
-export const textContrastConfiguration: IKerosRuleConfiguration = {
+export const textContrastConfiguration: RulesConfiguration = {
     checks: [
         {
             id: 'text-contrast',

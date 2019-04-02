@@ -1,6 +1,5 @@
 import { WCAG } from './wcag';
 
-// tslint:disable-next-line:interface-name
 export interface AxeRule {
     id: string;
     nodes: AxeNodeResult[];
@@ -8,7 +7,6 @@ export interface AxeRule {
     help?: string;
 }
 
-// tslint:disable-next-line:interface-name
 export interface AxeNodeResult {
     any: FormattedCheckResult[];
     none: FormattedCheckResult[];
@@ -20,21 +18,21 @@ export interface AxeNodeResult {
     snippet?: string;
 }
 
-export interface IKerosRuleConfiguration {
-    checks: ICheckConfiguration[];
-    rule: IRuleConfiguration;
+export interface RulesConfiguration {
+    checks: CheckConfiguration[];
+    rule: RuleConfiguration;
 }
 
-export interface IAxeConfiguration {
-    checks?: ICheckConfiguration[];
-    rules?: IRuleConfiguration[];
+export interface AxeConfiguration {
+    checks?: CheckConfiguration[];
+    rules?: RuleConfiguration[];
 }
 
-export interface IAxeBranding {
+export interface AxeBranding {
     brand?: string;
     application?: string;
 }
-export interface IRuleConfiguration {
+export interface RuleConfiguration {
     id: string;
     selector: string;
     excludeHidden?: boolean;
@@ -52,7 +50,7 @@ export interface IRuleConfiguration {
     helpUrl?: string;
 }
 
-export interface ICheckConfiguration {
+export interface CheckConfiguration {
     id: string;
     evaluate: (
         node: any,
@@ -67,37 +65,36 @@ export interface ICheckConfiguration {
     failMessage?: () => string;
 }
 
-// tslint:disable-next-line:interface-name
 export interface FormattedCheckResult {
     id: string;
     message: string;
-    data: IAxeCheckResultExtraData;
+    data: AxeCheckResultExtraData;
     result?: boolean;
 }
 
-export interface IAxeCheckResultExtraData {
+export interface AxeCheckResultExtraData {
     headingLevel?: number;
     headingText?: string;
 }
 
-export interface IAxeCheckResultFrameExtraData {
+export interface AxeCheckResultFrameExtraData {
     frameType?: string;
     frameTitle?: string;
 }
 
-export type IChiselRuleResult = AxeRule & IChiselDecorations;
+export type AxeCoreRuleResult = AxeRule & AxeCoreDecorations;
 
 export interface IChiselResults {
-    passes: IChiselRuleResult[];
-    violations: IChiselRuleResult[];
-    inapplicable: IChiselRuleResult[];
-    incomplete: IChiselRuleResult[];
+    passes: AxeCoreRuleResult[];
+    violations: AxeCoreRuleResult[];
+    inapplicable: AxeCoreRuleResult[];
+    incomplete: AxeCoreRuleResult[];
     timestamp: string;
     targetPageUrl: string;
     targetPageTitle: string;
 }
 
-export interface IChiselDecorations {
+export interface AxeCoreDecorations {
     WCAG?: WCAG[];
     chiselHelpUrl?: string;
 }

@@ -1,4 +1,4 @@
-import { AxeNodeResult, AxeRule } from './iruleresults';
+import { AxeNodeResult, AxeRule } from './ruleresults';
 
 export namespace Processor {
     export let suppressedMessages = [

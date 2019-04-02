@@ -1,7 +1,7 @@
 /// <reference path="../axe-extension.d.ts" />
 // tslint:disable:max-line-length
 import * as axe from 'axe-core';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 
 const id: string = 'unique-landmark';
 const passMessage: string =
@@ -13,7 +13,7 @@ const descriptionHelp = {
     help: passMessage,
 };
 
-export const uniqueLandmarkConfiguration: IKerosRuleConfiguration = {
+export const uniqueLandmarkConfiguration: RulesConfiguration = {
     checks: [
         {
             id,

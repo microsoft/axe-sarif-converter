@@ -1,9 +1,9 @@
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 import { DocumentUtils } from '../document-utils';
 
 const pageCheckId: string = 'page-title';
 
-export const pageConfiguration: IKerosRuleConfiguration = {
+export const pageConfiguration: RulesConfiguration = {
     checks: [
         {
             id: pageCheckId,

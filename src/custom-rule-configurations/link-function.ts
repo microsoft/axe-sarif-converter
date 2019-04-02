@@ -1,12 +1,12 @@
 /// <reference path="../axe-extension.d.ts" />
 import * as AxeUtils from '../axe-utils';
-import { AxeNodeResult, IKerosRuleConfiguration } from '../iruleresults';
+import { AxeNodeResult, RulesConfiguration } from '../ruleresults';
 import { RoleUtils } from '../role-utils';
 
 const checkId = 'link-function';
 const snippetKey = 'snippet';
 const hasValidRoleIfPresent = 'valid-role-if-present';
-export const linkFunctionConfiguration: IKerosRuleConfiguration = {
+export const linkFunctionConfiguration: RulesConfiguration = {
     checks: [
         {
             id: checkId,

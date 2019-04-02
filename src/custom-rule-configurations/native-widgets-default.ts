@@ -1,5 +1,5 @@
 import * as AxeUtils from '../axe-utils';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 import { RoleUtils } from '../role-utils';
 
 export const nativeWidgetSelector =
@@ -20,7 +20,7 @@ export function createNativeWidgetConfiguration(
         context: any,
     ) => boolean,
     matches?: (node: any, virtualNode: any) => boolean,
-): IKerosRuleConfiguration {
+): RulesConfiguration {
     return {
         checks: [
             {

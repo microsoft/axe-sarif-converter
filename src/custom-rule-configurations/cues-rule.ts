@@ -1,5 +1,5 @@
 import * as AxeUtils from '../axe-utils';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 import {
     getNativeWidgetElementType,
     createNativeWidgetConfiguration,
@@ -9,7 +9,7 @@ import {
     generateARIACuesDictionary,
 } from '../cues';
 
-export const cuesConfiguration: IKerosRuleConfiguration = createNativeWidgetConfiguration(
+export const cuesConfiguration: RulesConfiguration = createNativeWidgetConfiguration(
     'cues',
     'cues-collector',
     evaluateCues,

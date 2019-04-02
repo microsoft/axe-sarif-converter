@@ -1,11 +1,11 @@
 import { CheckMessageTransformer } from './check-message-transformer';
-import { AxeRule, IKerosRuleConfiguration } from './iruleresults';
+import { AxeRule, RulesConfiguration } from './ruleresults';
 
 export class MessageDecorator {
-    private configuration: IKerosRuleConfiguration[];
+    private configuration: RulesConfiguration[];
     private checkMessageCreator: CheckMessageTransformer;
     constructor(
-        configuration: IKerosRuleConfiguration[],
+        configuration: RulesConfiguration[],
         checkMessageCreator: CheckMessageTransformer,
     ) {
         this.configuration = configuration;

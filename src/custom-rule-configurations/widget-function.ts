@@ -1,12 +1,12 @@
 /// <reference path="../axe-extension.d.ts" />
 import * as AxeUtils from '../axe-utils';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 import {
     getNativeWidgetElementType,
     createNativeWidgetConfiguration,
 } from './native-widgets-default';
 
-export const widgetFunctionConfiguration: IKerosRuleConfiguration = createNativeWidgetConfiguration(
+export const widgetFunctionConfiguration: RulesConfiguration = createNativeWidgetConfiguration(
     'widget-function',
     'widget-function-collector',
     evaluateWidgetFunction,

@@ -1,4 +1,4 @@
-import { IKerosRuleConfiguration } from './iruleresults';
+import { RulesConfiguration } from './ruleresults';
 
 import { textContrastConfiguration } from './custom-rule-configurations/text-contrast';
 import { textAlternativeConfiguration } from './custom-rule-configurations/text-alternative';
@@ -16,7 +16,7 @@ import { nativeWidgetsDefaultConfiguration } from './custom-rule-configurations/
 import { cuesConfiguration } from './custom-rule-configurations/cues-rule';
 import { customWidgetConfiguration } from './custom-rule-configurations/custom-widget';
 
-export const configuration: IKerosRuleConfiguration[] = [
+export const configuration: RulesConfiguration[] = [
     headingConfiguration,
     colorConfiguration,
     landmarkConfiguration,

@@ -1,11 +1,8 @@
-import {
-    IAxeCheckResultExtraData,
-    IKerosRuleConfiguration,
-} from '../iruleresults';
+import { AxeCheckResultExtraData, RulesConfiguration } from '../ruleresults';
 
 const headingCheckId: string = 'collect-headings';
 
-export const headingConfiguration: IKerosRuleConfiguration = {
+export const headingConfiguration: RulesConfiguration = {
     checks: [
         {
             id: headingCheckId,
@@ -33,7 +30,7 @@ function evaluateCodedHeadings(node: HTMLElement, options: any): boolean {
             headingLevel = parseInt(codedHeadingLevel[1], 10);
         }
     }
-    const headingResultData: IAxeCheckResultExtraData = {
+    const headingResultData: AxeCheckResultExtraData = {
         // @ts-ignore
         headingLevel: headingLevel,
         headingText: headingText,

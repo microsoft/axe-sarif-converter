@@ -1,8 +1,8 @@
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 
 const colorCheckId: string = 'select-body';
 
-export const colorConfiguration: IKerosRuleConfiguration = {
+export const colorConfiguration: RulesConfiguration = {
     checks: [
         {
             id: colorCheckId,

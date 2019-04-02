@@ -2,9 +2,9 @@
 import * as axe from 'axe-core';
 
 import * as AxeUtils from '../axe-utils';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 
-export const imageConfiguration: IKerosRuleConfiguration = {
+export const imageConfiguration: RulesConfiguration = {
     checks: [
         {
             id: 'image-function-data-collector',

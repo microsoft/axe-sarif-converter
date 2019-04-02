@@ -1,13 +1,13 @@
 /// <reference path="../axe-extension.d.ts" />
 import * as AxeUtils from '../axe-utils';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 import {
     generateHTMLCuesDictionary,
     generateARIACuesDictionary,
 } from '../cues';
 
 const checkId = 'custom-widget';
-export const customWidgetConfiguration: IKerosRuleConfiguration = {
+export const customWidgetConfiguration: RulesConfiguration = {
     checks: [
         {
             id: checkId,

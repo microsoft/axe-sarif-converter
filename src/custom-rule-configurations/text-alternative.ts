@@ -2,9 +2,9 @@
 import * as AxeUtils from '../axe-utils';
 
 import { isImage } from './image-rule';
-import { IKerosRuleConfiguration } from '../iruleresults';
+import { RulesConfiguration } from '../ruleresults';
 
-export const textAlternativeConfiguration: IKerosRuleConfiguration = {
+export const textAlternativeConfiguration: RulesConfiguration = {
     checks: [
         {
             id: 'text-alternative-data-collector',

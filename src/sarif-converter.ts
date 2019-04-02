@@ -4,8 +4,8 @@ import {
     AxeNodeResult,
     FormattedCheckResult,
     IChiselResults,
-    IChiselRuleResult,
-} from './iruleresults';
+    AxeCoreRuleResult,
+} from './ruleresults';
 import { WCAG, WCAGData } from './wcag';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import { ISarifLog } from './sarif/isarflog';
@@ -127,7 +127,7 @@ export class SarifConverter {
 
     private _convertRuleResults(
         resultArray: Sarif.Result[],
-        ruleResults: IChiselRuleResult[],
+        ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
         targetPageUrl: string,
         properties: IDictionaryStringTo<string>,
@@ -147,7 +147,7 @@ export class SarifConverter {
 
     private _convertRuleResult(
         resultArray: Sarif.Result[],
-        ruleResult: IChiselRuleResult,
+        ruleResult: AxeCoreRuleResult,
         level: CustomSarif.Result.level,
         targetPageUrl: string,
         properties: IDictionaryStringTo<string>,
@@ -192,7 +192,7 @@ export class SarifConverter {
     }
 
     private _getPartialFingerprintsFromRule(
-        ruleResult: IChiselRuleResult,
+        ruleResult: AxeCoreRuleResult,
     ): IDictionaryStringTo<string> {
         return {
             ruleId: ruleResult.id,
@@ -269,7 +269,7 @@ export class SarifConverter {
 
     private _convertRuleResultsWithoutNodes(
         resultArray: Sarif.Result[],
-        ruleResults: IChiselRuleResult[],
+        ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
         properties: IDictionaryStringTo<string>,
     ): void {
@@ -306,7 +306,7 @@ export class SarifConverter {
 
     private _convertRuleResultsToRules(
         rulesDictionary: IDictionaryStringTo<Sarif.Rule>,
-        ruleResults: IChiselRuleResult[],
+        ruleResults: AxeCoreRuleResult[],
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -317,7 +317,7 @@ export class SarifConverter {
 
     private _convertRuleResultToRule(
         rulesDictionary: IDictionaryStringTo<Sarif.Rule>,
-        ruleResult: IChiselRuleResult,
+        ruleResult: AxeCoreRuleResult,
     ): void {
         if (!rulesDictionary.hasOwnProperty(ruleResult.id)) {
             const rule: Sarif.Rule = {

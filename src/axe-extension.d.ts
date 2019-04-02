@@ -1,5 +1,5 @@
 import * as axe from 'axe-core';
-import { IRuleConfiguration, ICheckConfiguration } from './iruleresults';
+import { RuleConfiguration, CheckConfiguration } from './ruleresults';
 
 declare module 'axe-core/axe' {
     const commons: {
@@ -25,8 +25,8 @@ declare module 'axe-core/axe' {
 
     const _audit: {
         defaultConfig: {
-            rules: IRuleConfiguration[];
-            checks: ICheckConfiguration[];
+            rules: RuleConfiguration[];
+            checks: CheckConfiguration[];
         };
     };
 }

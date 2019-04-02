@@ -1,9 +1,9 @@
-import { FormattedCheckResult, ICheckConfiguration } from './iruleresults';
+import { FormattedCheckResult, CheckConfiguration } from './ruleresults';
 
 export class CheckMessageTransformer {
     public addMessagesToChecks(
         checks: FormattedCheckResult[],
-        checkConfigurations: ICheckConfiguration[],
+        checkConfigurations: CheckConfiguration[],
     ): void {
         for (let checkIndex = 0; checkIndex < checks.length; checkIndex++) {
             const checkResult = checks[checkIndex];
