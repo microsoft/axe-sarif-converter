@@ -49,12 +49,12 @@ export class SarifConverter {
 
         const run: Sarif.Run = {
             tool: {
-                name: 'Scanner',
-                fullName: 'Scanner',
-                semanticVersion: '1.0.0',
-                version: '1.0.0',
+                name: 'axe',
+                fullName: 'axe-core',
+                semanticVersion: '3.2.2',
+                version: '3.2.2',
                 properties: {
-                    downloadUri: 'https://accessibilityinsights.io',
+                    downloadUri: 'https://www.deque.com/axe/',
                 },
             },
             invocations: [
