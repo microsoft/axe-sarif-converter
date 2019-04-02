@@ -1,4 +1,15 @@
 {
     "extends": ["tslint-microsoft-contrib/recommended"],
-    "rulesDirectory": ["node_modules/tslint-microsoft-contrib"]
+    "rulesDirectory": ["node_modules/tslint-microsoft-contrib"],
+    "rules": {
+        "file-header": [
+            true,
+            {
+                "match": "//Copyright (c) Microsoft Corporation. All rights reserved.\n//Licensed under the MIT License.",
+                "allow-single-line-comments": true,
+                "default": "//Copyright (c) Microsoft Corporation. All rights reserved.\n//Licensed under the MIT License.",
+                "enforce-trailing-newline": true
+            }
+        ]
+    }
 }

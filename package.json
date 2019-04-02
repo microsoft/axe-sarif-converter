@@ -20,9 +20,6 @@
         "ts-jest": "^24.0.1",
         "tslint-microsoft-contrib": "^6.1.0",
         "typescript": "^3.4.1",
-        "grunt": "^1.0.4",
-        "grunt-cli": "^1.3.2",
-        "grunt-contrib-concat": "^1.0.1",
         "license-check-and-add": "^2.3.6"
     },
     "scripts": {
@@ -35,8 +32,7 @@
         "prepack": "npm run format-check && npm run build",
         "watch:build": "tsc -p . --watch",
         "watch:test": "jest --watch --coverage false --colors",
-        "copyrightheaders": "grunt copyright-check",
-        "copyrightheaders:fix": "grunt copyright-add"
+        "copyrightheaders": "license-check-and-add"
     },
     "repository": {
         "type": "git",
@@ -56,5 +52,45 @@
     "bugs": {
         "url": "https://github.com/Microsoft/axe-sarif-converter/issues"
     },
-    "homepage": "https://github.com/Microsoft/axe-sarif-converter#readme"
+    "homepage": "https://github.com/Microsoft/axe-sarif-converter#readme",
+    "license-check-and-add-config": {
+        "folder": "./",
+        "license": "copyright-header.txt",
+        "exact_paths_method": "EXCLUDE",
+        "exact_paths": [
+            "./.vscode",
+            "./.git",
+            "./.github",
+            "./node_modules",
+            "./copyright-header.txt"
+        ],
+        "file_type_method": "INCLUDE",
+        "file_types": [
+            ".js",
+            ".html",
+            ".css",
+            ".scss",
+            ".yaml",
+            ".md",
+            ".txt",
+            ".xml"
+        ],
+        "insert_license": false,
+        "license_formats": {
+            "yaml|npmrc": {
+                "eachLine": {
+                    "prepend": "# "
+                }
+            },
+            "md": {
+                "prepend": "<!--",
+                "append": "-->"
+            },
+            "snap|js|scss|css": {
+                "eachLine": {
+                    "prepend": "// "
+                }
+            }
+        }
+    }
 }
