@@ -1,7 +1,7 @@
 import * as Axe from 'axe-core';
 import { IDictionaryStringTo } from './dictionary-types';
 import { DocumentUtils } from './document-utils';
-import { AxeRule, IChiselResults, AxeCoreRuleResult } from './ruleresults';
+import { AxeRule, ScannerResults, AxeCoreRuleResult } from './ruleresults';
 import { WCAG } from './wcag';
 import { MessageDecorator } from './message-decorator';
 import { Processor } from './processor';
@@ -20,8 +20,8 @@ export class ResultDecorator {
         this._messageDecorator = messageDecorator;
     }
 
-    public decorateResults(results: Axe.AxeResults): IChiselResults {
-        const chiselResults: IChiselResults = {
+    public decorateResults(results: Axe.AxeResults): ScannerResults {
+        const chiselResults: ScannerResults = {
             passes: this._decorateAxeRuleResults(results.passes),
             violations: this._decorateAxeRuleResults(results.violations),
             inapplicable: this._decorateAxeRuleResults(

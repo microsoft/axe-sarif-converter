@@ -1,4 +1,4 @@
-/// <reference path="../axe-extension.d.ts" />
+/// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
 import { RulesConfiguration } from '../ruleresults';
 import {

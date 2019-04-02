@@ -1,4 +1,4 @@
-/// <reference path="./axe-extension.d.ts" />
+/// <reference path="./axe-extension.ts" />
 import * as axe from 'axe-core';
 
 import { IDictionaryStringTo } from './dictionary-types';

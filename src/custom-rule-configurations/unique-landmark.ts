@@ -1,4 +1,4 @@
-/// <reference path="../axe-extension.d.ts" />
+/// <reference path="../axe-extension.ts" />
 // tslint:disable:max-line-length
 import * as axe from 'axe-core';
 import { RulesConfiguration } from '../ruleresults';

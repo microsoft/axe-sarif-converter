@@ -1,4 +1,4 @@
-/// <reference path="../axe-extension.d.ts" />
+/// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
 import { AxeNodeResult, RulesConfiguration } from '../ruleresults';
 import { RoleUtils } from '../role-utils';

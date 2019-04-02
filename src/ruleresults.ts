@@ -84,7 +84,7 @@ export interface AxeCheckResultFrameExtraData {
 
 export type AxeCoreRuleResult = AxeRule & AxeCoreDecorations;
 
-export interface IChiselResults {
+export interface ScannerResults {
     passes: AxeCoreRuleResult[];
     violations: AxeCoreRuleResult[];
     inapplicable: AxeCoreRuleResult[];

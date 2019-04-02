@@ -3,7 +3,7 @@ import { IChiselOptions } from './exposed-apis';
 import {
     AxeNodeResult,
     FormattedCheckResult,
-    IChiselResults,
+    ScannerResults,
     AxeCoreRuleResult,
 } from './ruleresults';
 import { WCAG, WCAGData } from './wcag';
@@ -20,7 +20,7 @@ export class SarifConverter {
     }
 
     public convert(
-        results: IChiselResults,
+        results: ScannerResults,
         options: IChiselOptions,
     ): ISarifLog {
         const log: ISarifLog = {
@@ -31,7 +31,7 @@ export class SarifConverter {
     }
 
     private _convertRun(
-        results: IChiselResults,
+        results: ScannerResults,
         options: IChiselOptions,
     ): Sarif.Run {
         const files: IDictionaryStringTo<Sarif.File> = {};
@@ -89,7 +89,7 @@ export class SarifConverter {
     }
 
     private _convertResults(
-        results: IChiselResults,
+        results: ScannerResults,
         properties: IDictionaryStringTo<string>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
@@ -292,7 +292,7 @@ export class SarifConverter {
     }
 
     private _convertResultsToRules(
-        results: IChiselResults,
+        results: ScannerResults,
     ): IDictionaryStringTo<Sarif.Rule> {
         const rulesDictionary: IDictionaryStringTo<Sarif.Rule> = {};
 

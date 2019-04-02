@@ -1,4 +1,3 @@
-import * as axe from 'axe-core';
 import { RuleConfiguration, CheckConfiguration } from './ruleresults';
 
 declare module 'axe-core/axe' {

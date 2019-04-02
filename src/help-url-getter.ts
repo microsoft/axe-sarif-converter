@@ -1,11 +1,11 @@
 import { RulesConfiguration } from './ruleresults';
 
-export class ChiselHelpUrlGetter {
+export class HelpUrlGetter {
     constructor(private readonly ruleConfigs: RulesConfiguration[]) {}
 
-    public getChiselHelpUrl(ruleId: string): string {
+    public getHelpUrl(ruleId: string): string {
         const customHelpUrl = this._getCustomHelpUrl(ruleId);
-        return customHelpUrl || `https://aka.ms/keros/rules/axe.${ruleId}`;
+        return customHelpUrl;
     }
 
     private _getCustomHelpUrl(ruleId: string): string {

@@ -7,7 +7,7 @@ import { DocumentUtils } from './document-utils';
 import { MessageDecorator } from './message-decorator';
 import { configuration } from './custom-rule-configurations';
 import { CheckMessageTransformer } from './check-message-transformer';
-import { ChiselHelpUrlGetter } from './chisel-help-url-getter';
+import { HelpUrlGetter } from './help-url-getter';
 import { ISarifLog } from './sarif/isarflog';
 
 export function axeToSarif(axeResults: Axe.AxeResults): ISarifLog {
@@ -16,11 +16,11 @@ export function axeToSarif(axeResults: Axe.AxeResults): ISarifLog {
         new CheckMessageTransformer(),
     );
 
-    const chiselHelpUrlGetter = new ChiselHelpUrlGetter(configuration);
+    const chiselHelpUrlGetter = new HelpUrlGetter(configuration);
     const resultDecorator = new ResultDecorator(
         new DocumentUtils(),
         messageDecorator,
-        ruleId => chiselHelpUrlGetter.getChiselHelpUrl(ruleId),
+        ruleId => chiselHelpUrlGetter.getHelpUrl(ruleId),
     );
 
     resultDecorator.setWCAGConfiguration(rulesWCAGConfiguration);
