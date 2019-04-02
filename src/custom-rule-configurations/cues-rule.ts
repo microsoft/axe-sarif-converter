@@ -1,13 +1,13 @@
 import * as AxeUtils from '../axe-utils';
+import {
+    generateARIACuesDictionary,
+    generateHTMLCuesDictionary,
+} from '../cues';
 import { RulesConfiguration } from '../ruleresults';
 import {
-    getNativeWidgetElementType,
     createNativeWidgetConfiguration,
+    getNativeWidgetElementType,
 } from './native-widgets-default';
-import {
-    generateHTMLCuesDictionary,
-    generateARIACuesDictionary,
-} from '../cues';
 
 export const cuesConfiguration: RulesConfiguration = createNativeWidgetConfiguration(
     'cues',

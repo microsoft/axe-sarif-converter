@@ -2,8 +2,8 @@
 import * as AxeUtils from '../axe-utils';
 import { RulesConfiguration } from '../ruleresults';
 import {
-    getNativeWidgetElementType,
     createNativeWidgetConfiguration,
+    getNativeWidgetElementType,
 } from './native-widgets-default';
 
 export const widgetFunctionConfiguration: RulesConfiguration = createNativeWidgetConfiguration(

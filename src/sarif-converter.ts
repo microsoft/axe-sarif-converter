@@ -1,16 +1,16 @@
 import { DictionaryStringTo } from './dictionary-types';
 import { ScannerOptions } from './exposed-apis';
 import {
+    AxeCoreRuleResult,
     AxeNodeResult,
     FormattedCheckResult,
     ScannerResults,
-    AxeCoreRuleResult,
 } from './ruleresults';
-import { WCAG, WCAGData } from './wcag';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import { SarifLog } from './sarif/sarifLog';
 import * as Sarif from './sarif/sarifv2';
 import { StringUtils } from './string-utils';
+import { WCAG, WCAGData } from './wcag';
 
 export class SarifConverter {
     private wcagList: WCAGData;

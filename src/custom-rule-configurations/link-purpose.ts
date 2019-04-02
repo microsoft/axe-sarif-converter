@@ -1,7 +1,7 @@
 /// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
-import { RulesConfiguration } from '../ruleresults';
 import { RoleUtils } from '../role-utils';
+import { RulesConfiguration } from '../ruleresults';
 
 const checkId = 'link-purpose';
 const hasValidRoleIfPresent = 'valid-role-if-present';

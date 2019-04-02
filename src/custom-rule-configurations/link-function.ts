@@ -1,7 +1,7 @@
 /// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
-import { AxeNodeResult, RulesConfiguration } from '../ruleresults';
 import { RoleUtils } from '../role-utils';
+import { AxeNodeResult, RulesConfiguration } from '../ruleresults';
 
 const checkId = 'link-function';
 const snippetKey = 'snippet';

@@ -1,4 +1,4 @@
-import { RuleConfiguration, CheckConfiguration } from './ruleresults';
+import { CheckConfiguration, RuleConfiguration } from './ruleresults';
 
 declare module 'axe-core/axe' {
     const commons: {

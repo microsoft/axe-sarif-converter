@@ -1,5 +1,5 @@
-import { RulesConfiguration } from '../ruleresults';
 import { DocumentUtils } from '../document-utils';
+import { RulesConfiguration } from '../ruleresults';
 
 const pageCheckId: string = 'page-title';
 

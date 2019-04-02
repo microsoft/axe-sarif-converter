@@ -1,8 +1,8 @@
 /// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
 
-import { isImage } from './image-rule';
 import { RulesConfiguration } from '../ruleresults';
+import { isImage } from './image-rule';
 
 export const textAlternativeConfiguration: RulesConfiguration = {
     checks: [

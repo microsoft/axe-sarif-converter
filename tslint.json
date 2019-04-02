@@ -1,4 +1,7 @@
 {
     "extends": ["tslint-microsoft-contrib/recommended"],
-    "rulesDirectory": ["node_modules/tslint-microsoft-contrib"]
+    "rulesDirectory": ["node_modules/tslint-microsoft-contrib"],
+    "rules": {
+        "ordered-imports": true
+    }
 }

@@ -1,10 +1,10 @@
 import * as Axe from 'axe-core';
 import { DictionaryStringTo } from './dictionary-types';
 import { DocumentUtils } from './document-utils';
-import { AxeRule, ScannerResults, AxeCoreRuleResult } from './ruleresults';
-import { WCAG } from './wcag';
 import { MessageDecorator } from './message-decorator';
 import { Processor } from './processor';
+import { AxeCoreRuleResult, AxeRule, ScannerResults } from './ruleresults';
+import { WCAG } from './wcag';
 
 export class ResultDecorator {
     private wcagConfiguration!: DictionaryStringTo<WCAG[]>;

@@ -1,10 +1,10 @@
 /// <reference path="../axe-extension.ts" />
 import * as AxeUtils from '../axe-utils';
-import { RulesConfiguration } from '../ruleresults';
 import {
-    generateHTMLCuesDictionary,
     generateARIACuesDictionary,
+    generateHTMLCuesDictionary,
 } from '../cues';
+import { RulesConfiguration } from '../ruleresults';
 
 const checkId = 'custom-widget';
 export const customWidgetConfiguration: RulesConfiguration = {

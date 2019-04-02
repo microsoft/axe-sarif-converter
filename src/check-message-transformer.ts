@@ -1,4 +1,4 @@
-import { FormattedCheckResult, CheckConfiguration } from './ruleresults';
+import { CheckConfiguration, FormattedCheckResult } from './ruleresults';
 
 export class CheckMessageTransformer {
     public addMessagesToChecks(

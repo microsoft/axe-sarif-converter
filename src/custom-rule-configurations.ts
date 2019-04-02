@@ -1,19 +1,18 @@
-import { RulesConfiguration } from './ruleresults';
-
-import { textContrastConfiguration } from './custom-rule-configurations/text-contrast';
-import { textAlternativeConfiguration } from './custom-rule-configurations/text-alternative';
 import { colorConfiguration } from './custom-rule-configurations/color-rule';
+import { cuesConfiguration } from './custom-rule-configurations/cues-rule';
+import { customWidgetConfiguration } from './custom-rule-configurations/custom-widget';
+import { frameTitleConfiguration } from './custom-rule-configurations/frame-title';
 import { headingConfiguration } from './custom-rule-configurations/heading-rule';
 import { imageConfiguration } from './custom-rule-configurations/image-rule';
 import { landmarkConfiguration } from './custom-rule-configurations/landmark-rule';
-import { linkPurposeConfiguration } from './custom-rule-configurations/link-purpose';
 import { linkFunctionConfiguration } from './custom-rule-configurations/link-function';
-import { frameTitleConfiguration } from './custom-rule-configurations/frame-title';
-import { pageConfiguration } from './custom-rule-configurations/page-title';
-import { widgetFunctionConfiguration } from './custom-rule-configurations/widget-function';
+import { linkPurposeConfiguration } from './custom-rule-configurations/link-purpose';
 import { nativeWidgetsDefaultConfiguration } from './custom-rule-configurations/native-widgets-default';
-import { cuesConfiguration } from './custom-rule-configurations/cues-rule';
-import { customWidgetConfiguration } from './custom-rule-configurations/custom-widget';
+import { pageConfiguration } from './custom-rule-configurations/page-title';
+import { textAlternativeConfiguration } from './custom-rule-configurations/text-alternative';
+import { textContrastConfiguration } from './custom-rule-configurations/text-contrast';
+import { widgetFunctionConfiguration } from './custom-rule-configurations/widget-function';
+import { RulesConfiguration } from './ruleresults';
 
 export const configuration: RulesConfiguration[] = [
     headingConfiguration,

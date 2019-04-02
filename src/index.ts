@@ -1,14 +1,14 @@
 import * as Axe from 'axe-core';
-import { SarifConverter } from './sarif-converter';
-import { wcagLinkData } from './wcag';
-import { ResultDecorator } from './result-decorator';
-import { rulesWCAGConfiguration } from './wcag-mappings';
-import { DocumentUtils } from './document-utils';
-import { MessageDecorator } from './message-decorator';
-import { configuration } from './custom-rule-configurations';
 import { CheckMessageTransformer } from './check-message-transformer';
+import { configuration } from './custom-rule-configurations';
+import { DocumentUtils } from './document-utils';
 import { HelpUrlGetter } from './help-url-getter';
+import { MessageDecorator } from './message-decorator';
+import { ResultDecorator } from './result-decorator';
+import { SarifConverter } from './sarif-converter';
 import { SarifLog } from './sarif/sarifLog';
+import { wcagLinkData } from './wcag';
+import { rulesWCAGConfiguration } from './wcag-mappings';
 
 export function axeToSarif(axeResults: Axe.AxeResults): SarifLog {
     const messageDecorator = new MessageDecorator(
