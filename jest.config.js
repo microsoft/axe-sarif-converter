@@ -14,12 +14,8 @@ module.exports = {
     displayName: 'unit tests',
     moduleFileExtensions: ['ts', 'js'],
     rootDir: rootDir,
-    roots: [currentDir],
     collectCoverage: true,
-    collectCoverageFrom: [
-        '<rootDir>/src/**/*.{ts}',
-        '!<rootDir>/src/**/*.test.{ts}',
-    ],
+    collectCoverageFrom: ['./**/*.ts', '!./**/*.test.ts'],
     coverageReporters: ['json', 'lcov', 'text', 'cobertura'],
     testMatch: [`${currentDir}/**/*.test.(ts|js)`],
     reporters: [
