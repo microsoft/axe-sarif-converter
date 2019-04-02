@@ -1,23 +1,36 @@
 {
     "name": "axe-sarif-converter",
     "version": "0.0.1",
-    "description": "An axe-core reporter that outputs axe scan results in SARIF format",
-    "main": "index.js",
-    "dependencies": {
-        "axe-core": "^3.2.2"
-    },
+    "description": "An axe-core reporter that outputs axe scan results in SARIF format (http://sarifweb.azurewebsites.net/)",
+    "main": "dist/index.js",
+    "types": "dist/index.d.js",
+    "files": [
+        "dist/",
+        "LICENSE",
+        "README.md"
+    ],
+    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^24.0.11",
         "jest": "^24.5.0",
+        "jest-circus": "^24.5.0",
+        "jest-junit": "^6.3.0",
         "prettier": "^1.16.4",
+        "rimraf": "^2.6.3",
+        "ts-jest": "^24.0.1",
         "tslint-microsoft-contrib": "^6.1.0",
         "typescript": "^3.4.1"
     },
     "scripts": {
+        "prebuild": "npm run clean",
+        "build": "tsc -p .",
+        "clean": "rimraf dist/* test-results/*",
+        "test": "jest",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
-        "tslint": "tslint -c ./tslint.json",
-        "tslint:fix": "tslint --fix -c ./tslint.json"
+        "prepack": "npm run format-check && npm run build",
+        "watch:build": "tsc -p . --watch",
+        "watch:test": "jest --watch --coverage false --colors"
     },
     "repository": {
         "type": "git",
@@ -25,7 +38,12 @@
     },
     "keywords": [
         "MIT",
-        "axe-core"
+        "axe-core",
+        "axe",
+        "sarif",
+        "reporter",
+        "coverter",
+        "accessibility"
     ],
     "author": "Microsoft",
     "license": "MIT",

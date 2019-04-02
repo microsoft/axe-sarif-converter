@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as Axe from 'axe-core';
 import { SarifConverter } from './sarif-converter';
 import { wcagLinkData } from './wcag';
@@ -33,3 +34,8 @@ export function axeToSarif(axeResults: Axe.AxeResults): ISarifLog {
     // IChiselResults -> ISarifLog
     return sarifConverter.convert(chiselResults, {}); // TODO - IChiselOptions w/ scanName, testCaseId, scanId
 }
+=======
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+export const helloWorld = 'hello world';
+>>>>>>> master
