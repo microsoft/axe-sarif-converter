@@ -12,14 +12,9 @@ import * as CustomSarif from './sarif/custom-sarif-types';
 import { SarifLog } from './sarif/sarifLog';
 import * as Sarif from './sarif/sarifv2';
 import { StringUtils } from './string-utils';
-import { WCAG, WCAGData } from './wcag';
 
 export class SarifConverter {
-    private wcagList: WCAGData;
-
-    constructor(wcagList: WCAGData) {
-        this.wcagList = wcagList;
-    }
+    constructor() {}
 
     public convert(results: ScannerResults, options: ScannerOptions): SarifLog {
         return {
@@ -70,9 +65,7 @@ export class SarifConverter {
             resources: {
                 rules: this.convertResultsToRules(results),
             },
-            properties: {
-                standards: this.convertStandards(),
-            },
+            properties: {},
         };
 
         if (options && options.testCaseId !== undefined) {
@@ -327,43 +320,10 @@ export class SarifConverter {
                     text: ruleResult.description,
                 },
                 helpUri: ruleResult.helpUrl,
-                properties: {
-                    standards: this.convertStandardsForRule(ruleResult.WCAG!),
-                },
+                properties: {},
             };
             rulesDictionary[ruleResult.id] = rule;
         }
-    }
-
-    private convertStandardsForRule(wcagList: WCAG[]): string[] {
-        const standards: string[] = [];
-        if (wcagList !== undefined) {
-            for (const wcag of wcagList) {
-                standards.push(wcag.text);
-            }
-        }
-        return standards;
-    }
-
-    private convertStandards(): DictionaryStringTo<AxeCoreStandard> {
-        const standards: DictionaryStringTo<AxeCoreStandard> = {};
-
-        Object.keys(this.wcagList).forEach(key => {
-            const wcag = this.wcagList[key];
-            if (wcag.title) {
-                standards[wcag.text] = {
-                    standardName: {
-                        text: 'WCAG',
-                    },
-                    requirementName: {
-                        text: wcag.title,
-                    },
-                    requirementId: wcag.text,
-                    requirementUri: wcag.url!,
-                };
-            }
-        });
-        return standards;
     }
 }
 
