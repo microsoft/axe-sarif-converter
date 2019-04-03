@@ -68,7 +68,8 @@
             "./.git",
             "./.github",
             "./node_modules",
-            "./copyright-header.txt"
+            "./copyright-header.txt",
+            "./src/test-resources/"
         ],
         "file_type_method": "INCLUDE",
         "file_types": [
