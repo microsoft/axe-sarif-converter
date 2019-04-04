@@ -17,7 +17,7 @@ export namespace Processor {
     ): AxeRule | undefined {
         rule.nodes = rule.nodes.filter((nodeResult: AxeNodeResult) => {
             nodeResult.any = nodeResult.any.filter((check: any) => {
-                return check.message !== undefined
+                return check.message
                     ? suppressedMessages.indexOf(normalizeText(check.message)) <
                           0
                     : true;

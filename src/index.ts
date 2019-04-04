@@ -9,7 +9,6 @@ import { MessageDecorator } from './message-decorator';
 import { ResultDecorator } from './result-decorator';
 import { SarifConverter } from './sarif-converter';
 import { SarifLog } from './sarif/sarifLog';
-import { wcagLinkData } from './wcag';
 import { rulesWCAGConfiguration } from './wcag-mappings';
 
 export function axeToSarif(axeResults: Axe.AxeResults): SarifLog {
@@ -27,7 +26,7 @@ export function axeToSarif(axeResults: Axe.AxeResults): SarifLog {
 
     resultDecorator.setWCAGConfiguration(rulesWCAGConfiguration);
 
-    const sarifConverter = new SarifConverter(wcagLinkData);
+    const sarifConverter = new SarifConverter();
 
     // AxeResults -> ScannerResults
     const scannerResults = resultDecorator.decorateResults(axeResults);
