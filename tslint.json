@@ -13,6 +13,7 @@
             }
         ],
         "no-banned-terms": false,
-        "prefer-type-cast": false
+        "prefer-type-cast": false,
+        "no-angle-bracket-type-assertion": true
     }
 }
