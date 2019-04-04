@@ -61,3 +61,10 @@ jobs:
                 command: custom
                 customCommand: run build
             displayName: npm run build
+
+          # CI build only
+          - task: ComponentGovernanceComponentDetection@0
+            displayName: 'component governance'
+            condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+            inputs:
+                verbosity: Normal
