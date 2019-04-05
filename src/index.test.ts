@@ -9,7 +9,8 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
-import { axeToSarif } from './index';
+// import { AxeRawResult } from './axe-extension';
+import { axeRawToSarif, axeToSarif } from './index';
 import { SarifLog } from './sarif/sarifLog';
 import { Run } from './sarif/sarifv2';
 
@@ -77,5 +78,28 @@ describe('axeToSarifConverter use generated AxeResults object', () => {
         );
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
         expect(axeToSarif(axeResultStub)).toMatchSnapshot();
+    });
+});
+
+describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
+    it('matches pinned snapshot of sarifv2 generated from an actual AxeRawResults object', () => {
+        const axeJSON: string = fs.readFileSync(
+            './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
+            'utf8',
+        );
+        const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
+
+        const axeRawJSON: string = fs.readFileSync(
+            // './src/test-resources/axe322-raw.dequemars-testsite.1554329251110.json',
+            './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
+            'utf8',
+        );
+        const axeRawResultStub: AxeResults = JSON.parse(
+            axeRawJSON,
+        ) as AxeResults;
+
+        expect(axeRawToSarif(axeRawResultStub)).toEqual(
+            axeToSarif(axeResultStub),
+        );
     });
 });
