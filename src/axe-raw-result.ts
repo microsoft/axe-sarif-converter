@@ -17,7 +17,6 @@ export interface AxeRawNodeResult {
     any: AxeRawCheck[];
     all: AxeRawCheck[];
     none: AxeRawCheck[];
-
     node: AxeRawNode;
     impact?: Impact;
     result?: 'passed' | 'failed' | 'inapplicable' | 'incomplete';
