@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { ConverterOptions } from './converter-options';
+import { DictionaryStringTo } from './dictionary-types';
 import {
     AxeCoreRuleResult,
     AxeNodeResult,
@@ -29,7 +30,7 @@ export class SarifConverter {
         results: ScannerResults,
         options: ConverterOptions,
     ): Sarif.Run {
-        const files: Record<string, Sarif.File> = {};
+        const files: DictionaryStringTo<Sarif.File> = {};
         files[results.targetPageUrl] = {
             mimeType: 'text/html',
             properties: {
@@ -38,7 +39,7 @@ export class SarifConverter {
             },
         };
 
-        let properties: Record<string, string> = {};
+        let properties: DictionaryStringTo<string> = {};
 
         if (options && options.scanName !== undefined) {
             properties = {
@@ -83,7 +84,7 @@ export class SarifConverter {
 
     private convertResults(
         results: ScannerResults,
-        properties: Record<string, string>,
+        properties: DictionaryStringTo<string>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
 
@@ -123,7 +124,7 @@ export class SarifConverter {
         ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
         targetPageUrl: string,
-        properties: Record<string, string>,
+        properties: DictionaryStringTo<string>,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -143,10 +144,9 @@ export class SarifConverter {
         ruleResult: AxeCoreRuleResult,
         level: CustomSarif.Result.level,
         targetPageUrl: string,
-        properties: Record<string, string>,
+        properties: DictionaryStringTo<string>,
     ): void {
-        const partialFingerprints: Record<
-            string,
+        const partialFingerprints: DictionaryStringTo<
             string
         > = this.getPartialFingerprintsFromRule(ruleResult);
 
@@ -187,7 +187,7 @@ export class SarifConverter {
 
     private getPartialFingerprintsFromRule(
         ruleResult: AxeCoreRuleResult,
-    ): Record<string, string> {
+    ): DictionaryStringTo<string> {
         return {
             ruleId: ruleResult.id,
         };
@@ -265,7 +265,7 @@ export class SarifConverter {
         resultArray: Sarif.Result[],
         ruleResults: AxeCoreRuleResult[],
         level: CustomSarif.Result.level,
-        properties: Record<string, string>,
+        properties: DictionaryStringTo<string>,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -287,8 +287,8 @@ export class SarifConverter {
 
     private convertResultsToRules(
         results: ScannerResults,
-    ): Record<string, Sarif.Rule> {
-        const rulesDictionary: Record<string, Sarif.Rule> = {};
+    ): DictionaryStringTo<Sarif.Rule> {
+        const rulesDictionary: DictionaryStringTo<Sarif.Rule> = {};
 
         this.convertRuleResultsToRules(rulesDictionary, results.violations);
         this.convertRuleResultsToRules(rulesDictionary, results.passes);
@@ -299,7 +299,7 @@ export class SarifConverter {
     }
 
     private convertRuleResultsToRules(
-        rulesDictionary: Record<string, Sarif.Rule>,
+        rulesDictionary: DictionaryStringTo<Sarif.Rule>,
         ruleResults: AxeCoreRuleResult[],
     ): void {
         if (ruleResults) {
@@ -310,7 +310,7 @@ export class SarifConverter {
     }
 
     private convertRuleResultToRule(
-        rulesDictionary: Record<string, Sarif.Rule>,
+        rulesDictionary: DictionaryStringTo<Sarif.Rule>,
         ruleResult: AxeCoreRuleResult,
     ): void {
         if (!rulesDictionary.hasOwnProperty(ruleResult.id)) {
