@@ -2,7 +2,7 @@ export interface AxeRawResult {
     id: string;
     result: string;
     pageLevel: boolean;
-    impact?: string;
+    impact?: Impact;
     tags: string[];
     help: string;
     helpUrl: string;
@@ -14,19 +14,26 @@ export interface AxeRawResult {
 }
 
 export interface RawNodeResult {
-    // node: {
-    //     selector: Selector;
-    // };
+    any: NodeElement[];
+    all: NodeElement[];
+    none: NodeElement[];
+
     node: {
-        impact?: 'minor' | 'moderate' | 'serious' | 'critical';
-        any: {
-            id: string;
-            // impact
-            message: string;
-        };
+        selector: Selector;
     };
+    impact?: Impact;
     result?: 'passed' | 'failed' | 'inapplicable' | 'incomplete';
 }
+
+export interface NodeElement {
+    id: string;
+    data?: string | object;
+    relatedNodes: []; // of type node in RawNodeResult
+    impact: Impact;
+    message?: string;
+}
+
+export type Impact = 'minor' | 'moderate' | 'serious' | 'critical';
 
 export type SelectorItem = string[] | string;
 
