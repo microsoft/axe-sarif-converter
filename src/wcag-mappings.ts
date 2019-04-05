@@ -1,9 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { DictionaryStringTo } from './dictionary-types';
 import { WCAG, wcagLinkData } from './wcag';
 
-export const rulesWCAGConfiguration: DictionaryStringTo<WCAG[]> = {
+export const rulesWCAGConfiguration: Record<string, WCAG[]> = {
     'area-alt': [wcagLinkData.WCAG1_1_1],
     'image-alt': [wcagLinkData.WCAG1_1_1],
     'image-redundant-alt': [wcagLinkData.WCAGBest_Practice],

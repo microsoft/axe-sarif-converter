@@ -1,13 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
-import { DictionaryStringTo } from './dictionary-types';
 import { Processor } from './processor';
 import { AxeCoreRuleResult, AxeRule, ScannerResults } from './ruleresults';
 import { WCAG } from './wcag';
 
 export class ResultDecorator {
-    constructor(private wcagConfiguration: DictionaryStringTo<WCAG[]>) {}
+    constructor(private wcagConfiguration: Record<string, WCAG[]>) {}
 
     public decorateResults(results: Axe.AxeResults): ScannerResults {
         return {
