@@ -7,30 +7,32 @@ export interface AxeRawResult {
     help: string;
     helpUrl: string;
     description: string;
-    inapplicable: RawNodeResult[];
-    violations?: RawNodeResult[];
-    passes?: RawNodeResult[];
-    incomplete?: RawNodeResult[];
+    inapplicable: AxeRawNodeResult[];
+    violations?: AxeRawNodeResult[];
+    passes?: AxeRawNodeResult[];
+    incomplete?: AxeRawNodeResult[];
 }
 
-export interface RawNodeResult {
-    any: NodeElement[];
-    all: NodeElement[];
-    none: NodeElement[];
+export interface AxeRawNodeResult {
+    any: AxeRawCheck[];
+    all: AxeRawCheck[];
+    none: AxeRawCheck[];
 
-    node: {
-        selector: Selector;
-    };
+    node: AxeRawNode;
     impact?: Impact;
     result?: 'passed' | 'failed' | 'inapplicable' | 'incomplete';
 }
 
-export interface NodeElement {
+export interface AxeRawCheck {
     id: string;
     data?: string | object;
-    relatedNodes: []; // of type node in RawNodeResult
+    relatedNodes: AxeRawNode[];
     impact: Impact;
     message?: string;
+}
+
+export interface AxeRawNode {
+    selector: Selector;
 }
 
 export type Impact = 'minor' | 'moderate' | 'serious' | 'critical';
