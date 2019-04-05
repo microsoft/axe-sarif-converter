@@ -47,17 +47,17 @@ declare module 'axe-core/axe' {
     }
 
     export interface AxeRawNodeResult {
-        any: AxeRawCheck[];
-        all: AxeRawCheck[];
-        none: AxeRawCheck[];
+        any: AxeRawCheckResult[];
+        all: AxeRawCheckResult[];
+        none: AxeRawCheckResult[];
         node: AxeRawNode;
         impact?: Impact;
         result?: 'passed' | 'failed' | 'inapplicable' | 'incomplete';
     }
 
-    export interface AxeRawCheck {
+    export interface AxeRawCheckResult {
         id: string;
-        data?: string | object;
+        data?: any;
         relatedNodes: AxeRawNode[];
         impact: Impact;
         message?: string;
