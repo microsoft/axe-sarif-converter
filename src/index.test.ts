@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import {
+    AxeRawResult,
     AxeResults,
     Result,
     RunOptions,
@@ -9,7 +10,6 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
-// import { AxeRawResult } from './axe-extension';
 import { axeRawToSarif, axeToSarif } from './index';
 import { SarifLog } from './sarif/sarifLog';
 import { Run } from './sarif/sarifv2';
@@ -90,13 +90,13 @@ describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
 
         const axeRawJSON: string = fs.readFileSync(
-            // './src/test-resources/axe322-raw.dequemars-testsite.1554329251110.json',
-            './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
+            './src/test-resources/axe322-raw.dequemars-testsite.1554329251110.json',
+            // './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
             'utf8',
         );
-        const axeRawResultStub: AxeResults = JSON.parse(
+        const axeRawResultStub: AxeRawResult[] = JSON.parse(
             axeRawJSON,
-        ) as AxeResults;
+        ) as AxeRawResult[];
 
         expect(axeRawToSarif(axeRawResultStub)).toEqual(
             axeToSarif(axeResultStub),

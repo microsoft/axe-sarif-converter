@@ -28,7 +28,7 @@ export function axeToSarif(
 }
 
 export function axeRawToSarif(
-    axeResults: Axe.AxeResults,
+    axeRawResults: Axe.AxeRawResult[],
     options?: ConverterOptions,
 ): SarifLog {
     options = options ? options : {};
@@ -38,8 +38,9 @@ export function axeRawToSarif(
     const axeRawSarifConverter = new AxeRawSarifConverter();
 
     // AxeResults -> ScannerResults
-    const scannerResults = resultDecorator.decorateResults(axeResults);
+    // const scannerResults = resultDecorator.decorateResults(axeRawResults);
 
     // ScannerResults -> ISarifLog
-    return axeRawSarifConverter.convert(scannerResults, options);
+    // return axeRawSarifConverter.convert(scannerResults, options);
+    return {} as SarifLog;
 }
