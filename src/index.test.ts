@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import {
-    AxeRawResult,
     AxeResults,
     Result,
     RunOptions,
@@ -10,6 +9,8 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
+import { AxeRawResult } from './axe-raw-result';
+import { EnvironmentData } from './environment-data';
 import { axeRawToSarif, axeToSarif } from './index';
 import { SarifLog } from './sarif/sarifLog';
 import { Run } from './sarif/sarifv2';
@@ -98,7 +99,12 @@ describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
             axeRawJSON,
         ) as AxeRawResult[];
 
-        expect(axeRawToSarif(axeRawResultStub)).toEqual(
+        const environmentDataStub: EnvironmentData = {
+            timestamp: '2019-04-03T22:07:38.846Z',
+            targetPageUrl: 'https://dequeuniversity.com/demo/mars/',
+            targetPageTitle: 'Test',
+        };
+        expect(axeRawToSarif(axeRawResultStub, environmentDataStub)).toEqual(
             axeToSarif(axeResultStub),
         );
     });
