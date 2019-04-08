@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
 import { DictionaryStringTo } from './dictionary-types';
-import { Processor } from './processor';
 import { AxeCoreRuleResult, AxeRule, ScannerResults } from './ruleresults';
 import { WCAG } from './wcag';
 
@@ -13,10 +12,7 @@ export class ResultDecorator {
         return {
             passes: this.decorateAxeRuleResults(results.passes),
             violations: this.decorateAxeRuleResults(results.violations),
-            inapplicable: this.decorateAxeRuleResults(
-                results.inapplicable,
-                true,
-            ),
+            inapplicable: this.decorateAxeRuleResults(results.inapplicable),
             incomplete: this.decorateAxeRuleResults(results.incomplete),
             timestamp: results.timestamp,
             targetPageUrl: results.url,
@@ -26,26 +22,10 @@ export class ResultDecorator {
 
     private decorateAxeRuleResults(
         ruleResults: AxeRule[],
-        isInapplicable: boolean = false,
     ): AxeCoreRuleResult[] {
-        return ruleResults.reduce<AxeCoreRuleResult[]>(
-            (filteredArray, result: AxeRule) => {
-                const processedResult = Processor.suppressChecksByMessages(
-                    result,
-                    !isInapplicable,
-                );
-
-                if (processedResult !== undefined) {
-                    filteredArray.push({
-                        ...processedResult,
-                        WCAG: this.getRelatedWCAGByRuleId(result.id),
-                    });
-                }
-
-                return filteredArray;
-            },
-            [],
-        );
+        return ruleResults.map<AxeCoreRuleResult>((result: AxeRule) => {
+            return { ...result, WCAG: this.getRelatedWCAGByRuleId(result.id) };
+        });
     }
 
     private getRelatedWCAGByRuleId(ruleId: string): WCAG[] {
