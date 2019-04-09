@@ -3,8 +3,11 @@
 import { StringUtils } from './string-utils';
 
 describe('string-utils', () => {
-    it('test if isNotEmpty works properly', () => {
+    it('isNotEmpty returns false for empty strings', () => {
         expect(StringUtils.isNotEmpty('')).toBe(false);
+    });
+
+    it('isNotEmpty returns true for non-empty strings', () => {
         expect(StringUtils.isNotEmpty('test')).toBe(true);
         expect(
             StringUtils.isNotEmpty(' test space at the start of string'),

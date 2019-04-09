@@ -3,8 +3,8 @@
 
 import { SarifConverter } from './sarif-converter';
 
-describe('SarifConverter tests', () => {
-    it('sarif converter is defined', () => {
+describe('SarifConverter', () => {
+    it('is defined', () => {
         expect(new SarifConverter()).toBeDefined();
     });
 });
