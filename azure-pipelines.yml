@@ -56,7 +56,7 @@ jobs:
                 failIfCoverageEmpty: true
             displayName: publish code coverage
 
-           - task: PublishBuildArtifacts@1
+          - task: PublishBuildArtifacts@1
             inputs:
                 pathtoPublish: '$(System.DefaultWorkingDirectory)/CodeAnalysisLogs'
                 artifactName: 'CodeAnalysisLogs'
