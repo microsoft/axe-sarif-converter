@@ -56,6 +56,14 @@ jobs:
                 failIfCoverageEmpty: true
             displayName: publish code coverage
 
+           - task: PublishBuildArtifacts@1
+            inputs:
+                pathtoPublish: '$(System.DefaultWorkingDirectory)/CodeAnalysisLogs'
+                artifactName: 'CodeAnalysisLogs'
+            condition: always()
+            continueOnError: true
+            displayName: publish sarif results
+
           - task: Npm@1
             inputs:
                 command: custom
