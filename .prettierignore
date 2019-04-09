@@ -8,7 +8,7 @@
 **/*.snap
 **/*.tgz
 dist/
-test-results/
+
 test-resources/
 LICENSE
 package-lock.json

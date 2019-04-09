@@ -78,15 +78,6 @@ describe('Result Decorator', () => {
         const decoratedResult: ScannerResults = resultDecorator.decorateResults(
             resultStub,
         );
-        fs.writeFile(
-            './test-results/test_result.sarif',
-            JSON.stringify(decoratedResult),
-            (data: any) => {
-                if (data) {
-                    console.log(data);
-                }
-            },
-        );
 
         expect(decoratedResult.violations).toEqual(expectedViolation);
         expect(decoratedResult.violations[0].WCAG).toEqual([{ text: 'test' }]);
