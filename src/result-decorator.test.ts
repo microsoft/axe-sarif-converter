@@ -3,6 +3,7 @@
 import { AxeResults, Result } from 'axe-core';
 import { DictionaryStringTo } from './dictionary-types';
 import { ResultDecorator } from './result-decorator';
+import { ScannerResults } from './ruleresults';
 import { WCAG } from './wcag';
 
 describe('Result Decorator', () => {
@@ -24,10 +25,14 @@ describe('Result Decorator', () => {
 
         const wcagInfo: DictionaryStringTo<WCAG[]> = {};
         const resultDecorator = new ResultDecorator(wcagInfo);
+        const decoratedResult: ScannerResults = resultDecorator.decorateResults(
+            resultStub,
+        );
+        expect(decoratedResult.violations).toEqual([]);
         expect(resultDecorator.decorateResults(resultStub)).toMatchSnapshot();
     });
 
-    it("result decorator doesn't have WCAG data when no info is provided", () => {
+    it('result decorator contains WCAG information that is provided as dependency', () => {
         const resultStub: AxeResults = {
             passes: [] as Result[],
             violations: [
@@ -54,6 +59,29 @@ describe('Result Decorator', () => {
             'test-rule': [wcagDataStub],
         };
         const resultDecorator = new ResultDecorator(wcagInfo);
-        expect(resultDecorator.decorateResults(resultStub)).toMatchSnapshot();
+
+        const expectedViolation = [
+            {
+                WCAG: [{ text: 'test' }],
+                description: 'description',
+                help: 'help',
+                helpUrl: 'test url',
+                id: 'test-rule',
+                impact: 'minor',
+                nodes: [{}],
+                tags: ['best-practice'],
+            },
+        ];
+
+        const decoratedResult: ScannerResults = resultDecorator.decorateResults(
+            resultStub,
+        );
+        expect(decoratedResult.violations).toEqual(expectedViolation);
+        expect(decoratedResult.violations.length).toBe(1);
+
+        // verify wcag info from violations
+        expect(decoratedResult.violations[0].WCAG).toEqual([{ text: 'test' }]);
+
+        expect(decoratedResult).toMatchSnapshot();
     });
 });
