@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { ConverterOptions } from './converter-options';
 import { DictionaryStringTo } from './dictionary-types';
-import { ScannerOptions } from './exposed-apis';
 import {
     AxeCoreRuleResult,
     AxeNodeResult,
@@ -12,16 +12,14 @@ import * as CustomSarif from './sarif/custom-sarif-types';
 import { SarifLog } from './sarif/sarifLog';
 import * as Sarif from './sarif/sarifv2';
 import { StringUtils } from './string-utils';
-import { WCAG, WCAGData } from './wcag';
 
 export class SarifConverter {
-    private wcagList: WCAGData;
+    constructor() {}
 
-    constructor(wcagList: WCAGData) {
-        this.wcagList = wcagList;
-    }
-
-    public convert(results: ScannerResults, options: ScannerOptions): SarifLog {
+    public convert(
+        results: ScannerResults,
+        options: ConverterOptions,
+    ): SarifLog {
         return {
             version: CustomSarif.SarifLogVersion.v2,
             runs: [this.convertRun(results, options)],
@@ -30,7 +28,7 @@ export class SarifConverter {
 
     private convertRun(
         results: ScannerResults,
-        options: ScannerOptions,
+        options: ConverterOptions,
     ): Sarif.Run {
         const files: DictionaryStringTo<Sarif.File> = {};
         files[results.targetPageUrl] = {
@@ -70,9 +68,7 @@ export class SarifConverter {
             resources: {
                 rules: this.convertResultsToRules(results),
             },
-            properties: {
-                standards: this.convertStandards(),
-            },
+            properties: {},
         };
 
         if (options && options.testCaseId !== undefined) {
@@ -327,43 +323,10 @@ export class SarifConverter {
                     text: ruleResult.description,
                 },
                 helpUri: ruleResult.helpUrl,
-                properties: {
-                    standards: this.convertStandardsForRule(ruleResult.WCAG!),
-                },
+                properties: {},
             };
             rulesDictionary[ruleResult.id] = rule;
         }
-    }
-
-    private convertStandardsForRule(wcagList: WCAG[]): string[] {
-        const standards: string[] = [];
-        if (wcagList !== undefined) {
-            for (const wcag of wcagList) {
-                standards.push(wcag.text);
-            }
-        }
-        return standards;
-    }
-
-    private convertStandards(): DictionaryStringTo<AxeCoreStandard> {
-        const standards: DictionaryStringTo<AxeCoreStandard> = {};
-
-        Object.keys(this.wcagList).forEach(key => {
-            const wcag = this.wcagList[key];
-            if (wcag.title) {
-                standards[wcag.text] = {
-                    standardName: {
-                        text: 'WCAG',
-                    },
-                    requirementName: {
-                        text: wcag.title,
-                    },
-                    requirementId: wcag.text,
-                    requirementUri: wcag.url!,
-                };
-            }
-        });
-        return standards;
     }
 }
 

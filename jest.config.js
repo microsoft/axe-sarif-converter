@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-const rootDir = './';
-const currentDir = '<rootDir>/src/';
+const rootDir = './src';
+const currentDir = '<rootDir>/';
 
 module.exports = {
     clearMocks: true,
@@ -10,7 +10,7 @@ module.exports = {
         '^.+\\.(ts)$': 'ts-jest',
     },
     verbose: false,
-    coverageDirectory: '<rootDir>/test-results/coverage',
+    coverageDirectory: '../test-results/coverage',
     displayName: 'unit tests',
     moduleFileExtensions: ['ts', 'js'],
     rootDir: rootDir,
@@ -24,7 +24,7 @@ module.exports = {
             'jest-junit',
             {
                 outputDirectory: '.',
-                outputName: '<rootDir>/test-results/junit.xml',
+                outputName: './test-results/junit.xml',
             },
         ],
     ],

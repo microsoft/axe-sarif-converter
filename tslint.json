@@ -12,6 +12,8 @@
                 "static-method-regex": "^[a-z][\\w\\d]+$"
             }
         ],
-        "no-banned-terms": false
+        "no-banned-terms": false,
+        "prefer-type-cast": false,
+        "no-angle-bracket-type-assertion": true
     }
 }
