@@ -10,7 +10,8 @@
         "README.md"
     ],
     "dependencies": {
-        "axe-core": "^3.2.2"
+        "axe-core": "^3.2.2",
+        "file-system": "^2.2.2"
     },
     "devDependencies": {
         "@types/jest": "^24.0.11",

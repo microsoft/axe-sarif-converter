@@ -5,6 +5,8 @@ import { DictionaryStringTo } from './dictionary-types';
 import { ResultDecorator } from './result-decorator';
 import { ScannerResults } from './ruleresults';
 import { WCAG } from './wcag';
+// tslint:disable-next-line:mocha-no-side-effect-code
+var fs = require('file-system');
 
 describe('Result Decorator', () => {
     it('check if the class is defined', () => {
@@ -76,6 +78,16 @@ describe('Result Decorator', () => {
         const decoratedResult: ScannerResults = resultDecorator.decorateResults(
             resultStub,
         );
+        fs.writeFile(
+            'test_result.sarif',
+            JSON.stringify(decoratedResult),
+            (data: any) => {
+                if (data) {
+                    console.log(data);
+                }
+            },
+        );
+
         expect(decoratedResult.violations).toEqual(expectedViolation);
         expect(decoratedResult.violations[0].WCAG).toEqual([{ text: 'test' }]);
     });
