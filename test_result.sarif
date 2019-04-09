@@ -1,1 +1,0 @@
-{"passes":[],"violations":[{"id":"test-rule","nodes":[{}],"description":"description","helpUrl":"test url","help":"help","impact":"minor","tags":["best-practice"],"WCAG":[{"text":"test"}]}],"inapplicable":[],"incomplete":[],"timestamp":"100","targetPageUrl":"https://example.com","targetPageTitle":""}

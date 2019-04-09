@@ -79,7 +79,7 @@ describe('Result Decorator', () => {
             resultStub,
         );
         fs.writeFile(
-            'test_result.sarif',
+            './test-results/test_result.sarif',
             JSON.stringify(decoratedResult),
             (data: any) => {
                 if (data) {
