@@ -77,11 +77,6 @@ describe('Result Decorator', () => {
             resultStub,
         );
         expect(decoratedResult.violations).toEqual(expectedViolation);
-        expect(decoratedResult.violations.length).toBe(1);
-
-        // verify wcag info from violations
         expect(decoratedResult.violations[0].WCAG).toEqual([{ text: 'test' }]);
-
-        expect(decoratedResult).toMatchSnapshot();
     });
 });

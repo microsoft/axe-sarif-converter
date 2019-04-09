@@ -1,36 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Result Decorator result decorator contains WCAG information that is provided as dependency 1`] = `
-Object {
-  "inapplicable": Array [],
-  "incomplete": Array [],
-  "passes": Array [],
-  "targetPageTitle": "",
-  "targetPageUrl": "https://example.com",
-  "timestamp": "100",
-  "violations": Array [
-    Object {
-      "WCAG": Array [
-        Object {
-          "text": "test",
-        },
-      ],
-      "description": "description",
-      "help": "help",
-      "helpUrl": "test url",
-      "id": "test-rule",
-      "impact": "minor",
-      "nodes": Array [
-        Object {},
-      ],
-      "tags": Array [
-        "best-practice",
-      ],
-    },
-  ],
-}
-`;
-
 exports[`Result Decorator result decorator doesn't have WCAG data when no info is provided 1`] = `
 Object {
   "inapplicable": Array [],
