@@ -5,7 +5,35 @@ Licensed under the MIT License.
 
 # axe-sarif-converter
 
-**An [axe-core](https://github.com/dequelabs/axe-core) reporter that outputs axe scan results in [SARIF format](http://sarifweb.azurewebsites.net/).**
+Enables outputting [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results in [SARIF format](http://sarifweb.azurewebsites.net/).
+
+Use this with the [Sarif Viewer Build Tab Azure DevOps Extension](https://marketplace.visualstudio.com/items?itemName=sariftools.sarif-viewer-build-tab) to visualize accessibility scan results in the build results of an [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) build.
+
+## Usage
+
+Before using axe-sarif-converter, you will need to run an [axe](https://github.com/dequelabs/axe-core) accessibility scan to produce some axe results to convert. Typically, you would do this by using an axe integration library for your favorite browser automation tool ([axe-puppeteer](https://github.com/dequelabs/axe-puppeteer), [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs), [cypress-axe](https://github.com/avanslaars/cypress-axe)).
+
+axe-sarif-converter exports a single function, named `convertAxeToSarif`. Use it like this:
+
+```ts
+import { convertAxeToSarif, SarifLog } from 'axe-sarif-converter';
+
+test('my accessibility test', async () => {
+    // This example uses axe-puppeteer, but you can use any axe-based library
+    // that outputs axe scan results in the default axe output format
+    const testPage: Puppeteer.Page = /* ... set up your test page ... */;
+    const axeResults: Axe.AxeResults = await new AxePuppeteer(testPage).analyze();
+
+    // Perform the conversion
+    const sarifResults: SarifLog = convertAxeToSarif(axeResults);
+
+    // Output a SARIF file, perhaps for use with a Sarif Viewer tool
+    await fs.promises.writeFile(
+        './test-results/my-accessibility-test.sarif',
+        JSON.stringify(sarifResults),
+        { encoding: 'utf8' });
+}
+```
 
 ## Contributing
 
