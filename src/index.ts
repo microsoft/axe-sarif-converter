@@ -6,6 +6,8 @@ import { SarifConverter } from './sarif-converter';
 import { SarifLog } from './sarif/sarif-log';
 import { rulesWCAGConfiguration } from './wcag-mappings';
 
+export { SarifLog } from './sarif/sarif-log';
+
 export function convertAxeToSarif(axeResults: Axe.AxeResults): SarifLog {
     const resultDecorator = new ResultDecorator(rulesWCAGConfiguration);
     const decoratedAxeResults = resultDecorator.decorateResults(axeResults);
