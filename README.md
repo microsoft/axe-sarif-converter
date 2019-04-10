@@ -5,7 +5,7 @@ Licensed under the MIT License.
 
 # axe-sarif-converter
 
-Enables outputting [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results in [SARIF format](http://sarifweb.azurewebsites.net/).
+Convert [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results to the [SARIF format](http://sarifweb.azurewebsites.net/).
 
 Use this with the [Sarif Viewer Build Tab Azure DevOps Extension](https://marketplace.visualstudio.com/items?itemName=sariftools.sarif-viewer-build-tab) to visualize accessibility scan results in the build results of an [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) build.
 

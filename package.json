@@ -1,7 +1,7 @@
 {
     "name": "axe-sarif-converter",
     "version": "1.0.0",
-    "description": "An axe-core reporter that outputs axe scan results in SARIF format (http://sarifweb.azurewebsites.net/)",
+    "description": "Convert axe-core accessibility scan results to the SARIF format",
     "main": "dist/index.js",
     "types": "dist/index.d.js",
     "files": [
