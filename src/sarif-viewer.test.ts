@@ -3,7 +3,7 @@
 
 import { AxeResults } from 'axe-core';
 import * as fs from 'fs';
-import { axeToSarif } from './index';
+import { convertAxeToSarif } from './index';
 
 describe('Azure DevOps sarif viewer extension test', () => {
     it('save sarif file to artifact to be shown by sarif viewer tab', () => {
@@ -14,8 +14,8 @@ describe('Azure DevOps sarif viewer extension test', () => {
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
         fs.mkdir('./test-results', () => {
             fs.writeFileSync(
-                './test_result.sarif',
-                JSON.stringify(axeToSarif(axeResultStub)),
+                './test-results/test_result.sarif',
+                JSON.stringify(convertAxeToSarif(axeResultStub)),
             );
         });
     });
