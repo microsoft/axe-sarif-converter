@@ -70,7 +70,8 @@
             "./.github",
             "./node_modules",
             "./copyright-header.txt",
-            "./src/test-resources/"
+            "./src/test-resources/",
+            "./test_result.sarif"
         ],
         "file_type_method": "INCLUDE",
         "file_types": [

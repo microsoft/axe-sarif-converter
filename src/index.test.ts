@@ -78,7 +78,7 @@ describe('axeToSarifConverter use generated AxeResults object', () => {
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
 
         fs.writeFileSync(
-            './test-results/test_result.sarif',
+            './test_result.sarif',
             JSON.stringify(axeToSarif(axeResultStub)),
         );
 

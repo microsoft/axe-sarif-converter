@@ -58,7 +58,7 @@ jobs:
 
           - task: PublishBuildArtifacts@1
             inputs:
-                pathtoPublish: '$(System.DefaultWorkingDirectory)/test-results/test_result.sarif'
+                pathtoPublish: '$(System.DefaultWorkingDirectory)/test_result.sarif'
                 artifactName: 'CodeAnalysisLogs'
             condition: always()
             continueOnError: true
