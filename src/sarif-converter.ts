@@ -1,23 +1,22 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Axe from 'axe-core';
 import { ConverterOptions } from './converter-options';
-import { DictionaryStringTo } from './dictionary-types';
 import {
-    AxeCoreRuleResult,
-    AxeNodeResult,
-    FormattedCheckResult,
-    ScannerResults,
-} from './ruleresults';
+    DecoratedAxeResult,
+    DecoratedAxeResults,
+} from './decorated-axe-results';
+import { DictionaryStringTo } from './dictionary-types';
 import * as CustomSarif from './sarif/custom-sarif-types';
-import { SarifLog } from './sarif/sarifLog';
-import * as Sarif from './sarif/sarifv2';
+import * as Sarif from './sarif/sarif-2.0.0';
+import { SarifLog } from './sarif/sarif-log';
 import { StringUtils } from './string-utils';
 
 export class SarifConverter {
     constructor() {}
 
     public convert(
-        results: ScannerResults,
+        results: DecoratedAxeResults,
         options: ConverterOptions,
     ): SarifLog {
         return {
@@ -27,7 +26,7 @@ export class SarifConverter {
     }
 
     private convertRun(
-        results: ScannerResults,
+        results: DecoratedAxeResults,
         options: ConverterOptions,
     ): Sarif.Run {
         const files: DictionaryStringTo<Sarif.File> = {};
@@ -83,7 +82,7 @@ export class SarifConverter {
     }
 
     private convertResults(
-        results: ScannerResults,
+        results: DecoratedAxeResults,
         properties: DictionaryStringTo<string>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
@@ -121,7 +120,7 @@ export class SarifConverter {
 
     private convertRuleResults(
         resultArray: Sarif.Result[],
-        ruleResults: AxeCoreRuleResult[],
+        ruleResults: DecoratedAxeResult[],
         level: CustomSarif.Result.level,
         targetPageUrl: string,
         properties: DictionaryStringTo<string>,
@@ -141,7 +140,7 @@ export class SarifConverter {
 
     private convertRuleResult(
         resultArray: Sarif.Result[],
-        ruleResult: AxeCoreRuleResult,
+        ruleResult: DecoratedAxeResult,
         level: CustomSarif.Result.level,
         targetPageUrl: string,
         properties: DictionaryStringTo<string>,
@@ -186,7 +185,7 @@ export class SarifConverter {
     }
 
     private getPartialFingerprintsFromRule(
-        ruleResult: AxeCoreRuleResult,
+        ruleResult: DecoratedAxeResult,
     ): DictionaryStringTo<string> {
         return {
             ruleId: ruleResult.id,
@@ -194,7 +193,7 @@ export class SarifConverter {
     }
 
     private convertMessage(
-        node: AxeNodeResult,
+        node: Axe.NodeResult,
         level: CustomSarif.Result.level,
     ): CustomSarif.Message {
         const textArray: string[] = [];
@@ -232,7 +231,7 @@ export class SarifConverter {
 
     private convertMessageChecks(
         heading: string,
-        checkResults: FormattedCheckResult[],
+        checkResults: Axe.CheckResult[],
         textArray: string[],
         richTextArray: string[],
     ): void {
@@ -263,7 +262,7 @@ export class SarifConverter {
 
     private convertRuleResultsWithoutNodes(
         resultArray: Sarif.Result[],
-        ruleResults: AxeCoreRuleResult[],
+        ruleResults: DecoratedAxeResult[],
         level: CustomSarif.Result.level,
         properties: DictionaryStringTo<string>,
     ): void {
@@ -286,7 +285,7 @@ export class SarifConverter {
     }
 
     private convertResultsToRules(
-        results: ScannerResults,
+        results: DecoratedAxeResults,
     ): DictionaryStringTo<Sarif.Rule> {
         const rulesDictionary: DictionaryStringTo<Sarif.Rule> = {};
 
@@ -300,7 +299,7 @@ export class SarifConverter {
 
     private convertRuleResultsToRules(
         rulesDictionary: DictionaryStringTo<Sarif.Rule>,
-        ruleResults: AxeCoreRuleResult[],
+        ruleResults: DecoratedAxeResult[],
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -311,7 +310,7 @@ export class SarifConverter {
 
     private convertRuleResultToRule(
         rulesDictionary: DictionaryStringTo<Sarif.Rule>,
-        ruleResult: AxeCoreRuleResult,
+        ruleResult: DecoratedAxeResult,
     ): void {
         if (!rulesDictionary.hasOwnProperty(ruleResult.id)) {
             const rule: Sarif.Rule = {
@@ -328,11 +327,4 @@ export class SarifConverter {
             rulesDictionary[ruleResult.id] = rule;
         }
     }
-}
-
-export interface AxeCoreStandard {
-    standardName: CustomSarif.Message;
-    requirementName: CustomSarif.Message;
-    requirementId: string;
-    requirementUri: string;
 }
