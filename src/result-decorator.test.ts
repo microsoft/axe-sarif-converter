@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { AxeResults, Result } from 'axe-core';
+import { DecoratedAxeResults } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { ResultDecorator } from './result-decorator';
-import { ScannerResults } from './ruleresults';
 import { WCAG } from './wcag';
 // tslint:disable-next-line:mocha-no-side-effect-code
 var fs = require('file-system');
@@ -27,11 +27,11 @@ describe('Result Decorator', () => {
 
         const wcagInfo: DictionaryStringTo<WCAG[]> = {};
         const resultDecorator = new ResultDecorator(wcagInfo);
-        const decoratedResult: ScannerResults = resultDecorator.decorateResults(
+        const decoratedResults: DecoratedAxeResults = resultDecorator.decorateResults(
             resultStub,
         );
-        expect(decoratedResult.violations).toEqual([]);
-        expect(resultDecorator.decorateResults(resultStub)).toMatchSnapshot();
+        expect(decoratedResults.violations).toEqual([]);
+        expect(decoratedResults).toMatchSnapshot();
     });
 
     it('result decorator contains WCAG information that is provided as dependency', () => {
@@ -75,11 +75,10 @@ describe('Result Decorator', () => {
             },
         ];
 
-        const decoratedResult: ScannerResults = resultDecorator.decorateResults(
+        const decoratedResults: DecoratedAxeResults = resultDecorator.decorateResults(
             resultStub,
         );
-
-        expect(decoratedResult.violations).toEqual(expectedViolation);
-        expect(decoratedResult.violations[0].WCAG).toEqual([{ text: 'test' }]);
+        expect(decoratedResults.violations).toEqual(expectedViolation);
+        expect(decoratedResults.violations[0].WCAG).toEqual([{ text: 'test' }]);
     });
 });
