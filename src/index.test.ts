@@ -80,7 +80,9 @@ describe('axeToSarifConverter use generated AxeResults object', () => {
         fs.writeFile(
             './test-results/test_result.sarif',
             JSON.stringify(axeToSarif(axeResultStub)),
-            (data: any) => {},
+            (data: any) => {
+                console.log('test');
+            },
         );
 
         expect(axeToSarif(axeResultStub)).toMatchSnapshot();
