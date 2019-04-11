@@ -1,7 +1,6 @@
-import { ImpactValue } from 'axe-core';
-
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { ImpactValue } from 'axe-core';
 export interface AxeRawResult {
     id: string;
     result: string;
