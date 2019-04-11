@@ -9,9 +9,9 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
-import { axeToSarif } from './index';
-import { SarifLog } from './sarif/sarifLog';
-import { Run } from './sarif/sarifv2';
+import { convertAxeToSarif } from './index';
+import { Run } from './sarif/sarif-2.0.0';
+import { SarifLog } from './sarif/sarif-log';
 
 describe('axe-sarf-converter integration test', () => {
     it('axe-sarif-converter returns a valid sarif with blank results array in run array', () => {
@@ -64,8 +64,8 @@ describe('axe-sarf-converter integration test', () => {
             ] as Run[],
         };
 
-        expect(axeToSarif(axeResultStub)).toBeDefined();
-        expect(axeToSarif(axeResultStub)).toEqual(expected);
+        expect(convertAxeToSarif(axeResultStub)).toBeDefined();
+        expect(convertAxeToSarif(axeResultStub)).toEqual(expected);
     });
 });
 
@@ -76,6 +76,6 @@ describe('axeToSarifConverter use generated AxeResults object', () => {
             'utf8',
         );
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
-        expect(axeToSarif(axeResultStub)).toMatchSnapshot();
+        expect(convertAxeToSarif(axeResultStub)).toMatchSnapshot();
     });
 });

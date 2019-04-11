@@ -18,7 +18,6 @@ export namespace Result {
 /**
  * Encapsulates a message intended to be read by the end user.
  */
-// tslint:disable-next-line:interface-name
 export interface Message {
     /**
      * A plain text message string.
