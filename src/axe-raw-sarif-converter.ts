@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { isEmpty } from 'lodash';
 import {
     AxeRawCheckResult,
     AxeRawNodeResult,
@@ -98,10 +99,10 @@ export class AxeRawSarifConverter {
 
         for (const result of results) {
             const axeRawNodeResultArrays = [
-                result.inapplicable,
                 result.violations,
                 result.passes,
                 result.incomplete,
+                result.inapplicable,
             ];
 
             for (const axeRawNodeResultArray of axeRawNodeResultArrays) {
@@ -117,9 +118,34 @@ export class AxeRawSarifConverter {
                     ),
                 );
             }
+            if (axeRawNodeResultArrays.every(isEmpty)) {
+                resultArray.push(
+                    this.generateResultForInapplicableRule(
+                        extraSarifResultProperties,
+                        result.id,
+                    ),
+                );
+            }
         }
 
         return resultArray;
+    }
+
+    private generateResultForInapplicableRule(
+        extraSarifResultProperties: DictionaryStringTo<string>,
+        ruleId: string,
+    ): Sarif.Result {
+        return {
+            ruleId: ruleId,
+            level: CustomSarif.Result.level.notApplicable,
+            properties: {
+                ...extraSarifResultProperties,
+                tags: ['Accessibility'],
+            },
+            partialFingerprints: {
+                ruleId: ruleId,
+            },
+        };
     }
 
     private getSarifResultLevel(
@@ -131,11 +157,13 @@ export class AxeRawSarifConverter {
             passed: CustomSarif.Result.level.pass,
             failed: CustomSarif.Result.level.error,
             inapplicable: CustomSarif.Result.level.notApplicable,
-            incomplete: CustomSarif.Result.level.open,
+            cantTell: CustomSarif.Result.level.open,
         };
 
         if (!resultValue) {
-            throw new Error('getSarifResultLevel resultValue is undefined');
+            throw new Error(
+                'getSarifResultLevel(resultValue): resultValue is undefined',
+            );
         }
 
         return resultToLevelMapping[resultValue];
@@ -202,7 +230,9 @@ export class AxeRawSarifConverter {
 
     private getLogicalNameFromRawNode(axeRawNodeResult: AxeRawNodeResult) {
         if (!axeRawNodeResult.node.selector) {
-            return 'asdf';
+            throw new Error(
+                'getLogicalNameFromRawNode: axe result contained a node with no selector',
+            );
         }
         return axeRawNodeResult.node.selector.join(';');
     }

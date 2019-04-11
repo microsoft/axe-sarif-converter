@@ -39,6 +39,6 @@ export interface AxeRawNode {
     source: string;
 }
 
-export type ResultValue = 'passed' | 'failed' | 'inapplicable' | 'incomplete';
+export type ResultValue = 'passed' | 'failed' | 'inapplicable' | 'cantTell';
 
 export type Selector = string[];

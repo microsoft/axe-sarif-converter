@@ -9,9 +9,7 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
-import { AxeRawResult } from './axe-raw-result';
-import { EnvironmentData } from './environment-data';
-import { axeRawToSarif, axeToSarif } from './index';
+import { axeToSarif } from './index';
 import { SarifLog } from './sarif/sarifLog';
 import { Run } from './sarif/sarifv2';
 
@@ -79,33 +77,5 @@ describe('axeToSarifConverter use generated AxeResults object', () => {
         );
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
         expect(axeToSarif(axeResultStub)).toMatchSnapshot();
-    });
-});
-
-describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
-    it('matches pinned snapshot of sarifv2 generated from an actual AxeRawResults object', () => {
-        const axeJSON: string = fs.readFileSync(
-            './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
-            'utf8',
-        );
-        const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
-
-        const axeRawJSON: string = fs.readFileSync(
-            './src/test-resources/axe322-raw.dequemars-testsite.1554329251110.json',
-            // './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
-            'utf8',
-        );
-        const axeRawResultStub: AxeRawResult[] = JSON.parse(
-            axeRawJSON,
-        ) as AxeRawResult[];
-
-        const environmentDataStub: EnvironmentData = {
-            timestamp: '2019-04-03T22:07:38.846Z',
-            targetPageUrl: 'https://dequeuniversity.com/demo/mars/',
-            targetPageTitle: 'Test',
-        };
-        expect(axeRawToSarif(axeRawResultStub, environmentDataStub)).toEqual(
-            axeToSarif(axeResultStub),
-        );
     });
 });
