@@ -11,8 +11,8 @@ import { ConverterOptions } from './converter-options';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import * as CustomSarif from './sarif/custom-sarif-types';
-import { SarifLog } from './sarif/sarifLog';
-import * as Sarif from './sarif/sarifv2';
+import * as Sarif from './sarif/sarif-2.0.0';
+import { SarifLog } from './sarif/sarif-log';
 import { StringUtils } from './string-utils';
 
 export class AxeRawSarifConverter {

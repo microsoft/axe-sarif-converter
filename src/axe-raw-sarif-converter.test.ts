@@ -3,11 +3,11 @@
 import { AxeResults } from 'axe-core';
 import * as fs from 'fs';
 import { sortBy } from 'lodash';
-import { axeToSarif } from '.';
+import { convertAxeToSarif } from '.';
 import { AxeRawResult } from './axe-raw-result';
 import { AxeRawSarifConverter } from './axe-raw-sarif-converter';
 import { EnvironmentData } from './environment-data';
-import { SarifLog } from './sarif/sarifLog';
+import { SarifLog } from './sarif/sarif-log';
 
 describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
     it('matches pinned snapshot of sarifv2 generated from an actual AxeRawResults object', () => {
@@ -16,7 +16,7 @@ describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
             'utf8',
         );
         const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
-        const axeToSarifOutput = axeToSarif(axeResult);
+        const axeToSarifOutput = convertAxeToSarif(axeResult);
 
         const axeRawJSON: string = fs.readFileSync(
             './src/test-resources/axe-v3.2.2.reporter-raw.json',
@@ -27,8 +27,8 @@ describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
         ) as AxeRawResult[];
 
         const environmentDataStub: EnvironmentData = {
-            timestamp: '2019-04-03T22:07:38.846Z',
-            targetPageUrl: 'https://dequeuniversity.com/demo/mars/',
+            timestamp: axeResult.timestamp,
+            targetPageUrl: axeResult.url,
             targetPageTitle: '',
         };
 
