@@ -331,10 +331,3 @@ export class AxeRawSarifConverter {
         };
     }
 }
-
-export interface AxeCoreStandard {
-    standardName: CustomSarif.Message;
-    requirementName: CustomSarif.Message;
-    requirementId: string;
-    requirementUri: string;
-}

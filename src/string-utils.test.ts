@@ -4,6 +4,7 @@ import { StringUtils } from './string-utils';
 
 describe('string-utils', () => {
     it('isNotEmpty returns false for empty strings', () => {
+        expect(StringUtils.isNotEmpty(undefined)).toBe(false);
         expect(StringUtils.isNotEmpty('')).toBe(false);
     });
 
