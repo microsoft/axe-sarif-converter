@@ -285,7 +285,7 @@ export class AxeRawSarifConverter {
             const richTextLines: string[] = [];
 
             textLines.push(heading);
-            richTextLines.push(this.escapeForMarkdown(heading));
+            richTextLines.push(StringUtils.escapeForMarkdown(heading));
 
             for (const checkResult of checkResults) {
                 const message = StringUtils.isNotEmpty(checkResult.message)
@@ -293,16 +293,14 @@ export class AxeRawSarifConverter {
                     : checkResult.id;
 
                 textLines.push(message + '.');
-                richTextLines.push('- ' + this.escapeForMarkdown(message));
+                richTextLines.push(
+                    '- ' + StringUtils.escapeForMarkdown(message),
+                );
             }
 
             textArray.push(textLines.join(' '));
             richTextArray.push(richTextLines.join('\n'));
         }
-    }
-
-    private escapeForMarkdown(s?: string): string {
-        return s ? s.replace(/</g, '&lt;') : '';
     }
 
     private convertResultsToRules(

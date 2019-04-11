@@ -6,4 +6,8 @@ export class StringUtils {
 
         return str.length > 0;
     }
+
+    public static escapeForMarkdown(s?: string): string {
+        return s ? s.replace(/</g, '&lt;') : '';
+    }
 }
