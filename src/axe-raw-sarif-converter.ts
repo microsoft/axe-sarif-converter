@@ -13,7 +13,7 @@ import { EnvironmentData } from './environment-data';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import * as Sarif from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
-import { StringUtils } from './string-utils';
+import { escapeForMarkdown, isNotEmpty } from './string-utils';
 
 export class AxeRawSarifConverter {
     constructor() {}
@@ -285,17 +285,15 @@ export class AxeRawSarifConverter {
             const richTextLines: string[] = [];
 
             textLines.push(heading);
-            richTextLines.push(StringUtils.escapeForMarkdown(heading));
+            richTextLines.push(escapeForMarkdown(heading));
 
             for (const checkResult of checkResults) {
-                const message = StringUtils.isNotEmpty(checkResult.message)
+                const message = isNotEmpty(checkResult.message)
                     ? checkResult.message
                     : checkResult.id;
 
                 textLines.push(message + '.');
-                richTextLines.push(
-                    '- ' + StringUtils.escapeForMarkdown(message),
-                );
+                richTextLines.push('- ' + escapeForMarkdown(message));
             }
 
             textArray.push(textLines.join(' '));
