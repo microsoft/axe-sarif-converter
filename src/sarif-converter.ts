@@ -10,7 +10,7 @@ import { DictionaryStringTo } from './dictionary-types';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import * as Sarif from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
-import { StringUtils } from './string-utils';
+import { isNotEmpty } from './string-utils';
 
 export class SarifConverter {
     constructor() {}
@@ -243,7 +243,7 @@ export class SarifConverter {
             richTextLines.push(this.escapeForMarkdown(heading));
 
             for (const checkResult of checkResults) {
-                const message = StringUtils.isNotEmpty(checkResult.message)
+                const message = isNotEmpty(checkResult.message)
                     ? checkResult.message
                     : checkResult.id;
 
