@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { isEmpty } from 'lodash';
+import { isEmpty } from './array-utils';
 import {
     AxeRawCheckResult,
     AxeRawNodeResult,
