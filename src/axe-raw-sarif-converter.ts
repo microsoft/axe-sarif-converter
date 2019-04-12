@@ -16,8 +16,6 @@ import { SarifLog } from './sarif/sarif-log';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 
 export class AxeRawSarifConverter {
-    constructor() {}
-
     public convert(
         results: AxeRawResult[],
         options: ConverterOptions,
