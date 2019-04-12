@@ -20,6 +20,7 @@
         "jest-circus": "^24.5.0",
         "jest-junit": "^6.3.0",
         "license-check-and-add": "^2.3.6",
+        "lodash": "^4.17.11",
         "prettier": "^1.16.4",
         "rimraf": "^2.6.3",
         "ts-jest": "^24.0.1",
