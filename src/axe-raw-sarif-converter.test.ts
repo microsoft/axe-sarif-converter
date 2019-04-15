@@ -10,7 +10,7 @@ import { EnvironmentData } from './environment-data';
 import { SarifLog } from './sarif/sarif-log';
 
 describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {
-    it('matches pinned snapshot of sarifv2 generated from an actual AxeRawResults object', () => {
+    it('matches pinned snapshot of sarif v2 generated from an actual AxeRawResults object', () => {
         const axeJSON: string = fs.readFileSync(
             './src/test-resources/axe-v3.2.2.reporter-v2.json',
             'utf8',
@@ -57,3 +57,9 @@ function normalizeSarif(sarif: SarifLog): void {
         'id',
     ]) as any;
 }
+
+describe('AxeRawSarifConverter', () => {
+    it('is defined', () => {
+        expect(new AxeRawSarifConverter()).toBeDefined();
+    });
+});
