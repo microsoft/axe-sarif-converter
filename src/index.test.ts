@@ -72,7 +72,7 @@ describe('axe-sarf-converter integration test', () => {
 describe('axeToSarifConverter use generated AxeResults object', () => {
     it('matches pinned snapshot of sarifv2 generated from an actual AxeResults object', () => {
         const axeJSON: string = fs.readFileSync(
-            './src/test-resources/axe322-v2.dequemars-testsite.1554329251110.json',
+            './src/test-resources/axe-v3.2.2.reporter-v2.json',
             'utf8',
         );
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
