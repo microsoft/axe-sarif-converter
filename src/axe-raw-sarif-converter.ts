@@ -18,38 +18,37 @@ import { escapeForMarkdown, isNotEmpty } from './string-utils';
 export class AxeRawSarifConverter {
     public convert(
         results: AxeRawResult[],
-        options: ConverterOptions,
+        converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): SarifLog {
         return {
             version: CustomSarif.SarifLogVersion.v2,
-            runs: [this.convertRun(results, options, environmentData)],
+            runs: [this.convertRun(results, converterOptions, environmentData)],
         };
     }
 
     private convertRun(
         results: AxeRawResult[],
-        options: ConverterOptions,
+        converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): Sarif.Run {
-        const files: DictionaryStringTo<Sarif.File> = {};
-        files[environmentData.targetPageUrl] = {
-            mimeType: 'text/html',
-            properties: {
-                tags: ['target'],
-                title: environmentData.targetPageTitle,
-            },
-        };
+        const run = this.convertRunHelper(
+            results,
+            environmentData,
+            converterOptions,
+        );
 
-        let extraSarifResultProperties: DictionaryStringTo<string> = {};
+        this.processConverterOptions(run, converterOptions);
 
-        if (options && options.scanName !== undefined) {
-            extraSarifResultProperties = {
-                scanName: options.scanName,
-            };
-        }
+        return run;
+    }
 
-        const run: Sarif.Run = {
+    private convertRunHelper(
+        results: AxeRawResult[],
+        environmentData: EnvironmentData,
+        converterOptions: ConverterOptions,
+    ): Sarif.Run {
+        return {
             tool: {
                 name: 'axe',
                 fullName: 'axe-core',
@@ -65,10 +64,10 @@ export class AxeRawSarifConverter {
                     endTime: environmentData.timestamp,
                 },
             ],
-            files: files,
+            files: this.getTargetPageProperties(environmentData),
             results: this.convertRawResults(
                 results,
-                extraSarifResultProperties,
+                this.getExtraSarifResultProperties(converterOptions),
                 environmentData,
             ),
             resources: {
@@ -76,16 +75,45 @@ export class AxeRawSarifConverter {
             },
             properties: {},
         };
+    }
 
-        if (options && options.testCaseId !== undefined) {
-            run.properties!.testCaseId = options.testCaseId;
+    private getTargetPageProperties(
+        environmentData: EnvironmentData,
+    ): DictionaryStringTo<Sarif.File> {
+        const files: DictionaryStringTo<Sarif.File> = {};
+        files[environmentData.targetPageUrl] = {
+            mimeType: 'text/html',
+            properties: {
+                tags: ['target'],
+                title: environmentData.targetPageTitle,
+            },
+        };
+        return files;
+    }
+
+    private getExtraSarifResultProperties(
+        converterOptions: ConverterOptions,
+    ): DictionaryStringTo<string> {
+        let extraSarifResultProperties: DictionaryStringTo<string> = {};
+        if (converterOptions && converterOptions.scanName !== undefined) {
+            extraSarifResultProperties = {
+                scanName: converterOptions.scanName,
+            };
+        }
+        return extraSarifResultProperties;
+    }
+
+    private processConverterOptions(
+        run: Sarif.Run,
+        converterOptions: ConverterOptions,
+    ): void {
+        if (converterOptions && converterOptions.testCaseId !== undefined) {
+            run.properties!.testCaseId = converterOptions.testCaseId;
         }
 
-        if (options && options.scanId !== undefined) {
-            run.logicalId = options.scanId;
+        if (converterOptions && converterOptions.scanId !== undefined) {
+            run.logicalId = converterOptions.scanId;
         }
-
-        return run;
     }
 
     private convertRawResults(
@@ -127,44 +155,6 @@ export class AxeRawSarifConverter {
         }
 
         return resultArray;
-    }
-
-    private generateResultForInapplicableRule(
-        extraSarifResultProperties: DictionaryStringTo<string>,
-        ruleId: string,
-    ): Sarif.Result {
-        return {
-            ruleId: ruleId,
-            level: CustomSarif.Result.level.notApplicable,
-            properties: {
-                ...extraSarifResultProperties,
-                tags: ['Accessibility'],
-            },
-            partialFingerprints: {
-                ruleId: ruleId,
-            },
-        };
-    }
-
-    private getSarifResultLevel(
-        resultValue?: ResultValue,
-    ): CustomSarif.Result.level {
-        const resultToLevelMapping: {
-            [K in ResultValue]: CustomSarif.Result.level
-        } = {
-            passed: CustomSarif.Result.level.pass,
-            failed: CustomSarif.Result.level.error,
-            inapplicable: CustomSarif.Result.level.notApplicable,
-            cantTell: CustomSarif.Result.level.open,
-        };
-
-        if (!resultValue) {
-            throw new Error(
-                'getSarifResultLevel(resultValue): resultValue is undefined',
-            );
-        }
-
-        return resultToLevelMapping[resultValue];
     }
 
     private convertRawNodeResults(
@@ -224,6 +214,44 @@ export class AxeRawSarifConverter {
                 ruleId: ruleId,
             },
         };
+    }
+
+    private generateResultForInapplicableRule(
+        extraSarifResultProperties: DictionaryStringTo<string>,
+        ruleId: string,
+    ): Sarif.Result {
+        return {
+            ruleId: ruleId,
+            level: CustomSarif.Result.level.notApplicable,
+            properties: {
+                ...extraSarifResultProperties,
+                tags: ['Accessibility'],
+            },
+            partialFingerprints: {
+                ruleId: ruleId,
+            },
+        };
+    }
+
+    private getSarifResultLevel(
+        resultValue?: ResultValue,
+    ): CustomSarif.Result.level {
+        const resultToLevelMapping: {
+            [K in ResultValue]: CustomSarif.Result.level
+        } = {
+            passed: CustomSarif.Result.level.pass,
+            failed: CustomSarif.Result.level.error,
+            inapplicable: CustomSarif.Result.level.notApplicable,
+            cantTell: CustomSarif.Result.level.open,
+        };
+
+        if (!resultValue) {
+            throw new Error(
+                'getSarifResultLevel(resultValue): resultValue is undefined',
+            );
+        }
+
+        return resultToLevelMapping[resultValue];
     }
 
     private getLogicalNameFromRawNode(axeRawNodeResult: AxeRawNodeResult) {
