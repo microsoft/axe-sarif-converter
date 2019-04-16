@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { isEmpty } from './array-utils';
-import { getInvocations } from './axe-invocation-property';
 import {
     AxeRawCheckResult,
     AxeRawNodeResult,
@@ -11,6 +10,7 @@ import {
 import { ConverterOptions } from './converter-options';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
+import { getInvocations } from './invocation-provider';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import * as Sarif from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';

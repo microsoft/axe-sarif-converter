@@ -3,17 +3,18 @@
 import { AxeResults } from 'axe-core';
 import * as fs from 'fs';
 import { sortBy } from 'lodash';
+import { IMock, It, Mock, Times } from 'typemoq';
 import { convertAxeToSarif } from '.';
 import { AxeRawResult } from './axe-raw-result';
 import {
     AxeRawSarifConverter,
     defaultAxeRawSarifConverter,
 } from './axe-raw-sarif-converter';
+import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
+import { getInvocations } from './invocation-provider';
 import * as Sarif from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
-
-describe('axeRawToSarifConverter uses generated AxeRawResults object', () => {});
 
 function normalizeSarif(sarif: SarifLog): void {
     sarif.runs[0].results = sortBy(sarif.runs[0].results, [
@@ -71,62 +72,43 @@ describe('AxeRawSarifConverter', () => {
 
     describe('convert', () => {
         it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
-            // Arrange
-            const stubInvocations: Sarif.Invocation[] = [
-                { commandLine: 'stub_invocation' },
-            ];
-            const invocationProviderMock = Mock.of<
-                (environmentData: EnvironmentData) => Sarif.Invocation[]
-            >();
             const stubEnvironmentData = {
                 targetPageUrl: 'stub_url',
             } as EnvironmentData;
 
+            const stubInvocations: Sarif.Invocation[] = [
+                { commandLine: 'stub_invocation' },
+            ];
+
+            const invocationProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.Invocation[]
+            > = Mock.ofInstance(getInvocations);
+
             invocationProviderMock
-                .setup(stubEnvironmentData => stubInvocations)
+                .setup(ip =>
+                    ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
+                )
+                .returns(() => stubInvocations)
                 .verifiable(Times.once());
 
             const testSubject = new AxeRawSarifConverter(
                 invocationProviderMock.object,
             );
-            const irrelevantResults = [];
-            const irrelevantOptions = {};
+            const irrelevantResults: AxeRawResult[] = [];
+            const irrelevantOptions: ConverterOptions = {};
 
-            // Act
             const actualResults = testSubject.convert(
                 irrelevantResults,
                 irrelevantOptions,
                 stubEnvironmentData,
             );
 
-            // Assert
             invocationProviderMock.verifyAll();
-            expect(actualResults).toMatchObject({
-                runs: [
-                    {
-                        invocations: stubInvocations,
-                    },
-                ],
-            });
+            expect(actualResults).toHaveProperty('runs');
+            expect(actualResults.runs[0]).toHaveProperty(
+                'invocations',
+                stubInvocations,
+            );
         });
-
-        // it('provides the invocationProvider with the passed environment data as-is', () => {
-        //     // Arrange
-        //     const irrelevantInvocations: Sarif.Invocation[] = [];
-
-        //     const testSubject = new AxeRawSarifConverter(invocationProviderMock.object);
-        //     const irrelevantResults = [];
-        //     const irrelevantOptions = {};
-
-        //     // Act
-        //     const irrelevantResults = testSubject.convert(
-        //         irrelevantResults,
-        //         irrelevantOptions,
-        //         stubEnvironmentData,
-        //     );
-
-        //     // Assert
-
-        // });
     });
 });
