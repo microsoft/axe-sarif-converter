@@ -32,38 +32,9 @@ export class AxeRawSarifConverter {
         converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): Sarif.Run {
-        const run = this.convertRunHelper(
-            results,
-            environmentData,
-            converterOptions,
-        );
-
-        this.processConverterOptions(run, converterOptions);
-
-        return run;
-    }
-
-    private convertRunHelper(
-        results: AxeRawResult[],
-        environmentData: EnvironmentData,
-        converterOptions: ConverterOptions,
-    ): Sarif.Run {
-        return {
-            tool: {
-                name: 'axe',
-                fullName: 'axe-core',
-                semanticVersion: '3.2.2',
-                version: '3.2.2',
-                properties: {
-                    downloadUri: 'https://www.deque.com/axe/',
-                },
-            },
-            invocations: [
-                {
-                    startTime: environmentData.timestamp,
-                    endTime: environmentData.timestamp,
-                },
-            ],
+        const run: Sarif.Run = {
+            tool: this.getAxeToolProperties(),
+            invocations: this.invocationConverter(environmentData),
             files: this.getTargetPageProperties(environmentData),
             results: this.convertRawResults(
                 results,
@@ -74,6 +45,22 @@ export class AxeRawSarifConverter {
                 rules: this.convertResultsToRules(results),
             },
             properties: {},
+        };
+
+        this.fillInRunPropertiesFromOptions(run, converterOptions);
+
+        return run;
+    }
+
+    private getAxeToolProperties() {
+        return {
+            name: 'axe',
+            fullName: 'axe-core',
+            semanticVersion: '3.2.2',
+            version: '3.2.2',
+            properties: {
+                downloadUri: 'https://www.deque.com/axe/',
+            },
         };
     }
 
@@ -103,15 +90,15 @@ export class AxeRawSarifConverter {
         return extraSarifResultProperties;
     }
 
-    private processConverterOptions(
+    private fillInRunPropertiesFromOptions(
         run: Sarif.Run,
         converterOptions: ConverterOptions,
     ): void {
-        if (converterOptions && converterOptions.testCaseId !== undefined) {
+        if (converterOptions.testCaseId !== undefined) {
             run.properties!.testCaseId = converterOptions.testCaseId;
         }
 
-        if (converterOptions && converterOptions.scanId !== undefined) {
+        if (converterOptions.scanId !== undefined) {
             run.logicalId = converterOptions.scanId;
         }
     }
