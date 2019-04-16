@@ -1,6 +1,6 @@
 {
     "name": "axe-sarif-converter",
-    "version": "1.0.1",
+    "version": "0.0.0-managed-by-semantic-release",
     "description": "Convert axe-core accessibility scan results to the SARIF format",
     "main": "dist/index.js",
     "types": "dist/index.d.js",
