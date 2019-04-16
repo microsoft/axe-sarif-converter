@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { isEmpty } from './array-utils';
+import { getInvocations } from './axe-invocation-property';
 import {
     AxeRawCheckResult,
     AxeRawNodeResult,
@@ -15,7 +16,17 @@ import * as Sarif from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 
+export function defaultAxeRawSarifConverter(): AxeRawSarifConverter {
+    return new AxeRawSarifConverter(getInvocations);
+}
+
 export class AxeRawSarifConverter {
+    public constructor(
+        private invocationConverter: (
+            environmentData: EnvironmentData,
+        ) => Sarif.Invocation[],
+    ) {}
+
     public convert(
         results: AxeRawResult[],
         converterOptions: ConverterOptions,
