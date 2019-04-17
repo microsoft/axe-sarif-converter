@@ -76,10 +76,10 @@ describe('AxeRawSarifConverter', () => {
         let stubToolProperties: Sarif.Run['tool'];
         let stubInvocations: Sarif.Invocation[];
 
+        let axeToolPropertyProviderMock: IMock<() => Sarif.Run['tool']>;
         let invocationProviderMock: IMock<
             (environmentData: EnvironmentData) => Sarif.Invocation[]
         >;
-        let axeToolPropertyProviderMock: IMock<() => Sarif.Run['tool']>;
 
         beforeEach(() => {
             stubEnvironmentData = {
@@ -93,39 +93,17 @@ describe('AxeRawSarifConverter', () => {
             axeToolPropertyProviderMock = Mock.ofInstance(getAxeToolProperties);
             invocationProviderMock = Mock.ofInstance(getInvocations);
 
+            axeToolPropertyProviderMock
+                .setup(ap => ap())
+                .returns(() => stubToolProperties)
+                .verifiable(Times.once());
+
             invocationProviderMock
                 .setup(ip =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
                 )
                 .returns(() => stubInvocations)
                 .verifiable(Times.once());
-
-            axeToolPropertyProviderMock
-                .setup(ap => ap())
-                .returns(() => stubToolProperties)
-                .verifiable(Times.once());
-        });
-
-        it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
-            const testSubject = new AxeRawSarifConverter(
-                axeToolPropertyProviderMock.object,
-                invocationProviderMock.object,
-            );
-            const irrelevantResults: AxeRawResult[] = [];
-            const irrelevantOptions: ConverterOptions = {};
-
-            const actualResults = testSubject.convert(
-                irrelevantResults,
-                irrelevantOptions,
-                stubEnvironmentData,
-            );
-
-            invocationProviderMock.verifyAll();
-            expect(actualResults).toHaveProperty('runs');
-            expect(actualResults.runs[0]).toHaveProperty(
-                'invocations',
-                stubInvocations,
-            );
         });
 
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
@@ -147,6 +125,28 @@ describe('AxeRawSarifConverter', () => {
             expect(actualResults.runs[0]).toHaveProperty(
                 'tool',
                 stubToolProperties,
+            );
+        });
+
+        it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
+            const testSubject = new AxeRawSarifConverter(
+                axeToolPropertyProviderMock.object,
+                invocationProviderMock.object,
+            );
+            const irrelevantResults: AxeRawResult[] = [];
+            const irrelevantOptions: ConverterOptions = {};
+
+            const actualResults = testSubject.convert(
+                irrelevantResults,
+                irrelevantOptions,
+                stubEnvironmentData,
+            );
+
+            invocationProviderMock.verifyAll();
+            expect(actualResults).toHaveProperty('runs');
+            expect(actualResults.runs[0]).toHaveProperty(
+                'invocations',
+                stubInvocations,
             );
         });
     });
