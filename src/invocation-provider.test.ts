@@ -18,7 +18,9 @@ describe('invocation-provider', () => {
                     endTime: '2018-03-23T21:36:58.321Z',
                 },
             ] as Sarif.Invocation[];
-            const actualResults = getInvocations(environmentDataStub);
+            const actualResults: Sarif.Invocation[] = getInvocations(
+                environmentDataStub,
+            );
             expect(actualResults).toEqual(invocationStub);
         });
     });
