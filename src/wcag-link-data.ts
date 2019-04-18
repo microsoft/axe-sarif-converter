@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { DictionaryStringTo } from './dictionary-types';
 
 export interface WCAGLinkData {
     text: string;
@@ -20,7 +21,7 @@ function standardWcag21Link(
 }
 
 // prettier-ignore
-export const axeTagsToWcagLinkData = {
+export const axeTagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> = {
     wcag111: standardWcag21Link("non-text-content", '1.1.1', 'Non-text Content'),
     wcag121: standardWcag21Link("audio-only-and-video-only-prerecorded", '1.2.1', 'Audio-only and Video-only (Prerecorded)'),
     wcag122: standardWcag21Link("captions-prerecorded", '1.2.2', 'Captions (Prerecorded)'),
