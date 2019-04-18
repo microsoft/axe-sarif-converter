@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 import * as Sarif from './sarif/sarif-2.0.0';
 
-export function getAxeToolProperties() {
+export function getAxeToolProperties(): Sarif.Run['tool'] {
     return {
         name: 'axe',
         fullName: 'axe-core',
@@ -11,5 +11,5 @@ export function getAxeToolProperties() {
         properties: {
             downloadUri: 'https://www.deque.com/axe/',
         },
-    } as Sarif.Run['tool'];
+    };
 }
