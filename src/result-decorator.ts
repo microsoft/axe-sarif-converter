@@ -6,10 +6,10 @@ import {
     DecoratedAxeResults,
 } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
-import { WCAG } from './wcag';
+import { WCAGLinkData } from './wcag-link-data';
 
 export class ResultDecorator {
-    constructor(private wcagConfiguration: DictionaryStringTo<WCAG[]>) {}
+    constructor(private wcagConfiguration: DictionaryStringTo<WCAGLinkData>) {}
 
     public decorateResults(results: Axe.AxeResults): DecoratedAxeResults {
         return {
@@ -27,11 +27,16 @@ export class ResultDecorator {
         ruleResults: Axe.Result[],
     ): DecoratedAxeResult[] {
         return ruleResults.map<DecoratedAxeResult>((result: Axe.Result) => {
-            return { ...result, WCAG: this.getRelatedWCAGByRuleId(result.id) };
+            return {
+                ...result,
+                WCAG: this.getRelatedWcagByRuleTags(result.tags),
+            };
         });
     }
 
-    private getRelatedWCAGByRuleId(ruleId: string): WCAG[] {
-        return this.wcagConfiguration[ruleId];
+    private getRelatedWcagByRuleTags(tags: string[]): WCAGLinkData[] {
+        return tags
+            .map(tag => this.wcagConfiguration[tag])
+            .filter(wcag => wcag != undefined);
     }
 }

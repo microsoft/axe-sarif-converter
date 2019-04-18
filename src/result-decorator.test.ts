@@ -1,20 +1,14 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { AxeResults, Result } from 'axe-core';
+import { AxeResults, Result, TagValue } from 'axe-core';
 import { DecoratedAxeResults } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { ResultDecorator } from './result-decorator';
-import { WCAG } from './wcag';
+import { WCAGLinkData } from './wcag-link-data';
 
-describe('Result Decorator', () => {
-    it('check if the class is defined', () => {
-        const wcagConfig = {} as DictionaryStringTo<WCAG[]>;
-        const resultDecorator = new ResultDecorator(wcagConfig);
-        expect(resultDecorator).toBeDefined();
-        expect(resultDecorator).not.toBeNull();
-    });
-    it("result decorator doesn't have WCAG data when no info is provided", () => {
-        const resultStub: AxeResults = {
+describe('ResultDecorator', () => {
+    it("doesn't modify its input when there are no individual results to decorate", () => {
+        const inputWithNoIndividualResults: AxeResults = {
             passes: [] as Result[],
             violations: [] as Result[],
             inapplicable: [] as Result[],
@@ -23,60 +17,76 @@ describe('Result Decorator', () => {
             timestamp: '100',
         } as AxeResults;
 
-        const wcagInfo: DictionaryStringTo<WCAG[]> = {};
+        const wcagInfo: DictionaryStringTo<WCAGLinkData> = {};
         const resultDecorator = new ResultDecorator(wcagInfo);
         const decoratedResults: DecoratedAxeResults = resultDecorator.decorateResults(
-            resultStub,
+            inputWithNoIndividualResults,
         );
         expect(decoratedResults.violations).toEqual([]);
         expect(decoratedResults).toMatchSnapshot();
     });
 
-    it('result decorator contains WCAG information that is provided as dependency', () => {
+    it('decorates individual results with a WCAG property based on result tags', () => {
         const resultStub: AxeResults = {
             passes: [] as Result[],
             violations: [
                 {
                     id: 'test-rule',
-                    nodes: [{}],
-                    description: 'description',
-                    helpUrl: 'test url',
-                    help: 'help',
-                    impact: 'minor',
-                    tags: ['best-practice'],
+                    tags: [
+                        'tag-present-in-wcag-info' as TagValue,
+                        'tag-not-present-in-wcag-info' as TagValue,
+                    ],
                 },
             ],
             inapplicable: [] as Result[],
             incomplete: [] as Result[],
-            url: 'https://example.com',
-            timestamp: '100',
         } as AxeResults;
 
-        const wcagDataStub: WCAG = {
-            text: 'test',
-        };
-        const wcagInfo: DictionaryStringTo<WCAG[]> = {
-            'test-rule': [wcagDataStub],
+        const wcagInfo: DictionaryStringTo<WCAGLinkData> = {
+            'tag-present-in-wcag-info': {
+                text: 'text-for-tag-present-in-wcag-info',
+            },
         };
         const resultDecorator = new ResultDecorator(wcagInfo);
-
-        const expectedViolation = [
-            {
-                WCAG: [{ text: 'test' }],
-                description: 'description',
-                help: 'help',
-                helpUrl: 'test url',
-                id: 'test-rule',
-                impact: 'minor',
-                nodes: [{}],
-                tags: ['best-practice'],
-            },
-        ];
 
         const decoratedResults: DecoratedAxeResults = resultDecorator.decorateResults(
             resultStub,
         );
-        expect(decoratedResults.violations).toEqual(expectedViolation);
-        expect(decoratedResults.violations[0].WCAG).toEqual([{ text: 'test' }]);
+
+        expect(decoratedResults.violations[0]).toHaveProperty('WCAG', [
+            { text: 'text-for-tag-present-in-wcag-info' },
+        ]);
+    });
+
+    it('uses an empty array as the WCAG property for results with no known tags', () => {
+        const resultStub: AxeResults = {
+            passes: [] as Result[],
+            violations: [
+                {
+                    id: 'result-with-only-unknown-tags',
+                    tags: ['tag-not-present-in-wcag-info' as TagValue],
+                },
+                {
+                    id: 'result-with-empty-tags',
+                    tags: [],
+                },
+            ],
+            inapplicable: [] as Result[],
+            incomplete: [] as Result[],
+        } as AxeResults;
+
+        const wcagInfo: DictionaryStringTo<WCAGLinkData> = {
+            'tag-present-in-wcag-info': {
+                text: 'text-for-tag-present-in-wcag-info',
+            },
+        };
+        const resultDecorator = new ResultDecorator(wcagInfo);
+
+        const decoratedResults: DecoratedAxeResults = resultDecorator.decorateResults(
+            resultStub,
+        );
+
+        expect(decoratedResults.violations[0]).toHaveProperty('WCAG', []);
+        expect(decoratedResults.violations[1]).toHaveProperty('WCAG', []);
     });
 });
