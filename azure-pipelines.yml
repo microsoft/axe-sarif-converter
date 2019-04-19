@@ -61,7 +61,6 @@ jobs:
                 pathtoPublish: '$(System.DefaultWorkingDirectory)/test-results/test_result.sarif'
                 artifactName: 'CodeAnalysisLogs'
             condition: always()
-            continueOnError: true
             displayName: publish sarif results
 
           - task: Npm@1
@@ -69,3 +68,10 @@ jobs:
                 command: custom
                 customCommand: run build
             displayName: npm run build
+
+          - task: Npm@1
+            inputs:
+                command: custom
+                customCommand: run semantic-release
+            displayName: npm run semantic-release (master branch only)
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['EnableSemanticRelease'], 'true'))
