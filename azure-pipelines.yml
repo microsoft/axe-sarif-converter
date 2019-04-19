@@ -75,6 +75,6 @@ jobs:
                 customCommand: run semantic-release
             displayName: npm run semantic-release (master branch only)
             env:
-              GH_TOKEN: $(GH_TOKEN)
-              NPM_TOKEN: $(NPM_TOKEN)
+                GH_TOKEN: $(GH_TOKEN)
+                NPM_TOKEN: $(NPM_TOKEN)
             condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['EnableSemanticRelease'], 'true'))
