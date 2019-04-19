@@ -31,16 +31,7 @@ describe('ResultDecorator', () => {
         });
     });
 
-    // tslint:disable-next-line: mocha-no-side-effect-code
-    const resultsArrayProperties = [
-        'passes',
-        'violations',
-        'inapplicable',
-        'incomplete',
-    ] as const;
-
-    // tslint:disable-next-line: mocha-no-side-effect-code
-    it.each(resultsArrayProperties)(
+    it.each(['passes', 'violations', 'inapplicable', 'incomplete'] as const)(
         'decorates individual results in results array %s with a WCAG property based on result tags',
         resultsArrayPropertyUnderTest => {
             const resultStub: AxeResults = {

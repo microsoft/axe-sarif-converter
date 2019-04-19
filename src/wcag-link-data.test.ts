@@ -4,7 +4,6 @@ import * as axe from 'axe-core';
 import { axeTagsToWcagLinkData } from './wcag-link-data';
 
 describe('axeTagsToWcagLinkData', () => {
-    // tslint:disable-next-line: mocha-no-side-effect-code
     it.each(axe.getRules())(
         'contains populated entries for every wcag standard tag used by axe-core rule %p',
         axeRule => {
