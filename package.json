@@ -68,13 +68,14 @@
         "license": "copyright-header.txt",
         "exact_paths_method": "EXCLUDE",
         "exact_paths": [
-            "./dist",
-            "./.vscode",
             "./.git",
             "./.github",
-            "./node_modules",
+            "./.vscode",
             "./copyright-header.txt",
-            "./src/test-resources/"
+            "./dist",
+            "./node_modules",
+            "./src/test-resources/",
+            "./test-results"
         ],
         "file_type_method": "INCLUDE",
         "file_types": [
