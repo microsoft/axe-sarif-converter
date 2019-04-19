@@ -7,13 +7,24 @@ import {
     DecoratedAxeResults,
 } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
+import { EnvironmentData } from './environment-data';
+import { getEnvironmentData } from './environment-data-provider';
+import { getInvocations } from './invocation-provider';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import * as Sarif from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
 import { isNotEmpty } from './string-utils';
 
+export function defaultSarifConverter(): SarifConverter {
+    return new SarifConverter(getInvocations);
+}
+
 export class SarifConverter {
-    constructor() {}
+    public constructor(
+        private invocationConverter: (
+            environmentData: EnvironmentData,
+        ) => Sarif.Invocation[],
+    ) {}
 
     public convert(
         results: DecoratedAxeResults,
@@ -56,12 +67,7 @@ export class SarifConverter {
                     downloadUri: 'https://www.deque.com/axe/',
                 },
             },
-            invocations: [
-                {
-                    startTime: results.timestamp,
-                    endTime: results.timestamp,
-                },
-            ],
+            invocations: this.invocationConverter(getEnvironmentData(results)),
             files: files,
             results: this.convertResults(results, properties),
             resources: {
