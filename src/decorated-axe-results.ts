@@ -1,10 +1,10 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
-import { WCAG } from './wcag';
+import { WCAGLinkData } from './wcag-link-data';
 
 export interface AxeResultDecorations {
-    WCAG?: WCAG[];
+    WCAG?: WCAGLinkData[];
 }
 
 export type DecoratedAxeResult = Axe.Result & AxeResultDecorations;

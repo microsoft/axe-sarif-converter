@@ -14,6 +14,10 @@
         ],
         "no-banned-terms": false,
         "prefer-type-cast": false,
-        "no-angle-bracket-type-assertion": true
+        "no-angle-bracket-type-assertion": true,
+        "mocha-no-side-effect-code": [
+            true,
+            { "ignore": "(it|test|describe)\\.each" }
+        ]
     }
 }
