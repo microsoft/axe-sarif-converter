@@ -6,23 +6,17 @@ import { ConverterOptions } from './converter-options';
 import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
 import { getInvocations } from './invocation-provider';
-import { defaultSarifConverter, SarifConverter } from './sarif-converter';
+import { SarifConverter } from './sarif-converter';
 import * as Sarif from './sarif/sarif-2.0.0';
 
 describe('SarifConverter', () => {
-    it('is defined', () => {
-        expect(defaultSarifConverter()).toBeDefined();
-    });
-
     describe('convert', () => {
-        let stubToolProperties: Sarif.Run['tool'];
-        let stubInvocations: Sarif.Invocation[];
-
-        let axeToolPropertyProviderMock: IMock<() => Sarif.Run['tool']>;
-        let invocationProviderMock: IMock<
-            (environmentData: EnvironmentData) => Sarif.Invocation[]
-        >;
-
+        const stubToolProperties: Sarif.Run['tool'] = {
+            name: 'stub_tool_property',
+        };
+        const stubInvocations: Sarif.Invocation[] = [
+            { commandLine: 'stub_invocation' },
+        ];
         const stubTimestamp: string = 'stub_timestamp';
         const stubTargetPageUrl: string = 'stub_url';
         const stubTargetPageTitle: string = 'stub_title';
@@ -31,35 +25,29 @@ describe('SarifConverter', () => {
             targetPageUrl: stubTargetPageUrl,
             targetPageTitle: stubTargetPageTitle,
         };
+        const axeToolPropertyProviderStub: () => Sarif.Run['tool'] = () => {
+            return {} as Sarif.Run['tool'];
+        };
+        const invocationProviderStub: () => Sarif.Invocation[] = () => {
+            return stubInvocations;
+        };
 
-        beforeEach(() => {
-            stubToolProperties = {
-                name: 'stub_tool_property',
-            };
-            stubInvocations = [{ commandLine: 'stub_invocation' }];
-
-            axeToolPropertyProviderMock = Mock.ofInstance(getAxeToolProperties);
-            invocationProviderMock = Mock.ofInstance(getInvocations);
-
+        it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
+            const axeToolPropertyProviderMock: IMock<
+                () => Sarif.Run['tool']
+            > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
                 .setup(ap => ap())
                 .returns(() => stubToolProperties)
                 .verifiable(Times.once());
 
-            invocationProviderMock
-                .setup(ip =>
-                    ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
-                )
-                .returns(() => stubInvocations)
-                .verifiable(Times.once());
-        });
-        it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
-            const testSubject = new SarifConverter(
-                axeToolPropertyProviderMock.object,
-                invocationProviderMock.object,
-            );
             const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
             const irrelevantOptions: ConverterOptions = {};
+
+            const testSubject = new SarifConverter(
+                axeToolPropertyProviderMock.object,
+                invocationProviderStub,
+            );
 
             const actualResults = testSubject.convert(
                 irrelevantResults,
@@ -85,8 +73,18 @@ describe('SarifConverter', () => {
             };
             const irrelevantOptions: ConverterOptions = {};
 
+            const invocationProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.Invocation[]
+            > = Mock.ofInstance(getInvocations);
+            invocationProviderMock
+                .setup(ip =>
+                    ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
+                )
+                .returns(() => stubInvocations)
+                .verifiable(Times.once());
+
             const testSubject = new SarifConverter(
-                axeToolPropertyProviderMock.object,
+                axeToolPropertyProviderStub,
                 invocationProviderMock.object,
             );
 

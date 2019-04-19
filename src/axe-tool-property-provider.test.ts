@@ -3,10 +3,10 @@
 import { getAxeToolProperties } from './axe-tool-property-provider';
 import * as Sarif from './sarif/sarif-2.0.0';
 
-describe('axe-tool-properties', () => {
+describe('axe-tool-property-provider', () => {
     describe('getAxeToolProperties', () => {
         it("returns the axe properties as a Sarif.Run['tool']", () => {
-            const axeToolPropertiesStub: Sarif.Run['tool'] = {
+            const expectedResults: Sarif.Run['tool'] = {
                 name: 'axe',
                 fullName: 'axe-core',
                 semanticVersion: '3.2.2',
@@ -17,7 +17,7 @@ describe('axe-tool-properties', () => {
             };
 
             const actualResults: Sarif.Run['tool'] = getAxeToolProperties();
-            expect(actualResults).toEqual(axeToolPropertiesStub);
+            expect(actualResults).toEqual(expectedResults);
         });
     });
 });
