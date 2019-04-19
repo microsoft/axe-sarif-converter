@@ -1,6 +1,6 @@
 {
     "name": "axe-sarif-converter",
-    "version": "1.0.1",
+    "version": "0.0.0-managed-by-semantic-release",
     "description": "Convert axe-core accessibility scan results to the SARIF format",
     "main": "dist/index.js",
     "types": "dist/index.d.js",
@@ -23,9 +23,11 @@
         "lodash": "^4.17.11",
         "prettier": "^1.16.4",
         "rimraf": "^2.6.3",
+        "semantic-release": "^15.13.3",
         "ts-jest": "^24.0.1",
         "tslint": "^5.15.0",
         "tslint-microsoft-contrib": "^6.1.0",
+        "typemoq": "^2.1.0",
         "typescript": "^3.4.1"
     },
     "scripts": {
@@ -36,10 +38,11 @@
         "lint": "tslint -p .",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
-        "prepack": "npm run format-check && npm run lint && npm run build && npm run copyrightheaders",
+        "copyrightheaders": "license-check-and-add",
+        "precheckin": "npm run format-check && npm run lint && npm run build && npm test && npm run copyrightheaders",
         "watch:build": "tsc -p . --watch",
         "watch:test": "jest --watch --coverage false --colors",
-        "copyrightheaders": "license-check-and-add"
+        "semantic-release": "semantic-release"
     },
     "repository": {
         "type": "git",

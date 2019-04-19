@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
 import { ResultDecorator } from './result-decorator';
-import { SarifConverter } from './sarif-converter';
+import { defaultSarifConverter } from './sarif-converter';
 import { SarifLog } from './sarif/sarif-log';
 import { axeTagsToWcagLinkData } from './wcag-link-data';
 
@@ -12,6 +12,6 @@ export function convertAxeToSarif(axeResults: Axe.AxeResults): SarifLog {
     const resultDecorator = new ResultDecorator(axeTagsToWcagLinkData);
     const decoratedAxeResults = resultDecorator.decorateResults(axeResults);
 
-    const sarifConverter = new SarifConverter();
+    const sarifConverter = defaultSarifConverter();
     return sarifConverter.convert(decoratedAxeResults, {});
 }
