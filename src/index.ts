@@ -25,8 +25,8 @@ export function sarifReporter(
     callback: Function,
 ) {
     let environmentData: EnvironmentData = {
-        timestamp: '',
-        targetPageUrl: '',
+        timestamp: new Date().toISOString(),
+        targetPageUrl: window.location.href,
         targetPageTitle: '',
     };
     callback(createSarifReport(rawResults, environmentData));
