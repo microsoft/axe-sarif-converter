@@ -26,13 +26,11 @@ export function sarifReporter(
     callback: Function,
 ) {
     const environmentData: EnvironmentData = getEnvironmentDataFromEnvironment();
-    callback(createSarifReport(rawResults, environmentData));
-}
-
-function createSarifReport(
-    rawResults: AxeRawResult[],
-    environmentData: EnvironmentData,
-): SarifLog {
-    const axeRawSarifConverter = defaultAxeRawSarifConverter();
-    return axeRawSarifConverter.convert(rawResults, {}, environmentData);
+    callback(() => {
+        return defaultAxeRawSarifConverter().convert(
+            rawResults,
+            {},
+            environmentData,
+        );
+    });
 }
