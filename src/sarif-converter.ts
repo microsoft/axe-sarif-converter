@@ -8,7 +8,7 @@ import {
 } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
-import { getEnvironmentData } from './environment-data-provider';
+import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations } from './invocation-provider';
 import * as CustomSarif from './sarif/custom-sarif-types';
 import * as Sarif from './sarif/sarif-2.0.0';
@@ -67,7 +67,9 @@ export class SarifConverter {
                     downloadUri: 'https://www.deque.com/axe/',
                 },
             },
-            invocations: this.invocationConverter(getEnvironmentData(results)),
+            invocations: this.invocationConverter(
+                getEnvironmentDataFromResults(results),
+            ),
             files: files,
             results: this.convertResults(results, properties),
             resources: {

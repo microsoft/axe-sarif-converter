@@ -4,6 +4,7 @@ import * as Axe from 'axe-core';
 import { AxeRawResult } from './axe-raw-result';
 import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
 import { EnvironmentData } from './environment-data';
+import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
 import { ResultDecorator } from './result-decorator';
 import { defaultSarifConverter } from './sarif-converter';
 import { SarifLog } from './sarif/sarif-log';
@@ -24,15 +25,11 @@ export function sarifReporter(
     {},
     callback: Function,
 ) {
-    let environmentData: EnvironmentData = {
-        timestamp: new Date().toISOString(),
-        targetPageUrl: window.location.href,
-        targetPageTitle: '',
-    };
+    const environmentData: EnvironmentData = getEnvironmentDataFromEnvironment();
     callback(createSarifReport(rawResults, environmentData));
 }
 
-export function createSarifReport(
+function createSarifReport(
     rawResults: AxeRawResult[],
     environmentData: EnvironmentData,
 ): SarifLog {
