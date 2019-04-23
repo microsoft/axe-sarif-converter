@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import {
     DecoratedAxeResult,
@@ -16,11 +17,11 @@ import { SarifLog } from './sarif/sarif-log';
 import { isNotEmpty } from './string-utils';
 
 export function defaultSarifConverter(): SarifConverter {
-    return new SarifConverter(getInvocations);
+    return new SarifConverter(getAxeToolProperties, getInvocations);
 }
-
 export class SarifConverter {
     public constructor(
+        private getAxeProperties: () => Sarif.Run['tool'],
         private invocationConverter: (
             environmentData: EnvironmentData,
         ) => Sarif.Invocation[],
@@ -58,18 +59,8 @@ export class SarifConverter {
         }
 
         const run: Sarif.Run = {
-            tool: {
-                name: 'axe',
-                fullName: 'axe-core',
-                semanticVersion: '3.2.2',
-                version: '3.2.2',
-                properties: {
-                    downloadUri: 'https://www.deque.com/axe/',
-                },
-            },
-            invocations: this.invocationConverter(
-                getEnvironmentDataFromResults(results),
-            ),
+            tool: this.getAxeProperties(),
+            invocations: this.invocationConverter(getEnvironmentDataFromResults(results)),
             files: files,
             results: this.convertResults(results, properties),
             resources: {
