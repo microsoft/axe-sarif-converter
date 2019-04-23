@@ -17,6 +17,6 @@ export function getEnvironmentDataFromEnvironment(): EnvironmentData {
     return {
         timestamp: new Date().toISOString(),
         targetPageUrl: window.location.href,
-        targetPageTitle: '',
+        targetPageTitle: document.title,
     };
 }
