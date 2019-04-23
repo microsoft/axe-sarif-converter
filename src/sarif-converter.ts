@@ -60,7 +60,9 @@ export class SarifConverter {
 
         const run: Sarif.Run = {
             tool: this.getAxeProperties(),
-            invocations: this.invocationConverter(getEnvironmentDataFromResults(results)),
+            invocations: this.invocationConverter(
+                getEnvironmentDataFromResults(results),
+            ),
             files: files,
             results: this.convertResults(results, properties),
             resources: {
