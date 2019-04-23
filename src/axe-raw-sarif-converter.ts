@@ -7,6 +7,7 @@ import {
     AxeRawResult,
     ResultValue,
 } from './axe-raw-result';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
@@ -17,11 +18,12 @@ import { SarifLog } from './sarif/sarif-log';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 
 export function defaultAxeRawSarifConverter(): AxeRawSarifConverter {
-    return new AxeRawSarifConverter(getInvocations);
+    return new AxeRawSarifConverter(getAxeToolProperties, getInvocations);
 }
 
 export class AxeRawSarifConverter {
     public constructor(
+        private getAxeProperties: () => Sarif.Run['tool'],
         private invocationConverter: (
             environmentData: EnvironmentData,
         ) => Sarif.Invocation[],
@@ -44,7 +46,7 @@ export class AxeRawSarifConverter {
         environmentData: EnvironmentData,
     ): Sarif.Run {
         const run: Sarif.Run = {
-            tool: this.getAxeToolProperties(),
+            tool: this.getAxeProperties(),
             invocations: this.invocationConverter(environmentData),
             files: this.getTargetPageProperties(environmentData),
             results: this.convertRawResults(
@@ -61,18 +63,6 @@ export class AxeRawSarifConverter {
         this.fillInRunPropertiesFromOptions(run, converterOptions);
 
         return run;
-    }
-
-    private getAxeToolProperties() {
-        return {
-            name: 'axe',
-            fullName: 'axe-core',
-            semanticVersion: '3.2.2',
-            version: '3.2.2',
-            properties: {
-                downloadUri: 'https://www.deque.com/axe/',
-            },
-        };
     }
 
     private getTargetPageProperties(
