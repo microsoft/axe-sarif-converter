@@ -9,7 +9,10 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
-import { convertAxeToSarif } from './index';
+import { AxeRawResult } from './axe-raw-result';
+import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
+import { EnvironmentData } from './environment-data';
+import { convertAxeToSarif, sarifReporter } from './index';
 import { Run } from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
 
@@ -78,4 +81,52 @@ describe('axeToSarifConverter use generated AxeResults object', () => {
         const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
         expect(convertAxeToSarif(axeResultStub)).toMatchSnapshot();
     });
+});
+
+describe('sarifReporter', () => {
+    it('runs the callback function with the returned sarif log from the axeRawSarifConverter', done => {
+        const stubResults = [
+            {
+                id: 'stub_id',
+            },
+        ] as AxeRawResult[];
+
+        function callback(convertedSarifResults: SarifLog) {
+            const expectedSarifResults = defaultAxeRawSarifConverter().convert(
+                stubResults,
+                {},
+                getEnvironmentDataFromConvertedResults(convertedSarifResults),
+            );
+            expect(convertedSarifResults).toEqual(expectedSarifResults);
+            done();
+        }
+        sarifReporter(stubResults, {}, callback);
+    });
+
+    function getEnvironmentDataFromConvertedResults(
+        convertedResults: SarifLog,
+    ): EnvironmentData {
+        const invocations = convertedResults.runs[0].invocations;
+        const timestamp =
+            invocations && invocations[0].startTime
+                ? invocations[0].startTime
+                : '';
+
+        const targetPageUrl = convertedResults.runs[0].files
+            ? Object.keys(convertedResults.runs[0].files)[0]
+            : '';
+
+        const targetPageTitle =
+            convertedResults.runs[0].files &&
+            convertedResults.runs[0].files.targetPageUrl &&
+            convertedResults.runs[0].files.targetPageUrl.properties
+                ? convertedResults.runs[0].files.targetPageUrl.properties.title
+                : '';
+
+        return {
+            timestamp: timestamp,
+            targetPageUrl: targetPageUrl,
+            targetPageTitle: targetPageTitle,
+        };
+    }
 });
