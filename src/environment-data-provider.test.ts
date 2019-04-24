@@ -42,6 +42,7 @@ describe('environment-data-provider', () => {
             expect(actualResults).toHaveProperty('targetPageUrl');
             expect(actualResults).toHaveProperty('targetPageTitle');
         });
+
         it('contains a timestamp with a valid ISO format', () => {
             const actualTimestamp = getEnvironmentDataFromEnvironment()
                 .timestamp;
