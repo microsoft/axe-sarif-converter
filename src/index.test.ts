@@ -11,6 +11,7 @@ import {
 import * as fs from 'fs';
 import { AxeRawResult } from './axe-raw-result';
 import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
+import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
 import { convertAxeToSarif, sarifReporter } from './index';
 import { Run } from './sarif/sarif-2.0.0';
@@ -91,16 +92,20 @@ describe('sarifReporter', () => {
             },
         ] as AxeRawResult[];
 
+        const runOptions: RunOptions = {};
+        const converterOptions: ConverterOptions = {};
+
         function callback(convertedSarifResults: SarifLog) {
             const expectedSarifResults = defaultAxeRawSarifConverter().convert(
                 stubResults,
-                {},
+                converterOptions,
                 getEnvironmentDataFromConvertedResults(convertedSarifResults),
             );
             expect(convertedSarifResults).toEqual(expectedSarifResults);
             done();
         }
-        sarifReporter(stubResults, {}, callback);
+
+        sarifReporter(stubResults, runOptions, callback);
     });
 
     function getEnvironmentDataFromConvertedResults(
