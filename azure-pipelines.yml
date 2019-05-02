@@ -12,35 +12,11 @@ jobs:
                 versionSpec: '10.15.3'
             displayName: use node 10.15.3
 
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: ci
-            displayName: npm ci
-
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run lint
-            displayName: check for lint
-
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run format-check
-            displayName: check code formatting
-
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run copyrightheaders
-            displayName: check copyright headers
-
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run test -- --ci
-            displayName: run unit tests
+          - script: yarn install --frozen-lockfile
+          - script: yarn lint
+          - script: yarn format-check
+          - script: yarn copyrightheaders
+          - script: yarn test -- --ci
 
           - task: PublishTestResults@2
             inputs:
@@ -63,17 +39,10 @@ jobs:
             condition: always()
             displayName: publish sarif results
 
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run build
-            displayName: npm run build
+          - script: yarn build
 
-          - task: Npm@1
-            inputs:
-                command: custom
-                customCommand: run semantic-release
-            displayName: npm run semantic-release (master branch only)
+          - script: yarn semantic-release
+            displayName: yarn semantic-release (master branch only)
             env:
                 GH_TOKEN: $(GH_TOKEN)
                 NPM_TOKEN: $(NPM_TOKEN)
