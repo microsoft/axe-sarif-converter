@@ -11,5 +11,5 @@ dist/
 test-results/
 test-resources/
 LICENSE
-package-lock.json
+yarn.lock
 copyright-header.txt
