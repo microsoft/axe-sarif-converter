@@ -9,6 +9,10 @@
         "LICENSE",
         "README.md"
     ],
+    "engines": {
+        "node": ">= 8",
+        "yarn": "^1.15.1"
+    },
     "dependencies": {
         "axe-core": "^3.2.2"
     },
@@ -31,7 +35,7 @@
         "typescript": "^3.4.5"
     },
     "scripts": {
-        "prebuild": "npm run clean",
+        "prebuild": "yarn clean",
         "build": "tsc -p .",
         "clean": "rimraf dist/* test-results/*",
         "test": "jest",
@@ -39,7 +43,7 @@
         "format": "prettier --config prettier.config.js --write \"**/*\"",
         "format-check": "prettier --config prettier.config.js --check \"**/*\"",
         "copyrightheaders": "license-check-and-add",
-        "precheckin": "npm run format-check && npm run lint && npm run build && npm test && npm run copyrightheaders",
+        "precheckin": "yarn format-check && yarn lint && yarn build && yarn test && yarn copyrightheaders",
         "watch:build": "tsc -p . --watch",
         "watch:test": "jest --watch --coverage false --colors",
         "semantic-release": "semantic-release"
