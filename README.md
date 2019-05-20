@@ -21,6 +21,12 @@ Before using axe-sarif-converter, you will need to run an [axe](https://github.c
 axe-sarif-converter exports a single function, named `convertAxeToSarif`. Use it like this:
 
 ```ts
+import * as Axe from 'axe';
+import * as AxePuppeteer from 'axe-puppeteer';
+import * as fs from 'fs';
+import * as Puppeteer from 'puppeteer'
+import * as util from 'util';
+
 import { convertAxeToSarif, SarifLog } from 'axe-sarif-converter';
 
 test('my accessibility test', async () => {
@@ -33,7 +39,7 @@ test('my accessibility test', async () => {
     const sarifResults: SarifLog = convertAxeToSarif(axeResults);
 
     // Output a SARIF file, perhaps for use with a Sarif Viewer tool
-    await fs.promises.writeFile(
+    await util.promisify(fs.writeFile)(
         './test-results/my-accessibility-test.sarif',
         JSON.stringify(sarifResults),
         { encoding: 'utf8' });
