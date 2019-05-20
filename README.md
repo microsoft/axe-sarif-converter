@@ -46,6 +46,10 @@ test('my accessibility test', async () => {
 }
 ```
 
+## Samples
+
+The [microsoft/axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples) project contains full sample code that walks you through integrating this library into your project, from writing a test to seeing results in Azure Pipelines.
+
 ## Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
