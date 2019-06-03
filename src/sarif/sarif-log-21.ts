@@ -2,4 +2,4 @@
 // Licensed under the MIT License.
 import { StaticAnalysisResultsFormatSarifVersion212JsonSchema } from './sarif-2.1.2';
 
-export type SarifLog = StaticAnalysisResultsFormatSarifVersion212JsonSchema;
+export type SarifLog21 = StaticAnalysisResultsFormatSarifVersion212JsonSchema;

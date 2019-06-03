@@ -41,8 +41,8 @@ export interface Run {
              * The name of the tool along with its version and any other useful identifying information, such as its locale.
              */
             fullName?: string;
-            shortDescription: {
-                text: string;
+            shortDescription?: {
+                text?: string;
             };
             /**
              * The tool version, in whatever format the tool natively provides.
