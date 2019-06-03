@@ -41,7 +41,13 @@ export interface Run {
              * The name of the tool along with its version and any other useful identifying information, such as its locale.
              */
             fullName?: string;
+            /**
+             * A short description about the tool.
+             */
             shortDescription?: {
+                /**
+                 * The text for the short description about the tool.
+                 */
                 text?: string;
             };
             /**
@@ -97,47 +103,53 @@ export interface Run {
          * A tool object that describes the converter.
          */
         tool: {
-            /**
-             * The name of the tool.
-             */
-            name: string;
-            /**
-             * The name of the tool along with its version and any other useful identifying information, such as its locale.
-             */
-            fullName?: string;
-            /**
-             * The tool version, in whatever format the tool natively provides.
-             */
-            version?: string;
-            /**
-             * The tool version in the format specified by Semantic Versioning 2.0.
-             */
-            semanticVersion?: string;
-            /**
-             * The binary version of the tool's primary executable file (for operating systems such as Windows that provide that information).
-             */
-            fileVersion?: string;
-            /**
-             * The absolute URI from which the tool can be downloaded.
-             */
-            downloadUri?: string;
-            /**
-             * A version that uniquely identifies the SARIF logging component that generated this file, if it is versioned separately from the tool.
-             */
-            sarifLoggerVersion?: string;
-            /**
-             * The tool language (expressed as an ISO 649 two-letter lowercase culture code) and region (expressed as an ISO 3166 two-letter uppercase subculture code associated with a country or region).
-             */
-            language?: string;
-            /**
-             * Key/value pairs that provide additional information about the tool.
-             */
-            properties?: {
+            driver: {
                 /**
-                 * A set of distinct strings that provide additional information.
+                 * The name of the tool.
                  */
-                tags?: string[];
-                [k: string]: any;
+                name: string;
+                /**
+                 * The name of the tool along with its version and any other useful identifying information, such as its locale.
+                 */
+                fullName?: string;
+                /**
+                 * The tool version, in whatever format the tool natively provides.
+                 */
+                version?: string;
+                /**
+                 * The tool version in the format specified by Semantic Versioning 2.0.
+                 */
+                semanticVersion?: string;
+                /**
+                 * The absolute URI from which more information about the tool can be obtained.
+                 */
+                informationUri?: string;
+                /**
+                 * The binary version of the tool's primary executable file (for operating systems such as Windows that provide that information).
+                 */
+                fileVersion?: string;
+                /**
+                 * The absolute URI from which the tool can be downloaded.
+                 */
+                downloadUri?: string;
+                /**
+                 * A version that uniquely identifies the SARIF logging component that generated this file, if it is versioned separately from the tool.
+                 */
+                sarifLoggerVersion?: string;
+                /**
+                 * The tool language (expressed as an ISO 649 two-letter lowercase culture code) and region (expressed as an ISO 3166 two-letter uppercase subculture code associated with a country or region).
+                 */
+                language?: string;
+                /**
+                 * Key/value pairs that provide additional information about the tool.
+                 */
+                properties?: {
+                    /**
+                     * A set of distinct strings that provide additional information.
+                     */
+                    tags?: string[];
+                    [k: string]: any;
+                };
             };
         };
         /**
