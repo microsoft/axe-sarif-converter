@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
-import { getAxeToolProperties } from './axe-tool-property-provider';
+import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import {
     DecoratedAxeResult,
@@ -11,13 +11,13 @@ import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
-import * as CustomSarif from './sarif/custom-sarif-types';
-import * as Sarif from './sarif/sarif-2.0.0';
-import { SarifLog } from './sarif/sarif-log';
+import * as CustomSarif from './sarif/custom-sarif-types-21';
+import * as Sarif from './sarif/sarif-2.1.2';
+import { SarifLog } from './sarif/sarif-log-21';
 import { isNotEmpty } from './string-utils';
 
 export function defaultSarifConverter21(): SarifConverter21 {
-    return new SarifConverter21(getAxeToolProperties, getInvocations21);
+    return new SarifConverter21(getAxeToolProperties21, getInvocations21);
 }
 export class SarifConverter21 {
     public constructor(
@@ -32,7 +32,7 @@ export class SarifConverter21 {
         options: ConverterOptions,
     ): SarifLog {
         return {
-            version: CustomSarif.SarifLogVersion.v2,
+            version: CustomSarif.SarifLogVersion21.v21,
             runs: [this.convertRun(results, options)],
         };
     }
