@@ -1,18 +1,20 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { IMock, It, Mock, Times } from 'typemoq';
-import { getAxeToolProperties } from './axe-tool-property-provider';
+import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
 import { getInvocations } from './invocation-provider';
-import { SarifConverter } from './sarif-converter';
-import * as Sarif from './sarif/sarif-2.0.0';
+import { SarifConverter21 } from './sarif-converter-21';
+import * as Sarif from './sarif/sarif-2.1.2';
 
 describe('SarifConverter21', () => {
     describe('convert', () => {
         const stubToolProperties: Sarif.Run['tool'] = {
-            name: 'stub_tool_property',
+            driver: {
+                name: 'stub_tool_property',
+            },
         };
         const stubInvocations: Sarif.Invocation[] = [
             { commandLine: 'stub_invocation' },
@@ -35,7 +37,7 @@ describe('SarifConverter21', () => {
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
                 () => Sarif.Run['tool']
-            > = Mock.ofInstance(getAxeToolProperties);
+            > = Mock.ofInstance(getAxeToolProperties21);
             axeToolPropertyProviderMock
                 .setup(ap => ap())
                 .returns(() => stubToolProperties)
@@ -44,7 +46,7 @@ describe('SarifConverter21', () => {
             const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new SarifConverter(
+            const testSubject = new SarifConverter21(
                 axeToolPropertyProviderMock.object,
                 invocationProviderStub,
             );
@@ -83,7 +85,7 @@ describe('SarifConverter21', () => {
                 .returns(() => stubInvocations)
                 .verifiable(Times.once());
 
-            const testSubject = new SarifConverter(
+            const testSubject = new SarifConverter21(
                 axeToolPropertyProviderStub,
                 invocationProviderMock.object,
             );

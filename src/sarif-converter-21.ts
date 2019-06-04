@@ -13,7 +13,7 @@ import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
 import * as CustomSarif from './sarif/custom-sarif-types-21';
 import * as Sarif from './sarif/sarif-2.1.2';
-import { SarifLog } from './sarif/sarif-log-21';
+import { SarifLog21 } from './sarif/sarif-log-21';
 import { isNotEmpty } from './string-utils';
 
 export function defaultSarifConverter21(): SarifConverter21 {
@@ -30,7 +30,7 @@ export class SarifConverter21 {
     public convert(
         results: DecoratedAxeResults,
         options: ConverterOptions,
-    ): SarifLog {
+    ): SarifLog21 {
         return {
             version: CustomSarif.SarifLogVersion21.v21,
             runs: [this.convertRun(results, options)],
