@@ -3,6 +3,7 @@
 import * as Axe from 'axe-core';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
+import { getConverterProperties } from './converter-property-provider';
 import {
     DecoratedAxeResult,
     DecoratedAxeResults,
@@ -17,10 +18,15 @@ import { SarifLog21 } from './sarif/sarif-log-21';
 import { isNotEmpty } from './string-utils';
 
 export function defaultSarifConverter21(): SarifConverter21 {
-    return new SarifConverter21(getAxeToolProperties21, getInvocations21);
+    return new SarifConverter21(
+        getConverterProperties,
+        getAxeToolProperties21,
+        getInvocations21,
+    );
 }
 export class SarifConverter21 {
     public constructor(
+        private getConverterToolProperties: () => Sarif.Run['conversion'],
         private getAxeProperties: () => Sarif.Run['tool'],
         private invocationConverter: (
             environmentData: EnvironmentData,
@@ -59,6 +65,7 @@ export class SarifConverter21 {
         }
 
         const run: Sarif.Run = {
+            conversion: this.getConverterToolProperties(),
             tool: this.getAxeProperties(),
             invocations: this.invocationConverter(
                 getEnvironmentDataFromResults(results),
