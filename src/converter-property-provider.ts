@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 import * as Sarif from './sarif/sarif-2.1.2';
 
-export function geConverterProperties(): Sarif.Run['conversion'] {
+export function getConverterProperties(): Sarif.Run['conversion'] {
     return {
         tool: {
             driver: {
