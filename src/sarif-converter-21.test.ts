@@ -7,6 +7,7 @@ import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
+import { getInvocations21 } from './invocation-provider-21';
 import { SarifConverter21 } from './sarif-converter-21';
 import * as Sarif from './sarif/sarif-2.1.2';
 
@@ -84,47 +85,47 @@ describe('SarifConverter21', () => {
             );
         });
 
-        // it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
-        //     const stubResults: DecoratedAxeResults = {
-        //         timestamp: stubTimestamp,
-        //         targetPageUrl: stubTargetPageUrl,
-        //         targetPageTitle: stubTargetPageTitle,
-        //         passes: [],
-        //         violations: [],
-        //         inapplicable: [],
-        //         incomplete: [],
-        //     };
-        //     const irrelevantOptions: ConverterOptions = {};
+        it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
+            const stubResults: DecoratedAxeResults = {
+                timestamp: stubTimestamp,
+                targetPageUrl: stubTargetPageUrl,
+                targetPageTitle: stubTargetPageTitle,
+                passes: [],
+                violations: [],
+                inapplicable: [],
+                incomplete: [],
+            };
+            const irrelevantOptions: ConverterOptions = {};
 
-        //     const invocationProviderMock: IMock<
-        //         (environmentData: EnvironmentData) => Sarif.Invocation[]
-        //     > = Mock.ofInstance(getInvocations);
-        //     invocationProviderMock
-        //         .setup(ip =>
-        //             ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
-        //         )
-        //         .returns(() => stubInvocations)
-        //         .verifiable(Times.once());
+            const invocationProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.Invocation[]
+            > = Mock.ofInstance(getInvocations21);
+            invocationProviderMock
+                .setup(ip =>
+                    ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
+                )
+                .returns(() => stubInvocations)
+                .verifiable(Times.once());
 
-        //     const testSubject = new SarifConverter21(
-        //         converterPropertyProviderStub,
-        //         axeToolPropertyProviderStub,
-        //         invocationProviderMock.object,
-        //         artifactPropertyProviderStub,
-        //     );
+            const testSubject = new SarifConverter21(
+                converterPropertyProviderStub,
+                axeToolPropertyProviderStub,
+                invocationProviderMock.object,
+                artifactPropertyProviderStub,
+            );
 
-        //     const actualResults = testSubject.convert(
-        //         stubResults,
-        //         irrelevantOptions,
-        //     );
+            const actualResults = testSubject.convert(
+                stubResults,
+                irrelevantOptions,
+            );
 
-        //     invocationProviderMock.verifyAll();
-        //     expect(actualResults).toHaveProperty('runs');
-        //     expect(actualResults.runs[0]).toHaveProperty(
-        //         'invocations',
-        //         stubInvocations,
-        //     );
-        // });
+            invocationProviderMock.verifyAll();
+            expect(actualResults).toHaveProperty('runs');
+            expect(actualResults.runs[0]).toHaveProperty(
+                'invocations',
+                stubInvocations,
+            );
+        });
 
         it('outputs a sarif log whose run uses the converterPropertyProvider to populate the conversion property', () => {
             const converterPropertyProviderMock: IMock<
@@ -186,10 +187,9 @@ describe('SarifConverter21', () => {
 
             artifactPropertyProviderMock.verifyAll();
             expect(actualResults).toHaveProperty('runs');
-            expect(actualResults.runs[0]).toHaveProperty(
-                'artifacts',
+            expect(actualResults.runs[0]).toHaveProperty('artifacts', [
                 stubArtifactProperties,
-            );
+            ]);
         });
     });
 });
