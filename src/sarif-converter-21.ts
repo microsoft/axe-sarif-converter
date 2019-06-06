@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
+import { getArtifactProperties } from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
@@ -14,7 +15,6 @@ import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
 import * as CustomSarif from './sarif/custom-sarif-types-21';
 import * as Sarif from './sarif/sarif-2.1.2';
-import { SarifLog21 } from './sarif/sarif-log-21';
 import { isNotEmpty } from './string-utils';
 
 export function defaultSarifConverter21(): SarifConverter21 {
@@ -22,6 +22,7 @@ export function defaultSarifConverter21(): SarifConverter21 {
         getConverterProperties,
         getAxeToolProperties21,
         getInvocations21,
+        getArtifactProperties,
     );
 }
 export class SarifConverter21 {
@@ -31,14 +32,17 @@ export class SarifConverter21 {
         private invocationConverter: (
             environmentData: EnvironmentData,
         ) => Sarif.Invocation[],
+        private getArtifactProperties: (
+            environmentData: EnvironmentData,
+        ) => Sarif.Artifact,
     ) {}
 
     public convert(
         results: DecoratedAxeResults,
         options: ConverterOptions,
-    ): SarifLog21 {
+    ): Sarif.Log {
         return {
-            version: CustomSarif.SarifLogVersion21.v21,
+            version: CustomSarif.SarifLogVersion21.version,
             runs: [this.convertRun(results, options)],
         };
     }
@@ -47,15 +51,6 @@ export class SarifConverter21 {
         results: DecoratedAxeResults,
         options: ConverterOptions,
     ): Sarif.Run {
-        const files: DictionaryStringTo<Sarif.File> = {};
-        files[results.targetPageUrl] = {
-            mimeType: 'text/html',
-            properties: {
-                tags: ['target'],
-                title: results.targetPageTitle,
-            },
-        };
-
         let properties: DictionaryStringTo<string> = {};
 
         if (options && options.scanName !== undefined) {
@@ -70,11 +65,15 @@ export class SarifConverter21 {
             invocations: this.invocationConverter(
                 getEnvironmentDataFromResults(results),
             ),
-            files: files,
+            artifacts: [
+                this.getArtifactProperties(
+                    getEnvironmentDataFromResults(results),
+                ),
+            ],
             results: this.convertResults(results, properties),
-            resources: {
-                rules: this.convertResultsToRules(results),
-            },
+            // resources: {
+            //     rules: this.convertResultsToRules(results),
+            // },
             properties: {},
         };
 
@@ -83,7 +82,7 @@ export class SarifConverter21 {
         }
 
         if (options && options.scanId !== undefined) {
-            run.logicalId = options.scanId;
+            // run.logicalId = options.scanId;
         }
 
         return run;
@@ -161,16 +160,16 @@ export class SarifConverter21 {
             const selector = node.target.join(';');
             resultArray.push({
                 ruleId: ruleResult.id,
-                level: level,
+                // level: level,
                 message: this.convertMessage(node, level),
                 locations: [
                     {
                         physicalLocation: {
-                            fileLocation: {
-                                uri: targetPageUrl,
-                            },
+                            // fileLocation: {
+                            //     uri: targetPageUrl,
+                            // },
                         },
-                        fullyQualifiedLogicalName: selector,
+                        // fullyQualifiedLogicalName: selector,
                         annotations: [
                             {
                                 snippet: {
@@ -203,7 +202,7 @@ export class SarifConverter21 {
     private convertMessage(
         node: Axe.NodeResult,
         level: CustomSarif.Result.level,
-    ): CustomSarif.Message {
+    ): Sarif.Message {
         const textArray: string[] = [];
         const richTextArray: string[] = [];
 
@@ -233,7 +232,7 @@ export class SarifConverter21 {
 
         return {
             text: textArray.join(' '),
-            richText: richTextArray.join('\n\n'),
+            // richText: richTextArray.join('\n\n'),
         };
     }
 
@@ -279,23 +278,25 @@ export class SarifConverter21 {
                 const partialFingerprints = this.getPartialFingerprintsFromRule(
                     ruleResult,
                 );
-                resultArray.push({
-                    ruleId: ruleResult.id,
-                    level: level,
-                    properties: {
-                        ...properties,
-                        tags: ['Accessibility'],
-                    },
-                    partialFingerprints: partialFingerprints,
-                });
+                // resultArray.push({
+                // ruleId: ruleResult.id,
+                // level: level,
+                // properties: {
+                // ...properties,
+                // tags: ['Accessibility'],
+                // },
+                // partialFingerprints: partialFingerprints,
+                // });
             }
         }
     }
 
     private convertResultsToRules(
         results: DecoratedAxeResults,
-    ): DictionaryStringTo<Sarif.Rule> {
-        const rulesDictionary: DictionaryStringTo<Sarif.Rule> = {};
+    ): DictionaryStringTo<Sarif.ReportingDescriptor> {
+        const rulesDictionary: DictionaryStringTo<
+            Sarif.ReportingDescriptor
+        > = {};
 
         this.convertRuleResultsToRules(rulesDictionary, results.violations);
         this.convertRuleResultsToRules(rulesDictionary, results.passes);
@@ -306,7 +307,7 @@ export class SarifConverter21 {
     }
 
     private convertRuleResultsToRules(
-        rulesDictionary: DictionaryStringTo<Sarif.Rule>,
+        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
         ruleResults: DecoratedAxeResult[],
     ): void {
         if (ruleResults) {
@@ -317,15 +318,13 @@ export class SarifConverter21 {
     }
 
     private convertRuleResultToRule(
-        rulesDictionary: DictionaryStringTo<Sarif.Rule>,
+        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
         ruleResult: DecoratedAxeResult,
     ): void {
         if (!rulesDictionary.hasOwnProperty(ruleResult.id)) {
-            const rule: Sarif.Rule = {
+            const rule: Sarif.ReportingDescriptor = {
                 id: ruleResult.id,
-                name: {
-                    text: ruleResult.help,
-                },
+                name: ruleResult.help,
                 fullDescription: {
                     text: ruleResult.description,
                 },
