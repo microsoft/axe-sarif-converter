@@ -164,9 +164,7 @@ describe('SarifConverter21', () => {
                 (environmentData: EnvironmentData) => Sarif.Artifact
             > = Mock.ofInstance(getArtifactProperties);
             artifactPropertyProviderMock
-                .setup(ap =>
-                    ap(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
-                )
+                .setup(ap => ap(It.isAny()))
                 .returns(() => stubArtifactProperties)
                 .verifiable(Times.once());
 
