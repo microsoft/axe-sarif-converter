@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 // Type definitions for non-npm package Sarif 2.1
 // Project: https://github.com/Microsoft/sarif-sdk
 // Definitions by: Rusty Scrivens <https://github.com/rscrivens>
