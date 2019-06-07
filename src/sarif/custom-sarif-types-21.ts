@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 export const enum SarifLogVersion21 {
-    v21 = '2.1.2',
+    version = '2.1.2',
 }
 
 export namespace Result {

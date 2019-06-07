@@ -1,12 +1,13 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { IMock, It, Mock, Times } from 'typemoq';
+import { getArtifactProperties } from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
-import { getInvocations } from './invocation-provider';
+import { getInvocations21 } from './invocation-provider-21';
 import { SarifConverter21 } from './sarif-converter-21';
 import * as Sarif from './sarif/sarif-2.1.2';
 
@@ -25,7 +26,10 @@ describe('SarifConverter21', () => {
             },
         };
         const stubInvocations: Sarif.Invocation[] = [
-            { commandLine: 'stub_invocation' },
+            { executionSuccessful: true },
+        ];
+        const stubArtifactProperties: Sarif.Artifact[] = [
+            { encoding: 'stub_encoding' },
         ];
         const stubTimestamp: string = 'stub_timestamp';
         const stubTargetPageUrl: string = 'stub_url';
@@ -35,6 +39,7 @@ describe('SarifConverter21', () => {
             targetPageUrl: stubTargetPageUrl,
             targetPageTitle: stubTargetPageTitle,
         };
+
         const converterPropertyProviderStub: () => Sarif.Run['conversion'] = () => {
             return {} as Sarif.Run['conversion'];
         };
@@ -43,6 +48,9 @@ describe('SarifConverter21', () => {
         };
         const invocationProviderStub: () => Sarif.Invocation[] = () => {
             return stubInvocations;
+        };
+        const artifactPropertyProviderStub: () => Sarif.Artifact[] = () => {
+            return stubArtifactProperties;
         };
 
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
@@ -61,6 +69,7 @@ describe('SarifConverter21', () => {
                 converterPropertyProviderStub,
                 axeToolPropertyProviderMock.object,
                 invocationProviderStub,
+                artifactPropertyProviderStub,
             );
 
             const actualResults = testSubject.convert(
@@ -90,7 +99,7 @@ describe('SarifConverter21', () => {
 
             const invocationProviderMock: IMock<
                 (environmentData: EnvironmentData) => Sarif.Invocation[]
-            > = Mock.ofInstance(getInvocations);
+            > = Mock.ofInstance(getInvocations21);
             invocationProviderMock
                 .setup(ip =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
@@ -102,6 +111,7 @@ describe('SarifConverter21', () => {
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderMock.object,
+                artifactPropertyProviderStub,
             );
 
             const actualResults = testSubject.convert(
@@ -133,6 +143,7 @@ describe('SarifConverter21', () => {
                 converterPropertyProviderMock.object,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,
+                artifactPropertyProviderStub,
             );
 
             const actualResults = testSubject.convert(
@@ -146,6 +157,37 @@ describe('SarifConverter21', () => {
                 'conversion',
                 stubConverterProperties,
             );
+        });
+
+        it('outputs a sarif log whose run uses the artifactPropertyProvider to populate the artifacts property', () => {
+            const artifactPropertyProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.Artifact
+            > = Mock.ofInstance(getArtifactProperties);
+            artifactPropertyProviderMock
+                .setup(ap => ap(It.isAny()))
+                .returns(() => stubArtifactProperties)
+                .verifiable(Times.once());
+
+            const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
+            const irrelevantOptions: ConverterOptions = {};
+
+            const testSubject = new SarifConverter21(
+                converterPropertyProviderStub,
+                axeToolPropertyProviderStub,
+                invocationProviderStub,
+                artifactPropertyProviderMock.object,
+            );
+
+            const actualResults = testSubject.convert(
+                irrelevantResults,
+                irrelevantOptions,
+            );
+
+            artifactPropertyProviderMock.verifyAll();
+            expect(actualResults).toHaveProperty('runs');
+            expect(actualResults.runs[0]).toHaveProperty('artifacts', [
+                stubArtifactProperties,
+            ]);
         });
     });
 });
