@@ -11,11 +11,11 @@ export class WCAGLinkDataProcessor {
         this.wcagTagsToTaxaIndices = this.mapWcagTagToTaxaIndex();
     }
 
-    public getSortedWcagTags() {
+    public getSortedWcagTags(): string[] {
         return this.sortedWcagTags;
     }
 
-    public getWcagTagsToTaxaIndices() {
+    public getWcagTagsToTaxaIndices(): DictionaryStringTo<number> {
         return this.wcagTagsToTaxaIndices;
     }
 
