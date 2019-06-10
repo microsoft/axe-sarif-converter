@@ -3,47 +3,42 @@
 import * as Sarif from './sarif/sarif-2.1.2';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 
-export class WCAGTaxonomyProvider {
-    public getWcagTaxonomy(sortedWcagTags: string[]): Sarif.ToolComponent {
-        return {
-            name: 'WCAG',
-            fullName: 'Web Content Accessibility Guidelines (WCAG) 2.1',
-            organization: 'W3C',
-            informationUri: 'https://www.w3.org/TR/WCAG21',
-            version: '2.1',
-            guid: '',
-            isComprehensive: true,
-            taxa: this.getAllTaxaFromWcagLinkData(sortedWcagTags),
-        };
-    }
+export function getWcagTaxonomy(sortedWcagTags: string[]): Sarif.ToolComponent {
+    return {
+        name: 'WCAG',
+        fullName: 'Web Content Accessibility Guidelines (WCAG) 2.1',
+        organization: 'W3C',
+        informationUri: 'https://www.w3.org/TR/WCAG21',
+        version: '2.1',
+        guid: '',
+        isComprehensive: true,
+        taxa: getAllTaxaFromWcagLinkData(sortedWcagTags),
+    };
+}
 
-    private getAllTaxaFromWcagLinkData(
-        sortedWcagTags: string[],
-    ): Sarif.ToolComponent['taxa'] {
-        var taxa: Sarif.ToolComponent['taxa'] = [];
-        for (let i = 0; i < sortedWcagTags.length; i++) {
-            var tag = sortedWcagTags[i];
-            taxa.push(
-                this.getIndividualTaxaFromWcagLinkData(
-                    tag,
-                    axeTagsToWcagLinkData[tag],
-                ),
-            );
-        }
-        return taxa;
+function getAllTaxaFromWcagLinkData(
+    sortedWcagTags: string[],
+): Sarif.ToolComponent['taxa'] {
+    var taxa: Sarif.ToolComponent['taxa'] = [];
+    for (let i = 0; i < sortedWcagTags.length; i++) {
+        var tag = sortedWcagTags[i];
+        taxa.push(
+            getIndividualTaxaFromWcagLinkData(tag, axeTagsToWcagLinkData[tag]),
+        );
     }
+    return taxa;
+}
 
-    private getIndividualTaxaFromWcagLinkData(
-        tag: string,
-        wcagLinkData: WCAGLinkData,
-    ): Sarif.ReportingDescriptor {
-        return {
-            id: tag,
-            name: wcagLinkData.text,
-            shortDescription: {
-                text: wcagLinkData.title ? wcagLinkData.title : '',
-            },
-            helpUri: wcagLinkData.url,
-        };
-    }
+function getIndividualTaxaFromWcagLinkData(
+    tag: string,
+    wcagLinkData: WCAGLinkData,
+): Sarif.ReportingDescriptor {
+    return {
+        id: tag,
+        name: wcagLinkData.text,
+        shortDescription: {
+            text: wcagLinkData.title ? wcagLinkData.title : '',
+        },
+        helpUri: wcagLinkData.url,
+    };
 }
