@@ -22,58 +22,34 @@ describe('WCAGTaxonomyProvider', () => {
 
         expect(actualResults).toEqual(expectedResultsStub);
     });
-    // it('creates a Sarif.ToolComponent object for WCAG taxonomy from a dictionary of WCAG tags to WCAGLinkData', () => {
-    //     const expectedResults = {
-    //         taxa: [
-    //             {
-    //                 id: 'stub_wcag_1',
-    //                 name: 'stub_wcag_1',
-    //                 shortDescription: {
-    //                     text: 'stub_title_1',
-    //                 },
-    //                 helpUri: 'stub_url_1',
-    //             },
-    //             {
-    //                 id: 'stub_wcag_2',
-    //                 name: 'stub_wcag_2',
-    //                 shortDescription: {
-    //                     text: 'stub_title_2',
-    //                 },
-    //                 helpUri: 'stub_url_2',
-    //             },
-    //         ],
-    //     } as Sarif.ToolComponent;
 
-    //     const sortedTagsStub: string[] = ['stub_wcag_1', 'stub_wcag_2'];
-    //     const tagsToWcagLinkDataStub: DictionaryStringTo<WCAGLinkData> = {
-    //         wcag1: createWcagLinkDataObject(
-    //             'stub_wcag_1',
-    //             'stub_url_1',
-    //             'stub_title_1',
-    //         ),
-    //         wcag2: createWcagLinkDataObject(
-    //             'stub_wcag_2',
-    //             'stub_url_2',
-    //             'stub_title_2',
-    //         ),
-    //     };
+    it('creates a Sarif.ToolComponent object with taxa properties based on axeTagsToWcagLinkData', () => {
+        const sortedTagsStub: string[] = ['wcag111', 'wcag121'];
+        const expectedResults = [
+            {
+                id: 'wcag111',
+                name: 'WCAG 1.1.1',
+                shortDescription: {
+                    text: 'Non-text Content',
+                },
+                helpUri:
+                    'https://www.w3.org/WAI/WCAG21/Understanding/non-text-content',
+            },
+            {
+                id: 'wcag121',
+                name: 'WCAG 1.2.1',
+                shortDescription: {
+                    text: 'Audio-only and Video-only (Prerecorded)',
+                },
+                helpUri:
+                    'https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded',
+            },
+        ];
 
-    //     const actualResults: Sarif.ToolComponent = getWcagTaxonomy(
-    //         sortedTagsStub,
-    //     );
+        const actualResults: Sarif.ToolComponent = getWcagTaxonomy(
+            sortedTagsStub,
+        );
 
-    //     expect(expectedResults).toHaveProperty('taxa', actualResults['taxa']);
-    // });
-
-    function createWcagLinkDataObject(
-        text: string,
-        url: string,
-        title: string,
-    ) {
-        return {
-            text: text,
-            title: title,
-            url: url,
-        };
-    }
+        expect(actualResults).toHaveProperty('taxa', expectedResults);
+    });
 });
