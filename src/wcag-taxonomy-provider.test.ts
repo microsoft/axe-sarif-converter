@@ -52,4 +52,24 @@ describe('WCAGTaxonomyProvider', () => {
 
         expect(actualResults).toHaveProperty('taxa', expectedResults);
     });
+
+    it('creates a Sarif.Tool Component object with taxa properties where WCAGLinkData title and url are empty', () => {
+        const sortedTagsStub: string[] = ['best-practice'];
+        const expectedResults = [
+            {
+                id: 'best-practice',
+                name: 'Best Practice',
+                shortDescription: {
+                    text: '',
+                },
+                helpUri: '',
+            },
+        ];
+
+        const actualResults: Sarif.ToolComponent = getWcagTaxonomy(
+            sortedTagsStub,
+        );
+
+        expect(actualResults).toHaveProperty('taxa', expectedResults);
+    });
 });

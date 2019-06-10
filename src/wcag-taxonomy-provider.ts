@@ -39,6 +39,6 @@ function getIndividualTaxaFromWcagLinkData(
         shortDescription: {
             text: wcagLinkData.title ? wcagLinkData.title : '',
         },
-        helpUri: wcagLinkData.url,
+        helpUri: wcagLinkData.url ? wcagLinkData.url : '',
     };
 }
