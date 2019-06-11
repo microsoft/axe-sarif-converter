@@ -2,26 +2,24 @@
 // Licensed under the MIT License.
 import { DictionaryStringTo } from './dictionary-types';
 import { WCAGLinkData } from './wcag-link-data';
-import { WCAGLinkDataProcessor } from './wcag-link-data-indexer';
+import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 
-describe('WCAGLinkDataProcessor', () => {
+describe('WCAGLinkDataIndexer', () => {
     var tagsToWcagLinkDataStub: DictionaryStringTo<WCAGLinkData>;
-    var wcagLinkDataProcessor: WCAGLinkDataProcessor;
+    var wcagLinkDataIndexer: WCAGLinkDataIndexer;
     beforeAll(() => {
         tagsToWcagLinkDataStub = {
             wcag1: createWcagLinkDataObject('1', 'stub_url_1', 'stub_title_1'),
             wcag2: createWcagLinkDataObject('2', 'stub_url_2', 'stub_title_2'),
             wcag3: createWcagLinkDataObject('3', 'stub_url_3', 'stub_title_3'),
         };
-        wcagLinkDataProcessor = new WCAGLinkDataProcessor(
-            tagsToWcagLinkDataStub,
-        );
+        wcagLinkDataIndexer = new WCAGLinkDataIndexer(tagsToWcagLinkDataStub);
     });
 
     it('creates an array of WCAG tags sorted in ascending order', () => {
         const expectedResults: string[] = ['wcag1', 'wcag2', 'wcag3'];
 
-        const actualResults: string[] = wcagLinkDataProcessor.getSortedWcagTags();
+        const actualResults: string[] = wcagLinkDataIndexer.getSortedWcagTags();
 
         expect(actualResults).toEqual(expectedResults);
     });
@@ -35,7 +33,7 @@ describe('WCAGLinkDataProcessor', () => {
 
         const actualResults: DictionaryStringTo<
             number
-        > = wcagLinkDataProcessor.getWcagTagsToTaxaIndices();
+        > = wcagLinkDataIndexer.getWcagTagsToTaxaIndices();
 
         expect(actualResults).toEqual(expectedResults);
     });

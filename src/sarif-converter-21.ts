@@ -17,7 +17,7 @@ import * as CustomSarif from './sarif/custom-sarif-types-21';
 import * as Sarif from './sarif/sarif-2.1.2';
 import { isNotEmpty } from './string-utils';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
-import { WCAGLinkDataProcessor } from './wcag-link-data-indexer';
+import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 import { getWcagTaxonomy } from './wcag-taxonomy-provider';
 
 export function defaultSarifConverter21(): SarifConverter21 {
@@ -32,7 +32,7 @@ export class SarifConverter21 {
     private readonly tagsToWcagLinkData: DictionaryStringTo<
         WCAGLinkData
     > = axeTagsToWcagLinkData;
-    private readonly wcagLinkDataProcessor: WCAGLinkDataProcessor = new WCAGLinkDataProcessor(
+    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
         this.tagsToWcagLinkData,
     );
     public constructor(
@@ -85,7 +85,7 @@ export class SarifConverter21 {
             // },
             taxonomies: [
                 getWcagTaxonomy(
-                    this.wcagLinkDataProcessor.getSortedWcagTags(),
+                    this.wcagLinkDataIndexer.getSortedWcagTags(),
                     this.tagsToWcagLinkData,
                 ),
             ],

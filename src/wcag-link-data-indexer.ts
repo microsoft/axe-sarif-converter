@@ -3,7 +3,7 @@
 import { DictionaryStringTo } from './dictionary-types';
 import { WCAGLinkData } from './wcag-link-data';
 
-export class WCAGLinkDataProcessor {
+export class WCAGLinkDataIndexer {
     private readonly sortedWcagTags: string[];
     private readonly wcagTagsToTaxaIndices: DictionaryStringTo<number>;
     constructor(private wcagConfiguration: DictionaryStringTo<WCAGLinkData>) {
