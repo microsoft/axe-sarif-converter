@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 import { DictionaryStringTo } from './dictionary-types';
 import { WCAGLinkData } from './wcag-link-data';
-import { WCAGLinkDataProcessor } from './wcag-link-data-processor';
+import { WCAGLinkDataProcessor } from './wcag-link-data-indexer';
 
 describe('WCAGLinkDataProcessor', () => {
     var tagsToWcagLinkDataStub: DictionaryStringTo<WCAGLinkData>;
