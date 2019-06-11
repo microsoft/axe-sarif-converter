@@ -1,0 +1,60 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "3.2.2"
+    },
+    "testRunner": {
+        "name": "axe for Web v3.2.2"
+    },
+    "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.121 Electron/5.0.1 Safari/537.36",
+        "windowWidth": 2560,
+        "windowHeight": 1358,
+        "orientationAngle": 0,
+        "orientationType": "landscape-primary"
+    },
+    "timestamp": "2019-03-22T19:12:06.129Z",
+    "targetPageUrl": "https://www.washington.edu/accesscomputing/AU/before.html",
+    "targetPageTitle": "Accessible University Demo Site - Inaccessible Version",
+    "toolOptions": {
+        "reporter": "2.1.2"
+    },
+    "violations": [
+        {
+            "id": "document-title",
+            "impact": "serious",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document does not have a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<html><head></head><body></body></html>",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element"
+                }
+            ]
+        }
+    ],
+    "passes": [],
+    "incomplete": [],
+    "inapplicable": []
+}

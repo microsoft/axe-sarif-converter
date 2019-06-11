@@ -1,0 +1,778 @@
+{
+    "version": "2.1.2",
+    "runs": [
+      {
+        "conversion": {
+          "tool": {
+            "driver": {
+              "name": "axe-sarif-converter",
+              "fullName": "axe-sarif-converter v1.3.0",
+              "version": "1.3.0",
+              "semanticVersion": "1.3.0",
+              "informationUri": "https://github.com/microsoft/axe-sarif-converter/releases/tag/v1.3.0",
+              "downloadUri": "https://www.npmjs.com/package/axe-sarif-converter/v/1.3.0"
+            }
+          }
+        },
+        "tool": {
+          "driver": {
+            "name": "axe-core",
+            "fullName": "axe for Web v3.2.2",
+            "shortDescription": {
+              "text": "An open source accessibility rules library for automated testing."
+            },
+            "version": "3.2.2",
+            "semanticVersion": "3.2.2",
+            "informationUri": "https://www.deque.com/axe/axe-for-web/",
+            "downloadUri": "https://www.npmjs.com/package/axe-core/v/3.2.2",
+            "properties": {
+              "microsoft/qualityDomain": "Accessibility"
+            },
+            "supportedTaxonomies": [
+              {
+                "name": "WCAG",
+                "index": 0,
+                "guid": "ca34e0e1-5faf-4f55-a989-cdae42a98f18"
+              }
+            ],
+            "rules": [
+              {
+                "id": "document-title",
+                "name": "Documents must have <title> element to aid in navigation",
+                "fullDescription": {
+                  "text": "Ensures each HTML document contains a non-empty <title> element"
+                },
+                "helpUri": "https://dequeuniversity.com/rules/axe/3.2/document-title?application=axeAPI",
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "wcag242",
+                      "index": 45,
+                      "toolComponent": {
+                        "name": "WCAG",
+                        "index": 0,
+                        "guid": "ca34e0e1-5faf-4f55-a989-cdae42a98f18"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  },
+                  {
+                    "target": {
+                      "id": "wcag112",
+                      "index": 1,
+                      "toolComponent": {
+                        "name": "WCAG",
+                        "index": 0,
+                        "guid": "ca34e0e1-5faf-4f55-a989-cdae42a98f18"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "invocations": [
+          {
+            "startTimeUtc": "2019-03-22T19:12:06.129Z",
+            "endTimeUtc": "2019-03-22T19:12:06.129Z",
+            "executionSuccessful": true
+          }
+        ],
+        "artifacts": [
+          {
+            "location": {
+              "uri": "https://www.washington.edu/accesscomputing/AU/before.html",
+              "index": 0
+            },
+            "sourceLanguage": "html",
+            "roles": [
+              "analysisTarget"
+            ],
+            "description": {
+              "text": "Accessible University Demo Site - Inaccessible Version"
+            }
+          }
+        ],
+        "results": [
+          {
+            "ruleId": "document-title",
+            "ruleIndex": 0,
+            "level": "error",
+            "message": {
+              "text": "Fix any of the following: Document does not have a non-empty <title> element",
+              "markdown": "Fix any of the following:\n  Document does not have a non-empty <title> element"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "https://www.washington.edu/accesscomputing/AU/before.html",
+                    "index": 0
+                  },
+                  "region": {
+                    "snippet": {
+                      "text": "<html><head></head><body></body></html>"
+                    }
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "html",
+                    "kind": "element"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "taxonomies": [
+          {
+            "name": "WCAG",
+            "fullName": "Web Content Accessibility Guidelines (WCAG) 2.1",
+            "organization": "W3C",
+            "informationUri": "https://www.w3.org/TR/WCAG21",
+            "version": "2.1",
+            "guid": "ca34e0e1-5faf-4f55-a989-cdae42a98f18",
+            "isComprehensive": true,
+            "taxa": [
+              {
+                  "id": "best-practice",
+                  "name": "Best Practice"
+              },
+              {
+                  "id": "wcag111",
+                  "name": "WCAG 1.1.1",
+                  "shortDescription": {
+                  "text": "Non-text Content"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-content"
+              },
+              {
+                  "id": "wcag121",
+                  "name": "WCAG 1.2.1",
+                  "shortDescription": {
+                  "text": "Audio-only and Video-only (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded"
+              },
+              {
+                  "id": "wcag122",
+                  "name": "WCAG 1.2.2",
+                  "shortDescription": {
+                  "text": "Captions (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded"
+              },
+              {
+                  "id": "wcag123",
+                  "name": "WCAG 1.2.3",
+                  "shortDescription": {
+                  "text": "Audio Description or Media Alternative (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded"
+              },
+              {
+                  "id": "wcag124",
+                  "name": "WCAG 1.2.4",
+                  "shortDescription": {
+                  "text": "Captions (Live)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/captions-live"
+              },
+              {
+                  "id": "wcag125",
+                  "name": "WCAG 1.2.5",
+                  "shortDescription": {
+                  "text": "Audio Description (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/audio-description-prerecorded"
+              },
+              {
+                  "id": "wcag126",
+                  "name": "WCAG 1.2.6",
+                  "shortDescription": {
+                  "text": "Sign Language (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/sign-language-prerecorded"
+              },
+              {
+                  "id": "wcag127",
+                  "name": "WCAG 1.2.7",
+                  "shortDescription": {
+                  "text": "Extended Audio Description (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/extended-audio-description-prerecorded"
+              },
+              {
+                  "id": "wcag128",
+                  "name": "WCAG 1.2.8",
+                  "shortDescription": {
+                  "text": "Media Alternative (Prerecorded)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/media-alternative-prerecorded"
+              },
+              {
+                  "id": "wcag129",
+                  "name": "WCAG 1.2.9",
+                  "shortDescription": {
+                  "text": "Audio-only (Live)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/audio-only-live"
+              },
+              {
+                  "id": "wcag131",
+                  "name": "WCAG 1.3.1",
+                  "shortDescription": {
+                  "text": "Info and Relationships"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships"
+              },
+              {
+                  "id": "wcag132",
+                  "name": "WCAG 1.3.2",
+                  "shortDescription": {
+                  "text": "Meaningful Sequence"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence"
+              },
+              {
+                  "id": "wcag133",
+                  "name": "WCAG 1.3.3",
+                  "shortDescription": {
+                  "text": "Sensory Characteristics"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/sensory-characteristics"
+              },
+              {
+                  "id": "wcag134",
+                  "name": "WCAG 1.3.4",
+                  "shortDescription": {
+                  "text": "Orientation"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/orientation"
+              },
+              {
+                  "id": "wcag135",
+                  "name": "WCAG 1.3.5",
+                  "shortDescription": {
+                  "text": "Identify Input Purpose"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose"
+              },
+              {
+                  "id": "wcag136",
+                  "name": "WCAG 1.3.6",
+                  "shortDescription": {
+                  "text": "Identify Purpose"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/identify-purpose"
+              },
+              {
+                  "id": "wcag141",
+                  "name": "WCAG 1.4.1",
+                  "shortDescription": {
+                  "text": "Use of Color"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/use-of-color"
+              },
+              {
+                  "id": "wcag1410",
+                  "name": "WCAG 1.4.10",
+                  "shortDescription": {
+                  "text": "Reflow"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/reflow"
+              },
+              {
+                  "id": "wcag1411",
+                  "name": "WCAG 1.4.11",
+                  "shortDescription": {
+                  "text": "Non-text Contrast"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast"
+              },
+              {
+                  "id": "wcag1412",
+                  "name": "WCAG 1.4.12",
+                  "shortDescription": {
+                  "text": "Text Spacing"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/text-spacing"
+              },
+              {
+                  "id": "wcag1413",
+                  "name": "WCAG 1.4.13",
+                  "shortDescription": {
+                  "text": "Content on Hover or Focus"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus"
+              },
+              {
+                  "id": "wcag142",
+                  "name": "WCAG 1.4.2",
+                  "shortDescription": {
+                  "text": "Audio Control"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/audio-control"
+              },
+              {
+                  "id": "wcag143",
+                  "name": "WCAG 1.4.3",
+                  "shortDescription": {
+                  "text": "Contrast (Minimum)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum"
+              },
+              {
+                  "id": "wcag144",
+                  "name": "WCAG 1.4.4",
+                  "shortDescription": {
+                  "text": "Resize text"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text"
+              },
+              {
+                  "id": "wcag145",
+                  "name": "WCAG 1.4.5",
+                  "shortDescription": {
+                  "text": "Images of Text"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/images-of-text"
+              },
+              {
+                  "id": "wcag146",
+                  "name": "WCAG 1.4.6",
+                  "shortDescription": {
+                  "text": "Contrast (Enhanced)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced"
+              },
+              {
+                  "id": "wcag147",
+                  "name": "WCAG 1.4.7",
+                  "shortDescription": {
+                  "text": "Low or No Background Audio"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/low-or-no-background-audio"
+              },
+              {
+                  "id": "wcag148",
+                  "name": "WCAG 1.4.8",
+                  "shortDescription": {
+                  "text": "Visual Presentation"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation"
+              },
+              {
+                  "id": "wcag149",
+                  "name": "WCAG 1.4.9",
+                  "shortDescription": {
+                  "text": "Images of Text (No Exception)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/images-of-text-no-exception"
+              },
+              {
+                  "id": "wcag211",
+                  "name": "WCAG 2.1.1",
+                  "shortDescription": {
+                  "text": "Keyboard"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/keyboard"
+              },
+              {
+                  "id": "wcag212",
+                  "name": "WCAG 2.1.2",
+                  "shortDescription": {
+                  "text": "No Keyboard Trap"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap"
+              },
+              {
+                  "id": "wcag213",
+                  "name": "WCAG 2.1.3",
+                  "shortDescription": {
+                  "text": "Keyboard (No Exception)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/keyboard-no-exception"
+              },
+              {
+                  "id": "wcag214",
+                  "name": "WCAG 2.1.4",
+                  "shortDescription": {
+                  "text": "Character Key Shortcuts"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts"
+              },
+              {
+                  "id": "wcag221",
+                  "name": "WCAG 2.2.1",
+                  "shortDescription": {
+                  "text": "Timing Adjustable"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable"
+              },
+              {
+                  "id": "wcag222",
+                  "name": "WCAG 2.2.2",
+                  "shortDescription": {
+                  "text": "Pause, Stop, Hide"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide"
+              },
+              {
+                  "id": "wcag223",
+                  "name": "WCAG 2.2.3",
+                  "shortDescription": {
+                  "text": "No Timing"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/no-timing"
+              },
+              {
+                  "id": "wcag224",
+                  "name": "WCAG 2.2.4",
+                  "shortDescription": {
+                  "text": "Interruptions"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/interruptions"
+              },
+              {
+                  "id": "wcag225",
+                  "name": "WCAG 2.2.5",
+                  "shortDescription": {
+                  "text": "Re-authenticating"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/re-authenticating"
+              },
+              {
+                  "id": "wcag226",
+                  "name": "WCAG 2.2.6",
+                  "shortDescription": {
+                  "text": "Timeouts"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/timeouts"
+              },
+              {
+                  "id": "wcag231",
+                  "name": "WCAG 2.3.1",
+                  "shortDescription": {
+                  "text": "Three Flashes or Below Threshold"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold"
+              },
+              {
+                  "id": "wcag232",
+                  "name": "WCAG 2.3.2",
+                  "shortDescription": {
+                  "text": "Three Flashes"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/three-flashes"
+              },
+              {
+                  "id": "wcag233",
+                  "name": "WCAG 2.3.3",
+                  "shortDescription": {
+                  "text": "Animation from Interactions"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions"
+              },
+              {
+                  "id": "wcag241",
+                  "name": "WCAG 2.4.1",
+                  "shortDescription": {
+                  "text": "Bypass Blocks"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks"
+              },
+              {
+                  "id": "wcag2410",
+                  "name": "WCAG 2.4.10",
+                  "shortDescription": {
+                  "text": "Section Headings"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/section-headings"
+              },
+              {
+                  "id": "wcag242",
+                  "name": "WCAG 2.4.2",
+                  "shortDescription": {
+                  "text": "Page Titled"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/page-titled"
+              },
+              {
+                  "id": "wcag243",
+                  "name": "WCAG 2.4.3",
+                  "shortDescription": {
+                  "text": "Focus Order"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/focus-order"
+              },
+              {
+                  "id": "wcag244",
+                  "name": "WCAG 2.4.4",
+                  "shortDescription": {
+                  "text": "Link Purpose (In Context)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context"
+              },
+              {
+                  "id": "wcag245",
+                  "name": "WCAG 2.4.5",
+                  "shortDescription": {
+                  "text": "Multiple Ways"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/multiple-ways"
+              },
+              {
+                  "id": "wcag246",
+                  "name": "WCAG 2.4.6",
+                  "shortDescription": {
+                  "text": "Headings and Labels"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels"
+              },
+              {
+                  "id": "wcag247",
+                  "name": "WCAG 2.4.7",
+                  "shortDescription": {
+                  "text": "Focus Visible"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/focus-visible"
+              },
+              {
+                  "id": "wcag248",
+                  "name": "WCAG 2.4.8",
+                  "shortDescription": {
+                  "text": "Location"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/location"
+              },
+              {
+                  "id": "wcag249",
+                  "name": "WCAG 2.4.9",
+                  "shortDescription": {
+                  "text": "Link Purpose (Link Only)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-link-only"
+              },
+              {
+                  "id": "wcag251",
+                  "name": "WCAG 2.5.1",
+                  "shortDescription": {
+                  "text": "Pointer Gestures"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/pointer-gestures"
+              },
+              {
+                  "id": "wcag252",
+                  "name": "WCAG 2.5.2",
+                  "shortDescription": {
+                  "text": "Pointer Cancellation"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/pointer-cancellation"
+              },
+              {
+                  "id": "wcag253",
+                  "name": "WCAG 2.5.3",
+                  "shortDescription": {
+                  "text": "Label in Name"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/label-in-name"
+              },
+              {
+                  "id": "wcag254",
+                  "name": "WCAG 2.5.4",
+                  "shortDescription": {
+                  "text": "Motion Actuation"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/motion-actuation"
+              },
+              {
+                  "id": "wcag255",
+                  "name": "WCAG 2.5.5",
+                  "shortDescription": {
+                  "text": "Target Size"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/target-size"
+              },
+              {
+                  "id": "wcag256",
+                  "name": "WCAG 2.5.6",
+                  "shortDescription": {
+                  "text": "Concurrent Input Mechanisms"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/concurrent-input-mechanisms"
+              },
+              {
+                  "id": "wcag311",
+                  "name": "WCAG 3.1.1",
+                  "shortDescription": {
+                  "text": "Language of Page"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-page"
+              },
+              {
+                  "id": "wcag312",
+                  "name": "WCAG 3.1.2",
+                  "shortDescription": {
+                  "text": "Language of Parts"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts"
+              },
+              {
+                  "id": "wcag313",
+                  "name": "WCAG 3.1.3",
+                  "shortDescription": {
+                  "text": "Unusual Words"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/unusual-words"
+              },
+              {
+                  "id": "wcag314",
+                  "name": "WCAG 3.1.4",
+                  "shortDescription": {
+                  "text": "Abbreviations"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/abbreviations"
+              },
+              {
+                  "id": "wcag315",
+                  "name": "WCAG 3.1.5",
+                  "shortDescription": {
+                  "text": "Reading Level"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/reading-level"
+              },
+              {
+                  "id": "wcag316",
+                  "name": "WCAG 3.1.6",
+                  "shortDescription": {
+                  "text": "Pronunciation"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/pronunciation"
+              },
+              {
+                  "id": "wcag321",
+                  "name": "WCAG 3.2.1",
+                  "shortDescription": {
+                  "text": "On Focus"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/on-focus"
+              },
+              {
+                  "id": "wcag322",
+                  "name": "WCAG 3.2.2",
+                  "shortDescription": {
+                  "text": "On Input"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/on-input"
+              },
+              {
+                  "id": "wcag323",
+                  "name": "WCAG 3.2.3",
+                  "shortDescription": {
+                  "text": "Consistent Navigation"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/consistent-navigation"
+              },
+              {
+                  "id": "wcag324",
+                  "name": "WCAG 3.2.4",
+                  "shortDescription": {
+                  "text": "Consistent Identification"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/consistent-identification"
+              },
+              {
+                  "id": "wcag325",
+                  "name": "WCAG 3.2.5",
+                  "shortDescription": {
+                  "text": "Change on Request"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/change-on-request"
+              },
+              {
+                  "id": "wcag331",
+                  "name": "WCAG 3.3.1",
+                  "shortDescription": {
+                  "text": "Error Identification"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/error-identification"
+              },
+              {
+                  "id": "wcag332",
+                  "name": "WCAG 3.3.2",
+                  "shortDescription": {
+                  "text": "Labels or Instructions"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions"
+              },
+              {
+                  "id": "wcag333",
+                  "name": "WCAG 3.3.3",
+                  "shortDescription": {
+                  "text": "Error Suggestion"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/error-suggestion"
+              },
+              {
+                  "id": "wcag334",
+                  "name": "WCAG 3.3.4",
+                  "shortDescription": {
+                  "text": "Error Prevention (Legal, Financial, Data)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/error-prevention-legal-financial-data"
+              },
+              {
+                  "id": "wcag335",
+                  "name": "WCAG 3.3.5",
+                  "shortDescription": {
+                  "text": "Help"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/help"
+              },
+              {
+                  "id": "wcag336",
+                  "name": "WCAG 3.3.6",
+                  "shortDescription": {
+                  "text": "Error Prevention (All)"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/error-prevention-all"
+              },
+              {
+                  "id": "wcag411",
+                  "name": "WCAG 4.1.1",
+                  "shortDescription": {
+                  "text": "Parsing"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/parsing"
+              },
+              {
+                  "id": "wcag412",
+                  "name": "WCAG 4.1.2",
+                  "shortDescription": {
+                  "text": "Name, Role, Value"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/name-role-value"
+              },
+              {
+                  "id": "wcag413",
+                  "name": "WCAG 4.1.3",
+                  "shortDescription": {
+                  "text": "Status Messages"
+                  },
+                  "helpUri": "https://www.w3.org/WAI/WCAG21/Understanding/status-messages"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
