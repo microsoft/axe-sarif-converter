@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import * as Sarif from './sarif/sarif-2.1.2';
+import { WcagGuid } from './wcag-taxonomy-provider';
 
 describe('axe-tool-property-provider 2.1', () => {
     describe('getAxeToolProperties21', () => {
@@ -26,7 +27,7 @@ describe('axe-tool-property-provider 2.1', () => {
                         {
                             name: 'WCAG',
                             index: 0,
-                            guid: '',
+                            guid: WcagGuid,
                         },
                     ],
                 },
