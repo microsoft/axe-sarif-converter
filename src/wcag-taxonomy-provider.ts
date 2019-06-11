@@ -1,44 +1,53 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { DictionaryStringTo } from './dictionary-types';
 import * as Sarif from './sarif/sarif-2.1.2';
-import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
+import { WCAGLinkData } from './wcag-link-data';
 
-export function getWcagTaxonomy(sortedWcagTags: string[]): Sarif.ToolComponent {
+export function getWcagTaxonomy(
+    sortedWcagTags: string[],
+    tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData>,
+): Sarif.ToolComponent {
     return {
         name: 'WCAG',
         fullName: 'Web Content Accessibility Guidelines (WCAG) 2.1',
         organization: 'W3C',
         informationUri: 'https://www.w3.org/TR/WCAG21',
         version: '2.1',
-        guid: '',
+        guid: 'ca34e0e1-5faf-4f55-a989-cdae42a98f18',
         isComprehensive: true,
-        taxa: getAllTaxaFromWcagLinkData(sortedWcagTags),
+        taxa: getAllTaxaFromWcagLinkData(sortedWcagTags, tagsToWcagLinkData),
     };
 }
 
 function getAllTaxaFromWcagLinkData(
     sortedWcagTags: string[],
+    tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData>,
 ): Sarif.ToolComponent['taxa'] {
-    var taxa: Sarif.ToolComponent['taxa'] = [];
-    for (let i = 0; i < sortedWcagTags.length; i++) {
-        var tag = sortedWcagTags[i];
-        taxa.push(
-            getIndividualTaxaFromWcagLinkData(tag, axeTagsToWcagLinkData[tag]),
-        );
-    }
-    return taxa;
+    return sortedWcagTags.map(tag =>
+        getIndividualTaxaFromWcagLinkData(tag, tagsToWcagLinkData[tag]),
+    );
 }
 
 function getIndividualTaxaFromWcagLinkData(
     tag: string,
     wcagLinkData: WCAGLinkData,
 ): Sarif.ReportingDescriptor {
-    return {
+    var taxa: Sarif.ReportingDescriptor = {
         id: tag,
         name: wcagLinkData.text,
-        shortDescription: {
-            text: wcagLinkData.title ? wcagLinkData.title : '',
-        },
-        helpUri: wcagLinkData.url ? wcagLinkData.url : '',
     };
+    if (wcagLinkData.title) {
+        taxa = {
+            ...taxa,
+            shortDescription: {
+                text: wcagLinkData.title,
+            },
+        };
+    }
+    if (wcagLinkData.url) {
+        taxa = { ...taxa, helpUri: wcagLinkData.url };
+    }
+
+    return taxa;
 }
