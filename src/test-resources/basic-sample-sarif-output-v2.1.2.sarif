@@ -57,20 +57,6 @@
                     "kinds": [
                       "superset"
                     ]
-                  },
-                  {
-                    "target": {
-                      "id": "wcag112",
-                      "index": 1,
-                      "toolComponent": {
-                        "name": "WCAG",
-                        "index": 0,
-                        "guid": "ca34e0e1-5faf-4f55-a989-cdae42a98f18"
-                      }
-                    },
-                    "kinds": [
-                      "superset"
-                    ]
                   }
                 ]
               }
