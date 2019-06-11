@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { WcagGuid } from './constants';
 import * as Sarif from './sarif/sarif-2.1.2';
 
 export function getAxeToolProperties21(): Sarif.Run['tool'] {
@@ -22,7 +23,7 @@ export function getAxeToolProperties21(): Sarif.Run['tool'] {
                 {
                     name: 'WCAG',
                     index: 0,
-                    guid: '',
+                    guid: WcagGuid,
                 },
             ],
         },

@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+import { WcagGuid } from './constants';
 import * as Sarif from './sarif/sarif-2.1.2';
 
 describe('axe-tool-property-provider 2.1', () => {
@@ -26,7 +27,7 @@ describe('axe-tool-property-provider 2.1', () => {
                         {
                             name: 'WCAG',
                             index: 0,
-                            guid: '',
+                            guid: WcagGuid,
                         },
                     ],
                 },

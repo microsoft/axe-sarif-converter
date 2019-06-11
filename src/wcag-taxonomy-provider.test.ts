@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { WcagGuid } from './constants';
 import { DictionaryStringTo } from './dictionary-types';
 import * as Sarif from './sarif/sarif-2.1.2';
 import { WCAGLinkData } from './wcag-link-data';
@@ -15,7 +16,7 @@ describe('WCAGTaxonomyProvider', () => {
             organization: 'W3C',
             informationUri: 'https://www.w3.org/TR/WCAG21',
             version: '2.1',
-            guid: 'ca34e0e1-5faf-4f55-a989-cdae42a98f18',
+            guid: WcagGuid,
             isComprehensive: true,
             taxa: [],
         };
