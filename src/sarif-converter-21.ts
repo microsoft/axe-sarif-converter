@@ -16,6 +16,9 @@ import { getInvocations21 } from './invocation-provider-21';
 import * as CustomSarif from './sarif/custom-sarif-types-21';
 import * as Sarif from './sarif/sarif-2.1.2';
 import { isNotEmpty } from './string-utils';
+import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
+import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
+import { getWcagTaxonomy } from './wcag-taxonomy-provider';
 
 export function defaultSarifConverter21(): SarifConverter21 {
     return new SarifConverter21(
@@ -26,6 +29,12 @@ export function defaultSarifConverter21(): SarifConverter21 {
     );
 }
 export class SarifConverter21 {
+    private readonly tagsToWcagLinkData: DictionaryStringTo<
+        WCAGLinkData
+    > = axeTagsToWcagLinkData;
+    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
+        this.tagsToWcagLinkData,
+    );
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
         private getAxeProperties: () => Sarif.Run['tool'],
@@ -74,7 +83,12 @@ export class SarifConverter21 {
             // resources: {
             //     rules: this.convertResultsToRules(results),
             // },
-            properties: {},
+            taxonomies: [
+                getWcagTaxonomy(
+                    this.wcagLinkDataIndexer.getSortedWcagTags(),
+                    this.tagsToWcagLinkData,
+                ),
+            ],
         };
 
         if (options && options.testCaseId !== undefined) {
