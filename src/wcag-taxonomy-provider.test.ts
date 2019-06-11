@@ -1,10 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { WcagGuid } from './constants';
 import { DictionaryStringTo } from './dictionary-types';
 import * as Sarif from './sarif/sarif-2.1.2';
 import { WCAGLinkData } from './wcag-link-data';
-import { getWcagTaxonomy } from './wcag-taxonomy-provider';
+import { getWcagTaxonomy, WcagGuid } from './wcag-taxonomy-provider';
 
 describe('WCAGTaxonomyProvider', () => {
     it('creates a Sarif.ToolComponent object with WCAG property information', () => {

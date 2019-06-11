@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { WcagGuid } from './constants';
 import * as Sarif from './sarif/sarif-2.1.2';
+import { WcagGuid } from './wcag-taxonomy-provider';
 
 export function getAxeToolProperties21(): Sarif.Run['tool'] {
     return {
