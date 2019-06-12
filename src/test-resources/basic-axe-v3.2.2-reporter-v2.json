@@ -49,6 +49,9 @@
                     "target": [
                         "html"
                     ],
+                    "xpath": [
+                        "/html"
+                    ],
                     "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element"
                 }
             ]
