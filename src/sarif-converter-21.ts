@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
+import * as Sarif from '../node_modules/@types/sarif/index';
 import { getArtifactProperties } from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
@@ -14,7 +15,6 @@ import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
 import * as CustomSarif from './sarif/custom-sarif-types-21';
-import * as Sarif from './sarif/sarif-2.1.2';
 import { isNotEmpty } from './string-utils';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
