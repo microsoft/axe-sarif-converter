@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
-import * as Sarif from '../node_modules/@types/sarif/index';
+import * as Sarif from 'sarif';
 import { getArtifactProperties } from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
