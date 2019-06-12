@@ -572,7 +572,7 @@ export interface ExternalProperties {
 }
 
 export namespace ExternalProperties {
-    export type version = '2.1.2';
+    export type version = '2.1.0';
 }
 
 /**
