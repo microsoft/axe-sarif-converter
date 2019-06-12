@@ -1,5 +1,5 @@
 {
-    "version": "2.1.2",
+    "version": "2.1.0",
     "runs": [
       {
         "conversion": {
@@ -40,7 +40,7 @@
                 "id": "document-title",
                 "name": "Documents must have <title> element to aid in navigation",
                 "fullDescription": {
-                  "text": "Ensures each HTML document contains a non-empty <title> element"
+                  "text": "Ensures each HTML document contains a non-empty <title> element."
                 },
                 "helpUri": "https://dequeuniversity.com/rules/axe/3.2/document-title?application=axeAPI",
                 "relationships": [
@@ -91,8 +91,8 @@
             "ruleIndex": 0,
             "level": "error",
             "message": {
-              "text": "Fix any of the following: Document does not have a non-empty <title> element",
-              "markdown": "Fix any of the following:\n  Document does not have a non-empty <title> element"
+              "text": "Fix any of the following: Document does not have a non-empty <title> element.",
+              "markdown": "Fix any of the following:\n  Document does not have a non-empty <title> element."
             },
             "locations": [
               {

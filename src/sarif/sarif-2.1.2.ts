@@ -38,7 +38,7 @@ export interface Log {
 }
 
 export namespace Log {
-    export type version = '2.1.2';
+    export type version = '2.1.0';
 }
 
 /**

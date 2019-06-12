@@ -17,7 +17,7 @@
     "targetPageUrl": "https://www.washington.edu/accesscomputing/AU/before.html",
     "targetPageTitle": "Accessible University Demo Site - Inaccessible Version",
     "toolOptions": {
-        "reporter": "2.1.2"
+        "reporter": "v2"
     },
     "violations": [
         {
