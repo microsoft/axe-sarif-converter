@@ -20,6 +20,7 @@
         "@types/jest": "^24.0.12",
         "@types/lodash": "^4.14.123",
         "@types/node": "^11.13.9",
+        "@types/sarif": "^2.1.1",
         "jest": "^24.7.1",
         "jest-circus": "^24.7.1",
         "jest-junit": "^6.4.0",
