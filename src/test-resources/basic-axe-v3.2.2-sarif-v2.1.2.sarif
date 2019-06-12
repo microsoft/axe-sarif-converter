@@ -111,6 +111,10 @@
                   {
                     "fullyQualifiedName": "html",
                     "kind": "element"
+                  },
+                  {
+                    "fullyQualifiedName": "/html",
+                    "kind": "element"
                   }
                 ]
               }
