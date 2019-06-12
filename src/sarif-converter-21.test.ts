@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Sarif from 'sarif';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
@@ -9,7 +10,6 @@ import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
 import { getInvocations21 } from './invocation-provider-21';
 import { SarifConverter21 } from './sarif-converter-21';
-import * as Sarif from './sarif/sarif-2.1.2';
 
 describe('SarifConverter21', () => {
     describe('convert', () => {

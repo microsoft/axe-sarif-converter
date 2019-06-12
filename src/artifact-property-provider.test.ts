@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Sarif from 'sarif';
 import { getArtifactProperties } from './artifact-property-provider';
 import { EnvironmentData } from './environment-data';
-import * as Sarif from './sarif/sarif-2.1.2';
 
 describe('artifact-property-provider', () => {
     describe('getArtifactProperties', () => {
