@@ -9,11 +9,12 @@ import {
     TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
+import * as Sarif from 'sarif';
 import { AxeRawResult } from './axe-raw-result';
 import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
 import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
-import { convertAxeToSarif, sarifReporter } from './index';
+import { convertAxeToSarif, convertAxeToSarif21, sarifReporter } from './index';
 import { Run } from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
 
@@ -70,6 +71,49 @@ describe('axe-sarf-converter integration test', () => {
 
         expect(convertAxeToSarif(axeResultStub)).toBeDefined();
         expect(convertAxeToSarif(axeResultStub)).toEqual(expected);
+    });
+});
+
+describe('axe-sarif-converter integration test', () => {
+    it('returns a valid v2.1 sarif log with expected properties', () => {
+        const axeResultStub: AxeResults = {
+            toolOptions: {} as RunOptions,
+            testEngine: {} as TestEngine,
+            testRunner: {} as TestRunner,
+            testEnvironment: {} as TestEnvironment,
+            url: 'https://example.com',
+            timestamp: '2018-03-23T21:36:58.321Z',
+            passes: [] as Result[],
+            violations: [] as Result[],
+            incomplete: [] as Result[],
+            inapplicable: [] as Result[],
+        };
+
+        const actualResults: Sarif.Log = convertAxeToSarif21(axeResultStub);
+
+        expect(actualResults).toBeDefined();
+        expect(actualResults).toHaveProperty('version');
+        expect(actualResults).toHaveProperty('runs');
+    });
+});
+
+describe('axeToSarifConverter21', () => {
+    it('converts basic AxeResults input to Sarif Log that matches sample output', () => {
+        const axeJSON: string = fs.readFileSync(
+            './src/test-resources/basic-axe-v3.2.2-reporter-v2.json',
+            'utf8',
+        );
+        const testSubject: AxeResults = JSON.parse(axeJSON) as AxeResults;
+
+        const expectedResultsJSON: string = fs.readFileSync(
+            './src/test-resources/basic-axe-v3.2.2-sarif-v2.1.2.sarif',
+            'utf8',
+        );
+        const expectedResults: Sarif.Log = JSON.parse(
+            expectedResultsJSON,
+        ) as Sarif.Log;
+
+        expect(convertAxeToSarif21(testSubject)).toEqual(expectedResults);
     });
 });
 
