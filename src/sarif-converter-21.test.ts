@@ -23,6 +23,7 @@ describe('SarifConverter21', () => {
         const stubToolProperties: Sarif.Run['tool'] = {
             driver: {
                 name: 'stub_tool_property',
+                rules: [],
             },
         };
         const stubInvocations: Sarif.Invocation[] = [
@@ -43,8 +44,8 @@ describe('SarifConverter21', () => {
         const converterPropertyProviderStub: () => Sarif.Run['conversion'] = () => {
             return {} as Sarif.Run['conversion'];
         };
-        const axeToolPropertyProviderStub: () => Sarif.Run['tool'] = () => {
-            return {} as Sarif.Run['tool'];
+        const axeToolPropertyProviderStub: () => Sarif.ToolComponent = () => {
+            return {} as Sarif.ToolComponent;
         };
         const invocationProviderStub: () => Sarif.Invocation[] = () => {
             return stubInvocations;
@@ -55,11 +56,11 @@ describe('SarifConverter21', () => {
 
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
-                () => Sarif.Run['tool']
+                () => Sarif.ToolComponent
             > = Mock.ofInstance(getAxeToolProperties21);
             axeToolPropertyProviderMock
                 .setup(ap => ap())
-                .returns(() => stubToolProperties)
+                .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
             const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
