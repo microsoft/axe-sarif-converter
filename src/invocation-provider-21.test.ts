@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Sarif from 'sarif';
 import { EnvironmentData } from './environment-data';
 import { getInvocations21 } from './invocation-provider-21';
-import * as Sarif from './sarif/sarif-2.1.2';
 
 describe('invocation-provider-2.1', () => {
     describe('getInvocations21', () => {

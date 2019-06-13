@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Sarif from 'sarif';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
-import * as Sarif from './sarif/sarif-2.1.2';
 import { WcagGuid } from './wcag-taxonomy-provider';
 
 describe('axe-tool-property-provider 2.1', () => {
