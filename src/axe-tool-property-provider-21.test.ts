@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
-import { WcagGuid } from './wcag-taxonomy-provider';
+import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
 describe('axe-tool-property-provider 2.1', () => {
     describe('getAxeToolProperties21', () => {
@@ -21,13 +21,7 @@ describe('axe-tool-property-provider 2.1', () => {
                 properties: {
                     'microsoft/qualityDomain': 'Accessibility',
                 },
-                supportedTaxonomies: [
-                    {
-                        name: 'WCAG',
-                        index: 0,
-                        guid: WcagGuid,
-                    },
-                ],
+                supportedTaxonomies: [getWcagTaxonomyReference()],
             };
 
             const actualResults: Sarif.ToolComponent = getAxeToolProperties21();
