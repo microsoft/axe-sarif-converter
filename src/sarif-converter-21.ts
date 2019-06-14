@@ -286,10 +286,10 @@ export class SarifConverter21 {
     ): void {
         if (checkResults.length > 0) {
             const textLines: string[] = [];
-            const richTextLines: string[] = [];
+            const markdownLines: string[] = [];
 
             textLines.push(heading);
-            richTextLines.push(this.escapeForMarkdown(heading));
+            markdownLines.push(this.escapeForMarkdown(heading));
 
             for (const checkResult of checkResults) {
                 const message = isNotEmpty(checkResult.message)
@@ -297,11 +297,13 @@ export class SarifConverter21 {
                     : checkResult.id;
 
                 textLines.push(message + '.');
-                richTextLines.push('- ' + this.escapeForMarkdown(message));
+                markdownLines.push(
+                    '- ' + this.escapeForMarkdown(message) + '.',
+                );
             }
 
             textArray.push(textLines.join(' '));
-            markdownArray.push(richTextLines.join('\n'));
+            markdownArray.push(markdownLines.join('\n'));
         }
     }
 

@@ -69,7 +69,7 @@ describe('ResultToRuleConverter', () => {
                     id: 'stub_id',
                     name: 'stub_help_info',
                     fullDescription: {
-                        text: 'stub_description',
+                        text: 'stub_description.',
                     },
                     helpUri: 'stub_url',
                     relationships: [
@@ -95,7 +95,7 @@ describe('ResultToRuleConverter', () => {
                     id: 'stub_id_2',
                     name: 'stub_help_info_2',
                     fullDescription: {
-                        text: 'stub_description_2',
+                        text: 'stub_description_2.',
                     },
                     helpUri: 'stub_url_2',
                     relationships: [],
