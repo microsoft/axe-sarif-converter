@@ -109,15 +109,13 @@ export class SarifConverter21 {
     }
 
     private convertResultsToRules(results: DecoratedAxeResults) {
-        const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter();
-        const rules = resultToRuleConverter.getRulePropertiesFromResults(
+        const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
             results,
             this.wcagLinkDataIndexer.getSortedWcagTags(),
             this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
         );
         this.ruleIdsToRuleIndices = resultToRuleConverter.getRuleIdsToRuleIndices();
-
-        return rules;
+        return resultToRuleConverter.getRulePropertiesFromResults();
     }
 
     private convertResults(
