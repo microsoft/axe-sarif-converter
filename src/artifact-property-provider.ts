@@ -7,14 +7,20 @@ export function getArtifactProperties(
     environmentData: EnvironmentData,
 ): Sarif.Artifact {
     return {
-        location: {
-            uri: environmentData.targetPageUrl,
-            index: 0,
-        },
+        location: getArtifactLocation(environmentData),
         sourceLanguage: 'html',
         roles: ['analysisTarget'],
         description: {
             text: environmentData.targetPageTitle,
         },
+    };
+}
+
+export function getArtifactLocation(
+    environmentData: EnvironmentData,
+): Sarif.Artifact['location'] {
+    return {
+        uri: environmentData.targetPageUrl,
+        index: 0,
     };
 }

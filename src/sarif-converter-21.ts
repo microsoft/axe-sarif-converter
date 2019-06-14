@@ -2,7 +2,10 @@
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
-import { getArtifactProperties } from './artifact-property-provider';
+import {
+    getArtifactLocation,
+    getArtifactProperties,
+} from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
@@ -117,27 +120,27 @@ export class SarifConverter21 {
         properties: DictionaryStringTo<string>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
+        const environmentData: EnvironmentData = getEnvironmentDataFromResults(
+            results,
+        );
 
         this.convertRuleResults(
             resultArray,
             results.violations,
             CustomSarif.Result.level.error,
-            results.targetPageUrl,
-            properties,
+            environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.passes,
             CustomSarif.Result.level.pass,
-            results.targetPageUrl,
-            properties,
+            environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.incomplete,
             CustomSarif.Result.level.open,
-            results.targetPageUrl,
-            properties,
+            environmentData,
         );
         this.convertRuleResultsWithoutNodes(
             resultArray,
@@ -153,8 +156,7 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
         level: CustomSarif.Result.level,
-        targetPageUrl: string,
-        properties: DictionaryStringTo<string>,
+        environmentData: EnvironmentData,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -162,8 +164,7 @@ export class SarifConverter21 {
                     resultArray,
                     ruleResult,
                     level,
-                    targetPageUrl,
-                    properties,
+                    environmentData,
                 );
             }
         }
@@ -173,46 +174,52 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResult: DecoratedAxeResult,
         level: CustomSarif.Result.level,
-        targetPageUrl: string,
-        properties: DictionaryStringTo<string>,
+        environmentData: EnvironmentData,
     ): void {
-        const partialFingerprints: DictionaryStringTo<
-            string
-        > = this.getPartialFingerprintsFromRule(ruleResult);
-
         for (const node of ruleResult.nodes) {
-            const selector = node.target.join(';');
             resultArray.push({
                 ruleId: ruleResult.id,
+                ruleIndex: this.ruleIdsToRuleIndices[ruleResult.id],
                 // level: level,
                 message: this.convertMessage(node, level),
                 locations: [
                     {
                         physicalLocation: {
-                            // fileLocation: {
-                            //     uri: targetPageUrl,
-                            // },
-                        },
-                        // fullyQualifiedLogicalName: selector,
-                        annotations: [
-                            {
+                            artifactLocation: getArtifactLocation(
+                                environmentData,
+                            ),
+                            region: {
                                 snippet: {
                                     text: node.html,
                                 },
                             },
-                        ],
+                        },
+                        logicalLocations: this.getLogicalLocations(node),
                     },
                 ],
-                properties: {
-                    ...properties,
-                    tags: ['Accessibility'],
-                },
-                partialFingerprints: {
-                    fullyQualifiedLogicalName: selector,
-                    ...partialFingerprints,
-                },
             });
         }
+    }
+
+    private getLogicalLocations(node: Axe.NodeResult): Sarif.LogicalLocation[] {
+        const selector: string = node.target.join(';');
+        // let logicalLocations: Sarif.LogicalLocation[] = [
+        return [this.formatLogicalLocation(selector)];
+        // if(node.xpath) {
+        //     let nodeXpath: string = node.xpath.join(';');
+        //     logicalLocations.push({
+        //         fullyQualifiedName: nodeXpath,
+        //         kind: 'element'
+        //     })
+        // }
+        // return logicalLocations;
+    }
+
+    private formatLogicalLocation(name: string): Sarif.LogicalLocation {
+        return {
+            fullyQualifiedName: name,
+            kind: 'element',
+        };
     }
 
     private getPartialFingerprintsFromRule(
@@ -228,7 +235,7 @@ export class SarifConverter21 {
         level: CustomSarif.Result.level,
     ): Sarif.Message {
         const textArray: string[] = [];
-        const richTextArray: string[] = [];
+        const markdownArray: string[] = [];
 
         if (level === CustomSarif.Result.level.error) {
             const allAndNone = node.all.concat(node.none);
@@ -236,13 +243,13 @@ export class SarifConverter21 {
                 'Fix all of the following:',
                 allAndNone,
                 textArray,
-                richTextArray,
+                markdownArray,
             );
             this.convertMessageChecks(
                 'Fix any of the following:',
                 node.any,
                 textArray,
-                richTextArray,
+                markdownArray,
             );
         } else {
             const allNodes = node.all.concat(node.none).concat(node.any);
@@ -250,13 +257,13 @@ export class SarifConverter21 {
                 'The following tests passed:',
                 allNodes,
                 textArray,
-                richTextArray,
+                markdownArray,
             );
         }
 
         return {
             text: textArray.join(' '),
-            // richText: richTextArray.join('\n\n'),
+            markdown: markdownArray.join('\n\n'),
         };
     }
 
@@ -264,7 +271,7 @@ export class SarifConverter21 {
         heading: string,
         checkResults: Axe.CheckResult[],
         textArray: string[],
-        richTextArray: string[],
+        markdownArray: string[],
     ): void {
         if (checkResults.length > 0) {
             const textLines: string[] = [];
@@ -283,7 +290,7 @@ export class SarifConverter21 {
             }
 
             textArray.push(textLines.join(' '));
-            richTextArray.push(richTextLines.join('\n'));
+            markdownArray.push(richTextLines.join('\n'));
         }
     }
 
