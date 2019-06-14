@@ -10,9 +10,6 @@ export function getArtifactProperties(
         location: getArtifactLocation(environmentData),
         sourceLanguage: 'html',
         roles: ['analysisTarget'],
-        description: {
-            text: environmentData.targetPageTitle,
-        },
     };
 }
 
