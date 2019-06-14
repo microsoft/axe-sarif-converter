@@ -37,8 +37,6 @@ export class SarifConverter21 {
         this.tagsToWcagLinkData,
     );
 
-    private ruleIdsToRuleIndices: DictionaryStringTo<number> = {};
-
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
         private getAxeProperties: () => Sarif.ToolComponent,
@@ -72,12 +70,18 @@ export class SarifConverter21 {
             };
         }
 
+        const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
+            results,
+            this.wcagLinkDataIndexer.getSortedWcagTags(),
+            this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
+        );
+
         const run: Sarif.Run = {
             conversion: this.getConverterToolProperties(),
             tool: {
                 driver: {
                     ...this.getAxeProperties(),
-                    rules: this.convertResultsToRules(results),
+                    rules: resultToRuleConverter.getRulePropertiesFromResults(),
                 },
             },
             invocations: this.invocationConverter(
@@ -106,16 +110,6 @@ export class SarifConverter21 {
         }
 
         return run;
-    }
-
-    private convertResultsToRules(results: DecoratedAxeResults) {
-        const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
-            results,
-            this.wcagLinkDataIndexer.getSortedWcagTags(),
-            this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
-        );
-        this.ruleIdsToRuleIndices = resultToRuleConverter.getRuleIdsToRuleIndices();
-        return resultToRuleConverter.getRulePropertiesFromResults();
     }
 
     private convertResults(
