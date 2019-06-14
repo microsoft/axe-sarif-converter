@@ -5,6 +5,15 @@ import { DictionaryStringTo } from './dictionary-types';
 import { WCAGLinkData } from './wcag-link-data';
 
 export const WcagGuid = 'ca34e0e1-5faf-4f55-a989-cdae42a98f18';
+
+export function getWcagTaxonomyReference(): Sarif.ToolComponentReference {
+    return {
+        name: 'WCAG',
+        index: 0,
+        guid: WcagGuid,
+    };
+}
+
 export function getWcagTaxonomy(
     sortedWcagTags: string[],
     tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData>,

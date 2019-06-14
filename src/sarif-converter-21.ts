@@ -14,6 +14,7 @@ import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
+import { ResultToRuleConverter } from './result-to-rule-converter';
 import * as CustomSarif from './sarif/custom-sarif-types-21';
 import { isNotEmpty } from './string-utils';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
@@ -35,9 +36,10 @@ export class SarifConverter21 {
     private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
         this.tagsToWcagLinkData,
     );
+
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
-        private getAxeProperties: () => Sarif.Run['tool'],
+        private getAxeProperties: () => Sarif.ToolComponent,
         private invocationConverter: (
             environmentData: EnvironmentData,
         ) => Sarif.Invocation[],
@@ -68,9 +70,20 @@ export class SarifConverter21 {
             };
         }
 
+        const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
+            results,
+            this.wcagLinkDataIndexer.getSortedWcagTags(),
+            this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
+        );
+
         const run: Sarif.Run = {
             conversion: this.getConverterToolProperties(),
-            tool: this.getAxeProperties(),
+            tool: {
+                driver: {
+                    ...this.getAxeProperties(),
+                    rules: resultToRuleConverter.getRulePropertiesFromResults(),
+                },
+            },
             invocations: this.invocationConverter(
                 getEnvironmentDataFromResults(results),
             ),
@@ -80,9 +93,6 @@ export class SarifConverter21 {
                 ),
             ],
             results: this.convertResults(results, properties),
-            // resources: {
-            //     rules: this.convertResultsToRules(results),
-            // },
             taxonomies: [
                 getWcagTaxonomy(
                     this.wcagLinkDataIndexer.getSortedWcagTags(),
@@ -302,50 +312,6 @@ export class SarifConverter21 {
                 // partialFingerprints: partialFingerprints,
                 // });
             }
-        }
-    }
-
-    private convertResultsToRules(
-        results: DecoratedAxeResults,
-    ): DictionaryStringTo<Sarif.ReportingDescriptor> {
-        const rulesDictionary: DictionaryStringTo<
-            Sarif.ReportingDescriptor
-        > = {};
-
-        this.convertRuleResultsToRules(rulesDictionary, results.violations);
-        this.convertRuleResultsToRules(rulesDictionary, results.passes);
-        this.convertRuleResultsToRules(rulesDictionary, results.inapplicable);
-        this.convertRuleResultsToRules(rulesDictionary, results.incomplete);
-
-        return rulesDictionary;
-    }
-
-    private convertRuleResultsToRules(
-        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
-        ruleResults: DecoratedAxeResult[],
-    ): void {
-        if (ruleResults) {
-            for (const ruleResult of ruleResults) {
-                this.convertRuleResultToRule(rulesDictionary, ruleResult);
-            }
-        }
-    }
-
-    private convertRuleResultToRule(
-        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
-        ruleResult: DecoratedAxeResult,
-    ): void {
-        if (!rulesDictionary.hasOwnProperty(ruleResult.id)) {
-            const rule: Sarif.ReportingDescriptor = {
-                id: ruleResult.id,
-                name: ruleResult.help,
-                fullDescription: {
-                    text: ruleResult.description,
-                },
-                helpUri: ruleResult.helpUrl,
-                properties: {},
-            };
-            rulesDictionary[ruleResult.id] = rule;
         }
     }
 }
