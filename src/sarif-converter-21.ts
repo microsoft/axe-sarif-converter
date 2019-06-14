@@ -95,7 +95,11 @@ export class SarifConverter21 {
                     getEnvironmentDataFromResults(results),
                 ),
             ],
-            results: this.convertResults(results, properties),
+            results: this.convertResults(
+                results,
+                properties,
+                resultToRuleConverter.getRuleIdsToRuleIndices(),
+            ),
             taxonomies: [
                 getWcagTaxonomy(
                     this.wcagLinkDataIndexer.getSortedWcagTags(),
@@ -118,6 +122,7 @@ export class SarifConverter21 {
     private convertResults(
         results: DecoratedAxeResults,
         properties: DictionaryStringTo<string>,
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
         const environmentData: EnvironmentData = getEnvironmentDataFromResults(
@@ -127,18 +132,21 @@ export class SarifConverter21 {
         this.convertRuleResults(
             resultArray,
             results.violations,
+            ruleIdsToRuleIndices,
             CustomSarif.Result.level.error,
             environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.passes,
+            ruleIdsToRuleIndices,
             CustomSarif.Result.level.pass,
             environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.incomplete,
+            ruleIdsToRuleIndices,
             CustomSarif.Result.level.open,
             environmentData,
         );
@@ -155,6 +163,7 @@ export class SarifConverter21 {
     private convertRuleResults(
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
         level: CustomSarif.Result.level,
         environmentData: EnvironmentData,
     ): void {
@@ -163,6 +172,7 @@ export class SarifConverter21 {
                 this.convertRuleResult(
                     resultArray,
                     ruleResult,
+                    ruleIdsToRuleIndices,
                     level,
                     environmentData,
                 );
@@ -173,13 +183,14 @@ export class SarifConverter21 {
     private convertRuleResult(
         resultArray: Sarif.Result[],
         ruleResult: DecoratedAxeResult,
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
         level: CustomSarif.Result.level,
         environmentData: EnvironmentData,
     ): void {
         for (const node of ruleResult.nodes) {
             resultArray.push({
                 ruleId: ruleResult.id,
-                ruleIndex: this.ruleIdsToRuleIndices[ruleResult.id],
+                ruleIndex: ruleIdsToRuleIndices[ruleResult.id],
                 // level: level,
                 message: this.convertMessage(node, level),
                 locations: [
