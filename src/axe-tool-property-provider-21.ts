@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
-import { WcagGuid } from './wcag-taxonomy-provider';
+import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
 export function getAxeToolProperties21(): Sarif.ToolComponent {
     return {
@@ -18,14 +18,6 @@ export function getAxeToolProperties21(): Sarif.ToolComponent {
         properties: {
             'microsoft/qualityDomain': 'Accessibility',
         },
-        supportedTaxonomies: [getAxeToolSupportedTaxonomy()],
-    };
-}
-
-export function getAxeToolSupportedTaxonomy(): Sarif.ToolComponentReference {
-    return {
-        name: 'WCAG',
-        index: 0,
-        guid: WcagGuid,
+        supportedTaxonomies: [getWcagTaxonomyReference()],
     };
 }

@@ -1,12 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
-import { getAxeToolSupportedTaxonomy } from './axe-tool-property-provider-21';
 import {
     DecoratedAxeResult,
     DecoratedAxeResults,
 } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
+import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
 export class ResultToRuleConverter {
     private readonly ruleIdsToRuleIndices: DictionaryStringTo<number> = {};
@@ -121,7 +121,7 @@ export class ResultToRuleConverter {
                     target: {
                         id: tag,
                         index: wcagTagsToTaxaIndices[tag],
-                        toolComponent: getAxeToolSupportedTaxonomy(),
+                        toolComponent: getWcagTaxonomyReference(),
                     },
                     kinds: ['superset'],
                 };

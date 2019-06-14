@@ -2,13 +2,13 @@
 // Licensed under the MIT License.
 import { TagValue } from 'axe-core';
 import * as Sarif from 'sarif';
-import { getAxeToolSupportedTaxonomy } from './axe-tool-property-provider-21';
 import {
     DecoratedAxeResult,
     DecoratedAxeResults,
 } from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { ResultToRuleConverter } from './result-to-rule-converter';
+import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
 describe('ResultToRuleConverter', () => {
     let resultToRuleConverter: ResultToRuleConverter;
@@ -77,7 +77,7 @@ describe('ResultToRuleConverter', () => {
                             target: {
                                 id: 'stub_tag_1',
                                 index: 0,
-                                toolComponent: getAxeToolSupportedTaxonomy(),
+                                toolComponent: getWcagTaxonomyReference(),
                             },
                             kinds: ['superset'],
                         },
@@ -85,7 +85,7 @@ describe('ResultToRuleConverter', () => {
                             target: {
                                 id: 'stub_tag_3',
                                 index: 14,
-                                toolComponent: getAxeToolSupportedTaxonomy(),
+                                toolComponent: getWcagTaxonomyReference(),
                             },
                             kinds: ['superset'],
                         },
