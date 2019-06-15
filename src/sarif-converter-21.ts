@@ -214,16 +214,15 @@ export class SarifConverter21 {
 
     private getLogicalLocations(node: Axe.NodeResult): Sarif.LogicalLocation[] {
         const selector: string = node.target.join(';');
-        // let logicalLocations: Sarif.LogicalLocation[] = [
-        return [this.formatLogicalLocation(selector)];
-        // if(node.xpath) {
-        //     let nodeXpath: string = node.xpath.join(';');
-        //     logicalLocations.push({
-        //         fullyQualifiedName: nodeXpath,
-        //         kind: 'element'
-        //     })
-        // }
-        // return logicalLocations;
+        let logicalLocations: Sarif.LogicalLocation[] = [
+            this.formatLogicalLocation(selector),
+        ];
+        // casting node as "any" works around axe-core/#1636
+        if ((node as any).xpath) {
+            let nodeXpath: string = (node as any).xpath.join(';');
+            logicalLocations.push(this.formatLogicalLocation(nodeXpath));
+        }
+        return logicalLocations;
     }
 
     private formatLogicalLocation(name: string): Sarif.LogicalLocation {
