@@ -153,8 +153,8 @@ export class SarifConverter21 {
         this.convertRuleResultsWithoutNodes(
             resultArray,
             results.inapplicable,
+            ruleIdsToRuleIndices,
             CustomSarif.Result.level.notApplicable,
-            properties,
         );
 
         return resultArray;
@@ -232,14 +232,6 @@ export class SarifConverter21 {
         };
     }
 
-    private getPartialFingerprintsFromRule(
-        ruleResult: DecoratedAxeResult,
-    ): DictionaryStringTo<string> {
-        return {
-            ruleId: ruleResult.id,
-        };
-    }
-
     private convertMessage(
         node: Axe.NodeResult,
         level: CustomSarif.Result.level,
@@ -313,23 +305,19 @@ export class SarifConverter21 {
     private convertRuleResultsWithoutNodes(
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
         level: CustomSarif.Result.level,
-        properties: DictionaryStringTo<string>,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
-                const partialFingerprints = this.getPartialFingerprintsFromRule(
-                    ruleResult,
-                );
-                // resultArray.push({
-                // ruleId: ruleResult.id,
-                // level: level,
-                // properties: {
-                // ...properties,
-                // tags: ['Accessibility'],
-                // },
-                // partialFingerprints: partialFingerprints,
-                // });
+                resultArray.push({
+                    ruleId: ruleResult.id,
+                    ruleIndex: ruleIdsToRuleIndices[ruleResult.id],
+                    // level: level,
+                    message: {
+                        text: '',
+                    },
+                });
             }
         }
     }
