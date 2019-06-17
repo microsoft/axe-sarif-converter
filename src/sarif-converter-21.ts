@@ -18,7 +18,6 @@ import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
 import { ResultToRuleConverter } from './result-to-rule-converter';
-import * as CustomSarif from './sarif/custom-sarif-types-21';
 import { isNotEmpty } from './string-utils';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
@@ -56,7 +55,7 @@ export class SarifConverter21 {
         options: ConverterOptions,
     ): Sarif.Log {
         return {
-            version: CustomSarif.SarifLogVersion21.version,
+            version: '2.1.0',
             runs: [this.convertRun(results, options)],
         };
     }
@@ -113,28 +112,28 @@ export class SarifConverter21 {
             resultArray,
             results.violations,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.kind.fail,
+            'fail',
             environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.passes,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.kind.pass,
+            'pass',
             environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.incomplete,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.kind.open,
+            'open',
             environmentData,
         );
         this.convertRuleResultsWithoutNodes(
             resultArray,
             results.inapplicable,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.kind.notApplicable,
+            'notApplicable',
         );
 
         return resultArray;
@@ -144,7 +143,7 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
-        kind: CustomSarif.Result.kind,
+        kind: Sarif.Result.kind,
         environmentData: EnvironmentData,
     ): void {
         if (ruleResults) {
@@ -164,7 +163,7 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResult: DecoratedAxeResult,
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
-        kind: CustomSarif.Result.kind,
+        kind: Sarif.Result.kind,
         environmentData: EnvironmentData,
     ): void {
         for (const node of ruleResult.nodes) {
@@ -215,12 +214,12 @@ export class SarifConverter21 {
 
     private convertMessage(
         node: Axe.NodeResult,
-        kind: CustomSarif.Result.kind,
+        kind: Sarif.Result.kind,
     ): Sarif.Message {
         const textArray: string[] = [];
         const markdownArray: string[] = [];
 
-        if (kind === CustomSarif.Result.kind.fail) {
+        if (kind === 'fail') {
             const allAndNone = node.all.concat(node.none);
             this.convertMessageChecks(
                 'Fix all of the following:',
@@ -287,7 +286,7 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
-        kind: CustomSarif.Result.kind,
+        kind: Sarif.Result.kind,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -304,9 +303,7 @@ export class SarifConverter21 {
         }
     }
 
-    private getResultLevelFromResultKind(kind: CustomSarif.Result.kind) {
-        return kind === CustomSarif.Result.kind.fail
-            ? CustomSarif.Result.level.error
-            : CustomSarif.Result.level.none;
+    private getResultLevelFromResultKind(kind: Sarif.Result.kind) {
+        return kind === 'fail' ? 'error' : 'none';
     }
 }
