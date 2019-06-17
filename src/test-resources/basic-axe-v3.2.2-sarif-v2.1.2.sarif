@@ -86,6 +86,7 @@
           {
             "ruleId": "document-title",
             "ruleIndex": 0,
+            "kind": "fail",
             "level": "error",
             "message": {
               "text": "Fix any of the following: Document does not have a non-empty <title> element.",
