@@ -195,7 +195,7 @@ export class SarifConverter21 {
 
     private getLogicalLocations(node: Axe.NodeResult): Sarif.LogicalLocation[] {
         const selector: string = node.target.join(';');
-        let logicalLocations: Sarif.LogicalLocation[] = [
+        const logicalLocations: Sarif.LogicalLocation[] = [
             this.formatLogicalLocation(selector),
         ];
         // casting node as "any" works around axe-core/#1636
@@ -297,7 +297,7 @@ export class SarifConverter21 {
                     kind: kind,
                     level: this.getResultLevelFromResultKind(kind),
                     message: {
-                        text: '',
+                        text: ruleResult.description,
                     },
                 });
             }
