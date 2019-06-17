@@ -133,28 +133,28 @@ export class SarifConverter21 {
             resultArray,
             results.violations,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.level.error,
+            CustomSarif.Result.kind.fail,
             environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.passes,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.level.pass,
+            CustomSarif.Result.kind.pass,
             environmentData,
         );
         this.convertRuleResults(
             resultArray,
             results.incomplete,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.level.open,
+            CustomSarif.Result.kind.open,
             environmentData,
         );
         this.convertRuleResultsWithoutNodes(
             resultArray,
             results.inapplicable,
             ruleIdsToRuleIndices,
-            CustomSarif.Result.level.notApplicable,
+            CustomSarif.Result.kind.notApplicable,
         );
 
         return resultArray;
@@ -164,7 +164,7 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
-        level: CustomSarif.Result.level,
+        kind: CustomSarif.Result.kind,
         environmentData: EnvironmentData,
     ): void {
         if (ruleResults) {
@@ -173,7 +173,7 @@ export class SarifConverter21 {
                     resultArray,
                     ruleResult,
                     ruleIdsToRuleIndices,
-                    level,
+                    kind,
                     environmentData,
                 );
             }
@@ -184,15 +184,16 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResult: DecoratedAxeResult,
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
-        level: CustomSarif.Result.level,
+        kind: CustomSarif.Result.kind,
         environmentData: EnvironmentData,
     ): void {
         for (const node of ruleResult.nodes) {
             resultArray.push({
                 ruleId: ruleResult.id,
                 ruleIndex: ruleIdsToRuleIndices[ruleResult.id],
-                // level: level,
-                message: this.convertMessage(node, level),
+                kind: kind,
+                level: this.getResultLevelFromResultKind(kind),
+                message: this.convertMessage(node, kind),
                 locations: [
                     {
                         physicalLocation: {
@@ -234,12 +235,12 @@ export class SarifConverter21 {
 
     private convertMessage(
         node: Axe.NodeResult,
-        level: CustomSarif.Result.level,
+        kind: CustomSarif.Result.kind,
     ): Sarif.Message {
         const textArray: string[] = [];
         const markdownArray: string[] = [];
 
-        if (level === CustomSarif.Result.level.error) {
+        if (kind === CustomSarif.Result.kind.fail) {
             const allAndNone = node.all.concat(node.none);
             this.convertMessageChecks(
                 'Fix all of the following:',
@@ -306,19 +307,26 @@ export class SarifConverter21 {
         resultArray: Sarif.Result[],
         ruleResults: DecoratedAxeResult[],
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
-        level: CustomSarif.Result.level,
+        kind: CustomSarif.Result.kind,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
                 resultArray.push({
                     ruleId: ruleResult.id,
                     ruleIndex: ruleIdsToRuleIndices[ruleResult.id],
-                    // level: level,
+                    kind: kind,
+                    level: this.getResultLevelFromResultKind(kind),
                     message: {
                         text: '',
                     },
                 });
             }
         }
+    }
+
+    private getResultLevelFromResultKind(kind: CustomSarif.Result.kind) {
+        return kind === CustomSarif.Result.kind.fail
+            ? CustomSarif.Result.level.error
+            : CustomSarif.Result.level.none;
     }
 }

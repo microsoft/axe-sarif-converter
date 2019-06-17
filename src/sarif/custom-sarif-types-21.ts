@@ -5,13 +5,20 @@ export const enum SarifLogVersion21 {
 }
 
 export namespace Result {
-    export const enum level {
+    export const enum kind {
         notApplicable = 'notApplicable',
         pass = 'pass',
+        fail = 'fail',
+        review = 'review',
+        open = 'open',
+        informational = 'informational',
+    }
+
+    export const enum level {
+        none = 'none',
         note = 'note',
         warning = 'warning',
         error = 'error',
-        open = 'open',
     }
 }
 
