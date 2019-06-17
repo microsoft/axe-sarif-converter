@@ -1,11 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { TagValue } from 'axe-core';
+import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
-import {
-    DecoratedAxeResult,
-    DecoratedAxeResults,
-} from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { ResultToRuleConverter } from './result-to-rule-converter';
 import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
@@ -13,8 +9,8 @@ import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 describe('ResultToRuleConverter', () => {
     let resultToRuleConverter: ResultToRuleConverter;
     beforeAll(() => {
-        const stub_results: DecoratedAxeResults = {
-            passes: [] as DecoratedAxeResult[],
+        const stub_results: Axe.AxeResults = {
+            passes: [] as Axe.Result[],
             violations: [
                 {
                     id: 'stub_id',
@@ -22,14 +18,14 @@ describe('ResultToRuleConverter', () => {
                         'stub_tag_1',
                         'stub_tag_3',
                         'a_tag',
-                    ] as unknown) as TagValue[],
+                    ] as unknown) as Axe.TagValue[],
                     description: 'stub_description',
                     help: 'stub_help_info',
                     helpUrl: 'stub_url',
                 },
                 {
                     id: 'stub_id_2',
-                    tags: (['tag_2'] as unknown) as TagValue[],
+                    tags: (['tag_2'] as unknown) as Axe.TagValue[],
                     description: 'stub_description_2',
                     help: 'stub_help_info_2',
                     helpUrl: 'stub_url_2',
@@ -37,18 +33,17 @@ describe('ResultToRuleConverter', () => {
                 // repeating the same rule id to test that rules are added only once
                 {
                     id: 'stub_id_2',
-                    tags: (['tag_2'] as unknown) as TagValue[],
+                    tags: (['tag_2'] as unknown) as Axe.TagValue[],
                     description: 'stub_description_2',
                     help: 'stub_help_info_2',
                     helpUrl: 'stub_url_2',
                 },
-            ] as DecoratedAxeResult[],
-            inapplicable: [] as DecoratedAxeResult[],
-            incomplete: [] as DecoratedAxeResult[],
+            ] as Axe.Result[],
+            inapplicable: [] as Axe.Result[],
+            incomplete: [] as Axe.Result[],
             timestamp: 'stub_timestamp',
-            targetPageUrl: 'stub_url',
-            targetPageTitle: 'stub_title',
-        };
+            url: 'stub_url',
+        } as Axe.AxeResults;
         const stub_tags = ['stub_tag_1', 'stub_tag_2', 'stub_tag_3'];
         const stub_tags_to_indices = {
             stub_tag_1: 0,

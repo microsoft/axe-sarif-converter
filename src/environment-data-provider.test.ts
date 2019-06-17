@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { DecoratedAxeResults } from './decorated-axe-results';
+import * as Axe from 'axe-core';
 import { EnvironmentData } from './environment-data';
 import {
     getEnvironmentDataFromEnvironment,
@@ -12,22 +12,23 @@ describe('environment-data-provider', () => {
         it('returns an EnvironmentData object from environment data extracted from AxeResults', () => {
             const stubTimestamp: string = 'stub_timestamp';
             const stubTargetPageUrl: string = 'https://example.com';
-            const stubTargetPageTitle: string = 'stub_url';
 
-            const stubAxeResults: DecoratedAxeResults = {
-                targetPageUrl: stubTargetPageUrl,
+            const stubAxeResults: Axe.AxeResults = {
+                url: stubTargetPageUrl,
                 timestamp: stubTimestamp,
-                targetPageTitle: stubTargetPageTitle,
                 passes: [],
                 incomplete: [],
                 violations: [],
                 inapplicable: [],
+                toolOptions: null!,
+                testEngine: null!,
+                testRunner: null!,
+                testEnvironment: null!,
             };
 
             const expectedResults: EnvironmentData = {
                 timestamp: stubTimestamp,
                 targetPageUrl: stubTargetPageUrl,
-                targetPageTitle: stubTargetPageTitle,
             };
 
             const actualResults = getEnvironmentDataFromResults(stubAxeResults);

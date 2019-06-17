@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Axe from 'axe-core';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
-import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
 import { getInvocations } from './invocation-provider';
 import { SarifConverter } from './sarif-converter';
@@ -19,11 +19,9 @@ describe('SarifConverter', () => {
         ];
         const stubTimestamp: string = 'stub_timestamp';
         const stubTargetPageUrl: string = 'stub_url';
-        const stubTargetPageTitle: string = 'stub_title';
         const stubEnvironmentData: EnvironmentData = {
             timestamp: stubTimestamp,
             targetPageUrl: stubTargetPageUrl,
-            targetPageTitle: stubTargetPageTitle,
         };
         const axeToolPropertyProviderStub: () => Sarif.Run['tool'] = () => {
             return {} as Sarif.Run['tool'];
@@ -41,7 +39,7 @@ describe('SarifConverter', () => {
                 .returns(() => stubToolProperties)
                 .verifiable(Times.once());
 
-            const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
+            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter(
@@ -62,15 +60,18 @@ describe('SarifConverter', () => {
             );
         });
         it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
-            const stubResults: DecoratedAxeResults = {
+            const stubResults: Axe.AxeResults = {
                 timestamp: stubTimestamp,
-                targetPageUrl: stubTargetPageUrl,
-                targetPageTitle: stubTargetPageTitle,
+                url: stubTargetPageUrl,
                 passes: [],
                 violations: [],
                 inapplicable: [],
                 incomplete: [],
-            };
+                toolOptions: null!,
+                testEngine: null!,
+                testRunner: null!,
+                testEnvironment: null!,
+            } as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const invocationProviderMock: IMock<
