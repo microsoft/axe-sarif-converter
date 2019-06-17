@@ -24,9 +24,6 @@ describe('artifact-property-provider', () => {
                 },
                 sourceLanguage: 'html',
                 roles: ['analysisTarget'],
-                description: {
-                    text: targetPageTitle,
-                },
             };
 
             const actualResults: Sarif.Artifact = getArtifactProperties(

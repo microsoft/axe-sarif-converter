@@ -79,20 +79,18 @@
             "sourceLanguage": "html",
             "roles": [
               "analysisTarget"
-            ],
-            "description": {
-              "text": "Accessible University Demo Site - Inaccessible Version"
-            }
+            ]
           }
         ],
         "results": [
           {
             "ruleId": "document-title",
             "ruleIndex": 0,
+            "kind": "fail",
             "level": "error",
             "message": {
               "text": "Fix any of the following: Document does not have a non-empty <title> element.",
-              "markdown": "Fix any of the following:\n  Document does not have a non-empty <title> element."
+              "markdown": "Fix any of the following:\n- Document does not have a non-empty &lt;title> element."
             },
             "locations": [
               {

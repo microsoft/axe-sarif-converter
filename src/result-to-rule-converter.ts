@@ -96,7 +96,7 @@ export class ResultToRuleConverter {
                 id: ruleResult.id,
                 name: ruleResult.help,
                 fullDescription: {
-                    text: ruleResult.description,
+                    text: ruleResult.description + '.',
                 },
                 helpUri: ruleResult.helpUrl,
                 relationships: this.getRelationshipsFromResultTags(
