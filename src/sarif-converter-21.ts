@@ -65,21 +65,13 @@ export class SarifConverter21 {
         results: DecoratedAxeResults,
         options: ConverterOptions,
     ): Sarif.Run {
-        let properties: DictionaryStringTo<string> = {};
-
-        if (options && options.scanName !== undefined) {
-            properties = {
-                scanName: options.scanName,
-            };
-        }
-
         const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
             results,
             this.wcagLinkDataIndexer.getSortedWcagTags(),
             this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
         );
 
-        const run: Sarif.Run = {
+        return {
             conversion: this.getConverterToolProperties(),
             tool: {
                 driver: {
@@ -97,7 +89,6 @@ export class SarifConverter21 {
             ],
             results: this.convertResults(
                 results,
-                properties,
                 resultToRuleConverter.getRuleIdsToRuleIndices(),
             ),
             taxonomies: [
@@ -107,21 +98,10 @@ export class SarifConverter21 {
                 ),
             ],
         };
-
-        if (options && options.testCaseId !== undefined) {
-            run.properties!.testCaseId = options.testCaseId;
-        }
-
-        if (options && options.scanId !== undefined) {
-            // run.logicalId = options.scanId;
-        }
-
-        return run;
     }
 
     private convertResults(
         results: DecoratedAxeResults,
-        properties: DictionaryStringTo<string>,
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
