@@ -74,7 +74,7 @@ describe('axe-sarf-converter integration test', () => {
     });
 });
 
-describe('axe-sarif-converter integration test', () => {
+describe('axe-sarif-converter-21 integration test', () => {
     it('returns a valid v2.1 sarif log with expected properties', () => {
         const axeResultStub: AxeResults = {
             toolOptions: {} as RunOptions,
@@ -114,6 +114,15 @@ describe('axeToSarifConverter21', () => {
         ) as Sarif.Log;
 
         expect(convertAxeToSarif21(testSubject)).toEqual(expectedResults);
+    });
+
+    it('converts AxeResults input to sarif v2.1.2 log that matches a pinned snapshot of that sarif log', () => {
+        const axeJSON: string = fs.readFileSync(
+            './src/test-resources/axe-v3.2.2.reporter-v2.json',
+            'utf8',
+        );
+        const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
+        expect(convertAxeToSarif21(axeResultStub)).toMatchSnapshot();
     });
 });
 
