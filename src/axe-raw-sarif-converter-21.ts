@@ -16,6 +16,9 @@ import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
+import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
+import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
+import { getWcagTaxonomy } from './wcag-taxonomy-provider';
 
 export function defaultAxeRawSarifConverter21(): AxeRawSarifConverter21 {
     return new AxeRawSarifConverter21(
@@ -27,6 +30,12 @@ export function defaultAxeRawSarifConverter21(): AxeRawSarifConverter21 {
 }
 
 export class AxeRawSarifConverter21 {
+    private readonly tagsToWcagLinkData: DictionaryStringTo<
+        WCAGLinkData
+    > = axeTagsToWcagLinkData;
+    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
+        this.tagsToWcagLinkData,
+    );
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
         private getAxeProperties: () => Sarif.ToolComponent,
@@ -72,9 +81,11 @@ export class AxeRawSarifConverter21 {
                 environmentData,
             ),
             taxonomies: [
-                // getWcagTaxonomy()
+                getWcagTaxonomy(
+                    this.wcagLinkDataIndexer.getSortedWcagTags(),
+                    this.tagsToWcagLinkData,
+                ),
             ],
-            properties: {},
         };
 
         this.fillInRunPropertiesFromOptions(run, converterOptions);
