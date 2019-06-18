@@ -13,7 +13,7 @@ export class ResultToRuleConverter {
     > = {};
     private sortedRuleIds: string[] = [];
 
-    static fromRawResults(
+    public static fromRawResults(
         results: AxeRawResult[],
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
@@ -29,7 +29,7 @@ export class ResultToRuleConverter {
         );
         return new ResultToRuleConverter(rulesDictionary);
     }
-    static fromV2Results(
+    public static fromV2Results(
         results: Axe.AxeResults,
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
@@ -71,7 +71,7 @@ export class ResultToRuleConverter {
         }
     }
 
-    static convertV2ResultsToRules(
+    private static convertV2ResultsToRules(
         results: Axe.AxeResults,
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
@@ -103,7 +103,7 @@ export class ResultToRuleConverter {
         );
     }
 
-    static convertResultsToRules(
+    private static convertResultsToRules(
         results: Axe.Result[] | AxeRawResult[],
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
@@ -122,7 +122,7 @@ export class ResultToRuleConverter {
         }
     }
 
-    static convertAxeResultToSarifRule(
+    private static convertAxeResultToSarifRule(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
         result: Axe.Result | AxeRawResult,
@@ -142,7 +142,7 @@ export class ResultToRuleConverter {
         };
     }
 
-    static getRuleRelationshipsFromResultTags(
+    private static getRuleRelationshipsFromResultTags(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
         result: Axe.Result | AxeRawResult,
