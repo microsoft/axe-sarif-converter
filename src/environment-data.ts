@@ -2,6 +2,6 @@
 // Licensed under the MIT License.
 export interface EnvironmentData {
     targetPageUrl: string;
-    targetPageTitle: string;
+    targetPageTitle?: string;
     timestamp: string;
 }

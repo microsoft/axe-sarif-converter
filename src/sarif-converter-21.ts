@@ -9,10 +9,6 @@ import {
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
-import {
-    DecoratedAxeResult,
-    DecoratedAxeResults,
-} from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromResults } from './environment-data-provider';
@@ -51,7 +47,7 @@ export class SarifConverter21 {
     ) {}
 
     public convert(
-        results: DecoratedAxeResults,
+        results: Axe.AxeResults,
         options: ConverterOptions,
     ): Sarif.Log {
         return {
@@ -61,7 +57,7 @@ export class SarifConverter21 {
     }
 
     private convertRun(
-        results: DecoratedAxeResults,
+        results: Axe.AxeResults,
         options: ConverterOptions,
     ): Sarif.Run {
         const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
@@ -100,7 +96,7 @@ export class SarifConverter21 {
     }
 
     private convertResults(
-        results: DecoratedAxeResults,
+        results: Axe.AxeResults,
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
@@ -141,7 +137,7 @@ export class SarifConverter21 {
 
     private convertRuleResults(
         resultArray: Sarif.Result[],
-        ruleResults: DecoratedAxeResult[],
+        ruleResults: Axe.Result[],
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
         kind: Sarif.Result.kind,
         environmentData: EnvironmentData,
@@ -161,7 +157,7 @@ export class SarifConverter21 {
 
     private convertRuleResult(
         resultArray: Sarif.Result[],
-        ruleResult: DecoratedAxeResult,
+        ruleResult: Axe.Result,
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
         kind: Sarif.Result.kind,
         environmentData: EnvironmentData,
@@ -284,7 +280,7 @@ export class SarifConverter21 {
 
     private convertRuleResultsWithoutNodes(
         resultArray: Sarif.Result[],
-        ruleResults: DecoratedAxeResult[],
+        ruleResults: Axe.Result[],
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
         kind: Sarif.Result.kind,
     ): void {
