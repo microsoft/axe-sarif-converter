@@ -1,16 +1,22 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import { AxeResults } from 'axe-core';
+import * as fs from 'fs';
 import { sortBy } from 'lodash';
 import * as Sarif from 'sarif';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
 import { AxeRawResult } from './axe-raw-result';
-import { AxeRawSarifConverter21 } from './axe-raw-sarif-converter-21';
+import {
+    AxeRawSarifConverter21,
+    defaultAxeRawSarifConverter21,
+} from './axe-raw-sarif-converter-21';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { EnvironmentData } from './environment-data';
 import { getInvocations21 } from './invocation-provider-21';
+import { defaultSarifConverter21 } from './sarif-converter-21';
 
 function normalizeSarif(sarif: Sarif.Log): void {
     sarif.runs[0].results = sortBy(sarif.runs[0].results, [
@@ -25,50 +31,50 @@ function normalizeSarif(sarif: Sarif.Log): void {
 }
 
 describe('AxeRawSarifConverter21', () => {
-    // describe('integrated with default dependencies', () => {
-    //     let testSubject: AxeRawSarifConverter21;
+    describe('integrated with default dependencies', () => {
+        let testSubject: AxeRawSarifConverter21;
 
-    //     beforeEach(() => {
-    //         testSubject = defaultAxeRawSarifConverter21();
-    //     });
+        beforeEach(() => {
+            testSubject = defaultAxeRawSarifConverter21();
+        });
 
-    //     it('produces the same output as the v2 converter for equivalent raw input', () => {
-    //         const axeJSON: string = fs.readFileSync(
-    //             './src/test-resources/axe-v3.2.2.reporter-v2.json',
-    //             'utf8',
-    //         );
-    //         const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
-    //         const axeToSarifOutput = defaultSarifConverter21().convert(
-    //             axeResult,
-    //             {},
-    //         );
+        it.skip('produces the same output as the v2 converter for equivalent raw input', () => {
+            const axeJSON: string = fs.readFileSync(
+                './src/test-resources/axe-v3.2.2.reporter-v2.json',
+                'utf8',
+            );
+            const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
+            const axeToSarifOutput = defaultSarifConverter21().convert(
+                axeResult,
+                {},
+            );
 
-    //         const axeRawJSON: string = fs.readFileSync(
-    //             './src/test-resources/axe-v3.2.2.reporter-raw.json',
-    //             'utf8',
-    //         );
-    //         const axeRawResult: AxeRawResult[] = JSON.parse(
-    //             axeRawJSON,
-    //         ) as AxeRawResult[];
+            const axeRawJSON: string = fs.readFileSync(
+                './src/test-resources/axe-v3.2.2.reporter-raw.json',
+                'utf8',
+            );
+            const axeRawResult: AxeRawResult[] = JSON.parse(
+                axeRawJSON,
+            ) as AxeRawResult[];
 
-    //         const environmentDataStub: EnvironmentData = {
-    //             timestamp: axeResult.timestamp,
-    //             targetPageUrl: axeResult.url,
-    //             targetPageTitle: '',
-    //         };
+            const environmentDataStub: EnvironmentData = {
+                timestamp: axeResult.timestamp,
+                targetPageUrl: axeResult.url,
+                targetPageTitle: '',
+            };
 
-    //         const axeRawToSarifOutput = testSubject.convert(
-    //             axeRawResult,
-    //             {},
-    //             environmentDataStub,
-    //         );
+            const axeRawToSarifOutput = testSubject.convert(
+                axeRawResult,
+                {},
+                environmentDataStub,
+            );
 
-    //         normalizeSarif(axeRawToSarifOutput);
-    //         normalizeSarif(axeToSarifOutput);
+            normalizeSarif(axeRawToSarifOutput);
+            normalizeSarif(axeToSarifOutput);
 
-    //         expect(axeRawToSarifOutput).toEqual(axeToSarifOutput);
-    //     });
-    // });
+            expect(axeRawToSarifOutput).toEqual(axeToSarifOutput);
+        });
+    });
 
     describe('convert', () => {
         let stubEnvironmentData: EnvironmentData;
