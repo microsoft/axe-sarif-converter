@@ -12,12 +12,26 @@ export class ResultToRuleConverter {
     > = {};
     private sortedRuleIds: string[] = [];
 
-    constructor(
+    static fromV2Results(
         results: Axe.AxeResults,
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
+    ): ResultToRuleConverter {
+        const rulesDictionary: DictionaryStringTo<
+            Sarif.ReportingDescriptor
+        > = {};
+        ResultToRuleConverter.convertResultsToRules(
+            results,
+            axeTags,
+            wcagTagsToTaxaIndices,
+            rulesDictionary,
+        );
+        return new ResultToRuleConverter(rulesDictionary);
+    }
+    constructor(
+        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
     ) {
-        this.convertResultsToRules(results, axeTags, wcagTagsToTaxaIndices);
+        this.rulesDictionary = rulesDictionary;
         this.sortRuleIds();
         this.indexRuleIds();
     }
@@ -40,73 +54,78 @@ export class ResultToRuleConverter {
         }
     }
 
-    private convertResultsToRules(
+    static convertResultsToRules(
         results: Axe.AxeResults,
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
+        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
     ): void {
-        this.convertRuleResultsToRules(
+        ResultToRuleConverter.convertRuleResultsToRules(
             axeTags,
             wcagTagsToTaxaIndices,
             results.violations,
+            rulesDictionary,
         );
-        this.convertRuleResultsToRules(
+        ResultToRuleConverter.convertRuleResultsToRules(
             axeTags,
             wcagTagsToTaxaIndices,
             results.passes,
+            rulesDictionary,
         );
-        this.convertRuleResultsToRules(
+        ResultToRuleConverter.convertRuleResultsToRules(
             axeTags,
             wcagTagsToTaxaIndices,
             results.inapplicable,
+            rulesDictionary,
         );
-        this.convertRuleResultsToRules(
+        ResultToRuleConverter.convertRuleResultsToRules(
             axeTags,
             wcagTagsToTaxaIndices,
             results.incomplete,
+            rulesDictionary,
         );
     }
 
-    private convertRuleResultsToRules(
+    static convertRuleResultsToRules(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
         ruleResults: Axe.Result[],
+        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
-                this.convertRuleResultToRule(
+                ResultToRuleConverter.convertRuleResultToRule(
                     axeTags,
                     wcagTagsToTaxaIndices,
                     ruleResult,
+                    rulesDictionary,
                 );
             }
         }
     }
 
-    private convertRuleResultToRule(
+    static convertRuleResultToRule(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
         ruleResult: Axe.Result,
+        rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor>,
     ): void {
-        if (!this.rulesDictionary.hasOwnProperty(ruleResult.id)) {
-            const rule: Sarif.ReportingDescriptor = {
-                id: ruleResult.id,
-                name: ruleResult.help,
-                fullDescription: {
-                    text: ruleResult.description + '.',
-                },
-                helpUri: ruleResult.helpUrl,
-                relationships: this.getRelationshipsFromResultTags(
-                    axeTags,
-                    wcagTagsToTaxaIndices,
-                    ruleResult,
-                ),
-            };
-            this.rulesDictionary[ruleResult.id] = rule;
-        }
+        rulesDictionary[ruleResult.id] = {
+            id: ruleResult.id,
+            name: ruleResult.help,
+            fullDescription: {
+                text: ruleResult.description + '.',
+            },
+            helpUri: ruleResult.helpUrl,
+            relationships: ResultToRuleConverter.getRelationshipsFromResultTags(
+                axeTags,
+                wcagTagsToTaxaIndices,
+                ruleResult,
+            ),
+        };
     }
 
-    private getRelationshipsFromResultTags(
+    static getRelationshipsFromResultTags(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
         result: Axe.Result,
