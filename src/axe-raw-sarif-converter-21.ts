@@ -63,7 +63,7 @@ export class AxeRawSarifConverter21 {
         converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): Sarif.Run {
-        const run: Sarif.Run = {
+        return {
             conversion: this.getConverterToolProperties(),
             tool: {
                 driver: {
@@ -87,10 +87,6 @@ export class AxeRawSarifConverter21 {
                 ),
             ],
         };
-
-        this.fillInRunPropertiesFromOptions(run, converterOptions);
-
-        return run;
     }
 
     private getExtraSarifResultProperties(
@@ -103,19 +99,6 @@ export class AxeRawSarifConverter21 {
             };
         }
         return extraSarifResultProperties;
-    }
-
-    private fillInRunPropertiesFromOptions(
-        run: Sarif.Run,
-        converterOptions: ConverterOptions,
-    ): void {
-        if (converterOptions.testCaseId !== undefined) {
-            run.properties!.testCaseId = converterOptions.testCaseId;
-        }
-
-        if (converterOptions.scanId !== undefined) {
-            // run.logicalId = converterOptions.scanId;
-        }
     }
 
     private convertRawResults(
@@ -225,6 +208,7 @@ export class AxeRawSarifConverter21 {
     ): Sarif.Result {
         return {
             ruleId: ruleId,
+            // TODO: add actual rule index
             // ruleIndex: 0,
             kind: 'notApplicable',
             level: 'none',
@@ -354,7 +338,6 @@ export class AxeRawSarifConverter21 {
             },
             helpUri: axeRawResult.helpUrl,
             // relationships:
-            properties: {},
         };
     }
 }
