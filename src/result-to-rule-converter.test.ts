@@ -6,7 +6,7 @@ import { DictionaryStringTo } from './dictionary-types';
 import { ResultToRuleConverter } from './result-to-rule-converter';
 import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
-describe('ResultToRuleConverter', () => {
+describe('ResultToRuleConverter v2', () => {
     let resultToRuleConverter: ResultToRuleConverter;
     beforeAll(() => {
         const stub_results: Axe.AxeResults = {
@@ -50,7 +50,7 @@ describe('ResultToRuleConverter', () => {
             stub_tag_2: 20,
             stub_tag_3: 14,
         };
-        resultToRuleConverter = new ResultToRuleConverter(
+        resultToRuleConverter = ResultToRuleConverter.fromV2Results(
             stub_results,
             stub_tags,
             stub_tags_to_indices,
