@@ -36,6 +36,7 @@ export interface AxeRawCheckResult {
 export interface AxeRawNode {
     selector: Selector;
     source: string;
+    xpath: string[];
 }
 
 export type ResultValue = 'passed' | 'failed' | 'inapplicable' | 'cantTell';
