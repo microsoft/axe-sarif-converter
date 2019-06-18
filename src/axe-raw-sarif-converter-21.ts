@@ -15,7 +15,7 @@ import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
-import { RawResultToRuleConverter } from './raw-result-to-rule-converter';
+import { ResultToRuleConverter } from './result-to-rule-converter';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
@@ -64,7 +64,7 @@ export class AxeRawSarifConverter21 {
         converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): Sarif.Run {
-        const rawResultToRuleConverter: RawResultToRuleConverter = new RawResultToRuleConverter(
+        const resultToRuleConverter: ResultToRuleConverter = ResultToRuleConverter.fromRawResults(
             results,
             this.wcagLinkDataIndexer.getSortedWcagTags(),
             this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
@@ -74,7 +74,7 @@ export class AxeRawSarifConverter21 {
             tool: {
                 driver: {
                     ...this.getAxeProperties(),
-                    rules: rawResultToRuleConverter.getRulePropertiesFromResults(),
+                    rules: resultToRuleConverter.getRulePropertiesFromResults(),
                 },
             },
             invocations: this.invocationConverter(environmentData),
