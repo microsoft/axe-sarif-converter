@@ -67,11 +67,11 @@ describe('SarifConverter', () => {
                 violations: [],
                 inapplicable: [],
                 incomplete: [],
-                toolOptions: null!,
-                testEngine: null!,
-                testRunner: null!,
-                testEnvironment: null!,
-            } as Axe.AxeResults;
+                toolOptions: {} as Axe.RunOptions,
+                testEngine: {} as Axe.TestEngine,
+                testRunner: {} as Axe.TestRunner,
+                testEnvironment: {} as Axe.TestEnvironment,
+            };
             const irrelevantOptions: ConverterOptions = {};
 
             const invocationProviderMock: IMock<

@@ -20,10 +20,10 @@ describe('environment-data-provider', () => {
                 incomplete: [],
                 violations: [],
                 inapplicable: [],
-                toolOptions: null!,
-                testEngine: null!,
-                testRunner: null!,
-                testEnvironment: null!,
+                toolOptions: {} as Axe.RunOptions,
+                testEngine: {} as Axe.TestEngine,
+                testRunner: {} as Axe.TestRunner,
+                testEnvironment: {} as Axe.TestEnvironment,
             };
 
             const expectedResults: EnvironmentData = {
