@@ -14,9 +14,12 @@ import { AxeRawResult } from './axe-raw-result';
 import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
 import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
-import { convertAxeToSarif, convertAxeToSarif21, sarifReporter } from './index';
+import { convertAxeToSarif, sarifReporter } from './index';
+import { ResultDecorator } from './result-decorator';
+import { defaultSarifConverter21 } from './sarif-converter-21';
 import { Run } from './sarif/sarif-2.0.0';
 import { SarifLog } from './sarif/sarif-log';
+import { axeTagsToWcagLinkData } from './wcag-link-data';
 
 describe('axe-sarf-converter integration test', () => {
     it('axe-sarif-converter returns a valid sarif with blank results array in run array', () => {
@@ -188,3 +191,11 @@ describe('sarifReporter', () => {
         };
     }
 });
+
+function convertAxeToSarif21(axeResults: AxeResults): Sarif.Log {
+    const resultDecorator = new ResultDecorator(axeTagsToWcagLinkData);
+    const decoratedAxeResults = resultDecorator.decorateResults(axeResults);
+
+    const sarifConverter = defaultSarifConverter21();
+    return sarifConverter.convert(decoratedAxeResults, {});
+}
