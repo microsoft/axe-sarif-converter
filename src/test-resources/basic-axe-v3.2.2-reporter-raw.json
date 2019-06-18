@@ -23,7 +23,7 @@
             "data": null,
             "relatedNodes": [],
             "impact": "serious",
-            "message": "Document has a non-empty <title> element"
+            "message": "Document does not have a non-empty <title> element"
           }
         ],
         "all": [],
