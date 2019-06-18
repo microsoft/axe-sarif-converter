@@ -15,6 +15,7 @@ import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
+import { RawResultToRuleConverter } from './raw-result-to-rule-converter';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
@@ -63,12 +64,17 @@ export class AxeRawSarifConverter21 {
         converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): Sarif.Run {
+        const rawResultToRuleConverter: RawResultToRuleConverter = new RawResultToRuleConverter(
+            results,
+            this.wcagLinkDataIndexer.getSortedWcagTags(),
+            this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
+        );
         return {
             conversion: this.getConverterToolProperties(),
             tool: {
                 driver: {
                     ...this.getAxeProperties(),
-                    // rules: this.convertResultsToRules(results),
+                    rules: rawResultToRuleConverter.getRulePropertiesFromResults(),
                 },
             },
             invocations: this.invocationConverter(environmentData),
@@ -311,33 +317,5 @@ export class AxeRawSarifConverter21 {
             textArray.push(textLines.join(' '));
             markdownArray.push(markdownLines.join('\n'));
         }
-    }
-
-    private convertResultsToRules(
-        results: AxeRawResult[],
-    ): DictionaryStringTo<Sarif.ReportingDescriptor> {
-        const rulesDictionary: DictionaryStringTo<
-            Sarif.ReportingDescriptor
-        > = {};
-
-        for (const result of results) {
-            rulesDictionary[result.id] = this.axeRawResultToSarifRule(result);
-        }
-
-        return rulesDictionary;
-    }
-
-    private axeRawResultToSarifRule(
-        axeRawResult: AxeRawResult,
-    ): Sarif.ReportingDescriptor {
-        return {
-            id: axeRawResult.id,
-            name: axeRawResult.help,
-            fullDescription: {
-                text: axeRawResult.description + '.',
-            },
-            helpUri: axeRawResult.helpUrl,
-            // relationships:
-        };
     }
 }
