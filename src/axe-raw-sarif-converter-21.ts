@@ -15,7 +15,6 @@ import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
-// import * as CustomSarif from './sarif/custom-sarif-types';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 
 export function defaultAxeRawSarifConverter21(): AxeRawSarifConverter21 {
