@@ -6,19 +6,14 @@ import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
 import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
-import { ResultDecorator } from './result-decorator';
 import { defaultSarifConverter } from './sarif-converter';
 import { SarifLog } from './sarif/sarif-log';
-import { axeTagsToWcagLinkData } from './wcag-link-data';
 
 export { SarifLog } from './sarif/sarif-log';
 
 export function convertAxeToSarif(axeResults: Axe.AxeResults): SarifLog {
-    const resultDecorator = new ResultDecorator(axeTagsToWcagLinkData);
-    const decoratedAxeResults = resultDecorator.decorateResults(axeResults);
-
     const sarifConverter = defaultSarifConverter();
-    return sarifConverter.convert(decoratedAxeResults, {});
+    return sarifConverter.convert(axeResults, {});
 }
 
 export function sarifReporter(

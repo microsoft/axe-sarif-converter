@@ -1,10 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
-import {
-    DecoratedAxeResult,
-    DecoratedAxeResults,
-} from './decorated-axe-results';
 import { DictionaryStringTo } from './dictionary-types';
 import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
@@ -16,7 +13,7 @@ export class ResultToRuleConverter {
     private sortedRuleIds: string[] = [];
 
     constructor(
-        results: DecoratedAxeResults,
+        results: Axe.AxeResults,
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
     ) {
@@ -44,7 +41,7 @@ export class ResultToRuleConverter {
     }
 
     private convertResultsToRules(
-        results: DecoratedAxeResults,
+        results: Axe.AxeResults,
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
     ): void {
@@ -73,7 +70,7 @@ export class ResultToRuleConverter {
     private convertRuleResultsToRules(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
-        ruleResults: DecoratedAxeResult[],
+        ruleResults: Axe.Result[],
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
@@ -89,7 +86,7 @@ export class ResultToRuleConverter {
     private convertRuleResultToRule(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
-        ruleResult: DecoratedAxeResult,
+        ruleResult: Axe.Result,
     ): void {
         if (!this.rulesDictionary.hasOwnProperty(ruleResult.id)) {
             const rule: Sarif.ReportingDescriptor = {
@@ -112,7 +109,7 @@ export class ResultToRuleConverter {
     private getRelationshipsFromResultTags(
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
-        result: DecoratedAxeResult,
+        result: Axe.Result,
     ) {
         return result.tags
             .filter(tag => axeTags.indexOf(tag) != -1)

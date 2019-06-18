@@ -1,12 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
-import { DecoratedAxeResults } from './decorated-axe-results';
 import { EnvironmentData } from './environment-data';
 import { getInvocations21 } from './invocation-provider-21';
 import { SarifConverter21 } from './sarif-converter-21';
@@ -34,11 +34,9 @@ describe('SarifConverter21', () => {
         ];
         const stubTimestamp: string = 'stub_timestamp';
         const stubTargetPageUrl: string = 'stub_url';
-        const stubTargetPageTitle: string = 'stub_title';
         const stubEnvironmentData: EnvironmentData = {
             timestamp: stubTimestamp,
             targetPageUrl: stubTargetPageUrl,
-            targetPageTitle: stubTargetPageTitle,
         };
 
         const converterPropertyProviderStub: () => Sarif.Run['conversion'] = () => {
@@ -63,7 +61,7 @@ describe('SarifConverter21', () => {
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
-            const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
+            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter21(
@@ -87,14 +85,17 @@ describe('SarifConverter21', () => {
         });
 
         it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
-            const stubResults: DecoratedAxeResults = {
+            const stubResults: Axe.AxeResults = {
                 timestamp: stubTimestamp,
-                targetPageUrl: stubTargetPageUrl,
-                targetPageTitle: stubTargetPageTitle,
+                url: stubTargetPageUrl,
                 passes: [],
                 violations: [],
                 inapplicable: [],
                 incomplete: [],
+                toolOptions: {} as Axe.RunOptions,
+                testEngine: {} as Axe.TestEngine,
+                testRunner: {} as Axe.TestRunner,
+                testEnvironment: {} as Axe.TestEnvironment,
             };
             const irrelevantOptions: ConverterOptions = {};
 
@@ -137,7 +138,7 @@ describe('SarifConverter21', () => {
                 .returns(() => stubConverterProperties)
                 .verifiable(Times.once());
 
-            const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
+            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter21(
@@ -169,7 +170,7 @@ describe('SarifConverter21', () => {
                 .returns(() => stubArtifactProperties)
                 .verifiable(Times.once());
 
-            const irrelevantResults: DecoratedAxeResults = {} as DecoratedAxeResults;
+            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter21(
