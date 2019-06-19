@@ -12,6 +12,7 @@ import * as fs from 'fs';
 import * as Sarif from 'sarif';
 import { AxeRawResult } from './axe-raw-result';
 import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
+import { defaultAxeRawSarifConverter21 } from './axe-raw-sarif-converter-21';
 import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
 import { convertAxeToSarif, sarifReporter } from './index';
@@ -127,6 +128,37 @@ describe('axeToSarifConverter21', () => {
     });
 });
 
+describe('axeRawSarifConverter21', () => {
+    it('converts basic AxeRawResults input to Sarif Log that matches sample output', () => {
+        const axeJSON: string = fs.readFileSync(
+            './src/test-resources/basic-axe-v3.2.2-reporter-raw.json',
+            'utf8',
+        );
+        const testSubject: AxeRawResult[] = JSON.parse(
+            axeJSON,
+        ) as AxeRawResult[];
+
+        const expectedResultsJSON: string = fs.readFileSync(
+            './src/test-resources/basic-axe-v3.2.2-sarif-v2.1.2.sarif',
+            'utf8',
+        );
+        const expectedResults: Sarif.Log = JSON.parse(
+            expectedResultsJSON,
+        ) as Sarif.Log;
+
+        expect(convertAxeRawToSarif(testSubject)).toEqual(expectedResults);
+    });
+
+    it('converts AxeRawResults input to sarif v2.1.2 log that matches a pinned snapshot of that sarif log', () => {
+        const axeJSON: string = fs.readFileSync(
+            './src/test-resources/axe-v3.2.2.reporter-raw.json',
+            'utf8',
+        );
+        const axeResultStub: AxeResults = JSON.parse(axeJSON) as AxeResults;
+        expect(convertAxeToSarif21(axeResultStub)).toMatchSnapshot();
+    });
+});
+
 describe('axeToSarifConverter use generated AxeResults object', () => {
     it('matches pinned snapshot of sarifv2 generated from an actual AxeResults object', () => {
         const axeJSON: string = fs.readFileSync(
@@ -193,4 +225,14 @@ describe('sarifReporter', () => {
 function convertAxeToSarif21(axeResults: AxeResults): Sarif.Log {
     const sarifConverter = defaultSarifConverter21();
     return sarifConverter.convert(axeResults, {});
+}
+
+function convertAxeRawToSarif(axeRawResults: AxeRawResult[]): Sarif.Log {
+    const axeRawSarifConverter = defaultAxeRawSarifConverter21();
+    const environmentData: EnvironmentData = {
+        timestamp: '2019-03-22T19:12:06.129Z',
+        targetPageUrl:
+            'https://www.washington.edu/accesscomputing/AU/before.html',
+    };
+    return axeRawSarifConverter.convert(axeRawResults, {}, environmentData);
 }

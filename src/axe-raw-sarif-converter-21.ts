@@ -2,18 +2,21 @@
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
 import { isEmpty } from './array-utils';
-import { getArtifactProperties } from './artifact-property-provider';
+import {
+    getArtifactLocation,
+    getArtifactProperties,
+} from './artifact-property-provider';
 import {
     AxeRawCheckResult,
     AxeRawNodeResult,
     AxeRawResult,
+    ResultValue,
 } from './axe-raw-result';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
-import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
 import { getInvocations21 } from './invocation-provider-21';
 import { ResultToRuleConverter } from './result-to-rule-converter';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
@@ -78,12 +81,10 @@ export class AxeRawSarifConverter21 {
                 },
             },
             invocations: this.invocationConverter(environmentData),
-            artifacts: [
-                this.getArtifactProperties(getEnvironmentDataFromEnvironment()),
-            ],
+            artifacts: [this.getArtifactProperties(environmentData)],
             results: this.convertRawResults(
                 results,
-                this.getExtraSarifResultProperties(converterOptions),
+                resultToRuleConverter.getRuleIdsToRuleIndices(),
                 environmentData,
             ),
             taxonomies: [
@@ -95,21 +96,9 @@ export class AxeRawSarifConverter21 {
         };
     }
 
-    private getExtraSarifResultProperties(
-        converterOptions: ConverterOptions,
-    ): DictionaryStringTo<string> {
-        let extraSarifResultProperties: DictionaryStringTo<string> = {};
-        if (converterOptions && converterOptions.scanName !== undefined) {
-            extraSarifResultProperties = {
-                scanName: converterOptions.scanName,
-            };
-        }
-        return extraSarifResultProperties;
-    }
-
     private convertRawResults(
         results: AxeRawResult[],
-        extraSarifResultProperties: DictionaryStringTo<string>,
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
         environmentData: EnvironmentData,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
@@ -129,8 +118,8 @@ export class AxeRawSarifConverter21 {
                 resultArray.push(
                     ...this.convertRawNodeResults(
                         axeRawNodeResultArray,
-                        extraSarifResultProperties,
-                        environmentData.targetPageUrl,
+                        ruleIdsToRuleIndices,
+                        environmentData,
                         result.id,
                     ),
                 );
@@ -138,8 +127,9 @@ export class AxeRawSarifConverter21 {
             if (axeRawNodeResultArrays.every(isEmpty)) {
                 resultArray.push(
                     this.generateResultForInapplicableRule(
-                        extraSarifResultProperties,
+                        ruleIdsToRuleIndices,
                         result.id,
+                        result.description,
                     ),
                 );
             }
@@ -150,16 +140,16 @@ export class AxeRawSarifConverter21 {
 
     private convertRawNodeResults(
         rawNodeResults: AxeRawNodeResult[],
-        extraSarifResultProperties: DictionaryStringTo<string>,
-        targetPageUrl: string,
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
+        environmentData: EnvironmentData,
         ruleId: string,
     ): Sarif.Result[] {
         if (rawNodeResults) {
             return rawNodeResults.map(rawNodeResult =>
                 this.convertRawNodeResult(
                     rawNodeResult,
-                    extraSarifResultProperties,
-                    targetPageUrl,
+                    ruleIdsToRuleIndices,
+                    environmentData,
                     ruleId,
                 ),
             );
@@ -169,90 +159,106 @@ export class AxeRawSarifConverter21 {
 
     private convertRawNodeResult(
         axeRawNodeResult: AxeRawNodeResult,
-        extraSarifResultProperties: DictionaryStringTo<string>,
-        targetPageUrl: string,
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
+        environmentData: EnvironmentData,
         ruleId: string,
     ): Sarif.Result {
-        // const level = this.getSarifResultLevel(axeRawNodeResult.result);
-        const kind = 'fail';
-        const selector = this.getLogicalNameFromRawNode(axeRawNodeResult);
+        const kind = this.getSarifResultKind(axeRawNodeResult.result);
+
         return {
             ruleId: ruleId,
-            // level: level,
+            ruleIndex: ruleIdsToRuleIndices[ruleId],
+            kind: kind,
+            level: this.getResultLevelFromResultKind(kind),
             message: this.convertMessage(axeRawNodeResult, kind),
             locations: [
                 {
-                    // physicalLocation: {
-                    //     fileLocation: {
-                    //         uri: targetPageUrl,
-                    //     },
-                    // },
-                    // fullyQualifiedLogicalName: selector,
-                    annotations: [
-                        {
+                    physicalLocation: {
+                        artifactLocation: getArtifactLocation(environmentData),
+                        region: {
                             snippet: {
                                 text: axeRawNodeResult.node.source,
                             },
                         },
-                    ],
+                    },
+                    logicalLocations: this.getLogicalLocations(
+                        axeRawNodeResult,
+                    ),
                 },
             ],
-            properties: {
-                ...extraSarifResultProperties,
-                tags: ['Accessibility'],
-            },
-            partialFingerprints: {
-                fullyQualifiedLogicalName: selector,
-                ruleId: ruleId,
-            },
+        };
+    }
+
+    private getLogicalLocations(
+        node: AxeRawNodeResult,
+    ): Sarif.LogicalLocation[] {
+        const selector = this.getSelectorFromRawNode(node);
+        const xpath = this.getXpathFromRawNode(node);
+        const logicalLocations: Sarif.LogicalLocation[] = [
+            this.formatLogicalLocation(selector),
+        ];
+        if (xpath) {
+            logicalLocations.push(this.formatLogicalLocation(xpath));
+        }
+        return logicalLocations;
+    }
+
+    private formatLogicalLocation(name: string): Sarif.LogicalLocation {
+        return {
+            fullyQualifiedName: name,
+            kind: 'element',
         };
     }
 
     private generateResultForInapplicableRule(
-        extraSarifResultProperties: DictionaryStringTo<string>,
+        ruleIdsToRuleIndices: DictionaryStringTo<number>,
         ruleId: string,
+        ruleDescription: string,
     ): Sarif.Result {
         return {
             ruleId: ruleId,
-            // TODO: add actual rule index
-            // ruleIndex: 0,
+            ruleIndex: ruleIdsToRuleIndices[ruleId],
             kind: 'notApplicable',
             level: 'none',
-            // TODO: include message text
             message: {
-                text: '',
+                text: ruleDescription,
             },
         };
     }
 
-    // private getSarifResultLevel(
-    //     resultValue?: ResultValue,
-    // ): Sarif.Result.level {
-    //     const resultToLevelMapping: {
-    //         [K in ResultValue]: Sarif.Result.level
-    //     } = {
-    //         passed: Sarif.Result.level.pass,
-    //         failed: Sarif.Result.level.error,
-    //         inapplicable: Sarif.Result.level.notApplicable,
-    //         cantTell: Sarif.Result.level.open,
-    //     };
+    private getSarifResultKind(resultValue?: ResultValue): Sarif.Result.kind {
+        const resultToKindMapping: { [K in ResultValue]: Sarif.Result.kind } = {
+            passed: 'pass',
+            failed: 'fail',
+            inapplicable: 'notApplicable',
+            cantTell: 'open',
+        };
 
-    //     if (!resultValue) {
-    //         throw new Error(
-    //             'getSarifResultLevel(resultValue): resultValue is undefined',
-    //         );
-    //     }
+        if (!resultValue) {
+            throw new Error(
+                'getSarifResultKind(resultValue): resultValue is undefined',
+            );
+        }
 
-    //     return resultToLevelMapping[resultValue];
-    // }
+        return resultToKindMapping[resultValue];
+    }
 
-    private getLogicalNameFromRawNode(axeRawNodeResult: AxeRawNodeResult) {
+    private getSelectorFromRawNode(axeRawNodeResult: AxeRawNodeResult) {
         if (!axeRawNodeResult.node.selector) {
             throw new Error(
-                'getLogicalNameFromRawNode: axe result contained a node with no selector',
+                'getSelectorFromRawNode: axe result contained a node with no selector',
             );
         }
         return axeRawNodeResult.node.selector.join(';');
+    }
+
+    private getXpathFromRawNode(axeRawNodeResult: AxeRawNodeResult) {
+        if (!axeRawNodeResult.node.xpath) {
+            throw new Error(
+                'getXpathFromRawNode: axe result contained a node with no xpath',
+            );
+        }
+        return axeRawNodeResult.node.xpath.join(';');
     }
 
     private convertMessage(
@@ -317,5 +323,9 @@ export class AxeRawSarifConverter21 {
             textArray.push(textLines.join(' '));
             markdownArray.push(markdownLines.join('\n'));
         }
+    }
+
+    private getResultLevelFromResultKind(kind: Sarif.Result.kind) {
+        return kind === 'fail' ? 'error' : 'none';
     }
 }

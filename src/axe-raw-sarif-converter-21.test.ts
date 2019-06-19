@@ -60,7 +60,6 @@ describe('AxeRawSarifConverter21', () => {
             const environmentDataStub: EnvironmentData = {
                 timestamp: axeResult.timestamp,
                 targetPageUrl: axeResult.url,
-                targetPageTitle: '',
             };
 
             const axeRawToSarifOutput = testSubject.convert(
