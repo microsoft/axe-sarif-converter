@@ -60,7 +60,7 @@ export class SarifConverter21 {
         results: Axe.AxeResults,
         options: ConverterOptions,
     ): Sarif.Run {
-        const resultToRuleConverter: ResultToRuleConverter = new ResultToRuleConverter(
+        const resultToRuleConverter: ResultToRuleConverter = ResultToRuleConverter.fromV2Results(
             results,
             this.wcagLinkDataIndexer.getSortedWcagTags(),
             this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
