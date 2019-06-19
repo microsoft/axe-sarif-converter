@@ -1,18 +1,19 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
 import { AxeRawCheckResult, AxeRawNodeResult } from './axe-raw-result';
 import { escapeForMarkdown, isNotEmpty } from './string-utils';
 
 export function formatSarifResultMessage(
-    node: AxeRawNodeResult,
+    node: Axe.NodeResult | AxeRawNodeResult,
     kind: Sarif.Result.kind,
 ): Sarif.Message {
     const textArray: string[] = [];
     const markdownArray: string[] = [];
 
     if (kind === 'fail') {
-        const allAndNone = node.all.concat(node.none);
+        const allAndNone = (node.all as any).concat(node.none);
         formatSarifCheckResultsMessage(
             'Fix all of the following:',
             allAndNone,
@@ -26,7 +27,7 @@ export function formatSarifResultMessage(
             markdownArray,
         );
     } else {
-        const allNodes = node.all.concat(node.none).concat(node.any);
+        const allNodes = (node.all as any).concat(node.none).concat(node.any);
         formatSarifCheckResultsMessage(
             'The following tests passed:',
             allNodes,
@@ -43,7 +44,7 @@ export function formatSarifResultMessage(
 
 function formatSarifCheckResultsMessage(
     heading: string,
-    checkResults: AxeRawCheckResult[],
+    checkResults: Axe.CheckResult[] | AxeRawCheckResult[],
     textArray: string[],
     markdownArray: string[],
 ): void {
