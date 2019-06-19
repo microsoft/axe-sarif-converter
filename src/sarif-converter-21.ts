@@ -66,6 +66,10 @@ export class SarifConverter21 {
             this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
         );
 
+        const environmentData: EnvironmentData = getEnvironmentDataFromResults(
+            results,
+        );
+
         return {
             conversion: this.getConverterToolProperties(),
             tool: {
@@ -74,14 +78,8 @@ export class SarifConverter21 {
                     rules: resultToRuleConverter.getRulePropertiesFromResults(),
                 },
             },
-            invocations: this.invocationConverter(
-                getEnvironmentDataFromResults(results),
-            ),
-            artifacts: [
-                this.getArtifactProperties(
-                    getEnvironmentDataFromResults(results),
-                ),
-            ],
+            invocations: this.invocationConverter(environmentData),
+            artifacts: [this.getArtifactProperties(environmentData)],
             results: this.convertResults(
                 results,
                 resultToRuleConverter.getRuleIdsToRuleIndices(),
@@ -144,48 +142,48 @@ export class SarifConverter21 {
     ): void {
         if (ruleResults) {
             for (const ruleResult of ruleResults) {
-                this.convertRuleResult(
-                    resultArray,
-                    ruleResult,
-                    ruleIdsToRuleIndices,
-                    kind,
-                    environmentData,
-                );
+                for (const node of ruleResult.nodes) {
+                    resultArray.push(
+                        this.convertRuleResult(
+                            node,
+                            ruleResult,
+                            ruleIdsToRuleIndices,
+                            kind,
+                            environmentData,
+                        ),
+                    );
+                }
             }
         }
     }
 
     private convertRuleResult(
-        resultArray: Sarif.Result[],
+        node: Axe.NodeResult,
         ruleResult: Axe.Result,
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
         kind: Sarif.Result.kind,
         environmentData: EnvironmentData,
-    ): void {
-        for (const node of ruleResult.nodes) {
-            resultArray.push({
-                ruleId: ruleResult.id,
-                ruleIndex: ruleIdsToRuleIndices[ruleResult.id],
-                kind: kind,
-                level: this.getResultLevelFromResultKind(kind),
-                message: formatSarifResultMessage(node, kind),
-                locations: [
-                    {
-                        physicalLocation: {
-                            artifactLocation: getArtifactLocation(
-                                environmentData,
-                            ),
-                            region: {
-                                snippet: {
-                                    text: node.html,
-                                },
+    ): Sarif.Result {
+        return {
+            ruleId: ruleResult.id,
+            ruleIndex: ruleIdsToRuleIndices[ruleResult.id],
+            kind: kind,
+            level: this.getResultLevelFromResultKind(kind),
+            message: formatSarifResultMessage(node, kind),
+            locations: [
+                {
+                    physicalLocation: {
+                        artifactLocation: getArtifactLocation(environmentData),
+                        region: {
+                            snippet: {
+                                text: node.html,
                             },
                         },
-                        logicalLocations: this.getLogicalLocations(node),
                     },
-                ],
-            });
-        }
+                    logicalLocations: this.getLogicalLocations(node),
+                },
+            ],
+        };
     }
 
     private getLogicalLocations(node: Axe.NodeResult): Sarif.LogicalLocation[] {
