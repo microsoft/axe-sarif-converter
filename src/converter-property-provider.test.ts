@@ -6,17 +6,21 @@ import { getConverterProperties } from './converter-property-provider';
 describe('converter-property-provider', () => {
     describe('getConverterProperties', () => {
         it('returns the converter properties as a Sarif.Run["conversion"', () => {
+            var packagejson = require('../package.json');
+            const version = packagejson.version;
             const expectedResults: Sarif.Run['conversion'] = {
                 tool: {
                     driver: {
                         name: 'axe-sarif-converter',
-                        fullName: 'axe-sarif-converter v1.3.0',
-                        version: '1.3.0',
-                        semanticVersion: '1.3.0',
+                        fullName: 'axe-sarif-converter v' + version,
+                        version: version,
+                        semanticVersion: version,
                         informationUri:
-                            'https://github.com/microsoft/axe-sarif-converter/releases/tag/v1.3.0',
+                            'https://github.com/microsoft/axe-sarif-converter/releases/tag/v' +
+                            version,
                         downloadUri:
-                            'https://www.npmjs.com/package/axe-sarif-converter/v/1.3.0',
+                            'https://www.npmjs.com/package/axe-sarif-converter/v/' +
+                            version,
                     },
                 },
             };
