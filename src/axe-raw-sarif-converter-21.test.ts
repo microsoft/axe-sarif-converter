@@ -18,18 +18,6 @@ import { EnvironmentData } from './environment-data';
 import { getInvocations21 } from './invocation-provider-21';
 import { defaultSarifConverter21 } from './sarif-converter-21';
 
-function normalizeSarif(sarif: Sarif.Log): void {
-    sarif.runs[0].results = sortBy(sarif.runs[0].results, [
-        'ruleId',
-        'partialFingerprints.fullyQualifiedLogicalName',
-        'level',
-    ]);
-    sarif.runs[0].tool!.driver.rules = sortBy(
-        sarif.runs[0].tool!.driver.rules,
-        ['id'],
-    ) as any;
-}
-
 describe('AxeRawSarifConverter21', () => {
     describe('integrated with default dependencies', () => {
         let testSubject: AxeRawSarifConverter21;
@@ -38,7 +26,7 @@ describe('AxeRawSarifConverter21', () => {
             testSubject = defaultAxeRawSarifConverter21();
         });
 
-        it.skip('produces the same output as the v2 converter for equivalent raw input', () => {
+        it('produces the same output as the v2 converter for equivalent raw input', () => {
             const axeJSON: string = fs.readFileSync(
                 './src/test-resources/axe-v3.2.2.reporter-v2.json',
                 'utf8',
@@ -73,6 +61,42 @@ describe('AxeRawSarifConverter21', () => {
 
             expect(axeRawToSarifOutput).toEqual(axeToSarifOutput);
         });
+
+        function normalizeSarif(sarif: Sarif.Log): void {
+            sarif.runs[0].results = sortBy(sarif.runs[0].results, [
+                'ruleId',
+                'locations[0].logicalLocations[0].fullyQualifiedName',
+                'kind',
+            ]);
+
+            // remove logicalLocation that contains xpath in case xpath is not present
+            // in axe results (default xpath option = false) but present in axe raw results
+            for (let i = 0; i < sarif.runs[0].results.length; i++) {
+                if (isSecondLogicalLocationPresent(sarif.runs[0].results[i])) {
+                    sarif.runs[0].results[
+                        i
+                    ].locations![0].logicalLocations! = removeSecondLogicalLocation(
+                        sarif.runs[0].results[i].locations![0]
+                            .logicalLocations!,
+                    );
+                }
+            }
+        }
+
+        function isSecondLogicalLocationPresent(result: Sarif.Result) {
+            return (
+                result.locations &&
+                result.locations![0] &&
+                result.locations![0].logicalLocations! &&
+                result.locations![0].logicalLocations!.length > 1
+            );
+        }
+
+        function removeSecondLogicalLocation(
+            logicalLocations: Sarif.LogicalLocation[],
+        ): Sarif.LogicalLocation[] {
+            return [logicalLocations[0]];
+        }
     });
 
     describe('convert', () => {
