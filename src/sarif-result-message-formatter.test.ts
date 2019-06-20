@@ -53,7 +53,7 @@ describe('sarif-result-message-formatter formatSarifResultMessage', () => {
         } as Axe.NodeResult;
     });
 
-    it('proudces expected Sarif Message for kind: fail', () => {
+    it('produces expected Sarif Message for kind: fail', () => {
         const actualResults: Sarif.Message = formatSarifResultMessage(
             stub_node,
             'fail',
