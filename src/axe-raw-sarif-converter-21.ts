@@ -6,12 +6,7 @@ import {
     getArtifactLocation,
     getArtifactProperties,
 } from './artifact-property-provider';
-import {
-    AxeRawCheckResult,
-    AxeRawNodeResult,
-    AxeRawResult,
-    ResultValue,
-} from './axe-raw-result';
+import { AxeRawNodeResult, AxeRawResult, ResultValue } from './axe-raw-result';
 import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
@@ -19,7 +14,7 @@ import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getInvocations21 } from './invocation-provider-21';
 import { ResultToRuleConverter } from './result-to-rule-converter';
-import { escapeForMarkdown, isNotEmpty } from './string-utils';
+import { formatSarifResultMessage } from './sarif-result-message-formatter';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 import { getWcagTaxonomy } from './wcag-taxonomy-provider';
@@ -170,7 +165,7 @@ export class AxeRawSarifConverter21 {
             ruleIndex: ruleIdsToRuleIndices[ruleId],
             kind: kind,
             level: this.getResultLevelFromResultKind(kind),
-            message: this.convertMessage(axeRawNodeResult, kind),
+            message: formatSarifResultMessage(axeRawNodeResult, kind),
             locations: [
                 {
                     physicalLocation: {
@@ -259,70 +254,6 @@ export class AxeRawSarifConverter21 {
             );
         }
         return axeRawNodeResult.node.xpath.join(';');
-    }
-
-    private convertMessage(
-        node: AxeRawNodeResult,
-        kind: Sarif.Result.kind,
-    ): Sarif.Message {
-        const textArray: string[] = [];
-        const markdownArray: string[] = [];
-
-        if (kind === 'fail') {
-            const allAndNone = node.all.concat(node.none);
-            this.convertMessageChecks(
-                'Fix all of the following:',
-                allAndNone,
-                textArray,
-                markdownArray,
-            );
-            this.convertMessageChecks(
-                'Fix any of the following:',
-                node.any,
-                textArray,
-                markdownArray,
-            );
-        } else {
-            const allNodes = node.all.concat(node.none).concat(node.any);
-            this.convertMessageChecks(
-                'The following tests passed:',
-                allNodes,
-                textArray,
-                markdownArray,
-            );
-        }
-
-        return {
-            text: textArray.join(' '),
-            markdown: markdownArray.join('\n\n'),
-        };
-    }
-
-    private convertMessageChecks(
-        heading: string,
-        checkResults: AxeRawCheckResult[],
-        textArray: string[],
-        markdownArray: string[],
-    ): void {
-        if (checkResults.length > 0) {
-            const textLines: string[] = [];
-            const markdownLines: string[] = [];
-
-            textLines.push(heading);
-            markdownLines.push(escapeForMarkdown(heading));
-
-            for (const checkResult of checkResults) {
-                const message = isNotEmpty(checkResult.message)
-                    ? checkResult.message
-                    : checkResult.id;
-
-                textLines.push(message + '.');
-                markdownLines.push('- ' + escapeForMarkdown(message) + '.');
-            }
-
-            textArray.push(textLines.join(' '));
-            markdownArray.push(markdownLines.join('\n'));
-        }
     }
 
     private getResultLevelFromResultKind(kind: Sarif.Result.kind) {
