@@ -218,6 +218,7 @@ export class AxeRawSarifConverter21 {
             message: {
                 text: ruleDescription,
             },
+            locations: [],
         };
     }
 
