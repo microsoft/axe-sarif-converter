@@ -73,7 +73,7 @@
         "artifacts": [
           {
             "location": {
-              "uri": "https://www.washington.edu/accesscomputing/AU/before.html",
+              "uri": "http://localhost/",
               "index": 0
             },
             "sourceLanguage": "html",
@@ -96,7 +96,7 @@
               {
                 "physicalLocation": {
                   "artifactLocation": {
-                    "uri": "https://www.washington.edu/accesscomputing/AU/before.html",
+                    "uri": "http://localhost/",
                     "index": 0
                   },
                   "region": {
