@@ -220,7 +220,7 @@ export class SarifConverter21 {
                     kind: kind,
                     level: this.getResultLevelFromResultKind(kind),
                     message: {
-                        text: ruleResult.description,
+                        text: ruleResult.description + '.',
                     },
                 });
             }
