@@ -43,7 +43,7 @@ jobs:
 
           - task: PublishBuildArtifacts@1
             inputs:
-                pathtoPublish: '$(System.DefaultWorkingDirectory)/test-results/test_result.sarif'
+                pathtoPublish: '$(System.DefaultWorkingDirectory)/test-results/*.sarif'
                 artifactName: 'CodeAnalysisLogs'
             condition: always()
             displayName: publish sarif results
