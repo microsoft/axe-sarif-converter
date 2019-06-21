@@ -222,6 +222,7 @@ export class SarifConverter21 {
                     message: {
                         text: ruleResult.description,
                     },
+                    locations: [],
                 });
             }
         }

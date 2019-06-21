@@ -75,6 +75,7 @@ describe('AxeRawSarifConverter21', () => {
         function removeOptionalXpathLocation(result: Sarif.Result) {
             if (
                 result.locations &&
+                result.locations!.length > 0 &&
                 result.locations![0].logicalLocations!.length > 1
             ) {
                 result.locations![0].logicalLocations!.pop();
