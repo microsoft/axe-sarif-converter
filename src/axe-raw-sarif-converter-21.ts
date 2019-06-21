@@ -216,8 +216,9 @@ export class AxeRawSarifConverter21 {
             kind: 'notApplicable',
             level: 'none',
             message: {
-                text: ruleDescription,
+                text: ruleDescription + '.',
             },
+            locations: [],
         };
     }
 
