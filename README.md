@@ -50,6 +50,15 @@ test('my accessibility test', async () => {
 
 The [microsoft/axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples) project contains full sample code that walks you through integrating this library into your project, from writing a test to seeing results in Azure Pipelines.
 
+## Version numbers
+
+The version number of this library is **independent** from the version numbers of the axe-core inputs and SARIF outputs it supports.
+
+-   axe-sarif-converter version 2.x supports input from version ^3.0.0 of axe-core and outputs SARIF v2.1
+-   axe-sarif-converter version 1.x supports input from version ^3.0.0 of axe-core and outputs SARIF v2.0
+
+Note that the SARIF format _does not use semantic versioning_, and there are breaking changes between the v2.0 and v2.1 SARIF formats. If you need compatibility with a SARIF viewer that only supports v2.0, you should use version 1.x of this library.
+
 ## Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
