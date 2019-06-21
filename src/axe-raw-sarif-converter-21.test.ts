@@ -69,33 +69,16 @@ describe('AxeRawSarifConverter21', () => {
                 'kind',
             ]);
 
-            // remove logicalLocation that contains xpath in case xpath is not present
-            // in axe results (default xpath option = false) but present in axe raw results
-            for (let i = 0; i < sarif.runs[0].results.length; i++) {
-                if (isSecondLogicalLocationPresent(sarif.runs[0].results[i])) {
-                    sarif.runs[0].results[
-                        i
-                    ].locations![0].logicalLocations! = removeSecondLogicalLocation(
-                        sarif.runs[0].results[i].locations![0]
-                            .logicalLocations!,
-                    );
-                }
-            }
+            sarif.runs[0].results.forEach(removeOptionalXpathLocation);
         }
 
-        function isSecondLogicalLocationPresent(result: Sarif.Result) {
-            return (
+        function removeOptionalXpathLocation(result: Sarif.Result) {
+            if (
                 result.locations &&
-                result.locations![0] &&
-                result.locations![0].logicalLocations! &&
                 result.locations![0].logicalLocations!.length > 1
-            );
-        }
-
-        function removeSecondLogicalLocation(
-            logicalLocations: Sarif.LogicalLocation[],
-        ): Sarif.LogicalLocation[] {
-            return [logicalLocations[0]];
+            ) {
+                result.locations![0].logicalLocations!.pop();
+            }
         }
     });
 
