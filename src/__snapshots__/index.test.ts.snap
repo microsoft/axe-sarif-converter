@@ -27236,7 +27236,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures every accesskey attribute value is unique",
+            "text": "Ensures every accesskey attribute value is unique.",
           },
           "ruleId": "accesskeys",
           "ruleIndex": 0,
@@ -27246,7 +27246,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <area> elements of image maps have alternate text",
+            "text": "Ensures <area> elements of image maps have alternate text.",
           },
           "ruleId": "area-alt",
           "ruleIndex": 1,
@@ -27256,7 +27256,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures ARIA attributes are allowed for an element's role",
+            "text": "Ensures ARIA attributes are allowed for an element's role.",
           },
           "ruleId": "aria-allowed-attr",
           "ruleIndex": 2,
@@ -27266,7 +27266,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures role attribute has an appropriate value for the element",
+            "text": "Ensures role attribute has an appropriate value for the element.",
           },
           "ruleId": "aria-allowed-role",
           "ruleIndex": 3,
@@ -27276,7 +27276,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures unsupported DPUB roles are only used on elements with implicit fallback roles",
+            "text": "Ensures unsupported DPUB roles are only used on elements with implicit fallback roles.",
           },
           "ruleId": "aria-dpub-role-fallback",
           "ruleIndex": 4,
@@ -27286,7 +27286,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures aria-hidden elements do not contain focusable elements",
+            "text": "Ensures aria-hidden elements do not contain focusable elements.",
           },
           "ruleId": "aria-hidden-focus",
           "ruleIndex": 6,
@@ -27296,7 +27296,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "text": "Ensures elements with ARIA roles have all required ARIA attributes.",
           },
           "ruleId": "aria-required-attr",
           "ruleIndex": 7,
@@ -27306,7 +27306,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures elements with an ARIA role that require child roles contain them",
+            "text": "Ensures elements with an ARIA role that require child roles contain them.",
           },
           "ruleId": "aria-required-children",
           "ruleIndex": 8,
@@ -27316,7 +27316,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures elements with an ARIA role that require parent roles are contained by them",
+            "text": "Ensures elements with an ARIA role that require parent roles are contained by them.",
           },
           "ruleId": "aria-required-parent",
           "ruleIndex": 9,
@@ -27326,7 +27326,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures all elements with a role attribute use a valid value",
+            "text": "Ensures all elements with a role attribute use a valid value.",
           },
           "ruleId": "aria-roles",
           "ruleIndex": 10,
@@ -27336,7 +27336,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures all ARIA attributes have valid values",
+            "text": "Ensures all ARIA attributes have valid values.",
           },
           "ruleId": "aria-valid-attr-value",
           "ruleIndex": 12,
@@ -27346,7 +27346,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "text": "Ensures attributes that begin with aria- are valid ARIA attributes.",
           },
           "ruleId": "aria-valid-attr",
           "ruleIndex": 11,
@@ -27356,7 +27356,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "text": "Ensure the autocomplete attribute is correct and suitable for the form field.",
           },
           "ruleId": "autocomplete-valid",
           "ruleIndex": 13,
@@ -27366,7 +27366,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <blink> elements are not used",
+            "text": "Ensures <blink> elements are not used.",
           },
           "ruleId": "blink",
           "ruleIndex": 14,
@@ -27376,7 +27376,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures buttons have discernible text",
+            "text": "Ensures buttons have discernible text.",
           },
           "ruleId": "button-name",
           "ruleIndex": 15,
@@ -27386,7 +27386,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures related <input type=\\"checkbox\\"> elements have a group and that the group designation is consistent",
+            "text": "Ensures related <input type=\\"checkbox\\"> elements have a group and that the group designation is consistent.",
           },
           "ruleId": "checkboxgroup",
           "ruleIndex": 17,
@@ -27396,7 +27396,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <dl> elements are structured correctly",
+            "text": "Ensures <dl> elements are structured correctly.",
           },
           "ruleId": "definition-list",
           "ruleIndex": 19,
@@ -27406,7 +27406,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <dt> and <dd> elements are contained by a <dl>",
+            "text": "Ensures <dt> and <dd> elements are contained by a <dl>.",
           },
           "ruleId": "dlitem",
           "ruleIndex": 20,
@@ -27416,7 +27416,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures every id attribute value of active elements is unique",
+            "text": "Ensures every id attribute value of active elements is unique.",
           },
           "ruleId": "duplicate-id-active",
           "ruleIndex": 23,
@@ -27426,7 +27426,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "text": "Ensures every id attribute value used in ARIA and in labels is unique.",
           },
           "ruleId": "duplicate-id-aria",
           "ruleIndex": 24,
@@ -27436,7 +27436,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <iframe> and <frame> elements contain the axe-core script",
+            "text": "Ensures <iframe> and <frame> elements contain the axe-core script.",
           },
           "ruleId": "frame-tested",
           "ruleIndex": 27,
@@ -27446,7 +27446,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+            "text": "Ensures <iframe> and <frame> elements contain a unique title attribute.",
           },
           "ruleId": "frame-title-unique",
           "ruleIndex": 29,
@@ -27456,7 +27456,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <iframe> and <frame> elements contain a non-empty title attribute",
+            "text": "Ensures <iframe> and <frame> elements contain a non-empty title attribute.",
           },
           "ruleId": "frame-title",
           "ruleIndex": 28,
@@ -27466,7 +27466,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures the lang attribute of the <html> element has a valid value",
+            "text": "Ensures the lang attribute of the <html> element has a valid value.",
           },
           "ruleId": "html-lang-valid",
           "ruleIndex": 32,
@@ -27476,7 +27476,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+            "text": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page.",
           },
           "ruleId": "html-xml-lang-mismatch",
           "ruleIndex": 33,
@@ -27486,7 +27486,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <input type=\\"image\\"> elements have alternate text",
+            "text": "Ensures <input type=\\"image\\"> elements have alternate text.",
           },
           "ruleId": "input-image-alt",
           "ruleIndex": 36,
@@ -27496,7 +27496,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures the banner landmark is at top level",
+            "text": "Ensures the banner landmark is at top level.",
           },
           "ruleId": "landmark-banner-is-top-level",
           "ruleIndex": 39,
@@ -27506,7 +27506,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures the complementary landmark or aside is at top level",
+            "text": "Ensures the complementary landmark or aside is at top level.",
           },
           "ruleId": "landmark-complementary-is-top-level",
           "ruleIndex": 40,
@@ -27516,7 +27516,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures the contentinfo landmark is at top level",
+            "text": "Ensures the contentinfo landmark is at top level.",
           },
           "ruleId": "landmark-contentinfo-is-top-level",
           "ruleIndex": 41,
@@ -27526,7 +27526,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures the main landmark is at top level",
+            "text": "Ensures the main landmark is at top level.",
           },
           "ruleId": "landmark-main-is-top-level",
           "ruleIndex": 42,
@@ -27536,7 +27536,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <marquee> elements are not used",
+            "text": "Ensures <marquee> elements are not used.",
           },
           "ruleId": "marquee",
           "ruleIndex": 50,
@@ -27546,7 +27546,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <meta http-equiv=\\"refresh\\"> is not used",
+            "text": "Ensures <meta http-equiv=\\"refresh\\"> is not used.",
           },
           "ruleId": "meta-refresh",
           "ruleIndex": 51,
@@ -27556,7 +27556,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <meta name=\\"viewport\\"> can scale a significant amount",
+            "text": "Ensures <meta name=\\"viewport\\"> can scale a significant amount.",
           },
           "ruleId": "meta-viewport-large",
           "ruleIndex": 53,
@@ -27566,7 +27566,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <meta name=\\"viewport\\"> does not disable text scaling and zooming",
+            "text": "Ensures <meta name=\\"viewport\\"> does not disable text scaling and zooming.",
           },
           "ruleId": "meta-viewport",
           "ruleIndex": 52,
@@ -27576,7 +27576,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <object> elements have alternate text",
+            "text": "Ensures <object> elements have alternate text.",
           },
           "ruleId": "object-alt",
           "ruleIndex": 54,
@@ -27586,7 +27586,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures related <input type=\\"radio\\"> elements have a group and that the group designation is consistent",
+            "text": "Ensures related <input type=\\"radio\\"> elements have a group and that the group designation is consistent.",
           },
           "ruleId": "radiogroup",
           "ruleIndex": 56,
@@ -27596,7 +27596,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures the scope attribute is used correctly on tables",
+            "text": "Ensures the scope attribute is used correctly on tables.",
           },
           "ruleId": "scope-attr-valid",
           "ruleIndex": 58,
@@ -27606,7 +27606,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures that server-side image maps are not used",
+            "text": "Ensures that server-side image maps are not used.",
           },
           "ruleId": "server-side-image-map",
           "ruleIndex": 59,
@@ -27616,7 +27616,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures tabindex attribute values are not greater than 0",
+            "text": "Ensures tabindex attribute values are not greater than 0.",
           },
           "ruleId": "tabindex",
           "ruleIndex": 61,
@@ -27626,7 +27626,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensure that each table header in a data table refers to data cells",
+            "text": "Ensure that each table header in a data table refers to data cells.",
           },
           "ruleId": "th-has-data-cells",
           "ruleIndex": 64,
@@ -27636,7 +27636,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures lang attributes have valid values",
+            "text": "Ensures lang attributes have valid values.",
           },
           "ruleId": "valid-lang",
           "ruleIndex": 65,
@@ -27646,7 +27646,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <video> elements have captions",
+            "text": "Ensures <video> elements have captions.",
           },
           "ruleId": "video-caption",
           "ruleIndex": 66,
@@ -27656,7 +27656,7 @@ Fix any of the following:
           "level": "none",
           "locations": Array [],
           "message": Object {
-            "text": "Ensures <video> elements have audio descriptions",
+            "text": "Ensures <video> elements have audio descriptions.",
           },
           "ruleId": "video-description",
           "ruleIndex": 67,
