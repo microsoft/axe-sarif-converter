@@ -1,18 +1,18 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
+import * as Sarif from 'sarif';
 import { AxeRawResult } from './axe-raw-result';
-import { defaultAxeRawSarifConverter } from './axe-raw-sarif-converter';
+import { defaultAxeRawSarifConverter21 } from './axe-raw-sarif-converter-21';
 import { ConverterOptions } from './converter-options';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromEnvironment } from './environment-data-provider';
-import { defaultSarifConverter } from './sarif-converter';
-import { SarifLog } from './sarif/sarif-log';
+import { defaultSarifConverter21 } from './sarif-converter-21';
 
-export { SarifLog } from './sarif/sarif-log';
+export type SarifLog = Sarif.Log;
 
 export function convertAxeToSarif(axeResults: Axe.AxeResults): SarifLog {
-    const sarifConverter = defaultSarifConverter();
+    const sarifConverter = defaultSarifConverter21();
     return sarifConverter.convert(axeResults, {});
 }
 
@@ -23,17 +23,11 @@ export function sarifReporter(
 ) {
     const converterOptions: ConverterOptions = {};
     const environmentData: EnvironmentData = getEnvironmentDataFromEnvironment();
-    callback(createSarifReport(rawResults, converterOptions, environmentData));
-}
-
-function createSarifReport(
-    rawResults: AxeRawResult[],
-    converterOptions: ConverterOptions,
-    environmentData: EnvironmentData,
-) {
-    return defaultAxeRawSarifConverter().convert(
+    const sarifConverter = defaultAxeRawSarifConverter21();
+    const sarifOutput = sarifConverter.convert(
         rawResults,
         converterOptions,
         environmentData,
     );
+    callback(sarifOutput);
 }
