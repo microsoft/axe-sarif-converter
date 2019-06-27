@@ -4,12 +4,12 @@ import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
-import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+import { getAxeToolProperties21 } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider-21';
-import { SarifConverter21 } from './sarif-converter-21';
+import { getInvocations21 } from './invocation-provider';
+import { SarifConverter21 } from './sarif-converter';
 
 describe('SarifConverter21', () => {
     describe('convert', () => {

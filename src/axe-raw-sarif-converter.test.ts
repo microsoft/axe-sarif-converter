@@ -10,13 +10,13 @@ import { AxeRawResult } from './axe-raw-result';
 import {
     AxeRawSarifConverter21,
     defaultAxeRawSarifConverter21,
-} from './axe-raw-sarif-converter-21';
-import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+} from './axe-raw-sarif-converter';
+import { getAxeToolProperties21 } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider-21';
-import { defaultSarifConverter21 } from './sarif-converter-21';
+import { getInvocations21 } from './invocation-provider';
+import { defaultSarifConverter21 } from './sarif-converter';
 
 describe('AxeRawSarifConverter21', () => {
     describe('integrated with default dependencies', () => {

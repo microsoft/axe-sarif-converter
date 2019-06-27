@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider-21';
+import { getInvocations21 } from './invocation-provider';
 
 describe('invocation-provider-2.1', () => {
     describe('getInvocations21', () => {
