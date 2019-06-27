@@ -8,22 +8,22 @@ import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
 import { AxeRawResult } from './axe-raw-result';
 import {
-    AxeRawSarifConverter21,
-    defaultAxeRawSarifConverter21,
+    AxeRawSarifConverter,
+    defaultAxeRawSarifConverter,
 } from './axe-raw-sarif-converter';
-import { getAxeToolProperties21 } from './axe-tool-property-provider';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider';
-import { defaultSarifConverter21 } from './sarif-converter';
+import { getInvocations } from './invocation-provider';
+import { defaultSarifConverter } from './sarif-converter';
 
-describe('AxeRawSarifConverter21', () => {
+describe('AxeRawSarifConverter', () => {
     describe('integrated with default dependencies', () => {
-        let testSubject: AxeRawSarifConverter21;
+        let testSubject: AxeRawSarifConverter;
 
         beforeEach(() => {
-            testSubject = defaultAxeRawSarifConverter21();
+            testSubject = defaultAxeRawSarifConverter();
         });
 
         it('produces the same output as the v2 converter for equivalent raw input', () => {
@@ -32,7 +32,7 @@ describe('AxeRawSarifConverter21', () => {
                 'utf8',
             );
             const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
-            const axeToSarifOutput = defaultSarifConverter21().convert(
+            const axeToSarifOutput = defaultSarifConverter().convert(
                 axeResult,
                 {},
             );
@@ -128,13 +128,13 @@ describe('AxeRawSarifConverter21', () => {
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
                 () => Sarif.ToolComponent
-            > = Mock.ofInstance(getAxeToolProperties21);
+            > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
                 .setup(ap => ap())
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
-            const testSubject = new AxeRawSarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderMock.object,
                 invocationProviderStub,
@@ -160,7 +160,7 @@ describe('AxeRawSarifConverter21', () => {
         it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
             const invocationProviderMock: IMock<
                 (environmentData: EnvironmentData) => Sarif.Invocation[]
-            > = Mock.ofInstance(getInvocations21);
+            > = Mock.ofInstance(getInvocations);
             invocationProviderMock
                 .setup(ip =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
@@ -168,7 +168,7 @@ describe('AxeRawSarifConverter21', () => {
                 .returns(() => stubInvocations)
                 .verifiable(Times.once());
 
-            const testSubject = new AxeRawSarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderMock.object,
@@ -203,7 +203,7 @@ describe('AxeRawSarifConverter21', () => {
             const irrelevantResults: AxeRawResult[] = [];
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new AxeRawSarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderMock.object,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,
@@ -236,7 +236,7 @@ describe('AxeRawSarifConverter21', () => {
             const irrelevantResults: AxeRawResult[] = [];
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new AxeRawSarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,

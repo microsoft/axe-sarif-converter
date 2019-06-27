@@ -4,14 +4,14 @@ import * as Axe from 'axe-core';
 import * as Sarif from 'sarif';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
-import { getAxeToolProperties21 } from './axe-tool-property-provider';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider';
-import { SarifConverter21 } from './sarif-converter';
+import { getInvocations } from './invocation-provider';
+import { SarifConverter } from './sarif-converter';
 
-describe('SarifConverter21', () => {
+describe('SarifConverter', () => {
     describe('convert', () => {
         const stubConverterProperties: Sarif.Run['conversion'] = {
             tool: {
@@ -55,7 +55,7 @@ describe('SarifConverter21', () => {
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
                 () => Sarif.ToolComponent
-            > = Mock.ofInstance(getAxeToolProperties21);
+            > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
                 .setup(ap => ap())
                 .returns(() => stubToolProperties['driver'])
@@ -64,7 +64,7 @@ describe('SarifConverter21', () => {
             const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new SarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderMock.object,
                 invocationProviderStub,
@@ -101,7 +101,7 @@ describe('SarifConverter21', () => {
 
             const invocationProviderMock: IMock<
                 (environmentData: EnvironmentData) => Sarif.Invocation[]
-            > = Mock.ofInstance(getInvocations21);
+            > = Mock.ofInstance(getInvocations);
             invocationProviderMock
                 .setup(ip =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
@@ -109,7 +109,7 @@ describe('SarifConverter21', () => {
                 .returns(() => stubInvocations)
                 .verifiable(Times.once());
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new SarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderMock.object,
@@ -141,7 +141,7 @@ describe('SarifConverter21', () => {
             const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new SarifConverter(
                 converterPropertyProviderMock.object,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,
@@ -173,7 +173,7 @@ describe('SarifConverter21', () => {
             const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new SarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,

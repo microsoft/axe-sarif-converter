@@ -1,11 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
-import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
-describe('axe-tool-property-provider 2.1', () => {
-    describe('getAxeToolProperties21', () => {
+describe('axe-tool-property-provider', () => {
+    describe('getAxeToolProperties', () => {
         it('returns the axe properties as a Sarif.ToolComponent', () => {
             const expectedResults: Sarif.ToolComponent = {
                 name: 'axe-core',
@@ -24,7 +24,7 @@ describe('axe-tool-property-provider 2.1', () => {
                 supportedTaxonomies: [getWcagTaxonomyReference()],
             };
 
-            const actualResults: Sarif.ToolComponent = getAxeToolProperties21();
+            const actualResults: Sarif.ToolComponent = getAxeToolProperties();
             expect(actualResults).toEqual(expectedResults);
         });
     });

@@ -3,7 +3,7 @@
 import * as Sarif from 'sarif';
 import { EnvironmentData } from './environment-data';
 
-export function getInvocations21(
+export function getInvocations(
     environmentData: EnvironmentData,
 ): Sarif.Invocation[] {
     return [
