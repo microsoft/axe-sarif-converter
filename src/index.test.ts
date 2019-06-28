@@ -24,10 +24,13 @@ function readTestResourceJSON(testResourceFileName: string): any {
 }
 
 describe('public convertAxeToSarif API', () => {
-    it('converts empty/minimal axe v2 input with no results to the pinned minimal SARIF output', () => {
+    it('converts minimal axe v2 input with no results to the pinned minimal SARIF output', () => {
+        // "Minimal" means "just enough for the converter to infer required EnvironmentData"
         const minimalAxeV2Input: AxeResults = {
             toolOptions: {} as RunOptions,
-            testEngine: {} as TestEngine,
+            testEngine: {
+                version: '1.2.3',
+            } as TestEngine,
             testRunner: {} as TestRunner,
             testEnvironment: {} as TestEnvironment,
             url: 'https://example.com',

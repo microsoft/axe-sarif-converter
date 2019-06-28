@@ -14881,7 +14881,7 @@ Fix any of the following:
 }
 `;
 
-exports[`public convertAxeToSarif API converts empty/minimal axe v2 input with no results to the pinned minimal SARIF output 1`] = `
+exports[`public convertAxeToSarif API converts minimal axe v2 input with no results to the pinned minimal SARIF output 1`] = `
 Object {
   "runs": Array [
     Object {
@@ -15560,15 +15560,15 @@ Object {
       ],
       "tool": Object {
         "driver": Object {
-          "downloadUri": "https://www.npmjs.com/package/axe-core/v/undefined",
-          "fullName": "axe for Web vundefined",
+          "downloadUri": "https://www.npmjs.com/package/axe-core/v/1.2.3",
+          "fullName": "axe for Web v1.2.3",
           "informationUri": "https://www.deque.com/axe/axe-for-web/",
           "name": "axe-core",
           "properties": Object {
             "microsoft/qualityDomain": "Accessibility",
           },
           "rules": Array [],
-          "semanticVersion": undefined,
+          "semanticVersion": "1.2.3",
           "shortDescription": Object {
             "text": "An open source accessibility rules library for automated testing.",
           },
@@ -15579,7 +15579,7 @@ Object {
               "name": "WCAG",
             },
           ],
-          "version": undefined,
+          "version": "1.2.3",
         },
       },
     },
