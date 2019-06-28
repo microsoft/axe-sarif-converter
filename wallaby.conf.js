@@ -8,6 +8,7 @@ module.exports = function() {
             'tsconfig.json',
             'jest.config.js',
             'src/**/*.ts',
+            'src/test-resources/*',
             { pattern: 'src/**/*.test.ts', ignore: true },
         ],
         tests: ['src/**/*.test.ts'],
