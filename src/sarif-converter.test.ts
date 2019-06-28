@@ -59,7 +59,13 @@ describe('SarifConverter', () => {
                 (environmentData: EnvironmentData) => Sarif.ToolComponent
             > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
-                .setup(ap => ap(It.isAny()))
+                .setup(ap =>
+                    ap(
+                        It.isObjectWith({
+                            axeVersion: stubAxeVersion,
+                        } as EnvironmentData),
+                    ),
+                )
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
@@ -178,7 +184,13 @@ describe('SarifConverter', () => {
                 (environmentData: EnvironmentData) => Sarif.Artifact
             > = Mock.ofInstance(getArtifactProperties);
             artifactPropertyProviderMock
-                .setup(ap => ap(It.isAny()))
+                .setup(ap =>
+                    ap(
+                        It.isObjectWith({
+                            targetPageUrl: stubTargetPageUrl,
+                        } as EnvironmentData),
+                    ),
+                )
                 .returns(() => stubArtifactProperties)
                 .verifiable(Times.once());
 
@@ -186,6 +198,7 @@ describe('SarifConverter', () => {
                 testEngine: {
                     version: stubAxeVersion,
                 },
+                url: stubTargetPageUrl,
             } as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 

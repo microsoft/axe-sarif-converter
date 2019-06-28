@@ -131,7 +131,7 @@ describe('AxeRawSarifConverter', () => {
                 (environmentData: EnvironmentData) => Sarif.ToolComponent
             > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
-                .setup(ap => ap(It.isAny()))
+                .setup(ap => ap(stubEnvironmentData))
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
@@ -230,7 +230,7 @@ describe('AxeRawSarifConverter', () => {
                 (environmentData: EnvironmentData) => Sarif.Artifact
             > = Mock.ofInstance(getArtifactProperties);
             artifactPropertyProviderMock
-                .setup(ap => ap(It.isAny()))
+                .setup(ap => ap(stubEnvironmentData))
                 .returns(() => stubArtifactProperties)
                 .verifiable(Times.once());
 
