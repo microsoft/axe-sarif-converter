@@ -3,7 +3,7 @@
 import * as Sarif from 'sarif';
 import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
-export function getAxeToolProperties21(): Sarif.ToolComponent {
+export function getAxeToolProperties(): Sarif.ToolComponent {
     return {
         name: 'axe-core',
         fullName: 'axe for Web v3.2.2',

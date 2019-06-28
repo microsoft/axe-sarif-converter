@@ -2,10 +2,10 @@
 // Licensed under the MIT License.
 import * as Sarif from 'sarif';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider-21';
+import { getInvocations } from './invocation-provider';
 
-describe('invocation-provider-2.1', () => {
-    describe('getInvocations21', () => {
+describe('invocation-provider', () => {
+    describe('getInvocations', () => {
         it('populates invocations with data from environmentData parameter', () => {
             const environmentDataStub: EnvironmentData = {
                 targetPageUrl: 'https://example.com',
@@ -19,7 +19,7 @@ describe('invocation-provider-2.1', () => {
                     executionSuccessful: true,
                 },
             ];
-            const actualResults: Sarif.Invocation[] = getInvocations21(
+            const actualResults: Sarif.Invocation[] = getInvocations(
                 environmentDataStub,
             );
             expect(actualResults).toEqual(invocationStub);
