@@ -11,6 +11,7 @@ describe('invocation-provider', () => {
                 targetPageUrl: 'https://example.com',
                 targetPageTitle: 'Environment Data Stub',
                 timestamp: '2018-03-23T21:36:58.321Z',
+                axeVersion: 'stub_version',
             };
             const invocationStub: Sarif.Invocation[] = [
                 {
