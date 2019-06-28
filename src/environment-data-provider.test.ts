@@ -41,7 +41,7 @@ describe('environment-data-provider', () => {
         });
     });
 
-    describe('getEnvironmentDataFromEnvironment', () => {
+    describe('getEnvironmentDataFromEnvironment in axe-like environment', () => {
         beforeAll(() => {
             (global as any).axe = { version: 'stub_axe_version' };
         });
@@ -72,6 +72,16 @@ describe('environment-data-provider', () => {
                 /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/,
             );
             expect(actualTimestamp).toBe(expectedTimestamp);
+        });
+    });
+
+    describe('getEnvironmentDataFromEnvironment outside of axe-like environment', () => {
+        it('throws a descriptive error when it cannot infer axe version', () => {
+            expect(
+                getEnvironmentDataFromEnvironment,
+            ).toThrowErrorMatchingInlineSnapshot(
+                `"Could not infer axe version from global axe object. Are you running from the context of an axe reporter?"`,
+            );
         });
     });
 });
