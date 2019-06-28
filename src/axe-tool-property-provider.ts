@@ -4,7 +4,7 @@ import * as Sarif from 'sarif';
 import { EnvironmentData } from './environment-data';
 import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
-export function getAxeToolProperties21(
+export function getAxeToolProperties(
     environmentData: EnvironmentData,
 ): Sarif.ToolComponent {
     const version = environmentData.axeVersion;

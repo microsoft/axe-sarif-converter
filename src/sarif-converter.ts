@@ -6,28 +6,28 @@ import {
     getArtifactLocation,
     getArtifactProperties,
 } from './artifact-property-provider';
-import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
 import { getEnvironmentDataFromResults } from './environment-data-provider';
-import { getInvocations21 } from './invocation-provider-21';
+import { getInvocations } from './invocation-provider';
 import { ResultToRuleConverter } from './result-to-rule-converter';
 import { formatSarifResultMessage } from './sarif-result-message-formatter';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 import { getWcagTaxonomy } from './wcag-taxonomy-provider';
 
-export function defaultSarifConverter21(): SarifConverter21 {
-    return new SarifConverter21(
+export function defaultSarifConverter(): SarifConverter {
+    return new SarifConverter(
         getConverterProperties,
-        getAxeToolProperties21,
-        getInvocations21,
+        getAxeToolProperties,
+        getInvocations,
         getArtifactProperties,
     );
 }
-export class SarifConverter21 {
+export class SarifConverter {
     private readonly tagsToWcagLinkData: DictionaryStringTo<
         WCAGLinkData
     > = axeTagsToWcagLinkData;

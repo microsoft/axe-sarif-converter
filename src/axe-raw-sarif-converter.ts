@@ -7,28 +7,28 @@ import {
     getArtifactProperties,
 } from './artifact-property-provider';
 import { AxeRawNodeResult, AxeRawResult, ResultValue } from './axe-raw-result';
-import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { DictionaryStringTo } from './dictionary-types';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider-21';
+import { getInvocations } from './invocation-provider';
 import { ResultToRuleConverter } from './result-to-rule-converter';
 import { formatSarifResultMessage } from './sarif-result-message-formatter';
 import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 import { getWcagTaxonomy } from './wcag-taxonomy-provider';
 
-export function defaultAxeRawSarifConverter21(): AxeRawSarifConverter21 {
-    return new AxeRawSarifConverter21(
+export function defaultAxeRawSarifConverter(): AxeRawSarifConverter {
+    return new AxeRawSarifConverter(
         getConverterProperties,
-        getAxeToolProperties21,
-        getInvocations21,
+        getAxeToolProperties,
+        getInvocations,
         getArtifactProperties,
     );
 }
 
-export class AxeRawSarifConverter21 {
+export class AxeRawSarifConverter {
     private readonly tagsToWcagLinkData: DictionaryStringTo<
         WCAGLinkData
     > = axeTagsToWcagLinkData;

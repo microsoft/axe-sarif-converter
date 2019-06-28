@@ -1,18 +1,92 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import * as Axe from 'axe-core';
+import { AxeResults } from 'axe-core';
+import * as fs from 'fs';
+import { sortBy } from 'lodash';
 import * as Sarif from 'sarif';
 import { IMock, It, Mock, Times } from 'typemoq';
 import { getArtifactProperties } from './artifact-property-provider';
-import { getAxeToolProperties21 } from './axe-tool-property-provider-21';
+import { AxeRawResult } from './axe-raw-result';
+import {
+    AxeRawSarifConverter,
+    defaultAxeRawSarifConverter,
+} from './axe-raw-sarif-converter';
+import { getAxeToolProperties } from './axe-tool-property-provider';
 import { ConverterOptions } from './converter-options';
 import { getConverterProperties } from './converter-property-provider';
 import { EnvironmentData } from './environment-data';
-import { getInvocations21 } from './invocation-provider-21';
-import { SarifConverter21 } from './sarif-converter-21';
+import { getInvocations } from './invocation-provider';
+import { defaultSarifConverter } from './sarif-converter';
 
-describe('SarifConverter21', () => {
+describe('AxeRawSarifConverter', () => {
+    describe('integrated with default dependencies', () => {
+        let testSubject: AxeRawSarifConverter;
+
+        beforeEach(() => {
+            testSubject = defaultAxeRawSarifConverter();
+        });
+
+        it('produces the same output as the v2 converter for equivalent raw input', () => {
+            const axeJSON: string = fs.readFileSync(
+                './src/test-resources/axe-v3.2.2.reporter-v2.json',
+                'utf8',
+            );
+            const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
+            const axeToSarifOutput = defaultSarifConverter().convert(
+                axeResult,
+                {},
+            );
+
+            const axeRawJSON: string = fs.readFileSync(
+                './src/test-resources/axe-v3.2.2.reporter-raw.json',
+                'utf8',
+            );
+            const axeRawResult: AxeRawResult[] = JSON.parse(
+                axeRawJSON,
+            ) as AxeRawResult[];
+
+            const environmentDataStub: EnvironmentData = {
+                timestamp: axeResult.timestamp,
+                targetPageUrl: axeResult.url,
+                axeVersion: axeResult.testEngine.version,
+            };
+
+            const axeRawToSarifOutput = testSubject.convert(
+                axeRawResult,
+                {},
+                environmentDataStub,
+            );
+
+            normalizeSarif(axeRawToSarifOutput);
+            normalizeSarif(axeToSarifOutput);
+
+            expect(axeRawToSarifOutput).toEqual(axeToSarifOutput);
+        });
+
+        function normalizeSarif(sarif: Sarif.Log): void {
+            sarif.runs[0].results = sortBy(sarif.runs[0].results, [
+                'ruleId',
+                'locations[0].logicalLocations[0].fullyQualifiedName',
+                'kind',
+            ]);
+
+            sarif.runs[0].results.forEach(removeOptionalXpathLocation);
+        }
+
+        function removeOptionalXpathLocation(result: Sarif.Result) {
+            if (
+                result.locations &&
+                result.locations!.length > 0 &&
+                result.locations![0].logicalLocations!.length > 1
+            ) {
+                result.locations![0].logicalLocations!.pop();
+            }
+        }
+    });
+
     describe('convert', () => {
+        let stubEnvironmentData: EnvironmentData;
+
         const stubConverterProperties: Sarif.Run['conversion'] = {
             tool: {
                 driver: {
@@ -32,14 +106,6 @@ describe('SarifConverter21', () => {
         const stubArtifactProperties: Sarif.Artifact[] = [
             { encoding: 'stub_encoding' },
         ];
-        const stubTimestamp: string = 'stub_timestamp';
-        const stubTargetPageUrl: string = 'stub_url';
-        const stubAxeVersion: string = 'stub_axe_version';
-        const stubEnvironmentData: EnvironmentData = {
-            timestamp: stubTimestamp,
-            targetPageUrl: stubTargetPageUrl,
-            axeVersion: stubAxeVersion,
-        };
 
         const converterPropertyProviderStub: () => Sarif.Run['conversion'] = () => {
             return {} as Sarif.Run['conversion'];
@@ -54,32 +120,34 @@ describe('SarifConverter21', () => {
             return stubArtifactProperties;
         };
 
+        beforeEach(() => {
+            stubEnvironmentData = {
+                targetPageUrl: 'stub_url',
+            } as EnvironmentData;
+        });
+
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
                 (environmentData: EnvironmentData) => Sarif.ToolComponent
-            > = Mock.ofInstance(getAxeToolProperties21);
+            > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
                 .setup(ap => ap(It.isAny()))
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
-            const stubAxeResults: Axe.AxeResults = {
-                testEngine: {
-                    version: stubAxeVersion,
-                },
-            } as Axe.AxeResults;
-            const irrelevantOptions: ConverterOptions = {};
-
-            const testSubject = new SarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderMock.object,
                 invocationProviderStub,
                 artifactPropertyProviderStub,
             );
+            const irrelevantResults: AxeRawResult[] = [];
+            const irrelevantOptions: ConverterOptions = {};
 
             const actualResults = testSubject.convert(
-                stubAxeResults,
+                irrelevantResults,
                 irrelevantOptions,
+                stubEnvironmentData,
             );
 
             axeToolPropertyProviderMock.verifyAll();
@@ -91,25 +159,9 @@ describe('SarifConverter21', () => {
         });
 
         it('outputs a sarif log whose run uses the invocationsProvider to populate the invocations property', () => {
-            const stubResults: Axe.AxeResults = {
-                timestamp: stubTimestamp,
-                url: stubTargetPageUrl,
-                passes: [],
-                violations: [],
-                inapplicable: [],
-                incomplete: [],
-                toolOptions: {} as Axe.RunOptions,
-                testEngine: {
-                    version: stubAxeVersion,
-                } as Axe.TestEngine,
-                testRunner: {} as Axe.TestRunner,
-                testEnvironment: {} as Axe.TestEnvironment,
-            };
-            const irrelevantOptions: ConverterOptions = {};
-
             const invocationProviderMock: IMock<
                 (environmentData: EnvironmentData) => Sarif.Invocation[]
-            > = Mock.ofInstance(getInvocations21);
+            > = Mock.ofInstance(getInvocations);
             invocationProviderMock
                 .setup(ip =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
@@ -117,16 +169,19 @@ describe('SarifConverter21', () => {
                 .returns(() => stubInvocations)
                 .verifiable(Times.once());
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderMock.object,
                 artifactPropertyProviderStub,
             );
+            const irrelevantResults: AxeRawResult[] = [];
+            const irrelevantOptions: ConverterOptions = {};
 
             const actualResults = testSubject.convert(
-                stubResults,
+                irrelevantResults,
                 irrelevantOptions,
+                stubEnvironmentData,
             );
 
             invocationProviderMock.verifyAll();
@@ -146,14 +201,10 @@ describe('SarifConverter21', () => {
                 .returns(() => stubConverterProperties)
                 .verifiable(Times.once());
 
-            const stubAxeResults: Axe.AxeResults = {
-                testEngine: {
-                    version: stubAxeVersion,
-                },
-            } as Axe.AxeResults;
+            const irrelevantResults: AxeRawResult[] = [];
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderMock.object,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,
@@ -161,8 +212,9 @@ describe('SarifConverter21', () => {
             );
 
             const actualResults = testSubject.convert(
-                stubAxeResults,
+                irrelevantResults,
                 irrelevantOptions,
+                stubEnvironmentData,
             );
 
             converterPropertyProviderMock.verifyAll();
@@ -182,14 +234,10 @@ describe('SarifConverter21', () => {
                 .returns(() => stubArtifactProperties)
                 .verifiable(Times.once());
 
-            const stubAxeResults: Axe.AxeResults = {
-                testEngine: {
-                    version: stubAxeVersion,
-                },
-            } as Axe.AxeResults;
+            const irrelevantResults: AxeRawResult[] = [];
             const irrelevantOptions: ConverterOptions = {};
 
-            const testSubject = new SarifConverter21(
+            const testSubject = new AxeRawSarifConverter(
                 converterPropertyProviderStub,
                 axeToolPropertyProviderStub,
                 invocationProviderStub,
@@ -197,8 +245,9 @@ describe('SarifConverter21', () => {
             );
 
             const actualResults = testSubject.convert(
-                stubAxeResults,
+                irrelevantResults,
                 irrelevantOptions,
+                stubEnvironmentData,
             );
 
             artifactPropertyProviderMock.verifyAll();
