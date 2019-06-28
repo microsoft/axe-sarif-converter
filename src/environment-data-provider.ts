@@ -14,8 +14,11 @@ export function getEnvironmentDataFromResults(
 }
 
 export function getEnvironmentDataFromEnvironment(): EnvironmentData {
-    // We use the global axe rather than the imported axe to match the version
-    // we're scanning from the context of
+    // We use the global "axe" object to detect this rather than saying
+    // "import { version } from 'axe-core'"" because we want to pick up the
+    // version of axe that is invoking us, which will usually be a *peer*
+    // dependency, rather than using the version that axe-sarif-converter built
+    // against as a child dependency.
     const globalAxeVersion = (global as any).axe && (global as any).axe.version;
     if (!globalAxeVersion) {
         throw Error(
