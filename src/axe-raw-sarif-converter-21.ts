@@ -37,7 +37,9 @@ export class AxeRawSarifConverter21 {
     );
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
-        private getAxeProperties: () => Sarif.ToolComponent,
+        private getAxeProperties: (
+            environmentData: EnvironmentData,
+        ) => Sarif.ToolComponent,
         private invocationConverter: (
             environmentData: EnvironmentData,
         ) => Sarif.Invocation[],
@@ -71,7 +73,7 @@ export class AxeRawSarifConverter21 {
             conversion: this.getConverterToolProperties(),
             tool: {
                 driver: {
-                    ...this.getAxeProperties(),
+                    ...this.getAxeProperties(environmentData),
                     rules: resultToRuleConverter.getRulePropertiesFromResults(),
                 },
             },

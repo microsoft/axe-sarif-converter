@@ -12,16 +12,20 @@ describe('environment-data-provider', () => {
         it('returns an EnvironmentData object from environment data extracted from AxeResults', () => {
             const stubTimestamp: string = 'stub_timestamp';
             const stubTargetPageUrl: string = 'https://example.com';
+            const stubAxeVersion: string = 'stub_axe_version';
 
             const stubAxeResults: Axe.AxeResults = {
                 url: stubTargetPageUrl,
                 timestamp: stubTimestamp,
+                testEngine: {
+                    name: 'stub_axe_name',
+                    version: stubAxeVersion,
+                },
                 passes: [],
                 incomplete: [],
                 violations: [],
                 inapplicable: [],
                 toolOptions: {} as Axe.RunOptions,
-                testEngine: {} as Axe.TestEngine,
                 testRunner: {} as Axe.TestRunner,
                 testEnvironment: {} as Axe.TestEnvironment,
             };
@@ -29,6 +33,7 @@ describe('environment-data-provider', () => {
             const expectedResults: EnvironmentData = {
                 timestamp: stubTimestamp,
                 targetPageUrl: stubTargetPageUrl,
+                axeVersion: stubAxeVersion,
             };
 
             const actualResults = getEnvironmentDataFromResults(stubAxeResults);
@@ -37,11 +42,23 @@ describe('environment-data-provider', () => {
     });
 
     describe('getEnvironmentDataFromEnvironment', () => {
+        beforeAll(() => {
+            (global as any).axe = { version: 'stub_axe_version' };
+        });
+
+        afterAll(() => {
+            delete (global as any).axe;
+        });
+
         it('returns an EnvironmentData object from environment data extracted from the environment', () => {
             const actualResults = getEnvironmentDataFromEnvironment();
             expect(actualResults).toHaveProperty('timestamp');
             expect(actualResults).toHaveProperty('targetPageUrl');
             expect(actualResults).toHaveProperty('targetPageTitle');
+            expect(actualResults).toHaveProperty(
+                'axeVersion',
+                'stub_axe_version',
+            );
         });
 
         it('contains a timestamp with a valid ISO format', () => {

@@ -48,6 +48,7 @@ describe('AxeRawSarifConverter21', () => {
             const environmentDataStub: EnvironmentData = {
                 timestamp: axeResult.timestamp,
                 targetPageUrl: axeResult.url,
+                axeVersion: axeResult.testEngine.version,
             };
 
             const axeRawToSarifOutput = testSubject.convert(
@@ -127,10 +128,10 @@ describe('AxeRawSarifConverter21', () => {
 
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
-                () => Sarif.ToolComponent
+                (environmentData: EnvironmentData) => Sarif.ToolComponent
             > = Mock.ofInstance(getAxeToolProperties21);
             axeToolPropertyProviderMock
-                .setup(ap => ap())
+                .setup(ap => ap(It.isAny()))
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 

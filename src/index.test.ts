@@ -63,6 +63,9 @@ describe('public convertAxeToSarif API', () => {
     });
 });
 
+// This initializes global state that the reporter API assumes is available
+require('axe-core');
+
 describe('public sarifReporter API', () => {
     const emptyAxeRunOptions = {};
 
