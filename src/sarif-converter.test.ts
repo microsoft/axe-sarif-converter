@@ -34,9 +34,11 @@ describe('SarifConverter', () => {
         ];
         const stubTimestamp: string = 'stub_timestamp';
         const stubTargetPageUrl: string = 'stub_url';
+        const stubAxeVersion: string = 'stub_axe_version';
         const stubEnvironmentData: EnvironmentData = {
             timestamp: stubTimestamp,
             targetPageUrl: stubTargetPageUrl,
+            axeVersion: stubAxeVersion,
         };
 
         const converterPropertyProviderStub: () => Sarif.Run['conversion'] = () => {
@@ -54,14 +56,24 @@ describe('SarifConverter', () => {
 
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
             const axeToolPropertyProviderMock: IMock<
-                () => Sarif.ToolComponent
+                (environmentData: EnvironmentData) => Sarif.ToolComponent
             > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
-                .setup(ap => ap())
+                .setup(ap =>
+                    ap(
+                        It.isObjectWith({
+                            axeVersion: stubAxeVersion,
+                        } as EnvironmentData),
+                    ),
+                )
                 .returns(() => stubToolProperties['driver'])
                 .verifiable(Times.once());
 
-            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
+            const stubAxeResults: Axe.AxeResults = {
+                testEngine: {
+                    version: stubAxeVersion,
+                },
+            } as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter(
@@ -72,7 +84,7 @@ describe('SarifConverter', () => {
             );
 
             const actualResults = testSubject.convert(
-                irrelevantResults,
+                stubAxeResults,
                 irrelevantOptions,
             );
 
@@ -93,7 +105,9 @@ describe('SarifConverter', () => {
                 inapplicable: [],
                 incomplete: [],
                 toolOptions: {} as Axe.RunOptions,
-                testEngine: {} as Axe.TestEngine,
+                testEngine: {
+                    version: stubAxeVersion,
+                } as Axe.TestEngine,
                 testRunner: {} as Axe.TestRunner,
                 testEnvironment: {} as Axe.TestEnvironment,
             };
@@ -138,7 +152,11 @@ describe('SarifConverter', () => {
                 .returns(() => stubConverterProperties)
                 .verifiable(Times.once());
 
-            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
+            const stubAxeResults: Axe.AxeResults = {
+                testEngine: {
+                    version: stubAxeVersion,
+                },
+            } as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter(
@@ -149,7 +167,7 @@ describe('SarifConverter', () => {
             );
 
             const actualResults = testSubject.convert(
-                irrelevantResults,
+                stubAxeResults,
                 irrelevantOptions,
             );
 
@@ -166,11 +184,22 @@ describe('SarifConverter', () => {
                 (environmentData: EnvironmentData) => Sarif.Artifact
             > = Mock.ofInstance(getArtifactProperties);
             artifactPropertyProviderMock
-                .setup(ap => ap(It.isAny()))
+                .setup(ap =>
+                    ap(
+                        It.isObjectWith({
+                            targetPageUrl: stubTargetPageUrl,
+                        } as EnvironmentData),
+                    ),
+                )
                 .returns(() => stubArtifactProperties)
                 .verifiable(Times.once());
 
-            const irrelevantResults: Axe.AxeResults = {} as Axe.AxeResults;
+            const stubAxeResults: Axe.AxeResults = {
+                testEngine: {
+                    version: stubAxeVersion,
+                },
+                url: stubTargetPageUrl,
+            } as Axe.AxeResults;
             const irrelevantOptions: ConverterOptions = {};
 
             const testSubject = new SarifConverter(
@@ -181,7 +210,7 @@ describe('SarifConverter', () => {
             );
 
             const actualResults = testSubject.convert(
-                irrelevantResults,
+                stubAxeResults,
                 irrelevantOptions,
             );
 
