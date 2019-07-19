@@ -17,22 +17,22 @@
         "axe-core": "^3.2.2"
     },
     "devDependencies": {
-        "@types/jest": "^24.0.12",
-        "@types/lodash": "^4.14.123",
-        "@types/node": "^11.13.9",
-        "jest": "^24.7.1",
-        "jest-circus": "^24.7.1",
+        "@types/jest": "^24.0.15",
+        "@types/lodash": "^4.14.136",
+        "@types/node": "^12.6.8",
+        "jest": "^24.8.0",
+        "jest-circus": "^24.8.0",
         "jest-junit": "^6.4.0",
         "license-check-and-add": "^2.3.6",
-        "lodash": "^4.17.11",
-        "prettier": "^1.17.0",
+        "lodash": "^4.17.15",
+        "prettier": "^1.18.2",
         "rimraf": "^2.6.3",
-        "semantic-release": "^15.13.3",
+        "semantic-release": "^15.13.18",
         "ts-jest": "^24.0.2",
-        "tslint": "^5.16.0",
-        "tslint-microsoft-contrib": "^6.1.1",
+        "tslint": "^5.18.0",
+        "tslint-microsoft-contrib": "^6.2.0",
         "typemoq": "^2.1.0",
-        "typescript": "^3.4.5"
+        "typescript": "^3.5.3"
     },
     "scripts": {
         "prebuild": "yarn clean",
