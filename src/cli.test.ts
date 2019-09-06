@@ -43,6 +43,19 @@ describe('axe-sarif-converter CLI', () => {
         }
     });
 
+    it('supports conversion from axe-cli style list of results', async () => {
+        const outputFile = path.join(testResultsDir, 'axe-cli.sarif');
+        await deleteIfExists(outputFile);
+
+        const output = await invokeCliWith(`-i ${axeCliFile} -o ${outputFile}`);
+
+        expect(output.stderr).toBe('');
+        expect(output.stdout).toBe('');
+
+        const outputJson = JSON.parse((await readFile(outputFile)).toString());
+        expect(outputJson.runs.length).toBe(1);
+    });
+
     it('supports basic conversion with short-form i/o args', async () => {
         const outputFile = path.join(testResultsDir, 'basic_short.sarif');
         await deleteIfExists(outputFile);
@@ -146,6 +159,7 @@ describe('axe-sarif-converter CLI', () => {
         testResourcesDir,
         'basic-axe-v3.2.2-sarif-v2.1.2.sarif',
     );
+    const axeCliFile = path.join(testResourcesDir, 'axe-cli-v3.1.1.json');
 
     const writeFile = promisify(fs.writeFile);
     const readFile = promisify(fs.readFile);

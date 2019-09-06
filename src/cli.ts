@@ -62,21 +62,39 @@ function exitWithErrorMessage(message: string) {
     process.exit(1);
 }
 
-const sarifLogs: Log[] = argv.input.map((inputFilePath, index) => {
-    verboseLog(
-        `Reading input file ${index + 1}/${argv.input.length} ${inputFilePath}`,
+function flatten<T>(nestedArray: T[][]): T[] {
+    return nestedArray.reduce(
+        (accumulator, next) => accumulator.concat(next),
+        [],
     );
+}
 
-    // tslint:disable-next-line: non-literal-fs-path
-    const rawInputFileContents = fs.readFileSync(inputFilePath);
-    const axeResults = JSON.parse(rawInputFileContents.toString());
-    return convertAxeToSarif(axeResults);
-});
+const sarifLogs: Log[] = flatten(
+    argv.input.map((inputFilePath, index) => {
+        verboseLog(
+            `Reading input file ${index + 1}/${
+                argv.input.length
+            } ${inputFilePath}`,
+        );
+
+        // tslint:disable-next-line: non-literal-fs-path
+        const rawInputFileContents = fs.readFileSync(inputFilePath);
+        const inputFileJson = JSON.parse(rawInputFileContents.toString());
+        if (Array.isArray(inputFileJson)) {
+            // Treating as array of axe results, like axe-cli produces
+            return inputFileJson.map(convertAxeToSarif);
+        } else {
+            // Treating as a single axe results object, like
+            // JSON.stringify(await axe.run(...)) would produce
+            return [convertAxeToSarif(inputFileJson)];
+        }
+    }),
+);
 
 verboseLog(`Aggregating converted input file(s) into one SARIF log`);
 const combinedLog: Log = {
     ...sarifLogs[0],
-    runs: sarifLogs.map(log => log.runs[0]),
+    runs: flatten(sarifLogs.map(log => log.runs)),
 };
 
 verboseLog(`Formatting SARIF data into file contents`);
