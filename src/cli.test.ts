@@ -4,6 +4,7 @@ import * as child_process from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import { promisify } from 'util';
+
 // tslint:disable: mocha-no-side-effect-code
 
 describe('axe-sarif-converter CLI', () => {
