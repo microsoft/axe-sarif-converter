@@ -18,11 +18,14 @@ type Arguments = {
 const argv: Arguments = yargs
     .scriptName('axe-sarif-converter')
     .version() // inferred from package.json
-    .usage('$0: Converts axe-core result JSON files to SARIF files')
+    .usage(
+        '$0: Converts JSON files containing axe-core Result object(s) into SARIF files',
+    )
     .example('$0 -i axe-results.json -o axe-results.sarif', '')
     .option('input-files', {
         alias: 'i',
-        describe: 'Input file(s). Does not support globs.',
+        describe:
+            'Input JSON file(s) containing axe-core Result object(s). Does not support globs. Each input file may consist of either a single root-level axe-core Results object or a root-level array of axe-core Results objects.',
         demandOption: true,
         type: 'string',
     })
@@ -30,7 +33,7 @@ const argv: Arguments = yargs
     .option('output-file', {
         alias: 'o',
         describe:
-            'Output file. Multiple input files will be combined into one output file with multiple runs.',
+            'Output SARIF file. Multiple input files (or input files containing multiple Result objects) will be combined into one output file with a SARIF Run per axe-core Result.',
         demandOption: true,
         type: 'string',
     })
@@ -42,15 +45,13 @@ const argv: Arguments = yargs
     })
     .option('pretty', {
         alias: 'p',
-        describe:
-            'Includes line breaks and indentation in the output SARIF content.',
+        describe: 'Includes line breaks and indentation in the output.',
         default: false,
         type: 'boolean',
     })
     .option('force', {
         alias: 'f',
-        describe:
-            'Overwrites the output file if it already exists, instead of failing.',
+        describe: 'Overwrites the output file if it already exists.',
         default: false,
         type: 'boolean',
     }).argv;
