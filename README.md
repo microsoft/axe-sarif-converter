@@ -53,7 +53,7 @@ You can also use axe-sarif-converter as a command line tool:
 # using your library of choice and JSON.stringify the results.
 npx axe-cli https://accessibilityinsights.io --save ./sample-axe-results.json
 
-npx axe-sarif-converter --input ./sample-axe-results.json --outFile ./sample-axe-results.sarif
+npx axe-sarif-converter --inputFiles ./sample-axe-results.json --outputFile ./sample-axe-results.sarif
 ```
 
 See `npx axe-sarif-converter --help` for full command line option details.
