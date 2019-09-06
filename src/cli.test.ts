@@ -8,6 +8,10 @@ import { promisify } from 'util';
 // tslint:disable: mocha-no-side-effect-code
 
 describe('axe-sarif-converter CLI', () => {
+    beforeAll(async () => {
+        await ensureDirectoryExists(testResultsDir);
+    });
+
     it('prints help info with --help', async () => {
         const output = await invokeCliWith('--help');
         expect(output.stderr).toBe('');
@@ -162,6 +166,7 @@ describe('axe-sarif-converter CLI', () => {
     );
     const axeCliFile = path.join(testResourcesDir, 'axe-cli-v3.1.1.json');
 
+    const mkdir = promisify(fs.mkdir);
     const writeFile = promisify(fs.writeFile);
     const readFile = promisify(fs.readFile);
     const unlink = promisify(fs.unlink);
@@ -172,6 +177,16 @@ describe('axe-sarif-converter CLI', () => {
             await unlink(path);
         } catch (e) {
             if (e.code != 'ENOENT') {
+                throw e;
+            }
+        }
+    }
+
+    async function ensureDirectoryExists(path: string): Promise<void> {
+        try {
+            await mkdir(path);
+        } catch (e) {
+            if (e.code !== 'EEXIST') {
                 throw e;
             }
         }
