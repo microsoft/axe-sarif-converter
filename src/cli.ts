@@ -8,8 +8,8 @@ import * as yargs from 'yargs';
 import { convertAxeToSarif } from '.';
 
 type Arguments = {
-    input: string[];
-    outFile: string;
+    inputFiles: string[];
+    outputFile: string;
     verbose: boolean;
     pretty: boolean;
     force: boolean;
@@ -20,14 +20,14 @@ const argv: Arguments = yargs
     .version() // inferred from package.json
     .usage('$0: Converts axe-core result JSON files to SARIF files')
     .example('$0 -i axe-results.json -o axe-results.sarif', '')
-    .option('input', {
+    .option('inputFiles', {
         alias: 'i',
         describe: 'Input file(s). Does not support globs.',
         demandOption: true,
         type: 'string',
     })
-    .array('input')
-    .option('outFile', {
+    .array('inputFiles')
+    .option('outputFile', {
         alias: 'o',
         describe:
             'Output file. Multiple input files will be combined into one output file with multiple runs.',
@@ -70,10 +70,10 @@ function flatten<T>(nestedArray: T[][]): T[] {
 }
 
 const sarifLogs: Log[] = flatten(
-    argv.input.map((inputFilePath, index) => {
+    argv.inputFiles.map((inputFilePath, index) => {
         verboseLog(
             `Reading input file ${index + 1}/${
-                argv.input.length
+                argv.inputFiles.length
             } ${inputFilePath}`,
         );
 
@@ -101,16 +101,16 @@ verboseLog(`Formatting SARIF data into file contents`);
 const jsonSpacing = argv.pretty ? 2 : undefined;
 const outputFileContent = JSON.stringify(combinedLog, null, jsonSpacing);
 
-verboseLog(`Writing output file ${argv.outFile}`);
+verboseLog(`Writing output file ${argv.outputFile}`);
 try {
     // tslint:disable-next-line: non-literal-fs-path
-    fs.writeFileSync(argv.outFile, outputFileContent, {
+    fs.writeFileSync(argv.outputFile, outputFileContent, {
         flag: argv.force ? 'w' : 'wx',
     });
 } catch (e) {
     if (e.code == 'EEXIST') {
         exitWithErrorMessage(
-            `Error: EEXIST: Output file ${argv.outFile} already exists. Did you mean to use --force?`,
+            `Error: EEXIST: Output file ${argv.outputFile} already exists. Did you mean to use --force?`,
         );
     } else {
         throw e;

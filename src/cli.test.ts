@@ -79,7 +79,7 @@ describe('axe-sarif-converter CLI', () => {
         await deleteIfExists(outputFile);
 
         const output = await invokeCliWith(
-            `--input ${basicAxeV2File} --outFile ${outputFile}`,
+            `--inputFiles ${basicAxeV2File} --outputFile ${outputFile}`,
         );
 
         expect(output.stderr).toBe('');
