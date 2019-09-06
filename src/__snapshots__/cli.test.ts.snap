@@ -4,16 +4,16 @@ exports[`axe-sarif-converter CLI prints help info with --help: help_stdout 1`] =
 "axe-sarif-converter: Converts axe-core result JSON files to SARIF files
 
 Options:
-  --help            Show help                                          [boolean]
-  --version         Show version number                                [boolean]
-  --inputFiles, -i  Input file(s). Does not support globs.    [array] [required]
-  --outputFile, -o  Output file. Multiple input files will be combined into one
-                    output file with multiple runs.          [string] [required]
-  --verbose, -v     Enables verbose console output.   [boolean] [default: false]
-  --pretty, -p      Includes line breaks and indentation in the output SARIF
-                    content.                          [boolean] [default: false]
-  --force, -f       Overwrites the output file if it already exists, instead of
-                    failing.                          [boolean] [default: false]
+  --help             Show help                                         [boolean]
+  --version          Show version number                               [boolean]
+  --input-files, -i  Input file(s). Does not support globs.   [array] [required]
+  --output-file, -o  Output file. Multiple input files will be combined into one
+                     output file with multiple runs.         [string] [required]
+  --verbose, -v      Enables verbose console output.  [boolean] [default: false]
+  --pretty, -p       Includes line breaks and indentation in the output SARIF
+                     content.                         [boolean] [default: false]
+  --force, -f        Overwrites the output file if it already exists, instead of
+                     failing.                         [boolean] [default: false]
 
 Examples:
   axe-sarif-converter -i axe-results.json -o axe-results.sarif
