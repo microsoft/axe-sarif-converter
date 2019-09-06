@@ -56,6 +56,8 @@ npx axe-cli https://accessibilityinsights.io --save ./sample-axe-results.json
 npx axe-sarif-converter --input ./sample-axe-results.json --outFile ./sample-axe-results.sarif
 ```
 
+See `npx axe-sarif-converter --help` for full command line option details.
+
 ## Samples
 
 The [microsoft/axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples) project contains full sample code that walks you through integrating this library into your project, from writing a test to seeing results in Azure Pipelines.
