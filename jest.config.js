@@ -15,7 +15,13 @@ module.exports = {
     moduleFileExtensions: ['ts', 'js'],
     rootDir: rootDir,
     collectCoverage: true,
-    collectCoverageFrom: ['./**/*.ts', '!./**/*.test.ts'],
+    collectCoverageFrom: [
+        '<rootDir>/**/*.ts',
+        '!<rootDir>/**/*.test.ts',
+        // The CLI is tested via integration tests that spawn separate node
+        // processes, so coverage information on this file isn't accurate
+        '!<rootDir>/cli.ts',
+    ],
     coverageReporters: ['json', 'lcov', 'text', 'cobertura'],
     testMatch: [`${currentDir}/**/*.test.(ts|js)`],
     reporters: [
