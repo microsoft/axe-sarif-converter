@@ -10,7 +10,7 @@ Licensed under the MIT License.
 [![npm](https://img.shields.io/npm/v/axe-sarif-converter.svg)](https://www.npmjs.com/package/axe-sarif-converter)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-Convert [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results to the [SARIF format](http://sarifweb.azurewebsites.net/).
+Convert [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results to the [SARIF format](http://sarifweb.azurewebsites.net/). Provides both a TypeScript API and a CLI tool.
 
 Use this with the [Sarif Viewer Build Tab Azure DevOps Extension](https://marketplace.visualstudio.com/items?itemName=sariftools.sarif-viewer-build-tab) to visualize accessibility scan results in the build results of an [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) build.
 
@@ -44,6 +44,16 @@ test('my accessibility test', async () => {
         JSON.stringify(sarifResults),
         { encoding: 'utf8' });
 }
+```
+
+You can also use axe-sarif-converter as a command line tool:
+
+```bash
+# axe-cli is used here for example purposes only; you could also run axe-core
+# using your library of choice and JSON.stringify the results.
+npx axe-cli https://accessibilityinsights.io --save ./sample-axe-results.json
+
+npx axe-sarif-converter --input ./sample-axe-results.json --outFile ./sample-axe-results.sarif
 ```
 
 ## Samples
