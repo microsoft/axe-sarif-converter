@@ -32,7 +32,7 @@ describe('axe-sarif-converter CLI', () => {
             await invokeCliWith(`-o irrelevant.sarif`);
             fail('Should have returned non-zero exit code');
         } catch (e) {
-            expect(e.stderr).toMatch('Missing required argument: input');
+            expect(e.stderr).toMatch('Missing required argument: inputFiles');
         }
     });
 
@@ -44,7 +44,7 @@ describe('axe-sarif-converter CLI', () => {
             await invokeCliWith(`-i irrelevant.json`);
             fail('Should have returned non-zero exit code');
         } catch (e) {
-            expect(e.stderr).toMatch('Missing required argument: outFile');
+            expect(e.stderr).toMatch('Missing required argument: outputFile');
         }
     });
 
