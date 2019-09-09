@@ -24,6 +24,9 @@ jobs:
           - script: yarn copyrightheaders
             displayName: yarn copyrightheaders
 
+          - script: yarn build
+            displayName: yarn build
+
           - script: yarn test -- --ci
             displayName: yarn test
 
@@ -47,9 +50,6 @@ jobs:
                 artifactName: 'CodeAnalysisLogs'
             condition: always()
             displayName: publish sarif results
-
-          - script: yarn build
-            displayName: yarn build
 
           - script: yarn semantic-release
             displayName: yarn semantic-release (master branch only)

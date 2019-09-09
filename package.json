@@ -3,6 +3,7 @@
     "version": "0.0.0-managed-by-semantic-release",
     "description": "Convert axe-core accessibility scan results to the SARIF format",
     "main": "dist/index.js",
+    "bin": "dist/cli.js",
     "types": "dist/index.d.js",
     "files": [
         "dist/",
@@ -14,12 +15,14 @@
     },
     "dependencies": {
         "@types/sarif": ">=2.1.1 <=2.1.2",
-        "axe-core": "^3.2.2"
+        "axe-core": "^3.2.2",
+        "yargs": "^14.0.0"
     },
     "devDependencies": {
         "@types/jest": "^24.0.15",
         "@types/lodash": "^4.14.136",
         "@types/node": "^12.6.8",
+        "@types/yargs": "^13.0.2",
         "jest": "^24.8.0",
         "jest-circus": "^24.8.0",
         "jest-junit": "^8.0.0",

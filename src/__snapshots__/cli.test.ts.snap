@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`axe-sarif-converter CLI prints help info with --help: help_stdout 1`] = `
+"axe-sarif-converter: Converts JSON files containing axe-core Result object(s)
+into SARIF files
+
+Options:
+  --help             Show help                                         [boolean]
+  --version          Show version number                               [boolean]
+  --input-files, -i  Input JSON file(s) containing axe-core Result object(s).
+                     Does not support globs. Each input file may consist of
+                     either a single root-level axe-core Results object or a
+                     root-level array of axe-core Results objects.
+                                                              [array] [required]
+  --output-file, -o  Output SARIF file. Multiple input files (or input files
+                     containing multiple Result objects) will be combined into
+                     one output file with a SARIF Run per axe-core Result.
+                                                             [string] [required]
+  --verbose, -v      Enables verbose console output.  [boolean] [default: false]
+  --pretty, -p       Includes line breaks and indentation in the output.
+                                                      [boolean] [default: false]
+  --force, -f        Overwrites the output file if it already exists.
+                                                      [boolean] [default: false]
+
+Examples:
+  axe-sarif-converter -i axe-results.json -o axe-results.sarif
+"
+`;

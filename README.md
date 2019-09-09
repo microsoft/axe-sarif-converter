@@ -10,7 +10,7 @@ Licensed under the MIT License.
 [![npm](https://img.shields.io/npm/v/axe-sarif-converter.svg)](https://www.npmjs.com/package/axe-sarif-converter)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-Convert [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results to the [SARIF format](http://sarifweb.azurewebsites.net/).
+Convert [axe-core](https://github.com/dequelabs/axe-core) accessibility scan results to the [SARIF format](http://sarifweb.azurewebsites.net/). Provides both a TypeScript API and a CLI tool.
 
 Use this with the [Sarif Viewer Build Tab Azure DevOps Extension](https://marketplace.visualstudio.com/items?itemName=sariftools.sarif-viewer-build-tab) to visualize accessibility scan results in the build results of an [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) build.
 
@@ -46,6 +46,18 @@ test('my accessibility test', async () => {
 }
 ```
 
+You can also use axe-sarif-converter as a command line tool:
+
+```bash
+# axe-cli is used here for example purposes only; you could also run axe-core
+# using your library of choice and JSON.stringify the results.
+npx axe-cli https://accessibilityinsights.io --save ./sample-axe-results.json
+
+npx axe-sarif-converter --input-files ./sample-axe-results.json --output-file ./sample-axe-results.sarif
+```
+
+See `npx axe-sarif-converter --help` for full command line option details.
+
 ## Samples
 
 The [microsoft/axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples) project contains full sample code that walks you through integrating this library into your project, from writing a test to seeing results in Azure Pipelines.
@@ -61,6 +73,26 @@ Note that the SARIF format _does not use semantic versioning_, and there are bre
 
 ## Contributing
 
+To get started working on the project:
+
+1. Install dependencies:
+
+    - Install [Node.js](https://nodejs.org/en/download/) (LTS version)
+    - `npm install -g yarn`
+    - `yarn install`
+
+1. Run all build, lint, and test steps:
+
+    - `yarn precheckin`
+
+1. Run the CLI tool with your changes:
+
+    - `yarn build`
+    - `node dist/cli.js`
+    - Alternately, register a linked global `axe-sarif-converter` command with `npm install && npm link` (yarn doesn't work for this; see [yarnpkg/yarn#1585](https://github.com/yarnpkg/yarn/issues/1585))
+
+### Contributor License Agreement
+
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
@@ -68,6 +100,8 @@ the rights to use your contribution. For details, visit https://cla.microsoft.co
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 provided by the bot. You will only need to do this once across all repos using our CLA.
+
+### Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
