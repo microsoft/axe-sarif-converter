@@ -73,6 +73,26 @@ Note that the SARIF format _does not use semantic versioning_, and there are bre
 
 ## Contributing
 
+To get started working on the project:
+
+1. Install dependencies:
+
+    - Install [Node.js](https://nodejs.org/en/download/) (LTS version)
+    - `npm install -g yarn`
+    - `yarn install`
+
+1. Run all build, lint, and test steps:
+
+    - `yarn precheckin`
+
+1. Run the CLI tool with your changes:
+
+    - `yarn build`
+    - `node dist/cli.js`
+    - Alternately, register a linked global `axe-sarif-converter` command with `npm install && npm link` (yarn doesn't work for this; see [yarnpkg/yarn#1585](https://github.com/yarnpkg/yarn/issues/1585))
+
+### Contributor License Agreement
+
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
@@ -80,6 +100,8 @@ the rights to use your contribution. For details, visit https://cla.microsoft.co
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 provided by the bot. You will only need to do this once across all repos using our CLA.
+
+### Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
