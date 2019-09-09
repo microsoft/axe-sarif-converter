@@ -25,9 +25,6 @@ describe('axe-sarif-converter CLI', () => {
     });
 
     it('requires the -i parameter', async () => {
-        const outputFile = path.join(testResultsDir, 'overwrite_test.sarif');
-        await writeFile(outputFile, 'preexisting content');
-
         try {
             await invokeCliWith(`-o irrelevant.sarif`);
             fail('Should have returned non-zero exit code');
@@ -37,9 +34,6 @@ describe('axe-sarif-converter CLI', () => {
     });
 
     it('requires the -o parameter', async () => {
-        const outputFile = path.join(testResultsDir, 'overwrite_test.sarif');
-        await writeFile(outputFile, 'preexisting content');
-
         try {
             await invokeCliWith(`-i irrelevant.json`);
             fail('Should have returned non-zero exit code');
