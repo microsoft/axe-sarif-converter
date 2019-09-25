@@ -44,26 +44,25 @@ describe('public convertAxeToSarif API', () => {
         expect(convertAxeToSarif(minimalAxeV2Input)).toMatchSnapshot();
     });
 
-    it('converts minimal axe v2 input with a basic result to the pinned SARIF output', () => {
-        const basicAxeV2Input: AxeResults = readTestResourceJSON(
-            'basic-axe-v3.2.2-reporter-v2.json',
-        );
-        const expectedBasicSarifOutput: SarifLog = readTestResourceJSON(
-            'basic-axe-v3.2.2-sarif-v2.1.2.sarif',
-        );
+    it.each`
+        inputFile                                     | outputFile
+        ${'basic-axe-v3.2.2.reporter-v2.json'}        | ${'basic-axe-v3.2.2.sarif'}
+        ${'w3citylights-axe-v3.2.2.reporter-v2.json'} | ${'w3citylights-axe-v3.2.2.sarif'}
+        ${'basic-axe-v3.3.2.reporter-v1.json'}        | ${'basic-axe-v3.3.2.sarif'}
+        ${'basic-axe-v3.3.2.reporter-v2.json'}        | ${'basic-axe-v3.3.2.sarif'}
+        ${'w3citylights-axe-v3.3.2.reporter-v1.json'} | ${'w3citylights-axe-v3.3.2.sarif'}
+        ${'w3citylights-axe-v3.3.2.reporter-v2.json'} | ${'w3citylights-axe-v3.3.2.sarif'}
+    `(
+        'converts pinned v1/v2 input $inputFile to pinned output $outputFile',
+        ({ inputFile, outputFile }) => {
+            const input: AxeResults = readTestResourceJSON(inputFile);
+            const expectedOutput: SarifLog = readTestResourceJSON(outputFile);
 
-        expect(convertAxeToSarif(basicAxeV2Input)).toEqual(
-            expectedBasicSarifOutput,
-        );
-    });
+            const actualOutput: SarifLog = convertAxeToSarif(input);
 
-    it('converts axe v2 input from a real scan to the pinned SARIF output snapshot', () => {
-        const realisticAxeV2Input: AxeResults = readTestResourceJSON(
-            'axe-v3.2.2.reporter-v2.json',
-        );
-
-        expect(convertAxeToSarif(realisticAxeV2Input)).toMatchSnapshot();
-    });
+            expect(actualOutput).toEqual(expectedOutput);
+        },
+    );
 });
 
 // This initializes global state that the reporter API assumes is available
@@ -93,36 +92,31 @@ describe('public sarifReporter API', () => {
         sarifReporter(minimalAxeRawInput, emptyAxeRunOptions, callback);
     });
 
-    it('converts minimal axe rawObject input with a basic result to the pinned SARIF output', done => {
-        const basicAxeRawInput: AxeRawResult[] = readTestResourceJSON(
-            'basic-axe-v3.2.2-reporter-raw.json',
-        );
-        const expectedBasicSarifOutput: SarifLog = readTestResourceJSON(
-            'basic-axe-v3.2.2-sarif-v2.1.2.sarif',
-        );
+    // Since the integration tests of the raw converter involve global page/axe state,
+    // it isn't very meaningful to test cases that involve old axe versions here.
+    it.each`
+        inputFile                               | outputFile
+        ${'basic-axe-v3.3.2.reporter-raw.json'} | ${'basic-axe-v3.3.2.sarif'}
+    `(
+        'converts pinned raw input $inputFile to pinned output $outputFile',
+        async ({ inputFile, outputFile }) => {
+            return new Promise(resolve => {
+                const input: AxeRawResult[] = readTestResourceJSON(inputFile);
+                const expectedOutput: SarifLog = readTestResourceJSON(
+                    outputFile,
+                );
 
-        function callback(convertedSarifResults: SarifLog) {
-            normalizeEnvironmentDerivedSarifProperties(convertedSarifResults);
+                function callback(convertedSarifResults: SarifLog) {
+                    normalizeEnvironmentDerivedSarifProperties(
+                        convertedSarifResults,
+                    );
 
-            expect(convertedSarifResults).toEqual(expectedBasicSarifOutput);
-            done();
-        }
+                    expect(convertedSarifResults).toEqual(expectedOutput);
+                    resolve();
+                }
 
-        sarifReporter(basicAxeRawInput, emptyAxeRunOptions, callback);
-    });
-
-    it('converts axe rawObject input from a real scan to the pinned SARIF output snapshot', done => {
-        const realisticAxeRawInput: AxeRawResult[] = readTestResourceJSON(
-            'axe-v3.2.2.reporter-raw.json',
-        );
-
-        function callback(convertedSarifResults: SarifLog) {
-            normalizeEnvironmentDerivedSarifProperties(convertedSarifResults);
-
-            expect(convertedSarifResults).toMatchSnapshot();
-            done();
-        }
-
-        sarifReporter(realisticAxeRawInput, emptyAxeRunOptions, callback);
-    });
+                sarifReporter(input, emptyAxeRunOptions, callback);
+            });
+        },
+    );
 });

@@ -28,7 +28,7 @@ describe('AxeRawSarifConverter', () => {
 
         it('produces the same output as the v2 converter for equivalent raw input', () => {
             const axeJSON: string = fs.readFileSync(
-                './src/test-resources/axe-v3.2.2.reporter-v2.json',
+                './src/test-resources/basic-axe-v3.3.2.reporter-v2.json',
                 'utf8',
             );
             const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
@@ -38,7 +38,7 @@ describe('AxeRawSarifConverter', () => {
             );
 
             const axeRawJSON: string = fs.readFileSync(
-                './src/test-resources/axe-v3.2.2.reporter-raw.json',
+                './src/test-resources/basic-axe-v3.3.2.reporter-raw.json',
                 'utf8',
             );
             const axeRawResult: AxeRawResult[] = JSON.parse(
