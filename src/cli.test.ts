@@ -152,13 +152,16 @@ describe('axe-sarif-converter CLI', () => {
     const testResultsDir = path.join(__dirname, '..', 'test-results');
     const basicAxeV2File = path.join(
         testResourcesDir,
-        'basic-axe-v3.2.2-reporter-v2.json',
+        'basic-axe-v3.3.2.reporter-v2.json',
     );
     const basicSarifFile = path.join(
         testResourcesDir,
-        'basic-axe-v3.2.2-sarif-v2.1.2.sarif',
+        'basic-axe-v3.3.2.sarif',
     );
-    const axeCliFile = path.join(testResourcesDir, 'axe-cli-v3.1.1.json');
+    const axeCliFile = path.join(
+        testResourcesDir,
+        'w3citylights-axe-v3.3.2.axe-cli-v3.1.1.json',
+    );
 
     const mkdir = promisify(fs.mkdir);
     const writeFile = promisify(fs.writeFile);

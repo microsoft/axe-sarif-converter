@@ -66,8 +66,8 @@ The [microsoft/axe-pipelines-samples](https://github.com/microsoft/axe-pipelines
 
 The version number of this library is **independent** from the version numbers of the axe-core inputs and SARIF outputs it supports.
 
--   axe-sarif-converter version 2.x supports input from version ^3.0.0 of axe-core and outputs SARIF v2.1
--   axe-sarif-converter version 1.x supports input from version ^3.0.0 of axe-core and outputs SARIF v2.0
+-   axe-sarif-converter version 2.x supports input from version ^3.2.0 of axe-core (tested with 3.2.2 and 3.3.2) and outputs SARIF v2.1
+-   axe-sarif-converter version 1.x supports input from version >= 3.2.0 < 3.3.0 of axe-core (tested with 3.2.2) and outputs SARIF v2.0
 
 Note that the SARIF format _does not use semantic versioning_, and there are breaking changes between the v2.0 and v2.1 SARIF formats. If you need compatibility with a SARIF viewer that only supports v2.0, you should use version 1.x of this library.
 

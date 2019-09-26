@@ -7,7 +7,7 @@ import { convertAxeToSarif } from './index';
 describe('Azure DevOps sarif viewer extension test', () => {
     it('save sarif file to artifact to be shown by sarif viewer tab', () => {
         const axeJSON: string = fs.readFileSync(
-            './src/test-resources/axe-v3.2.2.reporter-v2.json',
+            './src/test-resources/w3citylights-axe-v3.3.2.reporter-v2.json',
             'utf8',
         );
         const axeResult: AxeResults = JSON.parse(axeJSON) as AxeResults;
