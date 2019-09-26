@@ -1,0 +1,34 @@
+{
+    "license": "copyright-header.txt",
+    "ignore": [
+        ".git/",
+        ".github/",
+        ".gitattributes",
+        ".gitignore",
+        ".prettierignore",
+        "src/test-resources/",
+        "test-results/",
+        "yarn.lock",
+        "**/*.snap"
+    ],
+    "licenseFormats": {
+        "yaml|yml|npmrc": {
+            "eachLine": {
+                "prepend": "# "
+            }
+        },
+        "md": {
+            "prepend": "<!--",
+            "append": "-->"
+        },
+        "snap|ts|tsx|d.ts|js|scss|css": {
+            "eachLine": {
+                "prepend": "// "
+            }
+        }
+    },
+    "defaultFormat": {
+        "prepend": "/*",
+        "append": "*/"
+    }
+}
