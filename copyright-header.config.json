@@ -21,7 +21,7 @@
             "prepend": "<!--",
             "append": "-->"
         },
-        "snap|ts|tsx|d.ts|js|scss|css": {
+        "ts|d.ts|js": {
             "eachLine": {
                 "prepend": "// "
             }
