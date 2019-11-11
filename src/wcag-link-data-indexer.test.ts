@@ -31,9 +31,7 @@ describe('WCAGLinkDataIndexer', () => {
             wcag3: 2,
         };
 
-        const actualResults: DictionaryStringTo<
-            number
-        > = wcagLinkDataIndexer.getWcagTagsToTaxaIndices();
+        const actualResults: DictionaryStringTo<number> = wcagLinkDataIndexer.getWcagTagsToTaxaIndices();
 
         expect(actualResults).toEqual(expectedResults);
     });
