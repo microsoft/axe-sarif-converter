@@ -18,9 +18,7 @@ export class ResultToRuleConverter {
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
     ): ResultToRuleConverter {
-        const rulesDictionary: DictionaryStringTo<
-            Sarif.ReportingDescriptor
-        > = {};
+        const rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> = {};
         ResultToRuleConverter.convertResultsToRules(
             results,
             axeTags,
@@ -34,9 +32,7 @@ export class ResultToRuleConverter {
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
     ): ResultToRuleConverter {
-        const rulesDictionary: DictionaryStringTo<
-            Sarif.ReportingDescriptor
-        > = {};
+        const rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> = {};
         ResultToRuleConverter.convertV2ResultsToRules(
             results,
             axeTags,

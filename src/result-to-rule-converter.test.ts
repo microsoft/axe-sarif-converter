@@ -119,9 +119,7 @@ describe('ResultToRuleConverter', () => {
                     stub_id_2: 1,
                 };
 
-                const actualResults: DictionaryStringTo<
-                    number
-                > = resultToRuleConverter.getRuleIdsToRuleIndices();
+                const actualResults: DictionaryStringTo<number> = resultToRuleConverter.getRuleIdsToRuleIndices();
 
                 expect(actualResults).toEqual(expectedResults);
             });
@@ -180,9 +178,7 @@ describe('ResultToRuleConverter', () => {
                     stub_id_2: 1,
                 };
 
-                const actualResults: DictionaryStringTo<
-                    number
-                > = rawResultToRuleConverter.getRuleIdsToRuleIndices();
+                const actualResults: DictionaryStringTo<number> = rawResultToRuleConverter.getRuleIdsToRuleIndices();
 
                 expect(actualResults).toEqual(expectedResults);
             });
