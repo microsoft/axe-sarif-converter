@@ -42,18 +42,30 @@ describe('axe-sarif-converter CLI', () => {
         }
     });
 
-    it('supports conversion from axe-cli style list of results', async () => {
-        const outputFile = path.join(testResultsDir, 'axe-cli.sarif');
-        await deleteIfExists(outputFile);
+    it.each`
+        inputFile
+        ${'w3citylights-axe-v3.3.2.axe-cli-v3.1.1.json'}
+        ${'w3citylights-axe-v3.4.1.axe-cli-v3.1.1.json'}
+    `(
+        'supports conversion from axe-cli output $inputFile',
+        async ({ inputFile }) => {
+            const inputFilePath = path.join(testResourcesDir, inputFile);
+            const outputFile = path.join(testResultsDir, `${inputFile}.sarif`);
+            await deleteIfExists(outputFile);
 
-        const output = await invokeCliWith(`-i ${axeCliFile} -o ${outputFile}`);
+            const output = await invokeCliWith(
+                `-i ${inputFilePath} -o ${outputFile}`,
+            );
 
-        expect(output.stderr).toBe('');
-        expect(output.stdout).toBe('');
+            expect(output.stderr).toBe('');
+            expect(output.stdout).toBe('');
 
-        const outputJson = JSON.parse((await readFile(outputFile)).toString());
-        expect(outputJson.runs.length).toBe(1);
-    });
+            const outputJson = JSON.parse(
+                (await readFile(outputFile)).toString(),
+            );
+            expect(outputJson.runs.length).toBe(1);
+        },
+    );
 
     it('supports basic conversion with short-form i/o args', async () => {
         const outputFile = path.join(testResultsDir, 'basic_short.sarif');
@@ -157,10 +169,6 @@ describe('axe-sarif-converter CLI', () => {
     const basicSarifFile = path.join(
         testResourcesDir,
         'basic-axe-v3.3.2.sarif',
-    );
-    const axeCliFile = path.join(
-        testResourcesDir,
-        'w3citylights-axe-v3.3.2.axe-cli-v3.1.1.json',
     );
 
     const mkdir = promisify(fs.mkdir);
