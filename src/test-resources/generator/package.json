@@ -1,0 +1,27 @@
+{
+  "name": "generate-test-resources",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Generates the test-resources files one directory up",
+  "scripts": {
+    "build": "tsc generate-test-resources.ts",
+    "generate-for-axe-version": "yarn build && node out/generate-test-resources.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "@types/node": "^12.7.7",
+    "@types/puppeteer": "^1.19.1",
+    "axe-cli": "^3.2.0",
+    "axe-core-3.0.3": "npm:axe-core@3.0.3",
+    "axe-core-3.1.2": "npm:axe-core@3.1.2",
+    "axe-core-3.2.2": "npm:axe-core@3.2.2",
+    "axe-core-3.3.2": "npm:axe-core@3.3.2",
+    "axe-core-3.4.1": "npm:axe-core@3.4.1",
+    "axe-puppeteer": "^1.0.0",
+    "axe-sarif-converter": "^2.2.0",
+    "puppeteer": "^1.19.0",
+    "typescript": "^3.6.3"
+  }
+}
