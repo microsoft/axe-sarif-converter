@@ -66,7 +66,7 @@ The [microsoft/axe-pipelines-samples](https://github.com/microsoft/axe-pipelines
 
 The version number of this library is **independent** from the version numbers of the axe-core inputs and SARIF outputs it supports.
 
--   axe-sarif-converter version 2.x supports input from version ^3.2.0 of axe-core (tested with 3.2.2 and 3.3.2) and outputs SARIF v2.1
+-   axe-sarif-converter version 2.x supports input from version ^3.2.0 of axe-core (tested with 3.2.2, 3.3.2, and 3.4.1) and outputs SARIF v2.1
 -   axe-sarif-converter version 1.x supports input from version >= 3.2.0 < 3.3.0 of axe-core (tested with 3.2.2) and outputs SARIF v2.0
 
 Note that the SARIF format _does not use semantic versioning_, and there are breaking changes between the v2.0 and v2.1 SARIF formats. If you need compatibility with a SARIF viewer that only supports v2.0, you should use version 1.x of this library.
@@ -116,6 +116,7 @@ To update the package and test cases to account for a new axe-core version:
 1. Manually compare the diff of `/src/test-resources/w3citylights-axe-vPREVIOUS.sarif` and `/src/test-resources/w3citylights-axe-vNEW.sarif`; in addition to version number differences, you should see some differences based on new/removed rules between the axe versions.
 1. Add test cases involving the new files to the integration tests in `src/index.test.ts` and `src/cli.test.ts`
 1. Update snapshots (`yarn test -u`)
+1. Update this README's `Version numbers` section to note which versions we've tested against.
 
 ### Contributor License Agreement
 
