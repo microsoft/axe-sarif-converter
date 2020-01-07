@@ -12,6 +12,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { AxeRawResult } from './axe-raw-result';
 import { convertAxeToSarif, SarifLog, sarifReporter } from './index';
+import { testResourceTimestampPlaceholder } from './test-resource-constants';
 
 function readTestResourceJSON(testResourceFileName: string): any {
     const rawFileContents: string = fs.readFileSync(
@@ -75,11 +76,11 @@ require('axe-core');
 describe('public sarifReporter API', () => {
     const emptyAxeRunOptions = {};
 
-    // Normalized values are the pinned expectations from basic-axe-v3.2.2-sarif-v2.1.2.sarif
+    // Normalized values are the pinned expectations from generated test-resources files
     function normalizeEnvironmentDerivedSarifProperties(sarif: SarifLog): void {
         sarif.runs[0]!.invocations!.forEach(i => {
-            i.endTimeUtc = '2000-01-02T03:04:05.006Z';
-            i.startTimeUtc = '2000-01-02T03:04:05.006Z';
+            i.endTimeUtc = testResourceTimestampPlaceholder;
+            i.startTimeUtc = testResourceTimestampPlaceholder;
         });
     }
 

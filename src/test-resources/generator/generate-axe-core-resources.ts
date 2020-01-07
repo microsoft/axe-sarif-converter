@@ -8,6 +8,7 @@ import * as path from 'path';
 import * as Puppeteer from 'puppeteer';
 import * as url from 'url';
 import { convertAxeToSarif } from '../../../dist/index';
+import { testResourceTimestampPlaceholder } from '../../../dist/test-resource-constants';
 
 const axeVersion: string = (axe as any).version;
 const axeSource: string = axe.source
@@ -40,7 +41,7 @@ async function writeResultFile(results: any, outputFileName: string) {
 
 function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
     if (axeResults.timestamp != undefined) {
-        axeResults.timestamp = '2000-01-02T03:04:05.006Z'
+        axeResults.timestamp = testResourceTimestampPlaceholder;
     }
 
     if (axeResults.url != undefined && axeResults.url.startsWith('file://')) {
