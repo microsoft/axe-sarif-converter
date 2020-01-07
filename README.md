@@ -112,6 +112,8 @@ To update the package and test cases to account for a new axe-core version:
     yarn generate
     ```
 
+1. Manually compare the diff of `/src/test-resources/basic-axe-vPREVIOUS.sarif` and `/src/test-resources/basic-axe-vNEW.sarif`; the only differences should be the version numbers.
+1. Manually compare the diff of `/src/test-resources/w3citylights-axe-vPREVIOUS.sarif` and `/src/test-resources/w3citylights-axe-vNEW.sarif`; in addition to version number differences, you should see some differences based on new/removed rules between the axe versions.
 1. Add test cases involving the new files to the integration tests in `src/index.test.ts` and `src/cli.test.ts`
 1. Update snapshots (`yarn test -u`)
 
