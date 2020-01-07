@@ -18,6 +18,7 @@ module.exports = {
     collectCoverageFrom: [
         '<rootDir>/**/*.ts',
         '!<rootDir>/**/*.test.ts',
+        '!<rootDir>/test-resources/generator/**/*.ts',
         // The CLI is tested via integration tests that spawn separate node
         // processes, so coverage information on this file isn't accurate
         '!<rootDir>/cli.ts',

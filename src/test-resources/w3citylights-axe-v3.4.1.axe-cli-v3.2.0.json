@@ -4,7 +4,7 @@
       {
         "description": "Ensures every accesskey attribute value is unique",
         "help": "accesskey attribute value must be unique",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/accesskeys?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/accesskeys?application=webdriverjs",
         "id": "accesskeys",
         "impact": null,
         "nodes": [],
@@ -16,7 +16,7 @@
       {
         "description": "Ensures <area> elements of image maps have alternate text",
         "help": "Active <area> elements must have alternate text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/area-alt?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/area-alt?application=webdriverjs",
         "id": "area-alt",
         "impact": null,
         "nodes": [],
@@ -31,7 +31,7 @@
       {
         "description": "Ensures ARIA attributes are allowed for an element's role",
         "help": "Elements must only use allowed ARIA attributes",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-allowed-attr?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-allowed-attr?application=webdriverjs",
         "id": "aria-allowed-attr",
         "impact": null,
         "nodes": [],
@@ -44,7 +44,7 @@
       {
         "description": "Ensures role attribute has an appropriate value for the element",
         "help": "ARIA role must be appropriate for the element",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-allowed-role?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-allowed-role?application=webdriverjs",
         "id": "aria-allowed-role",
         "impact": null,
         "nodes": [],
@@ -56,7 +56,7 @@
       {
         "description": "Ensures unsupported DPUB roles are only used on elements with implicit fallback roles",
         "help": "Unsupported DPUB ARIA roles should be used on elements with implicit fallback roles",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-dpub-role-fallback?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-dpub-role-fallback?application=webdriverjs",
         "id": "aria-dpub-role-fallback",
         "impact": null,
         "nodes": [],
@@ -69,12 +69,25 @@
       {
         "description": "Ensures aria-hidden elements do not contain focusable elements",
         "help": "ARIA hidden element must not contain focusable elements",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-hidden-focus?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-hidden-focus?application=webdriverjs",
         "id": "aria-hidden-focus",
         "impact": null,
         "nodes": [],
         "tags": [
           "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "wcag131"
+        ]
+      },
+      {
+        "description": "Ensures every ARIA input field has an accessible name",
+        "help": "ARIA input fields have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-input-field-name?application=webdriverjs",
+        "id": "aria-input-field-name",
+        "impact": null,
+        "nodes": [],
+        "tags": [
           "wcag2a",
           "wcag412"
         ]
@@ -82,7 +95,7 @@
       {
         "description": "Ensures elements with ARIA roles have all required ARIA attributes",
         "help": "Required ARIA attributes must be provided",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-required-attr?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-required-attr?application=webdriverjs",
         "id": "aria-required-attr",
         "impact": null,
         "nodes": [],
@@ -95,7 +108,7 @@
       {
         "description": "Ensures elements with an ARIA role that require child roles contain them",
         "help": "Certain ARIA roles must contain particular children",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-required-children?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-required-children?application=webdriverjs",
         "id": "aria-required-children",
         "impact": null,
         "nodes": [],
@@ -108,7 +121,7 @@
       {
         "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
         "help": "Certain ARIA roles must be contained by particular parents",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-required-parent?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-required-parent?application=webdriverjs",
         "id": "aria-required-parent",
         "impact": null,
         "nodes": [],
@@ -119,9 +132,22 @@
         ]
       },
       {
+        "description": "Ensure aria-roledescription is only used on elements with an implicit or explicit role",
+        "help": "Use aria-roledescription on elements with a semantic role",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-roledescription?application=webdriverjs",
+        "id": "aria-roledescription",
+        "impact": null,
+        "nodes": [],
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ]
+      },
+      {
         "description": "Ensures all elements with a role attribute use a valid value",
         "help": "ARIA roles used must conform to valid values",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-roles?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-roles?application=webdriverjs",
         "id": "aria-roles",
         "impact": null,
         "nodes": [],
@@ -132,9 +158,21 @@
         ]
       },
       {
+        "description": "Ensures every ARIA toggle field has an accessible name",
+        "help": "ARIA toggle fields have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-toggle-field-name?application=webdriverjs",
+        "id": "aria-toggle-field-name",
+        "impact": null,
+        "nodes": [],
+        "tags": [
+          "wcag2a",
+          "wcag412"
+        ]
+      },
+      {
         "description": "Ensures all ARIA attributes have valid values",
         "help": "ARIA attributes must conform to valid values",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-valid-attr-value?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-valid-attr-value?application=webdriverjs",
         "id": "aria-valid-attr-value",
         "impact": null,
         "nodes": [],
@@ -147,7 +185,7 @@
       {
         "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
         "help": "ARIA attributes must conform to valid names",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-valid-attr?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-valid-attr?application=webdriverjs",
         "id": "aria-valid-attr",
         "impact": null,
         "nodes": [],
@@ -160,7 +198,7 @@
       {
         "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
         "help": "autocomplete attribute must be used correctly",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/autocomplete-valid?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/autocomplete-valid?application=webdriverjs",
         "id": "autocomplete-valid",
         "impact": null,
         "nodes": [],
@@ -173,7 +211,7 @@
       {
         "description": "Ensures <blink> elements are not used",
         "help": "<blink> elements are deprecated and must not be used",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/blink?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/blink?application=webdriverjs",
         "id": "blink",
         "impact": null,
         "nodes": [],
@@ -188,7 +226,7 @@
       {
         "description": "Ensures buttons have discernible text",
         "help": "Buttons must have discernible text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/button-name?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/button-name?application=webdriverjs",
         "id": "button-name",
         "impact": null,
         "nodes": [],
@@ -201,21 +239,9 @@
         ]
       },
       {
-        "description": "Ensures related <input type=\"checkbox\"> elements have a group and that the group designation is consistent",
-        "help": "Checkbox inputs with the same name attribute value must be part of a group",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/checkboxgroup?application=webdriverjs",
-        "id": "checkboxgroup",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.forms",
-          "best-practice"
-        ]
-      },
-      {
         "description": "Ensures <dl> elements are structured correctly",
         "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/definition-list?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/definition-list?application=webdriverjs",
         "id": "definition-list",
         "impact": null,
         "nodes": [],
@@ -228,7 +254,7 @@
       {
         "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
         "help": "<dt> and <dd> elements must be contained by a <dl>",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/dlitem?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/dlitem?application=webdriverjs",
         "id": "dlitem",
         "impact": null,
         "nodes": [],
@@ -241,7 +267,7 @@
       {
         "description": "Ensures every id attribute value of active elements is unique",
         "help": "IDs of active elements must be unique",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/duplicate-id-active?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/duplicate-id-active?application=webdriverjs",
         "id": "duplicate-id-active",
         "impact": null,
         "nodes": [],
@@ -254,7 +280,7 @@
       {
         "description": "Ensures every id attribute value used in ARIA and in labels is unique",
         "help": "IDs used in ARIA and labels must be unique",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/duplicate-id-aria?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/duplicate-id-aria?application=webdriverjs",
         "id": "duplicate-id-aria",
         "impact": null,
         "nodes": [],
@@ -267,7 +293,7 @@
       {
         "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
         "help": "Frames must be tested with axe-core",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/frame-tested?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/frame-tested?application=webdriverjs",
         "id": "frame-tested",
         "impact": null,
         "nodes": [],
@@ -280,7 +306,7 @@
       {
         "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
         "help": "Frames must have a unique title attribute",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/frame-title-unique?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/frame-title-unique?application=webdriverjs",
         "id": "frame-title-unique",
         "impact": null,
         "nodes": [],
@@ -292,7 +318,7 @@
       {
         "description": "Ensures <iframe> and <frame> elements contain a non-empty title attribute",
         "help": "Frames must have title attribute",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/frame-title?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/frame-title?application=webdriverjs",
         "id": "frame-title",
         "impact": null,
         "nodes": [],
@@ -308,7 +334,7 @@
       {
         "description": "Ensures the lang attribute of the <html> element has a valid value",
         "help": "<html> element must have a valid value for the lang attribute",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/html-lang-valid?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/html-lang-valid?application=webdriverjs",
         "id": "html-lang-valid",
         "impact": null,
         "nodes": [],
@@ -321,7 +347,7 @@
       {
         "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
         "help": "HTML elements with lang and xml:lang must have the same base language",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/html-xml-lang-mismatch?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/html-xml-lang-mismatch?application=webdriverjs",
         "id": "html-xml-lang-mismatch",
         "impact": null,
         "nodes": [],
@@ -332,9 +358,24 @@
         ]
       },
       {
+        "description": "Ensures input buttons have discernible text",
+        "help": "Input buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/input-button-name?application=webdriverjs",
+        "id": "input-button-name",
+        "impact": null,
+        "nodes": [],
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "section508",
+          "section508.22.a"
+        ]
+      },
+      {
         "description": "Ensures <input type=\"image\"> elements have alternate text",
         "help": "Image buttons must have alternate text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/input-image-alt?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/input-image-alt?application=webdriverjs",
         "id": "input-image-alt",
         "impact": null,
         "nodes": [],
@@ -349,7 +390,7 @@
       {
         "description": "Ensures the banner landmark is at top level",
         "help": "Banner landmark must not be contained in another landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-banner-is-top-level?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-banner-is-top-level?application=webdriverjs",
         "id": "landmark-banner-is-top-level",
         "impact": null,
         "nodes": [],
@@ -361,7 +402,7 @@
       {
         "description": "Ensures the complementary landmark or aside is at top level",
         "help": "Aside must not be contained in another landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-complementary-is-top-level?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-complementary-is-top-level?application=webdriverjs",
         "id": "landmark-complementary-is-top-level",
         "impact": null,
         "nodes": [],
@@ -373,7 +414,7 @@
       {
         "description": "Ensures the contentinfo landmark is at top level",
         "help": "Contentinfo landmark must not be contained in another landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-contentinfo-is-top-level?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-contentinfo-is-top-level?application=webdriverjs",
         "id": "landmark-contentinfo-is-top-level",
         "impact": null,
         "nodes": [],
@@ -385,8 +426,20 @@
       {
         "description": "Ensures the main landmark is at top level",
         "help": "Main landmark must not be contained in another landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-main-is-top-level?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-main-is-top-level?application=webdriverjs",
         "id": "landmark-main-is-top-level",
+        "impact": null,
+        "nodes": [],
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
+        "description": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination",
+        "help": "Ensures landmarks are unique",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-unique?application=webdriverjs",
+        "id": "landmark-unique",
         "impact": null,
         "nodes": [],
         "tags": [
@@ -397,7 +450,7 @@
       {
         "description": "Ensures <marquee> elements are not used",
         "help": "<marquee> elements are deprecated and must not be used",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/marquee?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/marquee?application=webdriverjs",
         "id": "marquee",
         "impact": null,
         "nodes": [],
@@ -410,12 +463,12 @@
       {
         "description": "Ensures <meta http-equiv=\"refresh\"> is not used",
         "help": "Timed refresh must not exist",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/meta-refresh?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/meta-refresh?application=webdriverjs",
         "id": "meta-refresh",
         "impact": null,
         "nodes": [],
         "tags": [
-          "cat.time",
+          "cat.time-and-media",
           "wcag2a",
           "wcag2aaa",
           "wcag221",
@@ -426,7 +479,7 @@
       {
         "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
         "help": "Users should be able to zoom and scale the text up to 500%",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/meta-viewport-large?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/meta-viewport-large?application=webdriverjs",
         "id": "meta-viewport-large",
         "impact": null,
         "nodes": [],
@@ -438,7 +491,7 @@
       {
         "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
         "help": "Zooming and scaling must not be disabled",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/meta-viewport?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/meta-viewport?application=webdriverjs",
         "id": "meta-viewport",
         "impact": null,
         "nodes": [],
@@ -451,7 +504,7 @@
       {
         "description": "Ensures <object> elements have alternate text",
         "help": "<object> elements must have alternate text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/object-alt?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/object-alt?application=webdriverjs",
         "id": "object-alt",
         "impact": null,
         "nodes": [],
@@ -464,21 +517,24 @@
         ]
       },
       {
-        "description": "Ensures related <input type=\"radio\"> elements have a group and that the group designation is consistent",
-        "help": "Radio inputs with the same name attribute value must be part of a group",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/radiogroup?application=webdriverjs",
-        "id": "radiogroup",
+        "description": "Ensures [role='img'] elements have alternate text",
+        "help": "[role='img'] elements have an alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/role-img-alt?application=webdriverjs",
+        "id": "role-img-alt",
         "impact": null,
         "nodes": [],
         "tags": [
-          "cat.forms",
-          "best-practice"
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
         ]
       },
       {
         "description": "Ensures the scope attribute is used correctly on tables",
         "help": "scope attribute should be used correctly",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/scope-attr-valid?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/scope-attr-valid?application=webdriverjs",
         "id": "scope-attr-valid",
         "impact": null,
         "nodes": [],
@@ -488,9 +544,21 @@
         ]
       },
       {
+        "description": "Elements that have scrollable content should be accessible by keyboard",
+        "help": "Ensure that scrollable region has keyboard access",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/scrollable-region-focusable?application=webdriverjs",
+        "id": "scrollable-region-focusable",
+        "impact": null,
+        "nodes": [],
+        "tags": [
+          "wcag2a",
+          "wcag211"
+        ]
+      },
+      {
         "description": "Ensures that server-side image maps are not used",
         "help": "Server-side image maps must not be used",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/server-side-image-map?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/server-side-image-map?application=webdriverjs",
         "id": "server-side-image-map",
         "impact": null,
         "nodes": [],
@@ -505,7 +573,7 @@
       {
         "description": "Ensures tabindex attribute values are not greater than 0",
         "help": "Elements should not have tabindex greater than zero",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/tabindex?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/tabindex?application=webdriverjs",
         "id": "tabindex",
         "impact": null,
         "nodes": [],
@@ -517,7 +585,7 @@
       {
         "description": "Ensure that each table header in a data table refers to data cells",
         "help": "All th elements and elements with role=columnheader/rowheader must have data cells they describe",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/th-has-data-cells?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/th-has-data-cells?application=webdriverjs",
         "id": "th-has-data-cells",
         "impact": null,
         "nodes": [],
@@ -532,7 +600,7 @@
       {
         "description": "Ensures lang attributes have valid values",
         "help": "lang attribute must have a valid value",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/valid-lang?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/valid-lang?application=webdriverjs",
         "id": "valid-lang",
         "impact": null,
         "nodes": [],
@@ -545,7 +613,7 @@
       {
         "description": "Ensures <video> elements have captions",
         "help": "<video> elements must have captions",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/video-caption?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/video-caption?application=webdriverjs",
         "id": "video-caption",
         "impact": null,
         "nodes": [],
@@ -556,28 +624,13 @@
           "section508",
           "section508.22.a"
         ]
-      },
-      {
-        "description": "Ensures <video> elements have audio descriptions",
-        "help": "<video> elements must have an audio description track",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/video-description?application=webdriverjs",
-        "id": "video-description",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.text-alternatives",
-          "wcag2aa",
-          "wcag125",
-          "section508",
-          "section508.22.b"
-        ]
       }
     ],
     "incomplete": [
       {
         "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
         "help": "Elements must have sufficient color contrast",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/color-contrast?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=webdriverjs",
         "id": "color-contrast",
         "impact": "serious",
         "nodes": [
@@ -590,7 +643,7 @@
                   "contrastRatio": 0,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#ffffff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": "bgImage"
                 },
@@ -623,7 +676,7 @@
                   "contrastRatio": 0,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#333333",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": "bgImage"
                 },
@@ -646,6 +699,32 @@
             "target": [
               ".annotoggle"
             ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#000000",
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "missingData": "bgOverlap"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<font color=\"BLACK\" face=\"Verdana\" size=\"2\">",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "#WEATHER > font[color=\"BLACK\"][size=\"\\32 \"]"
+            ]
           }
         ],
         "tags": [
@@ -659,7 +738,7 @@
       {
         "description": "Ensures aria-hidden='true' is not present on the document body.",
         "help": "aria-hidden='true' must not be present on the document body",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/aria-hidden-body?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/aria-hidden-body?application=webdriverjs",
         "id": "aria-hidden-body",
         "impact": null,
         "nodes": [
@@ -689,9 +768,166 @@
         ]
       },
       {
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "help": "Inline text spacing must be adjustable with custom stylesheets",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/avoid-inline-spacing?application=webdriverjs",
+        "id": "avoid-inline-spacing",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<div class=\"image\" style=\"background: url(./img/panda-sm.jpg) center center no-repeat #cccccc\" title=\"image\"><div class=\"null\"></div></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".image[title=\"image\"]:nth-child(1)"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<div class=\"image\" style=\"background: url(./img/oldenburgstudentviolin34.jpg) center center no-repeat #cccccc\" title=\"image\"><div class=\"null\"></div></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".image[title=\"image\"]:nth-child(2)"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<div class=\"image\" style=\"background: url(./img/BrainInJar.jpg) center center no-repeat #cccccc;\" title=\"image\"><div class=\"null\"></div></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".image[title=\"image\"]:nth-child(3)"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".story:nth-child(1) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"] > img[src$=\"morearrow\\.gif\"][width=\"\\34 8\"][height=\"\\31 0\"]"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".story:nth-child(2) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"] > img[src$=\"morearrow\\.gif\"][width=\"\\34 8\"][height=\"\\31 0\"]"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".story:nth-child(3) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"] > img[src$=\"morearrow\\.gif\"][width=\"\\34 8\"][height=\"\\31 0\"]"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "a[href$=\"tickets\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "avoid-inline-spacing",
+                "impact": "serious",
+                "message": "No inline styles with '!important' that affect text spacing has been specified",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "a[href$=\"survey\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
+            ]
+          }
+        ],
+        "tags": [
+          "wcag21aa",
+          "wcag1412"
+        ]
+      },
+      {
         "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
         "help": "Page must have means to bypass repeated blocks",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/bypass?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/bypass?application=webdriverjs",
         "id": "bypass",
         "impact": null,
         "nodes": [
@@ -732,7 +968,7 @@
       {
         "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
         "help": "Elements must have sufficient color contrast",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/color-contrast?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=webdriverjs",
         "id": "color-contrast",
         "impact": "serious",
         "nodes": [
@@ -745,7 +981,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "3:1",
                   "fgColor": "#000000",
-                  "fontSize": "21.6pt",
+                  "fontSize": "21.6pt (28.8px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -771,7 +1007,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "13.6pt",
+                  "fontSize": "13.6pt (18.144px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -797,7 +1033,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -823,7 +1059,7 @@
                   "contrastRatio": 13.71,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#222222",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -849,7 +1085,7 @@
                   "contrastRatio": 10.97,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#222222",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -875,7 +1111,7 @@
                   "contrastRatio": 5.88,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#ffffff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -901,7 +1137,7 @@
                   "contrastRatio": 5.88,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#ffffff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -927,7 +1163,7 @@
                   "contrastRatio": 5.4,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#ffffff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -953,7 +1189,7 @@
                   "contrastRatio": 5.4,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#ffffff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -979,7 +1215,7 @@
                   "contrastRatio": 5.4,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#ffffff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1005,7 +1241,7 @@
                   "contrastRatio": 13.71,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#222222",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1031,7 +1267,7 @@
                   "contrastRatio": 13.71,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#222222",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1057,7 +1293,7 @@
                   "contrastRatio": 13.71,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#222222",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1083,7 +1319,7 @@
                   "contrastRatio": 13.71,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#222222",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1109,7 +1345,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.0pt",
+                  "fontSize": "10.0pt (13.3333px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1135,7 +1371,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "9.8pt",
+                  "fontSize": "9.8pt (13px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1161,7 +1397,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "9.8pt",
+                  "fontSize": "9.8pt (13px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1187,33 +1423,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "9.8pt",
-                  "fontWeight": "normal",
-                  "missingData": null
-                },
-                "id": "color-contrast",
-                "impact": "serious",
-                "message": "Element has sufficient color contrast of 17.93",
-                "relatedNodes": []
-              }
-            ],
-            "html": "<font color=\"BLACK\" face=\"Verdana\" size=\"2\">",
-            "impact": null,
-            "none": [],
-            "target": [
-              "#WEATHER > font[color=\"BLACK\"][size=\"\\32 \"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [
-              {
-                "data": {
-                  "bgColor": "#ededed",
-                  "contrastRatio": 17.93,
-                  "expectedContrastRatio": "4.5:1",
-                  "fgColor": "#000000",
-                  "fontSize": "9.8pt",
+                  "fontSize": "9.8pt (13px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1239,7 +1449,7 @@
                   "contrastRatio": 7.92,
                   "expectedContrastRatio": "3:1",
                   "fgColor": "#41545d",
-                  "fontSize": "18.0pt",
+                  "fontSize": "18.0pt (24px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1265,7 +1475,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1291,7 +1501,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1317,7 +1527,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1343,7 +1553,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1369,7 +1579,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1395,7 +1605,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1421,7 +1631,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1447,7 +1657,7 @@
                   "contrastRatio": 7.92,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#41545d",
-                  "fontSize": "15.0pt",
+                  "fontSize": "15.0pt (20px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1473,7 +1683,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1499,7 +1709,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1525,7 +1735,7 @@
                   "contrastRatio": 5.82,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1551,7 +1761,7 @@
                   "contrastRatio": 5.82,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1577,7 +1787,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "11.3pt",
+                  "fontSize": "11.3pt (15px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1603,7 +1813,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "12.0pt",
+                  "fontSize": "12.0pt (16px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1629,7 +1839,7 @@
                   "contrastRatio": 5.82,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "12.0pt",
+                  "fontSize": "12.0pt (16px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1655,7 +1865,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "12.0pt",
+                  "fontSize": "12.0pt (16px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1681,7 +1891,7 @@
                   "contrastRatio": 5.82,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "12.0pt",
+                  "fontSize": "12.0pt (16px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1707,7 +1917,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "7.5pt",
+                  "fontSize": "7.5pt (10px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1733,7 +1943,7 @@
                   "contrastRatio": 4.97,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "7.5pt",
+                  "fontSize": "7.5pt (10px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1759,7 +1969,7 @@
                   "contrastRatio": 4.97,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "7.5pt",
+                  "fontSize": "7.5pt (10px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1785,7 +1995,7 @@
                   "contrastRatio": 17.93,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "6.2pt",
+                  "fontSize": "6.2pt (8.33333px)",
                   "fontWeight": "normal",
                   "missingData": "shortTextContent"
                 },
@@ -1811,7 +2021,7 @@
                   "contrastRatio": 4.97,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "7.5pt",
+                  "fontSize": "7.5pt (10px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1837,7 +2047,7 @@
                   "contrastRatio": 4.97,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "7.5pt",
+                  "fontSize": "7.5pt (10px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1863,7 +2073,7 @@
                   "contrastRatio": 4.97,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#226c8e",
-                  "fontSize": "7.5pt",
+                  "fontSize": "7.5pt (10px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1889,7 +2099,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1915,7 +2125,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -1941,7 +2151,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1967,7 +2177,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -1993,7 +2203,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2019,7 +2229,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2045,7 +2255,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2071,7 +2281,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2097,7 +2307,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2123,7 +2333,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2149,7 +2359,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2175,7 +2385,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2201,7 +2411,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2227,7 +2437,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2253,7 +2463,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -2279,7 +2489,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
@@ -2305,7 +2515,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2331,7 +2541,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2357,7 +2567,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2383,7 +2593,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2409,7 +2619,7 @@
                   "contrastRatio": 21,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#000000",
-                  "fontSize": "9.0pt",
+                  "fontSize": "9.0pt (12px)",
                   "fontWeight": "normal",
                   "missingData": "shortTextContent"
                 },
@@ -2435,7 +2645,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2461,7 +2671,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2487,7 +2697,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2513,7 +2723,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2539,7 +2749,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2565,7 +2775,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2591,7 +2801,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2617,7 +2827,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2643,7 +2853,7 @@
                   "contrastRatio": 8.59,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#0000ff",
-                  "fontSize": "10.8pt",
+                  "fontSize": "10.8pt (14.4px)",
                   "fontWeight": "normal",
                   "missingData": null
                 },
@@ -2670,7 +2880,7 @@
       {
         "description": "Ensures each HTML document contains a non-empty <title> element",
         "help": "Documents must have <title> element to aid in navigation",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/document-title?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/document-title?application=webdriverjs",
         "id": "document-title",
         "impact": null,
         "nodes": [
@@ -2702,7 +2912,7 @@
       {
         "description": "Ensures every id attribute value is unique",
         "help": "id attribute value must be unique",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/duplicate-id?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/duplicate-id?application=webdriverjs",
         "id": "duplicate-id",
         "impact": null,
         "nodes": [
@@ -2968,7 +3178,7 @@
       {
         "description": "Ensures headings have discernible text",
         "help": "Headings must not be empty",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/empty-heading?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/empty-heading?application=webdriverjs",
         "id": "empty-heading",
         "impact": null,
         "nodes": [
@@ -2998,8 +3208,8 @@
       },
       {
         "description": "Ensures form field does not have multiple label elements",
-        "help": "Form field must not have multiple label elements",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/form-field-multiple-labels?application=webdriverjs",
+        "help": "Form field should not have multiple label elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/form-field-multiple-labels?application=webdriverjs",
         "id": "form-field-multiple-labels",
         "impact": null,
         "nodes": [
@@ -3031,7 +3241,7 @@
       {
         "description": "Ensures the order of headings is semantically correct",
         "help": "Heading levels should only increase by one",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/heading-order?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/heading-order?application=webdriverjs",
         "id": "heading-order",
         "impact": null,
         "nodes": [
@@ -3062,7 +3272,7 @@
       {
         "description": "Ensures <img> elements have alternate text or a role of none or presentation",
         "help": "Images must have alternate text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/image-alt?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/image-alt?application=webdriverjs",
         "id": "image-alt",
         "impact": "critical",
         "nodes": [
@@ -3310,16 +3520,16 @@
         ]
       },
       {
-        "description": "Ensure button and link text is not repeated as image alternative",
-        "help": "Text of buttons and links should not be repeated in the image alternative",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/image-redundant-alt?application=webdriverjs",
+        "description": "Ensure image alternative is not repeated as text",
+        "help": "Alternative text of images should not be repeated as text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/image-redundant-alt?application=webdriverjs",
         "id": "image-redundant-alt",
         "impact": null,
         "nodes": [
           {
             "all": [],
             "any": [],
-            "html": "<p id=\"skipnav\"><a href=\"#page\">Skip to inaccessible demo page</a></p>",
+            "html": "<img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\">",
             "impact": null,
             "none": [
               {
@@ -3331,13 +3541,13 @@
               }
             ],
             "target": [
-              "#skipnav"
+              "img[alt=\"W3C\\ logo\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"#page\">Skip to inaccessible demo page</a>",
+            "html": "<img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\">",
             "impact": null,
             "none": [
               {
@@ -3349,13 +3559,13 @@
               }
             ],
             "target": [
-              "a[href$=\"\\#page\"]"
+              "img[src$=\"wai\\.png\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<p id=\"logos\"><a href=\"http://www.w3.org/\" title=\"W3C Home\"><img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\"></a><a href=\"http://www.w3.org/WAI/\" title=\"WAI Home\"><img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\"></a></p>",
+            "html": "<img src=\"./img/border_left_top.gif\" width=\"10px\" height=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -3367,13 +3577,13 @@
               }
             ],
             "target": [
-              "#logos"
+              "img[src$=\"border_left_top\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"http://www.w3.org/\" title=\"W3C Home\"><img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\"></a>",
+            "html": "<img src=\"./img/border_top.gif\" height=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -3385,13 +3595,13 @@
               }
             ],
             "target": [
-              "a[title=\"W3C\\ Home\"]"
+              "img[src$=\"border_top\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/\" title=\"WAI Home\"><img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\"></a>",
+            "html": "<img src=\"./img/border_right_top.gif\" width=\"10px\" height=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -3403,13 +3613,13 @@
               }
             ],
             "target": [
-              "a[href$=\"WAI\\/\"]"
+              "img[src$=\"border_right_top\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<p class=\"subline\">Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0</p>",
+            "html": "<img src=\"./img/border_left.gif\" width=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -3421,13 +3631,13 @@
               }
             ],
             "target": [
-              ".subline"
+              "img[src$=\"border_left\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li class=\"first\"><a href=\"../Overview.html\">Overview</a></li>",
+            "html": "<img src=\"./img/top_logo.gif\" width=\"443px\" height=\"86px\" alt=\"Red dot with a white letter 'C' that symbolizes a moon crescent as well as the sun. This logo is followed by a black banner that says 'CITYLIGHTS' which is the name of this online portal. Finally, the slogan of the portal, 'your access to the city', follows in a turquoise green handwriting style and with a slight slant across the top banner.\">",
             "impact": null,
             "none": [
               {
@@ -3439,13 +3649,13 @@
               }
             ],
             "target": [
-              ".first:nth-child(1)"
+              "img[src$=\"top_logo\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"../Overview.html\">Overview</a>",
+            "html": "<img src=\"./img/top_logo_next_end.gif\" width=\"24px\" height=\"86px\">",
             "impact": null,
             "none": [
               {
@@ -3457,13 +3667,13 @@
               }
             ],
             "target": [
-              "a[href$=\"Overview\\.html\"]"
+              "img[src$=\"top_logo_next_end\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li class=\"current first\">",
+            "html": "<img src=\"./img/top_weather.gif\" width=\"128px\" height=\"86px\">",
             "impact": null,
             "none": [
               {
@@ -3475,13 +3685,13 @@
               }
             ],
             "target": [
-              ".current.first"
+              "img[src$=\"top_weather\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li class=\"inaccessible\"><strong>Inaccessible:</strong><a class=\"page current\"><span class=\"hidden\">Inaccessible </span>Home Page</a><a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a></li>",
+            "html": "<img src=\"./img/top_logo_next_start.gif\" width=\"22px\" height=\"86px\">",
             "impact": null,
             "none": [
               {
@@ -3493,13 +3703,13 @@
               }
             ],
             "target": [
-              "ul > .inaccessible"
+              "img[src$=\"top_logo_next_start\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a>",
+            "html": "<img src=\"./img/mark.gif\" width=\"158px\" height=\"7px\">",
             "impact": null,
             "none": [
               {
@@ -3511,13 +3721,13 @@
               }
             ],
             "target": [
-              ".inaccessible > .report[href$=\"home\\.html\"]"
+              "img[src$=\"mark\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li class=\"accessible\"><strong>Accessible:</strong><a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a><a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a></li>",
+            "html": "<img src=\".img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3529,13 +3739,13 @@
               }
             ],
             "target": [
-              ".accessible"
+              "td[colspan=\"\\35 \"][background=\"\\.\\/img\\/marker2_w\\.gif\"][width=\"\\37 80px\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3547,13 +3757,13 @@
               }
             ],
             "target": [
-              ".page[href$=\"home\\.html\"]"
+              "td[width=\"\\31 55px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a>",
+            "html": "<img src=\"./img/marker2_t.gif\" width=\"1\" height=\"30px\">",
             "impact": null,
             "none": [
               {
@@ -3565,13 +3775,13 @@
               }
             ],
             "target": [
-              ".accessible > .report[href$=\"home\\.html\"]"
+              "img[width=\"\\31 \"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"./annotated/home.html\" class=\"annotoggle\">Show <br>Annotations</a>",
+            "html": "<img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\">",
             "impact": null,
             "none": [
               {
@@ -3583,13 +3793,13 @@
               }
             ],
             "target": [
-              ".annotoggle"
+              "img[name=\"nav_home\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li><a href=\"news.html\">News</a></li>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3601,13 +3811,13 @@
               }
             ],
             "target": [
-              "li:nth-child(3)"
+              "tr[height=\"\\31 px\"]:nth-child(3) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"news.html\">News</a>",
+            "html": "<img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\">",
             "impact": null,
             "none": [
               {
@@ -3619,13 +3829,13 @@
               }
             ],
             "target": [
-              "li:nth-child(3) > a[href$=\"news\\.html\"]"
+              "img[src$=\"nav_news\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li><a href=\"tickets.html\">Tickets</a></li>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3637,13 +3847,13 @@
               }
             ],
             "target": [
-              "li:nth-child(4)"
+              "tr[height=\"\\31 px\"]:nth-child(5) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"tickets.html\">Tickets</a>",
+            "html": "<img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\">",
             "impact": null,
             "none": [
               {
@@ -3655,13 +3865,13 @@
               }
             ],
             "target": [
-              "li:nth-child(4) > a[href$=\"tickets\\.html\"]"
+              "img[name=\"nav_facts\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li><a href=\"survey.html\">Survey</a></li>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3673,13 +3883,13 @@
               }
             ],
             "target": [
-              "li:nth-child(5)"
+              "tr[height=\"\\31 px\"]:nth-child(7) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"survey.html\">Survey</a>",
+            "html": "<img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\">",
             "impact": null,
             "none": [
               {
@@ -3691,13 +3901,13 @@
               }
             ],
             "target": [
-              "li:nth-child(5) > a[href$=\"survey\\.html\"]"
+              "img[src$=\"nav_survey\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<li><a href=\"template.html\">Template</a></li>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3709,13 +3919,13 @@
               }
             ],
             "target": [
-              "li:nth-child(6)"
+              "tr[height=\"\\31 px\"]:nth-child(9) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"template.html\">Template</a>",
+            "html": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">",
             "impact": null,
             "none": [
               {
@@ -3727,13 +3937,13 @@
               }
             ],
             "target": [
-              "a[href$=\"template\\.html\"]"
+              "td[width=\"\\32 0px\"]:nth-child(2) > img[src$=\"blank_5x5\\.gif\"][height=\"\\35 px\"][width=\"\\32 0px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<p class=\"skip\" id=\"startcontent\">Demo starts here</p>",
+            "html": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">",
             "impact": null,
             "none": [
               {
@@ -3745,13 +3955,13 @@
               }
             ],
             "target": [
-              "#startcontent"
+              ".newsheadline:nth-child(1) > img[src$=\"headline_middle\\.gif\"][width=\"\\32 3\"][height=\"\\32 4\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"100%\" align=\"CENTER\">",
+            "html": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">",
             "impact": null,
             "none": [
               {
@@ -3763,13 +3973,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\31 00\\%\"][align=\"CENTER\"]"
+              ".newsheadline:nth-child(2) > img[src$=\"headline_middle\\.gif\"][width=\"\\32 3\"][height=\"\\32 4\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"10px\" background=\"./img/border_left_top.gif\"><img src=\"./img/border_left_top.gif\" width=\"10px\" height=\"10px\"></td>",
+            "html": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">",
             "impact": null,
             "none": [
               {
@@ -3781,13 +3991,13 @@
               }
             ],
             "target": [
-              "td[background=\"\\.\\/img\\/border_left_top\\.gif\"]"
+              ".newsheadline:nth-child(3) > img[src$=\"headline_middle\\.gif\"][width=\"\\32 3\"][height=\"\\32 4\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"780px\" background=\"./img/border_top.gif\"><img src=\"./img/border_top.gif\" height=\"10px\"></td>",
+            "html": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">",
             "impact": null,
             "none": [
               {
@@ -3799,13 +4009,13 @@
               }
             ],
             "target": [
-              "td[background=\"\\.\\/img\\/border_top\\.gif\"]"
+              ".story:nth-child(1) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"] > img[src$=\"morearrow\\.gif\"][width=\"\\34 8\"][height=\"\\31 0\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"10px\" background=\"./img/border_right_top.gif\"><img src=\"./img/border_right_top.gif\" width=\"10px\" height=\"10px\"></td>",
+            "html": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">",
             "impact": null,
             "none": [
               {
@@ -3817,13 +4027,13 @@
               }
             ],
             "target": [
-              "td[background=\"\\.\\/img\\/border_right_top\\.gif\"]"
+              ".story:nth-child(2) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"] > img[src$=\"morearrow\\.gif\"][width=\"\\34 8\"][height=\"\\31 0\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"10px\" background=\"./img/border_left.gif\"><img src=\"./img/border_left.gif\" width=\"10px\"></td>",
+            "html": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">",
             "impact": null,
             "none": [
               {
@@ -3835,13 +4045,13 @@
               }
             ],
             "target": [
-              "td[background=\"\\.\\/img\\/border_left\\.gif\"]"
+              ".story:nth-child(3) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"] > img[src$=\"morearrow\\.gif\"][width=\"\\34 8\"][height=\"\\31 0\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"780px\" align=\"CENTER\">",
+            "html": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">",
             "impact": null,
             "none": [
               {
@@ -3853,13 +4063,13 @@
               }
             ],
             "target": [
-              "td[align=\"CENTER\"][width=\"\\37 80px\"]"
+              "img[src$=\"list_bullets\\.gif\"][alt=\"bullet\"][border=\"\\30 \"]:nth-child(1)"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"443px\" background=\"./img/top_logo_next.gif\" valign=\"MIDDLE\">",
+            "html": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">",
             "impact": null,
             "none": [
               {
@@ -3871,13 +4081,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\34 43px\"][background=\"\\.\\/img\\/top_logo_next\\.gif\"][valign=\"MIDDLE\"]"
+              "img[src$=\"list_bullets\\.gif\"][alt=\"bullet\"][border=\"\\30 \"]:nth-child(4)"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<a href=\"home.html\">",
+            "html": "<img src=\"./img/telefon_white_bg.gif\" alt=\"1234 56789\" border=\"0\" align=\"absmiddle\">",
             "impact": null,
             "none": [
               {
@@ -3889,13 +4099,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\34 43px\"][background=\"\\.\\/img\\/top_logo_next\\.gif\"][valign=\"MIDDLE\"] > div > a[href$=\"home\\.html\"]"
+              "img[src$=\"telefon_white_bg\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"24px\" valign=\"MIDDLE\"><img src=\"./img/top_logo_next_end.gif\" width=\"24px\" height=\"86px\"></td>",
+            "html": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">",
             "impact": null,
             "none": [
               {
@@ -3907,13 +4117,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\32 4px\"][valign=\"MIDDLE\"]"
+              "td[width=\"\\32 0px\"]:nth-child(4) > img[src$=\"blank_5x5\\.gif\"][height=\"\\35 px\"][width=\"\\32 0px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"128px\" valign=\"MIDDLE\"><img src=\"./img/top_weather.gif\" width=\"128px\" height=\"86px\"></td>",
+            "html": "<img src=\"./img/marker2_t.gif\" width=\"1px\" height=\"30px\">",
             "impact": null,
             "none": [
               {
@@ -3925,13 +4135,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\31 28px\"][valign=\"MIDDLE\"]"
+              "img[src$=\"marker2_t\\.gif\"][height=\"\\33 0px\"][width=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"22px\" valign=\"MIDDLE\"><img src=\"./img/top_logo_next_start.gif\" width=\"22px\" height=\"86px\"></td>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3943,13 +4153,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\32 2px\"][valign=\"MIDDLE\"]"
+              "td[width=\"\\31 51px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"163px\" background=\"./img/top_logo_next.gif\" align=\"CENTER\" valign=\"MIDDLE\">",
+            "html": "<img src=\"./img/teaser_right1.jpg\" width=\"150px\" height=\"106px\">",
             "impact": null,
             "none": [
               {
@@ -3961,13 +4171,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\31 63px\"]"
+              "img[src$=\"teaser_right1\\.jpg\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"780px\" background=\"./img/mark.gif\" colspan=\"5\"><img src=\"./img/mark.gif\" width=\"158px\" height=\"7px\"></td>",
+            "html": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">",
             "impact": null,
             "none": [
               {
@@ -3979,13 +4189,13 @@
               }
             ],
             "target": [
-              "td[background=\"\\.\\/img\\/mark\\.gif\"]"
+              "td[background=\"\\.\\/img\\/marker2_w\\.gif\"][width=\"\\31 50px\"] > img[src$=\"marker2_w\\.gif\"][width=\"\\37 8px\"][height=\"\\31 px\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td colspan=\"5\">",
+            "html": "<img src=\"./img/teaser_right2.jpg\" width=\"150px\" height=\"154px\">",
             "impact": null,
             "none": [
               {
@@ -3997,13 +4207,13 @@
               }
             ],
             "target": [
-              "tr[height=\"\\32 5px\"]:nth-child(3) > td[colspan=\"\\35 \"]"
+              "img[src$=\"teaser_right2\\.jpg\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td bgcolor=\"#EDEDED\" width=\"380px\"><font color=\"BLACK\" face=\"Verdana\" size=\"2\">&nbsp;&nbsp;<b>Traffic:</b> Construction work on Main Road</font></td>",
+            "html": "<img src=\"./img/border_right.gif\" width=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -4015,13 +4225,13 @@
               }
             ],
             "target": [
-              "td[width=\"\\33 80px\"]"
+              "img[src$=\"border_right\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td bgcolor=\"#EDEDED\" align=\"RIGHT\" id=\"WEATHER\">",
+            "html": "<img src=\"./img/border_bottom_left.gif\" width=\"10px\" height=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -4033,13 +4243,13 @@
               }
             ],
             "target": [
-              "#WEATHER"
+              "img[src$=\"border_bottom_left\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td width=\"780px\" background=\"./img/marker2_w.gif\" colspan=\"5\"><img src=\".img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
+            "html": "<img src=\"./img/border_bottom.gif\" height=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -4051,13 +4261,13 @@
               }
             ],
             "target": [
-              "td[colspan=\"\\35 \"][background=\"\\.\\/img\\/marker2_w\\.gif\"][width=\"\\37 80px\"]"
+              "img[src$=\"border_bottom\\.gif\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<td colspan=\"5\">&nbsp;</td>",
+            "html": "<img src=\"./img/border_bottom_right.gif\" width=\"10px\" height=\"10px\">",
             "impact": null,
             "none": [
               {
@@ -4069,1465 +4279,7 @@
               }
             ],
             "target": [
-              "tr[height=\"\\32 5px\"]:nth-child(5) > td[colspan=\"\\35 \"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"155px\" bgcolor=\"#E4E4E4\" valign=\"TOP\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[bgcolor=\"\\#E4E4E4\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"155px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[width=\"\\31 55px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"1px\" background=\"./img/marker2_t.gif\" rowspan=\"9\" valign=\"TOP\"><img src=\"./img/marker2_t.gif\" width=\"1\" height=\"30px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[rowspan=\"\\39 \"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"home\" onmouseover=\"switchImage('nav_home', './img/nav_home2.gif'); ChangeColor('home','#FFF')\" onmouseout=\"switchImage('nav_home', './img/nav_home.gif'); ChangeColor('home','#EDEDED')\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#home"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"javascript:location.href='home.html';\" onfocus=\"blur();\"><img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#home > a[onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 px\"]:nth-child(3) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"news\" onmouseover=\"switchImage('nav_news', './img/nav_news2.gif'); ChangeColor('news','#FFF')\" onmouseout=\"switchImage('nav_news', './img/nav_news.gif'); ChangeColor('news','#EDEDED')\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#news"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"javascript:location.href='news.html';\" onfocus=\"blur();\"><img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#news > a[onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 px\"]:nth-child(5) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"tickets\" onmouseover=\"switchImage('nav_facts', './img/nav_facts2.gif'); ChangeColor('tickets','#FFF')\" onmouseout=\"switchImage('nav_facts', './img/nav_facts.gif'); ChangeColor('tickets','#EDEDED')\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#tickets"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"javascript:location.href='tickets.html';\" onfocus=\"blur();\"><img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#tickets > a[onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 px\"]:nth-child(7) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"survey\" onmouseover=\"switchImage('nav_survey', './img/nav_survey2.gif'); ChangeColor('survey','#FFF')\" onmouseout=\"switchImage('nav_survey', './img/nav_survey.gif'); ChangeColor('survey','#EDEDED')\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#survey"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"javascript:location.href='survey.html';\" onfocus=\"blur();\"><img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#survey > a[onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"154px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 px\"]:nth-child(9) > td[width=\"\\31 54px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"20px\"><img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[width=\"\\32 0px\"]:nth-child(2)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"434px\" height=\"600px\" valign=\"TOP\" id=\"main\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#main"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p class=\"headline\">Welcome to CityLights</p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".headline"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p>Citylights is the new portal for visitors and residents. Find out what's on, book tickets, and get the latest news.</p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#main > p:nth-child(2)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"news.html\" onfocus=\"blur();\">Heat wave linked to temperatures</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".newsheadline:nth-child(1) > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"news.html\" onfocus=\"blur();\">Man Gets Nine Months in Violin Case</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".newsheadline:nth-child(2) > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"news.html\" onfocus=\"blur();\">Lack of brains hinders research</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".newsheadline:nth-child(3) > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".story:nth-child(1) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".story:nth-child(2) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".story:nth-child(3) > span > a[href$=\"news\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p class=\"subheadline\">Elsewhere on the Web</p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".subheadline"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p:nth-child(7)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"offsite\\.html\"][target=\"_blank\"][onfocus=\"blur\\(\\)\\;\"]:nth-child(2)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"offsite\\.html\"][target=\"_blank\"][onfocus=\"blur\\(\\)\\;\"]:nth-child(5)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"20px\"><img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[width=\"\\32 0px\"]:nth-child(4)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"151px\" valign=\"TOP\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[width=\"\\31 51px\"][valign=\"TOP\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"1px\" background=\"./img/marker2_t.gif\" rowspan=\"11\" valign=\"TOP\"><img src=\"./img/marker2_t.gif\" width=\"1px\" height=\"30px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[rowspan=\"\\31 1\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"151px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[width=\"\\31 51px\"][background=\"\\.\\/img\\/marker2_w\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\" bgcolor=\"#A9B8BF\"><font color=\"#41545D\" face=\"Verdana\" size=\"2\">&nbsp;<b>Free Penguins</b></font></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\32 5px\"]:nth-child(2) > td[bgcolor=\"\\#A9B8BF\"][width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\"><div><img src=\"./img/teaser_right1.jpg\" width=\"150px\" height=\"106px\"></div></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 06px\"] > td[width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr:nth-child(4) > td[width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td><div>\"Free penguins\" slogan at zoo benefit concert causes confusion among city rockers. Adjective or verb?<br><a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a></div></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr:nth-child(4) > td[width=\"\\31 50px\"] > table[cellpadding=\"\\33 px\"] > tbody > tr > td"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"tickets\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td>&nbsp;</td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "table[width=\"\\31 51px\"][cellpadding=\"\\30 px\"] > tbody > tr[height=\"\\31 7px\"] > td"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\" background=\"./img/marker2_w.gif\"><img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[background=\"\\.\\/img\\/marker2_w\\.gif\"][width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\" bgcolor=\"#A9B8BF\"><font color=\"#41545D\" face=\"Verdana\" size=\"2\">&nbsp;<b>More City Parks</b></font></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\32 5px\"]:nth-child(7) > td[bgcolor=\"\\#A9B8BF\"][width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\"><img src=\"./img/teaser_right2.jpg\" width=\"150px\" height=\"154px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 54px\"] > td[width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"150px\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr:nth-child(9) > td[width=\"\\31 50px\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td>More parks and more green throughout the city at the price of already rare car parking spaces, how will this affect you?<br><a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr:nth-child(9) > td[width=\"\\31 50px\"] > table[cellpadding=\"\\33 px\"] > tbody > tr > td"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"survey\\.html\"][onfocus=\"blur\\(\\)\\;\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td align=\"RIGHT\">",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "tr[height=\"\\31 7px\"] > td[align=\"RIGHT\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "font[size=\"\\31 \"] > a[rel=\"Copyright\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/\"><acronym title=\"World Wide Web Consortium\">W3C</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "font[size=\"\\31 \"] > a[href$=\"w3\\.org\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.csail.mit.edu/\"><acronym title=\"Massachusetts Institute of Technology\">MIT</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "font[size=\"\\31 \"] > a[href$=\"csail\\.mit\\.edu\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.ercim.org/\"><acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "font[size=\"\\31 \"] > a[href$=\"ercim\\.org\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.keio.ac.jp/\">Keio</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "font[size=\"\\31 \"] > a[href$=\"keio\\.ac\\.jp\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"10px\" background=\"./img/border_right.gif\"><img src=\"./img/border_right.gif\" width=\"10px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[background=\"\\.\\/img\\/border_right\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"10px\" height=\"10px\" background=\"./img/border_bottom_left.gif\"><img src=\"./img/border_bottom_left.gif\" width=\"10px\" height=\"10px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[background=\"\\.\\/img\\/border_bottom_left\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"780px\" height=\"10px\" background=\"./img/border_bottom.gif\"><img src=\"./img/border_bottom.gif\" height=\"10px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[background=\"\\.\\/img\\/border_bottom\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<td width=\"10px\" height=\"10px\" background=\"./img/border_bottom_right.gif\"><img src=\"./img/border_bottom_right.gif\" width=\"10px\" height=\"10px\"></td>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "td[background=\"\\.\\/img\\/border_bottom_right\\.gif\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "#meta-footer > p:nth-child(2)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"../changelog.html\">changelog</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"changelog\\.html\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/People/shadi/\">Shadi Abou-Zahra</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p:nth-child(2) > a:nth-child(4)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/EO/\">Education and Outreach Working Group (EOWG)</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"EO\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/TIES/\"><acronym title=\"Web Accessibility Initiative: Training, Implementation, Education, Support\">WAI-TIES</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"TIES\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/WAI-AGE/\"><acronym title=\"Web Accessibility Initiative: Ageing Education and Harmonisation\">WAI-AGE</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"WAI-AGE\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"../acks.html\">Acknowledgements</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"acks\\.html\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p:nth-child(3)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/sitemap.html\" shape=\"rect\">WAI Site Map</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p:nth-child(3) > a[shape=\"rect\"]:nth-child(1)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/sitehelp.html\" shape=\"rect\">Help with WAI Website</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[shape=\"rect\"]:nth-child(2)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/search.php\" shape=\"rect\">Search</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[shape=\"rect\"]:nth-child(3)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/WAI/contacts\" shape=\"rect\">Contacting WAI</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"contacts\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href=\"mailto\\:wai-eo-editors\\@w3\\.org\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"mailto:wai@w3.org\" shape=\"rect\">wai@w3.org</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[href$=\"mailto\\:wai\\@w3\\.org\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<p>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".copyright > p"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p > a[rel=\"Copyright\"]:nth-child(1)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/\"><acronym title=\"World Wide Web Consortium\">W3C</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".copyright > p > a[href$=\"w3\\.org\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.csail.mit.edu/\"><acronym title=\"Massachusetts Institute of Technology\">MIT</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p > a[href$=\"csail\\.mit\\.edu\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.ercim.org/\"><acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym></a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p > a[href$=\"ercim\\.org\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.keio.ac.jp/\">Keio</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "p > a[href$=\"keio\\.ac\\.jp\\/\"]"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer\">liability</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".copyright > p > a:nth-child(7)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks\">trademark</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              ".copyright > p > a:nth-child(8)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-documents\">document use</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[rel=\"Copyright\"]:nth-child(9)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-software\">software licensing</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a[rel=\"Copyright\"]:nth-child(10)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Public\">public</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a:nth-child(11)"
-            ]
-          },
-          {
-            "all": [],
-            "any": [],
-            "html": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Members\">Member</a>",
-            "impact": null,
-            "none": [
-              {
-                "data": null,
-                "id": "duplicate-img-label",
-                "impact": "minor",
-                "message": "Element does not duplicate existing text in <img> alt text",
-                "relatedNodes": []
-              }
-            ],
-            "target": [
-              "a:nth-child(12)"
+              "img[src$=\"border_bottom_right\\.gif\"]"
             ]
           }
         ],
@@ -5539,7 +4291,7 @@
       {
         "description": "Ensures that every form element is not solely labeled using the title or aria-describedby attributes",
         "help": "Form elements should have a visible label",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/label-title-only?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/label-title-only?application=webdriverjs",
         "id": "label-title-only",
         "impact": null,
         "nodes": [
@@ -5570,7 +4322,7 @@
       {
         "description": "Ensures the document has at most one banner landmark",
         "help": "Document must not have more than one banner landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-no-duplicate-banner?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-no-duplicate-banner?application=webdriverjs",
         "id": "landmark-no-duplicate-banner",
         "impact": null,
         "nodes": [
@@ -5601,7 +4353,7 @@
       {
         "description": "Ensures the document has at most one contentinfo landmark",
         "help": "Document must not have more than one contentinfo landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-no-duplicate-contentinfo?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-no-duplicate-contentinfo?application=webdriverjs",
         "id": "landmark-no-duplicate-contentinfo",
         "impact": null,
         "nodes": [
@@ -5632,7 +4384,7 @@
       {
         "description": "Ensures presentational <table> elements do not use <th>, <caption> elements or the summary attribute",
         "help": "Layout tables must not use data table elements",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/layout-table?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/layout-table?application=webdriverjs",
         "id": "layout-table",
         "impact": null,
         "nodes": [
@@ -5966,7 +4718,7 @@
       {
         "description": "Ensures links have discernible text",
         "help": "Links must have discernible text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/link-name?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/link-name?application=webdriverjs",
         "id": "link-name",
         "impact": "serious",
         "nodes": [
@@ -7231,7 +5983,7 @@
       {
         "description": "Ensures that lists are structured correctly",
         "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/list?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/list?application=webdriverjs",
         "id": "list",
         "impact": null,
         "nodes": [
@@ -7281,7 +6033,7 @@
       {
         "description": "Ensures <li> elements are used semantically",
         "help": "<li> elements must be contained in a <ul> or <ol>",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/listitem?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/listitem?application=webdriverjs",
         "id": "listitem",
         "impact": null,
         "nodes": [
@@ -7439,7 +6191,7 @@
       {
         "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
         "help": "Page must contain a level-one heading",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/page-has-heading-one?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/page-has-heading-one?application=webdriverjs",
         "id": "page-has-heading-one",
         "impact": null,
         "nodes": [
@@ -7477,7 +6229,7 @@
       {
         "description": "Ensure all skip links have a focusable target",
         "help": "The skip-link target should exist and be focusable",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/skip-link?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/skip-link?application=webdriverjs",
         "id": "skip-link",
         "impact": null,
         "nodes": [
@@ -7508,7 +6260,7 @@
       {
         "description": "Ensure that tables do not have the same summary and caption",
         "help": "The <caption> element should not contain the same text as the summary attribute",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/table-duplicate-name?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/table-duplicate-name?application=webdriverjs",
         "id": "table-duplicate-name",
         "impact": null,
         "nodes": [
@@ -7701,7 +6453,7 @@
       {
         "description": "Ensure that each cell in a table using the headers refers to another cell in that table",
         "help": "All cells in a table element that use the headers attribute must only refer to other cells of that same table",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/td-headers-attr?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/td-headers-attr?application=webdriverjs",
         "id": "td-headers-attr",
         "impact": null,
         "nodes": [
@@ -7897,19 +6649,19 @@
     ],
     "testEngine": {
       "name": "axe-core",
-      "version": "3.2.2"
+      "version": "3.4.1"
     },
     "testEnvironment": {
       "orientationAngle": 0,
       "orientationType": "landscape-primary",
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/76.0.3809.132 Safari/537.36",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/79.0.3945.88 Safari/537.36",
       "windowHeight": 600,
       "windowWidth": 800
     },
     "testRunner": {
       "name": "axe"
     },
-    "timestamp": "2000-01-02T03:04:05.006Z",
+    "timestamp": "2020-01-07T01:18:27.882Z",
     "toolOptions": {
       "reporter": "v1"
     },
@@ -7918,7 +6670,7 @@
       {
         "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
         "help": "Elements must have sufficient color contrast",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/color-contrast?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/color-contrast?application=webdriverjs",
         "id": "color-contrast",
         "impact": "serious",
         "nodes": [
@@ -7931,13 +6683,13 @@
                   "contrastRatio": 3.88,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#41545d",
-                  "fontSize": "9.8pt",
+                  "fontSize": "9.8pt (13px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
                 "id": "color-contrast",
                 "impact": "serious",
-                "message": "Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt, font weight: bold). Expected contrast ratio of 4.5:1",
+                "message": "Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1",
                 "relatedNodes": [
                   {
                     "html": "<td width=\"150px\" bgcolor=\"#A9B8BF\"><font color=\"#41545D\" face=\"Verdana\" size=\"2\">&nbsp;<b>Free Penguins</b></font></td>",
@@ -7948,7 +6700,7 @@
                 ]
               }
             ],
-            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt, font weight: bold). Expected contrast ratio of 4.5:1",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1",
             "html": "<b>Free Penguins</b>",
             "impact": "serious",
             "none": [],
@@ -7965,13 +6717,13 @@
                   "contrastRatio": 3.88,
                   "expectedContrastRatio": "4.5:1",
                   "fgColor": "#41545d",
-                  "fontSize": "9.8pt",
+                  "fontSize": "9.8pt (13px)",
                   "fontWeight": "bold",
                   "missingData": null
                 },
                 "id": "color-contrast",
                 "impact": "serious",
-                "message": "Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt, font weight: bold). Expected contrast ratio of 4.5:1",
+                "message": "Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1",
                 "relatedNodes": [
                   {
                     "html": "<td width=\"150px\" bgcolor=\"#A9B8BF\"><font color=\"#41545D\" face=\"Verdana\" size=\"2\">&nbsp;<b>More City Parks</b></font></td>",
@@ -7982,7 +6734,7 @@
                 ]
               }
             ],
-            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt, font weight: bold). Expected contrast ratio of 4.5:1",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #41545d, background color: #a9b8bf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1",
             "html": "<b>More City Parks</b>",
             "impact": "serious",
             "none": [],
@@ -8000,7 +6752,7 @@
       {
         "description": "Ensures every HTML document has a lang attribute",
         "help": "<html> element must have a lang attribute",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/html-has-lang?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/html-has-lang?application=webdriverjs",
         "id": "html-has-lang",
         "impact": "serious",
         "nodes": [
@@ -8033,7 +6785,7 @@
       {
         "description": "Ensures <img> elements have alternate text or a role of none or presentation",
         "help": "Images must have alternate text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/image-alt?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/image-alt?application=webdriverjs",
         "id": "image-alt",
         "impact": "critical",
         "nodes": [
@@ -9831,7 +8583,7 @@
       {
         "description": "Ensures every form element has a label",
         "help": "Form elements must have labels",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/label?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/label?application=webdriverjs",
         "id": "label",
         "impact": "critical",
         "nodes": [
@@ -9895,7 +8647,7 @@
       {
         "description": "Ensures the document has only one main landmark and each iframe in the page has at most one main landmark",
         "help": "Document must have one main landmark",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/landmark-one-main?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/landmark-one-main?application=webdriverjs",
         "id": "landmark-one-main",
         "impact": "moderate",
         "nodes": [
@@ -9927,7 +8679,7 @@
       {
         "description": "Ensures links have discernible text",
         "help": "Links must have discernible text",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/link-name?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/link-name?application=webdriverjs",
         "id": "link-name",
         "impact": "serious",
         "nodes": [
@@ -10329,7 +9081,7 @@
       {
         "description": "Ensures all page content is contained by landmarks",
         "help": "All page content must be contained by landmarks",
-        "helpUrl": "https://dequeuniversity.com/rules/axe/3.2/region?application=webdriverjs",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/region?application=webdriverjs",
         "id": "region",
         "impact": "moderate",
         "nodes": [

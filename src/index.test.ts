@@ -12,6 +12,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { AxeRawResult } from './axe-raw-result';
 import { convertAxeToSarif, SarifLog, sarifReporter } from './index';
+import { testResourceTimestampPlaceholder } from './test-resource-constants';
 
 function readTestResourceJSON(testResourceFileName: string): any {
     const rawFileContents: string = fs.readFileSync(
@@ -52,6 +53,10 @@ describe('public convertAxeToSarif API', () => {
         ${'basic-axe-v3.3.2.reporter-v2.json'}        | ${'basic-axe-v3.3.2.sarif'}
         ${'w3citylights-axe-v3.3.2.reporter-v1.json'} | ${'w3citylights-axe-v3.3.2.sarif'}
         ${'w3citylights-axe-v3.3.2.reporter-v2.json'} | ${'w3citylights-axe-v3.3.2.sarif'}
+        ${'basic-axe-v3.4.1.reporter-v1.json'}        | ${'basic-axe-v3.4.1.sarif'}
+        ${'basic-axe-v3.4.1.reporter-v2.json'}        | ${'basic-axe-v3.4.1.sarif'}
+        ${'w3citylights-axe-v3.4.1.reporter-v1.json'} | ${'w3citylights-axe-v3.4.1.sarif'}
+        ${'w3citylights-axe-v3.4.1.reporter-v2.json'} | ${'w3citylights-axe-v3.4.1.sarif'}
     `(
         'converts pinned v1/v2 input $inputFile to pinned output $outputFile',
         ({ inputFile, outputFile }) => {
@@ -71,11 +76,11 @@ require('axe-core');
 describe('public sarifReporter API', () => {
     const emptyAxeRunOptions = {};
 
-    // Normalized values are the pinned expectations from basic-axe-v3.2.2-sarif-v2.1.2.sarif
+    // Normalized values are the pinned expectations from generated test-resources files
     function normalizeEnvironmentDerivedSarifProperties(sarif: SarifLog): void {
         sarif.runs[0]!.invocations!.forEach(i => {
-            i.endTimeUtc = '2019-03-22T19:12:06.129Z';
-            i.startTimeUtc = '2019-03-22T19:12:06.129Z';
+            i.endTimeUtc = testResourceTimestampPlaceholder;
+            i.startTimeUtc = testResourceTimestampPlaceholder;
         });
     }
 
@@ -96,7 +101,7 @@ describe('public sarifReporter API', () => {
     // it isn't very meaningful to test cases that involve old axe versions here.
     it.each`
         inputFile                               | outputFile
-        ${'basic-axe-v3.3.2.reporter-raw.json'} | ${'basic-axe-v3.3.2.sarif'}
+        ${'basic-axe-v3.4.1.reporter-raw.json'} | ${'basic-axe-v3.4.1.sarif'}
     `(
         'converts pinned raw input $inputFile to pinned output $outputFile',
         async ({ inputFile, outputFile }) => {

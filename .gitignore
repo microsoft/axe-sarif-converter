@@ -62,4 +62,5 @@ typings/
 
 # build output
 /dist/
+/src/test-resources/generator/*.js
 /test-results/
