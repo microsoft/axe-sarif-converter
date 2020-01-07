@@ -14,7 +14,7 @@ const testUrls: Record<string, string> = {
     'basic': url.pathToFileURL(path.join(testResourcesDir, 'basic.html')).toString(),
 };
 
-async function generateResources() {
+function generateResources() {
     for (const testUrlIdentifier of Object.keys(testUrls)) {
         const testUrl = testUrls[testUrlIdentifier];
         const axeCliVersion = child_process.execSync(`npx axe --version`).toString().trim();
