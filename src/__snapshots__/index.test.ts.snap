@@ -737,9 +737,9 @@ Object {
       },
       "invocations": Array [
         Object {
-          "endTimeUtc": "2019-03-22T19:12:06.129Z",
+          "endTimeUtc": "2000-01-02T03:04:05.006Z",
           "executionSuccessful": true,
-          "startTimeUtc": "2019-03-22T19:12:06.129Z",
+          "startTimeUtc": "2000-01-02T03:04:05.006Z",
         },
       ],
       "results": Array [],

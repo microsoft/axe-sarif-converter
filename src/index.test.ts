@@ -78,8 +78,8 @@ describe('public sarifReporter API', () => {
     // Normalized values are the pinned expectations from basic-axe-v3.2.2-sarif-v2.1.2.sarif
     function normalizeEnvironmentDerivedSarifProperties(sarif: SarifLog): void {
         sarif.runs[0]!.invocations!.forEach(i => {
-            i.endTimeUtc = '2019-03-22T19:12:06.129Z';
-            i.startTimeUtc = '2019-03-22T19:12:06.129Z';
+            i.endTimeUtc = '2000-01-02T03:04:05.006Z';
+            i.startTimeUtc = '2000-01-02T03:04:05.006Z';
         });
     }
 
