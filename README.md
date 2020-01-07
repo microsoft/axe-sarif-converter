@@ -91,6 +91,30 @@ To get started working on the project:
     - `node dist/cli.js`
     - Alternately, register a linked global `axe-sarif-converter` command with `npm install && npm link` (yarn doesn't work for this; see [yarnpkg/yarn#1585](https://github.com/yarnpkg/yarn/issues/1585))
 
+### Updating axe-core version
+
+This package attempts to maintain backwards compatibility with axe-core versions ^3.2.2. We maintain
+test cases using pinned output from multiple axe-core versions under `/src/test-resources/`, so updating
+the version of axe-core we support involves generating new output for the new versions.
+
+Ideally we'd specify axe-core as a peer dependency; unfortunately, changing this now would be a breaking
+change, so we're waiting to change this until we would need to make a breaking change anyway.
+
+To update the package and test cases to account for a new axe-core version:
+
+1. Update the version of axe-core in `yarn.lock` (_not_ `package.json`); usually dependabot will cover this.
+1. Update the versions of axe-cli and axe-core in `src/test-resources/generator/package.json`
+1. Generate test resource files for the new version with:
+
+    ```
+    cd src/test-resources/generator
+    yarn install
+    yarn generate
+    ```
+
+1. Add test cases involving the new files to the integration tests in `src/index.test.ts` and `src/cli.test.ts`
+1. Update snapshots (`yarn test -u`)
+
 ### Contributor License Agreement
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
