@@ -1,7 +1,7 @@
 {
   "testEngine": {
     "name": "axe-core",
-    "version": "3.3.2"
+    "version": "3.4.1"
   },
   "testRunner": {
     "name": "axe"
@@ -16,7 +16,14 @@
   "timestamp": "2000-01-02T03:04:05.006Z",
   "url": "http://localhost/",
   "toolOptions": {
-    "reporter": "v2"
+    "xpath": true,
+    "runOnly": {
+      "type": "rule",
+      "values": [
+        "document-title"
+      ]
+    },
+    "reporter": "v1"
   },
   "violations": [
     {
@@ -29,7 +36,7 @@
       ],
       "description": "Ensures each HTML document contains a non-empty <title> element",
       "help": "Documents must have <title> element to aid in navigation",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/3.3/document-title?application=axe-puppeteer",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/3.4/document-title?application=axe-puppeteer",
       "nodes": [
         {
           "any": [
@@ -50,7 +57,8 @@
           ],
           "xpath": [
             "/html"
-          ]
+          ],
+          "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element"
         }
       ]
     }

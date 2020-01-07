@@ -17,14 +17,14 @@
       "tool": {
         "driver": {
           "name": "axe-core",
-          "fullName": "axe for Web v3.3.2",
+          "fullName": "axe for Web v3.4.1",
           "shortDescription": {
             "text": "An open source accessibility rules library for automated testing."
           },
-          "version": "3.3.2",
-          "semanticVersion": "3.3.2",
+          "version": "3.4.1",
+          "semanticVersion": "3.4.1",
           "informationUri": "https://www.deque.com/axe/axe-for-web/",
-          "downloadUri": "https://www.npmjs.com/package/axe-core/v/3.3.2",
+          "downloadUri": "https://www.npmjs.com/package/axe-core/v/3.4.1",
           "properties": {
             "microsoft/qualityDomain": "Accessibility"
           },
@@ -42,7 +42,7 @@
               "fullDescription": {
                 "text": "Ensures each HTML document contains a non-empty <title> element."
               },
-              "helpUri": "https://dequeuniversity.com/rules/axe/3.3/document-title?application=axe-puppeteer",
+              "helpUri": "https://dequeuniversity.com/rules/axe/3.4/document-title?application=axe-puppeteer",
               "relationships": [
                 {
                   "target": {
