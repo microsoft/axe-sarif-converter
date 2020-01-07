@@ -38,6 +38,16 @@ async function writeResultFile(results: any, outputFileName: string) {
     await fs.promises.writeFile(outputPath, resultsAsJson, {encoding: 'utf8'});
 }
 
+function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
+    if (axeResults.timestamp != undefined) {
+        axeResults.timestamp = '2000-01-02T03:04:05.006Z'
+    }
+
+    if (axeResults.url != undefined && axeResults.url.startsWith('file://')) {
+        axeResults.url = 'http://localhost/';
+    }
+}
+
 async function generateResources() {
     const browser = await Puppeteer.launch();
 
@@ -60,15 +70,12 @@ async function generateResources() {
 
             const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).analyze();
 
-            // Normalize parts that will vary run-over-run so we can compare all
-            // the input files to the same sarif file on different machines.
-            axeResults.timestamp = '2000-01-02T03:04:05.006Z'
-            if (axeResults.url != undefined && axeResults.url.startsWith('file://')) {
-                axeResults.url = 'http://localhost/';
-            }
+            normalizeEnvironmentDependentPartsOfAxeResults(axeResults);
 
             await writeAxeResultFile(axeResults, axeVersion, reporter, testUrlIdentifier);
-    
+
+            // We pin .sarif output against 'v1' because it's the default axe-core reporter,
+            // so it's the baseline we want to measure other outputs against.
             if (reporter === 'v1') {
                 const sarifResults = convertAxeToSarif(axeResults);
                 await writeResultFile(sarifResults, `${testUrlIdentifier}-axe-v${axeVersion}.sarif`);
