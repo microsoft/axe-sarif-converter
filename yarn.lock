@@ -2645,12 +2645,7 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
-ignore@^5.1.1:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.2.tgz#e28e584d43ad7e92f96995019cc43b9e1ac49558"
-  integrity sha512-vdqWBp7MyzdmHkkRWV5nY+PfGRbYbahfuvsBCh277tq+w9zyNi7h5CYJCK0kmzti9kU+O/cB7sE8HvKv6aXAKQ==
-
-ignore@^5.1.2:
+ignore@^5.1.1, ignore@^5.1.2:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
   integrity sha512-MzbUSahkTW1u7JpKKjY7LCARd1fU5W2rLdxlM4kdkayuCwZImjkpluF9CM1aLewYJguPDqewLam18Y6AU69A8A==
@@ -3813,9 +3808,9 @@ libnpx@^10.2.0:
     yargs "^11.0.0"
 
 license-check-and-add@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/license-check-and-add/-/license-check-and-add-3.0.3.tgz#8ec30f84d88de4763c5a20a37df97c03671440b6"
-  integrity sha512-7xY3FhT++crFk0wQZYnokLNw53OYnWLPxMo0oH9W/BUycc2cVsHhIY2ftamXb25G1rP2db+lwqu6qoHQVk8CSA==
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/license-check-and-add/-/license-check-and-add-3.0.4.tgz#dcbcea5402e969d170ef3286ddbb668b37447135"
+  integrity sha512-j3dotPJECxJRdvfkXxxDJqlKoRyKoR0G1woG1TiuqHAHG2/EjByRQZNcaDZ0GCY6/zBhrkoPC/gZHz0vsQtAsQ==
   dependencies:
     fs-extra "^8.1.0"
     gitignore-to-glob "^0.3.0"
