@@ -30,7 +30,7 @@
         "lodash": "^4.17.15",
         "prettier": "^1.18.2",
         "rimraf": "^3.0.0",
-        "semantic-release": "^16.0.1",
+        "semantic-release": "^17.0.0",
         "ts-jest": "^25.0.0",
         "tslint": "^5.18.0",
         "tslint-microsoft-contrib": "^6.2.0",
