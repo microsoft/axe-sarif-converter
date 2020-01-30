@@ -4,13 +4,16 @@ jobs:
     - job: 'tests_and_checks'
 
       pool:
-          vmImage: 'ubuntu-16.04'
+          vmImage: 'ubuntu-18.04'
 
       steps:
+          # This is later than the minimum version the package claims support
+          # for because semantic-release requires a later LTS version that we
+          # can require of our users without a breaking change
           - task: NodeTool@0
             inputs:
-                versionSpec: '10.15.3'
-            displayName: use node 10.15.3
+                versionSpec: '12.14.1'
+            displayName: use node 12.14.1
 
           - script: yarn install --frozen-lockfile
             displayName: yarn install
