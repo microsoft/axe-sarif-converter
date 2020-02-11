@@ -57,6 +57,10 @@ describe('public convertAxeToSarif API', () => {
         ${'basic-axe-v3.4.1.reporter-v2.json'}        | ${'basic-axe-v3.4.1.sarif'}
         ${'w3citylights-axe-v3.4.1.reporter-v1.json'} | ${'w3citylights-axe-v3.4.1.sarif'}
         ${'w3citylights-axe-v3.4.1.reporter-v2.json'} | ${'w3citylights-axe-v3.4.1.sarif'}
+        ${'basic-axe-v3.4.2.reporter-v1.json'}        | ${'basic-axe-v3.4.2.sarif'}
+        ${'basic-axe-v3.4.2.reporter-v2.json'}        | ${'basic-axe-v3.4.2.sarif'}
+        ${'w3citylights-axe-v3.4.2.reporter-v1.json'} | ${'w3citylights-axe-v3.4.2.sarif'}
+        ${'w3citylights-axe-v3.4.2.reporter-v2.json'} | ${'w3citylights-axe-v3.4.2.sarif'}
     `(
         'converts pinned v1/v2 input $inputFile to pinned output $outputFile',
         ({ inputFile, outputFile }) => {
@@ -101,7 +105,7 @@ describe('public sarifReporter API', () => {
     // it isn't very meaningful to test cases that involve old axe versions here.
     it.each`
         inputFile                               | outputFile
-        ${'basic-axe-v3.4.1.reporter-raw.json'} | ${'basic-axe-v3.4.1.sarif'}
+        ${'basic-axe-v3.4.2.reporter-raw.json'} | ${'basic-axe-v3.4.2.sarif'}
     `(
         'converts pinned raw input $inputFile to pinned output $outputFile',
         async ({ inputFile, outputFile }) => {
