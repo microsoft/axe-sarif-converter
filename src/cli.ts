@@ -95,7 +95,7 @@ const sarifLogs: Log[] = flatten(
 verboseLog(`Aggregating converted input file(s) into one SARIF log`);
 const combinedLog: Log = {
     ...sarifLogs[0],
-    runs: flatten(sarifLogs.map(log => log.runs)),
+    runs: flatten(sarifLogs.map((log) => log.runs)),
 };
 
 verboseLog(`Formatting SARIF data into file contents`);

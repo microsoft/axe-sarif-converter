@@ -59,7 +59,7 @@ describe('SarifConverter', () => {
                 environmentData: EnvironmentData,
             ) => Sarif.ToolComponent> = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
-                .setup(ap =>
+                .setup((ap) =>
                     ap(
                         It.isObjectWith({
                             axeVersion: stubAxeVersion,
@@ -117,7 +117,7 @@ describe('SarifConverter', () => {
                 environmentData: EnvironmentData,
             ) => Sarif.Invocation[]> = Mock.ofInstance(getInvocations);
             invocationProviderMock
-                .setup(ip =>
+                .setup((ip) =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
                 )
                 .returns(() => stubInvocations)
@@ -148,7 +148,7 @@ describe('SarifConverter', () => {
                 getConverterProperties,
             );
             converterPropertyProviderMock
-                .setup(cp => cp())
+                .setup((cp) => cp())
                 .returns(() => stubConverterProperties)
                 .verifiable(Times.once());
 
@@ -184,7 +184,7 @@ describe('SarifConverter', () => {
                 environmentData: EnvironmentData,
             ) => Sarif.Artifact> = Mock.ofInstance(getArtifactProperties);
             artifactPropertyProviderMock
-                .setup(ap =>
+                .setup((ap) =>
                     ap(
                         It.isObjectWith({
                             targetPageUrl: stubTargetPageUrl,

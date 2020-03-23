@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 'use strict';
 
-module.exports = function() {
+module.exports = function () {
     return {
         files: [
             'tsconfig.json',
@@ -17,7 +17,7 @@ module.exports = function() {
             runner: 'node',
         },
         testFramework: 'jest',
-        setup: function(wallaby) {
+        setup: function (wallaby) {
             const jestConfig = require('./jest.config.js');
 
             // Wallaby uses its own typescript transformer and recommends

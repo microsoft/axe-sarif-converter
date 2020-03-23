@@ -142,7 +142,7 @@ export class AxeRawSarifConverter {
         ruleId: string,
     ): Sarif.Result[] {
         if (rawNodeResults) {
-            return rawNodeResults.map(rawNodeResult =>
+            return rawNodeResults.map((rawNodeResult) =>
                 this.convertRawNodeResult(
                     rawNodeResult,
                     ruleIdsToRuleIndices,
