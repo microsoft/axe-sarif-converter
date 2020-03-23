@@ -34,7 +34,7 @@ function getAllTaxaFromWcagLinkData(
     sortedWcagTags: string[],
     tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData>,
 ): Sarif.ToolComponent['taxa'] {
-    return sortedWcagTags.map(tag =>
+    return sortedWcagTags.map((tag) =>
         getIndividualTaxaFromWcagLinkData(tag, tagsToWcagLinkData[tag]),
     );
 }

@@ -119,7 +119,7 @@ describe('axe-sarif-converter CLI', () => {
         expect(outputFileContent).toBe('preexisting content');
     });
 
-    it.each(['-f', '--force'])('overwrites files with %s', async arg => {
+    it.each(['-f', '--force'])('overwrites files with %s', async (arg) => {
         const outputFile = path.join(testResultsDir, `overwrite_${arg}.sarif`);
         await writeFile(outputFile, 'preexisting content');
 
@@ -128,7 +128,7 @@ describe('axe-sarif-converter CLI', () => {
         expectSameJSONContent(outputFile, basicSarifFile);
     });
 
-    it.each(['-v', '--verbose'])('emits verbose output', async verboseArg => {
+    it.each(['-v', '--verbose'])('emits verbose output', async (verboseArg) => {
         const outputFile = path.join(
             testResultsDir,
             'emits_verbose_output.sarif',
@@ -146,7 +146,7 @@ describe('axe-sarif-converter CLI', () => {
         expectSameJSONContent(outputFile, basicSarifFile);
     });
 
-    it.each(['-p', '--pretty'])('pretty-prints', async prettyArg => {
+    it.each(['-p', '--pretty'])('pretty-prints', async (prettyArg) => {
         const outputFile = path.join(testResultsDir, 'pretty-prints.sarif');
         await deleteIfExists(outputFile);
 
@@ -158,7 +158,7 @@ describe('axe-sarif-converter CLI', () => {
 
         const lines = outputContents.split('\n');
         expect(lines.length).toBeGreaterThan(100);
-        expect(lines.every(line => line.length < 200)).toBe(true);
+        expect(lines.every((line) => line.length < 200)).toBe(true);
     });
 
     async function invokeCliWith(

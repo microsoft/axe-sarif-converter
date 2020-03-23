@@ -90,13 +90,13 @@ describe('public sarifReporter API', () => {
 
     // Normalized values are the pinned expectations from generated test-resources files
     function normalizeEnvironmentDerivedSarifProperties(sarif: SarifLog): void {
-        sarif.runs[0]!.invocations!.forEach(i => {
+        sarif.runs[0]!.invocations!.forEach((i) => {
             i.endTimeUtc = testResourceTimestampPlaceholder;
             i.startTimeUtc = testResourceTimestampPlaceholder;
         });
     }
 
-    it('converts empty/minimal axe rawObject input with no results to the pinned minimal SARIF output', done => {
+    it('converts empty/minimal axe rawObject input with no results to the pinned minimal SARIF output', (done) => {
         const minimalAxeRawInput: AxeRawResult[] = [];
 
         function callback(convertedSarifResults: SarifLog) {
@@ -117,7 +117,7 @@ describe('public sarifReporter API', () => {
     `(
         'converts pinned raw input $inputFile to pinned output $outputFile',
         async ({ inputFile, outputFile }) => {
-            return new Promise(resolve => {
+            return new Promise((resolve) => {
                 const input: AxeRawResult[] = readTestResourceJSON(inputFile);
                 const expectedOutput: SarifLog = readTestResourceJSON(
                     outputFile,

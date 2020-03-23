@@ -50,7 +50,7 @@ export class ResultToRuleConverter {
     }
 
     public getRulePropertiesFromResults(): Sarif.ReportingDescriptor[] {
-        return this.sortedRuleIds.map(ruleId => this.rulesDictionary[ruleId]);
+        return this.sortedRuleIds.map((ruleId) => this.rulesDictionary[ruleId]);
     }
 
     public getRuleIdsToRuleIndices(): DictionaryStringTo<number> {
@@ -144,8 +144,8 @@ export class ResultToRuleConverter {
         result: Axe.Result | AxeRawResult,
     ) {
         return result.tags
-            .filter(tag => axeTags.indexOf(tag) != -1)
-            .map(tag => {
+            .filter((tag) => axeTags.indexOf(tag) != -1)
+            .map((tag) => {
                 return {
                     target: {
                         id: tag,

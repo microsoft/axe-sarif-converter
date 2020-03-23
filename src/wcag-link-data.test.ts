@@ -6,7 +6,7 @@ import { axeTagsToWcagLinkData } from './wcag-link-data';
 describe('axeTagsToWcagLinkData', () => {
     it.each(axe.getRules())(
         'contains populated entries for every wcag standard tag used by axe-core rule %p',
-        axeRule => {
+        (axeRule) => {
             const tags: string[] = (axeRule as any).tags;
             const wcagTags = tags.filter(doesTagReferToWcagStandard);
 
