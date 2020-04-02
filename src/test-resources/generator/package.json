@@ -7,7 +7,6 @@
     "generate": "yarn generate-axe-core-resources && yarn generate-axe-cli-resources",
     "generate-axe-cli-resources": "tsc generate-axe-cli-resources.ts && node generate-axe-cli-resources.js",
     "generate-axe-core-resources": "tsc generate-axe-core-resources.ts && node generate-axe-core-resources.js"
-
   },
   "author": "",
   "license": "MIT",
@@ -20,5 +19,8 @@
     "axe-puppeteer": "^1.0.0",
     "puppeteer": "^1.19.0",
     "typescript": "^3.6.3"
+  },
+  "resolutions": {
+    "minimist": "^1.2.2"
   }
 }
