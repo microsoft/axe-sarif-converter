@@ -24,7 +24,7 @@
         "@types/node": "^13.1.2",
         "@types/yargs": "^15.0.0",
         "jest": "^25.1.0",
-        "jest-circus": "^25.1.0",
+        "jest-circus": "^26.0.0",
         "jest-junit": "^10.0.0",
         "license-check-and-add": "^3.0.3",
         "lodash": "^4.17.15",
