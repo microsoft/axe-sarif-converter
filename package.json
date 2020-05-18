@@ -31,7 +31,7 @@
         "prettier": "^2.0.1",
         "rimraf": "^3.0.0",
         "semantic-release": "^17.0.1",
-        "ts-jest": "^25.0.0",
+        "ts-jest": "^26.0.0",
         "tslint": "^6.0.0",
         "tslint-microsoft-contrib": "^6.2.0",
         "typemoq": "^2.1.0",
