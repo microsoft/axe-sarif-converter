@@ -57,6 +57,8 @@ describe('axe-sarif-converter CLI', () => {
         ${'w3citylights-axe-v3.5.3.axe-cli-v3.2.0.json'}
         ${'basic-axe-v3.5.4.axe-cli-v3.2.0.json'}
         ${'w3citylights-axe-v3.5.4.axe-cli-v3.2.0.json'}
+        ${'basic-axe-v3.5.5.axe-cli-v3.2.0.json'}
+        ${'w3citylights-axe-v3.5.5.axe-cli-v3.2.0.json'}
     `(
         'supports conversion from axe-cli output $inputFile',
         async ({ inputFile }) => {
@@ -175,11 +177,11 @@ describe('axe-sarif-converter CLI', () => {
     const testResultsDir = path.join(__dirname, '..', 'test-results');
     const basicAxeV2File = path.join(
         testResourcesDir,
-        'basic-axe-v3.5.4.reporter-v2.json',
+        'basic-axe-v3.5.5.reporter-v2.json',
     );
     const basicSarifFile = path.join(
         testResourcesDir,
-        'basic-axe-v3.5.4.sarif',
+        'basic-axe-v3.5.5.sarif',
     );
 
     const mkdir = promisify(fs.mkdir);
