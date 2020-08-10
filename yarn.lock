@@ -1123,10 +1123,10 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.0.tgz#a17b3a8ea811060e74d47d306122400ad4497ae2"
   integrity sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
 
-axe-core@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.0.1.tgz#e337c2ed1e6fe73920166d8b0b0b352e1b50d8ae"
-  integrity sha512-OSCABHvSNDleKqJP7DUwEBvMVbr/gtOj2vCDoKKz967fxe9WqtCZLo3IRNOO2fJcu+eSFsu8aAToHfIY7sPLaw==
+axe-core@^3.2.2:
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
+  integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
 
 babel-jest@^26.2.2:
   version "26.2.2"
@@ -4949,7 +4949,6 @@ npm@^6.10.3:
     cmd-shim "^3.0.3"
     columnify "~1.5.4"
     config-chain "^1.1.12"
-    debuglog "*"
     detect-indent "~5.0.0"
     detect-newline "^2.1.0"
     dezalgo "~1.0.3"
@@ -4964,7 +4963,6 @@ npm@^6.10.3:
     has-unicode "~2.0.1"
     hosted-git-info "^2.8.8"
     iferr "^1.0.2"
-    imurmurhash "*"
     infer-owner "^1.0.4"
     inflight "~1.0.6"
     inherits "^2.0.4"
@@ -4983,14 +4981,8 @@ npm@^6.10.3:
     libnpx "^10.2.2"
     lock-verify "^2.1.0"
     lockfile "^1.0.4"
-    lodash._baseindexof "*"
     lodash._baseuniq "~4.6.0"
-    lodash._bindcallback "*"
-    lodash._cacheindexof "*"
-    lodash._createcache "*"
-    lodash._getnative "*"
     lodash.clonedeep "~4.5.0"
-    lodash.restparam "*"
     lodash.union "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
