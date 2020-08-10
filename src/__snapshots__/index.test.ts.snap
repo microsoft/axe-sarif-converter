@@ -1386,15 +1386,15 @@ Object {
       ],
       "tool": Object {
         "driver": Object {
-          "downloadUri": "https://www.npmjs.com/package/axe-core/v/3.5.5",
-          "fullName": "axe for Web v3.5.5",
+          "downloadUri": "https://www.npmjs.com/package/axe-core/v/4.0.1",
+          "fullName": "axe for Web v4.0.1",
           "informationUri": "https://www.deque.com/axe/axe-for-web/",
           "name": "axe-core",
           "properties": Object {
             "microsoft/qualityDomain": "Accessibility",
           },
           "rules": Array [],
-          "semanticVersion": "3.5.5",
+          "semanticVersion": "4.0.1",
           "shortDescription": Object {
             "text": "An open source accessibility rules library for automated testing.",
           },
@@ -1405,7 +1405,7 @@ Object {
               "name": "WCAG",
             },
           ],
-          "version": "3.5.5",
+          "version": "4.0.1",
         },
       },
     },
