@@ -15,7 +15,7 @@
     "@types/node": "^12.7.7",
     "@types/puppeteer": "^1.19.1",
     "axe-cli": "3.2.0",
-    "axe-core": "4.0.1",
+    "axe-core": "3.5.5",
     "axe-puppeteer": "^1.0.0",
     "puppeteer": "^4.0.1",
     "typescript": "^3.6.3"
