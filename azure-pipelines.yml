@@ -57,6 +57,6 @@ jobs:
           - script: yarn semantic-release
             displayName: yarn semantic-release (master branch only)
             env:
-                GH_TOKEN: $(GH_TOKEN)
-                NPM_TOKEN: $(NPM_TOKEN)
+                GH_TOKEN: $(github-ada-cat-auth-token)
+                NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
             condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['EnableSemanticRelease'], 'true'))
