@@ -34,7 +34,7 @@
         "lodash": "^4.17.15",
         "prettier": "^2.0.1",
         "rimraf": "^3.0.0",
-        "semantic-release": "^17.0.1",
+        "semantic-release": "^17.1.1",
         "ts-jest": "^26.0.0",
         "typemoq": "^2.1.0",
         "typescript": "^4.0.2"
@@ -42,7 +42,8 @@
     "resolutions": {
         "minimist": "^1.2.3",
         "acorn": "^7.1.1",
-        "kind-of": "^6.0.3"
+        "kind-of": "^6.0.3",
+        "semantic-release/**/lock-verify/**/yargs": "^15.4.1"
     },
     "scripts": {
         "prebuild": "yarn clean",
