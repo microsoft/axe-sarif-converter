@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+import { AxePuppeteer } from '@axe-core/puppeteer';
 import * as axe from 'axe-core';
-import { AxePuppeteer } from 'axe-puppeteer';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as Puppeteer from 'puppeteer';
