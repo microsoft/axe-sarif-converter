@@ -17,12 +17,12 @@ const testUrls: Record<string, string> = {
 function generateResources() {
     for (const testUrlIdentifier of Object.keys(testUrls)) {
         const testUrl = testUrls[testUrlIdentifier];
-        const axeCliVersion = child_process.execSync(`npx axe --version`).toString().trim();
+        const axeCliVersion = child_process.execSync(`npx @axe-core/cli --version`).toString().trim();
         const axeCliOutputFile = path.join(testResourcesDir, `${testUrlIdentifier}-axe-v${axeCoreVersion}.axe-cli-v${axeCliVersion}.json`);
         console.log(`Writing test resource: ${axeCliOutputFile}`);
 
         const axeCliOutputFileRelativePath = path.relative(__dirname, axeCliOutputFile);
-        let axeCliCommand = `npx axe ${testUrl} --save ${axeCliOutputFileRelativePath} --axe-source ${axeSourcePath}`;
+        let axeCliCommand = `npx @axe-core/cli ${testUrl} --save ${axeCliOutputFileRelativePath} --axe-source ${axeSourcePath}`;
         if (testUrlIdentifier === 'basic') {
             axeCliCommand += ' --rules document-title';
         }

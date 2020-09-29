@@ -16,22 +16,22 @@ Use this with the [Sarif Viewer Build Tab Azure DevOps Extension](https://market
 
 ## Usage
 
-Before using axe-sarif-converter, you will need to run an [axe](https://github.com/dequelabs/axe-core) accessibility scan to produce some axe results to convert. Typically, you would do this by using an axe integration library for your favorite browser automation tool ([axe-puppeteer](https://github.com/dequelabs/axe-puppeteer), [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs), [cypress-axe](https://github.com/avanslaars/cypress-axe)).
+Before using axe-sarif-converter, you will need to run an [axe](https://github.com/dequelabs/axe-core) accessibility scan to produce some axe results to convert. Typically, you would do this by using an axe integration library for your favorite browser automation tool ([@axe-core/puppeteer](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/puppeteer), [@axe-core/webdriverjs](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/webdriverjs), [cypress-axe](https://github.com/avanslaars/cypress-axe)).
 
 axe-sarif-converter exports a single function, named `convertAxeToSarif`. Use it like this:
 
 ```ts
-import * as Axe from 'axe';
-import * as AxePuppeteer from 'axe-puppeteer';
+import * as Axe from 'axe-core';
+import * as AxePuppeteer from '@axe-core/puppeteer';
 import * as fs from 'fs';
-import * as Puppeteer from 'puppeteer'
+import * as Puppeteer from 'puppeteer';
 import * as util from 'util';
 
 import { convertAxeToSarif, SarifLog } from 'axe-sarif-converter';
 
 test('my accessibility test', async () => {
-    // This example uses axe-puppeteer, but you can use any axe-based library
-    // that outputs axe scan results in the default axe output format
+    // This example uses @axe-core/puppeteer, but you can use any axe-based
+    // library that outputs axe scan results in the default axe output format
     const testPage: Puppeteer.Page = /* ... set up your test page ... */;
     const axeResults: Axe.AxeResults = await new AxePuppeteer(testPage).analyze();
 
