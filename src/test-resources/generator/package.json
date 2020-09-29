@@ -12,11 +12,11 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
+    "@axe-core/cli": "^4.0.0",
+    "@axe-core/puppeteer": "^4.0.0",
     "@types/node": "^12.7.7",
     "@types/puppeteer": "^1.19.1",
-    "axe-cli": "3.2.0",
-    "axe-core": "4.1.0",
-    "axe-puppeteer": "^1.0.0",
+    "axe-core": "4.0.2",
     "puppeteer": "^4.0.1",
     "typescript": "^3.6.3"
   },

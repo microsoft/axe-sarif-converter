@@ -82,7 +82,7 @@ const sarifLogs: Log[] = flatten(
         const rawInputFileContents = fs.readFileSync(inputFilePath);
         const inputFileJson = JSON.parse(rawInputFileContents.toString());
         if (Array.isArray(inputFileJson)) {
-            // Treating as array of axe results, like axe-cli produces
+            // Treating as array of axe results, like @axe-core/cli produces
             return inputFileJson.map(convertAxeToSarif);
         } else {
             // Treating as a single axe results object, like

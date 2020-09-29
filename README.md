@@ -49,9 +49,9 @@ test('my accessibility test', async () => {
 You can also use axe-sarif-converter as a command line tool:
 
 ```bash
-# axe-cli is used here for example purposes only; you could also run axe-core
+# @axe-core/cli is used here for example purposes only; you could also run axe-core
 # using your library of choice and JSON.stringify the results.
-npx axe-cli https://accessibilityinsights.io --save ./sample-axe-results.json
+npx @axe-core/cli https://accessibilityinsights.io --save ./sample-axe-results.json
 
 npx axe-sarif-converter --input-files ./sample-axe-results.json --output-file ./sample-axe-results.sarif
 ```
@@ -108,7 +108,7 @@ To update the package and test cases to account for a new axe-core version:
     yarn install
     yarn build
     ```
-1. Update the versions of axe-cli and axe-core in `src/test-resources/generator/package.json`
+1. Update the versions of @axe-core/cli and axe-core in `src/test-resources/generator/package.json`
 1. Generate test resource files for the new version with:
 
     ```

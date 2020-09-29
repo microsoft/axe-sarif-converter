@@ -26,7 +26,7 @@ function generateResources() {
         if (testUrlIdentifier === 'basic') {
             axeCliCommand += ' --rules document-title';
         }
-        console.log(`Invoking axe-cli v${axeCliVersion} with: ${axeCliCommand}`);
+        console.log(`Invoking @axe-core/cli v${axeCliVersion} with: ${axeCliCommand}`);
 
         child_process.execSync(axeCliCommand);
     }

@@ -2,6 +2,33 @@
 # yarn lockfile v1
 
 
+"@axe-core/cli@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.0.0.tgz#018d0c3758c098b5ab5ec9d9106a6621f7bb342c"
+  integrity sha512-KPI/pax60kzoSS+cYm840WXAZmQTE5ejZB/Cbdx5VawipA7kOg+Fq3e3kmRaWNPDGpmFT2t20opPByXHWYLnbw==
+  dependencies:
+    "@axe-core/webdriverjs" "^4.0.0"
+    axe-core "^4.0.1"
+    chromedriver latest
+    colors "^1.4.0"
+    commander "^2.19.0"
+    selenium-webdriver "^3.6.0"
+
+"@axe-core/puppeteer@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@axe-core/puppeteer/-/puppeteer-4.0.0.tgz#4e6dcddb774b7a89430d51dd203baa182415f427"
+  integrity sha512-APFc2iRmrmUfqdBUevjsMxJliDudWPwvCU5Pzw2uKZ0sMVtW3rQuElTcfJCHFq8KOZSSO0BPD+lK+pXOx1ta5Q==
+  dependencies:
+    axe-core "^4.0.1"
+
+"@axe-core/webdriverjs@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.0.0.tgz#4e8a6ad6f2c065ce9018e16a40454ec680c27bf2"
+  integrity sha512-zDlA9xpwVJKeWStOQQkIxAzNF3bnbrN5y7UkjsBZdibRUruldrsUmngiW4qrpAKRVxkGkME1ykgjNizhpDurog==
+  dependencies:
+    axe-core "^4.0.1"
+    babel-runtime "^6.26.0"
+
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.3.tgz#3a582bdb53804c6ba6d146579c46e52130cf4a3b"
@@ -89,44 +116,10 @@ array-union@^2.1.0:
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-2.1.0.tgz#b798420adbeb1de828d84acd8a2e23d3efe85e8d"
   integrity sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==
 
-axe-cli@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/axe-cli/-/axe-cli-3.2.0.tgz#96bfdb34b904d2445ffd81fcd887e54f8a72530c"
-  integrity sha512-PxPEFEaGyCtQXAvoKcCKBnRP71vWfSLwrHCFw3b+jK2a97rKIN3XcSNWUgW5VN3rp76hD/96lWuOt6IE9DtapA==
-  dependencies:
-    axe-core "^3.2.2"
-    axe-webdriverjs "^2.2.0"
-    chromedriver latest
-    colors "^1.3.3"
-    commander "^2.19.0"
-    selenium-webdriver "^3.6.0"
-
-axe-core@4.1.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.0.1.tgz#e337c2ed1e6fe73920166d8b0b0b352e1b50d8ae"
-  integrity sha512-OSCABHvSNDleKqJP7DUwEBvMVbr/gtOj2vCDoKKz967fxe9WqtCZLo3IRNOO2fJcu+eSFsu8aAToHfIY7sPLaw==
-
-axe-core@^3.1.2, axe-core@^3.2.2, axe-core@^3.3.1:
-  name axe-core-3.4.1
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.4.1.tgz#e42623918bb85b5ef674633852cb9029db0309c5"
-  integrity sha512-+EhIdwR0hF6aeMx46gFDUy6qyCfsL0DmBrV3Z+LxYbsOd8e1zBaPHa3f9Rbjsz2dEwSBkLw6TwML/CAIIAqRpw==
-
-axe-puppeteer@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/axe-puppeteer/-/axe-puppeteer-1.0.0.tgz#cebbeec2c65a2e0cb7d5fd1e7aef26c5f71895a4"
-  integrity sha512-hTF3u4mtatgTN7fsLVyVgbRdNc15ngjDcTEuqhn9A7ugqLhLCryJWp9fzqZkNlrW8awPcxugyTwLPR7mRdPZmA==
-  dependencies:
-    axe-core "^3.1.2"
-
-axe-webdriverjs@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.3.0.tgz#92511fbce38624a57e1aa861dd8a3c73c6a3a972"
-  integrity sha512-AuUsX5OFTXOJ6reIKjtGay4O656n5G+m8MzhfL1SC8MHINBFFFn3Taucckn8+UZYJuTtNEobllSfiuPTHyKnSA==
-  dependencies:
-    axe-core "^3.3.1"
-    babel-runtime "^6.26.0"
-    depd "^2.0.0"
+axe-core@4.0.2, axe-core@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.0.2.tgz#c7cf7378378a51fcd272d3c09668002a4990b1cb"
+  integrity sha512-arU1h31OGFu+LPrOLGZ7nB45v940NMDMEJeNmbutu57P+UFDVnkZg3e+J1I2HJRZ9hT7gO8J91dn/PMrAiKakA==
 
 axios@^0.19.2:
   version "0.19.2"
@@ -212,7 +205,7 @@ clean-stack@^2.0.0:
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
   integrity sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==
 
-colors@^1.3.3:
+colors@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
   integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
@@ -276,11 +269,6 @@ del@^5.1.0:
     p-map "^3.0.0"
     rimraf "^3.0.0"
     slash "^3.0.0"
-
-depd@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
-  integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
 
 dir-glob@^3.0.1:
   version "3.0.1"
