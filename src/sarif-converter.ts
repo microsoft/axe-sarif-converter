@@ -54,6 +54,8 @@ export class SarifConverter {
     ): Sarif.Log {
         return {
             version: '2.1.0',
+            $schema:
+                'https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json',
             runs: [this.convertRun(results, options)],
         };
     }
