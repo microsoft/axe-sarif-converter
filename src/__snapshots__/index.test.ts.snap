@@ -2,6 +2,7 @@
 
 exports[`public convertAxeToSarif API converts minimal axe v2 input with no results to the pinned minimal SARIF output 1`] = `
 Object {
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
   "runs": Array [
     Object {
       "artifacts": Array [
@@ -709,6 +710,7 @@ Object {
 
 exports[`public sarifReporter API converts empty/minimal axe rawObject input with no results to the pinned minimal SARIF output 1`] = `
 Object {
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
   "runs": Array [
     Object {
       "artifacts": Array [
