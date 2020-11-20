@@ -28,9 +28,7 @@ export function defaultSarifConverter(): SarifConverter {
     );
 }
 export class SarifConverter {
-    private readonly tagsToWcagLinkData: DictionaryStringTo<
-        WCAGLinkData
-    > = axeTagsToWcagLinkData;
+    private readonly tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> = axeTagsToWcagLinkData;
     private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
         this.tagsToWcagLinkData,
     );
