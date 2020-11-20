@@ -29,9 +29,7 @@ export function defaultAxeRawSarifConverter(): AxeRawSarifConverter {
 }
 
 export class AxeRawSarifConverter {
-    private readonly tagsToWcagLinkData: DictionaryStringTo<
-        WCAGLinkData
-    > = axeTagsToWcagLinkData;
+    private readonly tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> = axeTagsToWcagLinkData;
     private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
         this.tagsToWcagLinkData,
     );

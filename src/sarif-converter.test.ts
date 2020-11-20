@@ -55,9 +55,9 @@ describe('SarifConverter', () => {
         };
 
         it('outputs a sarif log whose run uses the axeToolPropertyProvider to populate the tool property', () => {
-            const axeToolPropertyProviderMock: IMock<(
-                environmentData: EnvironmentData,
-            ) => Sarif.ToolComponent> = Mock.ofInstance(getAxeToolProperties);
+            const axeToolPropertyProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.ToolComponent
+            > = Mock.ofInstance(getAxeToolProperties);
             axeToolPropertyProviderMock
                 .setup((ap) =>
                     ap(
@@ -113,9 +113,9 @@ describe('SarifConverter', () => {
             };
             const irrelevantOptions: ConverterOptions = {};
 
-            const invocationProviderMock: IMock<(
-                environmentData: EnvironmentData,
-            ) => Sarif.Invocation[]> = Mock.ofInstance(getInvocations);
+            const invocationProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.Invocation[]
+            > = Mock.ofInstance(getInvocations);
             invocationProviderMock
                 .setup((ip) =>
                     ip(It.isObjectWith<EnvironmentData>(stubEnvironmentData)),
@@ -144,9 +144,9 @@ describe('SarifConverter', () => {
         });
 
         it('outputs a sarif log whose run uses the converterPropertyProvider to populate the conversion property', () => {
-            const converterPropertyProviderMock: IMock<() => Sarif.Run['conversion']> = Mock.ofInstance(
-                getConverterProperties,
-            );
+            const converterPropertyProviderMock: IMock<
+                () => Sarif.Run['conversion']
+            > = Mock.ofInstance(getConverterProperties);
             converterPropertyProviderMock
                 .setup((cp) => cp())
                 .returns(() => stubConverterProperties)
@@ -180,9 +180,9 @@ describe('SarifConverter', () => {
         });
 
         it('outputs a sarif log whose run uses the artifactPropertyProvider to populate the artifacts property', () => {
-            const artifactPropertyProviderMock: IMock<(
-                environmentData: EnvironmentData,
-            ) => Sarif.Artifact> = Mock.ofInstance(getArtifactProperties);
+            const artifactPropertyProviderMock: IMock<
+                (environmentData: EnvironmentData) => Sarif.Artifact
+            > = Mock.ofInstance(getArtifactProperties);
             artifactPropertyProviderMock
                 .setup((ap) =>
                     ap(

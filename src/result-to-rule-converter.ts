@@ -8,9 +8,7 @@ import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
 export class ResultToRuleConverter {
     private readonly ruleIdsToRuleIndices: DictionaryStringTo<number> = {};
-    private readonly rulesDictionary: DictionaryStringTo<
-        Sarif.ReportingDescriptor
-    > = {};
+    private readonly rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> = {};
     private sortedRuleIds: string[] = [];
 
     public static fromRawResults(
