@@ -6,7 +6,7 @@ import {
     RunOptions,
     TestEngine,
     TestEnvironment,
-    TestRunner,
+    TestRunner
 } from 'axe-core';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -137,7 +137,7 @@ describe('public sarifReporter API', () => {
     `(
         'converts pinned raw input $inputFile to pinned output $outputFile',
         async ({ inputFile, outputFile }) => {
-            return new Promise((resolve) => {
+            return new Promise<void>((resolve) => {
                 const input: AxeRawResult[] = readTestResourceJSON(inputFile);
                 const expectedOutput: SarifLog = readTestResourceJSON(
                     outputFile,
