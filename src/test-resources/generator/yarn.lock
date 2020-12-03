@@ -2,31 +2,31 @@
 # yarn lockfile v1
 
 
-"@axe-core/cli@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.0.0.tgz#018d0c3758c098b5ab5ec9d9106a6621f7bb342c"
-  integrity sha512-KPI/pax60kzoSS+cYm840WXAZmQTE5ejZB/Cbdx5VawipA7kOg+Fq3e3kmRaWNPDGpmFT2t20opPByXHWYLnbw==
+"@axe-core/cli@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.1.0.tgz#30512d87f1b4a9145e91e2d51109b321d03a565e"
+  integrity sha512-0TjJaOEiPD312zgnSmlnMrHxOx92dxZlkRxXbr5kGKdAeWYi0BkO9MUPm7Li7FF1dLMzNThqnAsHFlOUGVYGAg==
   dependencies:
-    "@axe-core/webdriverjs" "^4.0.0"
-    axe-core "^4.0.1"
+    "@axe-core/webdriverjs" "^4.1.0"
+    axe-core "^4.1.1"
     chromedriver latest
     colors "^1.4.0"
     commander "^2.19.0"
     selenium-webdriver "^3.6.0"
 
-"@axe-core/puppeteer@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@axe-core/puppeteer/-/puppeteer-4.0.0.tgz#4e6dcddb774b7a89430d51dd203baa182415f427"
-  integrity sha512-APFc2iRmrmUfqdBUevjsMxJliDudWPwvCU5Pzw2uKZ0sMVtW3rQuElTcfJCHFq8KOZSSO0BPD+lK+pXOx1ta5Q==
+"@axe-core/puppeteer@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@axe-core/puppeteer/-/puppeteer-4.1.0.tgz#201e656d757ee1a47ab6fb55a7db3076b344e735"
+  integrity sha512-zIxbZGNVXQpu0DuA0NLET4Nv23Ir6eecb/GJUWhuY1rWnVnUdHjI0y3Rh5nI2vfdjJ8glDh8G1MxtihVr1Ht2w==
   dependencies:
-    axe-core "^4.0.1"
+    axe-core "^4.1.1"
 
-"@axe-core/webdriverjs@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.0.0.tgz#4e8a6ad6f2c065ce9018e16a40454ec680c27bf2"
-  integrity sha512-zDlA9xpwVJKeWStOQQkIxAzNF3bnbrN5y7UkjsBZdibRUruldrsUmngiW4qrpAKRVxkGkME1ykgjNizhpDurog==
+"@axe-core/webdriverjs@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.1.0.tgz#ce22d795e33d02a4e2b3ad59d698f0b111e4e72a"
+  integrity sha512-I6YFiR3XzdCd+Id3LdsliEw04l9M2lFl0EIiPAweoW2E5AlQ5Jk+a4q4GLYWpdQE6RWSs0DvmS8JfF+u0R823w==
   dependencies:
-    axe-core "^4.0.1"
+    axe-core "^4.1.1"
     babel-runtime "^6.26.0"
 
 "@nodelib/fs.scandir@2.1.3":
@@ -112,10 +112,10 @@ array-union@^2.1.0:
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-2.1.0.tgz#b798420adbeb1de828d84acd8a2e23d3efe85e8d"
   integrity sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==
 
-axe-core@4.0.2, axe-core@^4.0.1:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.0.2.tgz#c7cf7378378a51fcd272d3c09668002a4990b1cb"
-  integrity sha512-arU1h31OGFu+LPrOLGZ7nB45v940NMDMEJeNmbutu57P+UFDVnkZg3e+J1I2HJRZ9hT7gO8J91dn/PMrAiKakA==
+axe-core@4.1.1, axe-core@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.1.tgz#70a7855888e287f7add66002211a423937063eaf"
+  integrity sha512-5Kgy8Cz6LPC9DJcNb3yjAXTu3XihQgEdnIg50c//zOC/MyLP0Clg+Y8Sh9ZjjnvBrDZU4DgXS9C3T9r4/scGZQ==
 
 axios@^0.19.2:
   version "0.19.2"
