@@ -108,7 +108,7 @@ To update the package and test cases to account for a new axe-core version:
     yarn install
     yarn build
     ```
-1. Update the versions of @axe-core/cli and axe-core in `src/test-resources/generator/package.json`
+1. Update the versions of @axe-core/cli, @axe-core/puppeteer, and axe-core in `src/test-resources/generator/package.json`
 1. Generate test resource files for the new version with:
 
     ```
