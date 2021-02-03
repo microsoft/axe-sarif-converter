@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@axe-core/cli@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.1.0.tgz#30512d87f1b4a9145e91e2d51109b321d03a565e"
-  integrity sha512-0TjJaOEiPD312zgnSmlnMrHxOx92dxZlkRxXbr5kGKdAeWYi0BkO9MUPm7Li7FF1dLMzNThqnAsHFlOUGVYGAg==
+"@axe-core/cli@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.1.1.tgz#309dd3a69dd6edc58c17f23889e80f3a7b06da90"
+  integrity sha512-1GpMfFg8HDc6sP0HC3IOc31hBNWKt1Q0lXlgyVtBmNAEC9ZtRllS+OFj1uDqOZqGb6e1Jq0JJJIobpcMT6nO0A==
   dependencies:
-    "@axe-core/webdriverjs" "^4.1.0"
+    "@axe-core/webdriverjs" "^4.1.1"
     axe-core "^4.1.1"
     chromedriver latest
     colors "^1.4.0"
@@ -21,10 +21,10 @@
   dependencies:
     axe-core "^4.1.1"
 
-"@axe-core/webdriverjs@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.1.0.tgz#ce22d795e33d02a4e2b3ad59d698f0b111e4e72a"
-  integrity sha512-I6YFiR3XzdCd+Id3LdsliEw04l9M2lFl0EIiPAweoW2E5AlQ5Jk+a4q4GLYWpdQE6RWSs0DvmS8JfF+u0R823w==
+"@axe-core/webdriverjs@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.1.1.tgz#8fb1cc895695566a5597ac8efc2e3c689e688ef7"
+  integrity sha512-1X8ed71XL6gH235Mi6TlvkkdIOvUh4/QVh1iW5Xp3IbNOb3ve76tod/tWaoMv9XFT+5YgtAC13loV8wx8P9SNA==
   dependencies:
     axe-core "^4.1.1"
     babel-runtime "^6.26.0"
