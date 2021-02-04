@@ -1,6 +1,16 @@
-#### Description of changes
+#### Details
 
-(give an overview. Add technical description describing your changes)
+<!-- Usually a sentence or two describing what the PR changes -->
+
+##### Motivation
+
+<!-- This can be as simple as "addresses issue #123" -->
+
+##### Context
+
+<!-- Are there any parts that you've intentionally left out-of-scope for a later PR to handle? -->
+
+<!-- Were there any alternative approaches you considered? What tradeoffs did you consider? -->
 
 #### Pull request checklist
 
