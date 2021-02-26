@@ -5,8 +5,8 @@ Licensed under the MIT License.
 
 # axe-sarif-converter
 
-[![Build status](https://dev.azure.com/accessibility-insights/axe-sarif-converter/_apis/build/status/Microsoft.axe-sarif-converter%20-%20CI?branchName=master)](https://dev.azure.com/accessibility-insights/axe-sarif-converter/_build/latest?definitionId=20&branchName=master)
-[![Code coverage](https://img.shields.io/azure-devops/coverage/accessibility-insights/axe-sarif-converter/20.svg)](https://dev.azure.com/accessibility-insights/axe-sarif-converter/_build/latest?definitionId=20&branchName=master)
+[![Build status](https://dev.azure.com/accessibility-insights/axe-sarif-converter/_apis/build/status/Microsoft.axe-sarif-converter%20-%20CI?branchName=main)](https://dev.azure.com/accessibility-insights/axe-sarif-converter/_build/latest?definitionId=20&branchName=main)
+[![Code coverage](https://img.shields.io/azure-devops/coverage/accessibility-insights/axe-sarif-converter/20.svg)](https://dev.azure.com/accessibility-insights/axe-sarif-converter/_build/latest?definitionId=20&branchName=main)
 [![npm](https://img.shields.io/npm/v/axe-sarif-converter.svg)](https://www.npmjs.com/package/axe-sarif-converter)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
