@@ -55,8 +55,8 @@ jobs:
             displayName: publish sarif results
 
           - script: yarn semantic-release
-            displayName: yarn semantic-release (master branch only)
+            displayName: yarn semantic-release (main branch only)
             env:
                 GH_TOKEN: $(github-ada-cat-auth-token)
                 NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
-            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['EnableSemanticRelease'], 'true'))
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['EnableSemanticRelease'], 'true'))
