@@ -27,7 +27,7 @@
         ]
       }
     },
-    "url": "file:///C:/Users/davetryon/source/repos/axe-sarif-converter/master/src/test-resources/basic.html",
+    "url": "file:///C:/repos/axe-sarif-converter/main/src/test-resources/basic.html",
     "violations": [
       {
         "description": "Ensures each HTML document contains a non-empty <title> element",
