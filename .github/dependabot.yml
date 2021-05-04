@@ -4,20 +4,23 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "13:00"
+    time: "11:00"
+    timezone: "America/Los_Angeles" # Pacific Time
   labels:
   - "category: engineering"
   - dependencies
   versioning-strategy: widen
   ignore:
+    # axe-core updates require specific engineering work to accept. See
+    # README.md for instructions.
   - dependency-name: axe-core
     versions:
     - ">= 0"
+    # Major version of @types/node is pinned to match the version of node we
+    # use for builds (ideally, latest LTS)
   - dependency-name: "@types/node"
     versions:
-    - 14.14.30
-    - 15.0.0
-    - 15.0.1
+    - ">=15.0.0"
   commit-message:
     prefix: chore
     include: scope
@@ -25,25 +28,26 @@ updates:
   directory: "/src/test-resources/generator"
   schedule:
     interval: daily
-    time: "13:00"
+    time: "11:00"
+    timezone: "America/Los_Angeles" # Pacific Time
   labels:
   - "category: engineering"
   - dependencies
   versioning-strategy: increase
   ignore:
+    # axe-core updates require specific engineering work to accept. See
+    # README.md for instructions.
   - dependency-name: axe-core
     versions:
     - ">= 0"
   - dependency-name: "@axe-core/puppeteer"
     versions:
     - ">= 0"
+    # Major version of @types/node is pinned to match the version of node we
+    # use for builds (ideally, latest LTS)
   - dependency-name: "@types/node"
     versions:
-    - 14.14.30
-    - 15.0.0
-  - dependency-name: puppeteer
-    versions:
-    - 8.0.0
+    - ">=15.0.0"
   commit-message:
     prefix: chore
     include: scope
