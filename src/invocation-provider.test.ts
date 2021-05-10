@@ -20,9 +20,8 @@ describe('invocation-provider', () => {
                     executionSuccessful: true,
                 },
             ];
-            const actualResults: Sarif.Invocation[] = getInvocations(
-                environmentDataStub,
-            );
+            const actualResults: Sarif.Invocation[] =
+                getInvocations(environmentDataStub);
             expect(actualResults).toEqual(invocationStub);
         });
     });
