@@ -147,9 +147,8 @@ describe('public sarifReporter API', () => {
         async ({ inputFile, outputFile }) => {
             return new Promise<void>((resolve) => {
                 const input: AxeRawResult[] = readTestResourceJSON(inputFile);
-                const expectedOutput: SarifLog = readTestResourceJSON(
-                    outputFile,
-                );
+                const expectedOutput: SarifLog =
+                    readTestResourceJSON(outputFile);
 
                 function callback(convertedSarifResults: SarifLog) {
                     normalizeEnvironmentDerivedSarifProperties(

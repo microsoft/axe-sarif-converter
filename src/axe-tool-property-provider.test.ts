@@ -12,8 +12,7 @@ describe('axe-tool-property-provider', () => {
                 name: 'axe-core',
                 fullName: 'axe for Web v1.2.3',
                 shortDescription: {
-                    text:
-                        'An open source accessibility rules library for automated testing.',
+                    text: 'An open source accessibility rules library for automated testing.',
                 },
                 version: '1.2.3',
                 semanticVersion: '1.2.3',
@@ -29,9 +28,8 @@ describe('axe-tool-property-provider', () => {
                 axeVersion: '1.2.3',
             } as EnvironmentData;
 
-            const actualResults: Sarif.ToolComponent = getAxeToolProperties(
-                stubEnvironmentData,
-            );
+            const actualResults: Sarif.ToolComponent =
+                getAxeToolProperties(stubEnvironmentData);
             expect(actualResults).toEqual(expectedResults);
         });
     });

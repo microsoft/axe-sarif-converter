@@ -28,10 +28,10 @@ export function defaultSarifConverter(): SarifConverter {
     );
 }
 export class SarifConverter {
-    private readonly tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> = axeTagsToWcagLinkData;
-    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
-        this.tagsToWcagLinkData,
-    );
+    private readonly tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> =
+        axeTagsToWcagLinkData;
+    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer =
+        new WCAGLinkDataIndexer(this.tagsToWcagLinkData);
 
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
@@ -62,15 +62,15 @@ export class SarifConverter {
         results: Axe.AxeResults,
         options: ConverterOptions,
     ): Sarif.Run {
-        const resultToRuleConverter: ResultToRuleConverter = ResultToRuleConverter.fromV2Results(
-            results,
-            this.wcagLinkDataIndexer.getSortedWcagTags(),
-            this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
-        );
+        const resultToRuleConverter: ResultToRuleConverter =
+            ResultToRuleConverter.fromV2Results(
+                results,
+                this.wcagLinkDataIndexer.getSortedWcagTags(),
+                this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
+            );
 
-        const environmentData: EnvironmentData = getEnvironmentDataFromResults(
-            results,
-        );
+        const environmentData: EnvironmentData =
+            getEnvironmentDataFromResults(results);
 
         return {
             conversion: this.getConverterToolProperties(),
@@ -100,9 +100,8 @@ export class SarifConverter {
         ruleIdsToRuleIndices: DictionaryStringTo<number>,
     ): Sarif.Result[] {
         const resultArray: Sarif.Result[] = [];
-        const environmentData: EnvironmentData = getEnvironmentDataFromResults(
-            results,
-        );
+        const environmentData: EnvironmentData =
+            getEnvironmentDataFromResults(results);
 
         this.convertRuleResults(
             resultArray,
