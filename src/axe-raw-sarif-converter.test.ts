@@ -107,9 +107,10 @@ describe('AxeRawSarifConverter', () => {
             { encoding: 'stub_encoding' },
         ];
 
-        const converterPropertyProviderStub: () => Sarif.Run['conversion'] = () => {
-            return {} as Sarif.Run['conversion'];
-        };
+        const converterPropertyProviderStub: () => Sarif.Run['conversion'] =
+            () => {
+                return {} as Sarif.Run['conversion'];
+            };
         const axeToolPropertyProviderStub: () => Sarif.ToolComponent = () => {
             return {} as Sarif.ToolComponent;
         };

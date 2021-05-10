@@ -12,8 +12,7 @@ export function getAxeToolProperties(
         name: 'axe-core',
         fullName: `axe for Web v${version}`,
         shortDescription: {
-            text:
-                'An open source accessibility rules library for automated testing.',
+            text: 'An open source accessibility rules library for automated testing.',
         },
         version: version,
         semanticVersion: version,

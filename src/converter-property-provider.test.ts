@@ -25,7 +25,8 @@ describe('converter-property-provider', () => {
                 },
             };
 
-            const actualResults: Sarif.Run['conversion'] = getConverterProperties();
+            const actualResults: Sarif.Run['conversion'] =
+                getConverterProperties();
             expect(actualResults).toEqual(expectedResults);
         });
     });

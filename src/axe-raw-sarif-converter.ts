@@ -29,10 +29,10 @@ export function defaultAxeRawSarifConverter(): AxeRawSarifConverter {
 }
 
 export class AxeRawSarifConverter {
-    private readonly tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> = axeTagsToWcagLinkData;
-    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer = new WCAGLinkDataIndexer(
-        this.tagsToWcagLinkData,
-    );
+    private readonly tagsToWcagLinkData: DictionaryStringTo<WCAGLinkData> =
+        axeTagsToWcagLinkData;
+    private readonly wcagLinkDataIndexer: WCAGLinkDataIndexer =
+        new WCAGLinkDataIndexer(this.tagsToWcagLinkData);
     public constructor(
         private getConverterToolProperties: () => Sarif.Run['conversion'],
         private getAxeProperties: (
@@ -64,11 +64,12 @@ export class AxeRawSarifConverter {
         converterOptions: ConverterOptions,
         environmentData: EnvironmentData,
     ): Sarif.Run {
-        const resultToRuleConverter: ResultToRuleConverter = ResultToRuleConverter.fromRawResults(
-            results,
-            this.wcagLinkDataIndexer.getSortedWcagTags(),
-            this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
-        );
+        const resultToRuleConverter: ResultToRuleConverter =
+            ResultToRuleConverter.fromRawResults(
+                results,
+                this.wcagLinkDataIndexer.getSortedWcagTags(),
+                this.wcagLinkDataIndexer.getWcagTagsToTaxaIndices(),
+            );
         return {
             conversion: this.getConverterToolProperties(),
             tool: {
@@ -178,9 +179,8 @@ export class AxeRawSarifConverter {
                             },
                         },
                     },
-                    logicalLocations: this.getLogicalLocations(
-                        axeRawNodeResult,
-                    ),
+                    logicalLocations:
+                        this.getLogicalLocations(axeRawNodeResult),
                 },
             ],
         };

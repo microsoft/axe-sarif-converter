@@ -22,7 +22,8 @@ export function sarifReporter(
     callback: (sarifResults: SarifLog) => void,
 ) {
     const converterOptions: ConverterOptions = {};
-    const environmentData: EnvironmentData = getEnvironmentDataFromEnvironment();
+    const environmentData: EnvironmentData =
+        getEnvironmentDataFromEnvironment();
     const sarifConverter = defaultAxeRawSarifConverter();
     const sarifOutput = sarifConverter.convert(
         rawResults,

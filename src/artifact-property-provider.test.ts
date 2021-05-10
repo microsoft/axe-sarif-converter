@@ -28,9 +28,8 @@ describe('artifact-property-provider', () => {
                 roles: ['analysisTarget'],
             };
 
-            const actualResults: Sarif.Artifact = getArtifactProperties(
-                environmentData,
-            );
+            const actualResults: Sarif.Artifact =
+                getArtifactProperties(environmentData);
 
             expect(actualResults).toEqual(expectedResults);
         });

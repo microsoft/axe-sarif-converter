@@ -8,7 +8,8 @@ import { getWcagTaxonomyReference } from './wcag-taxonomy-provider';
 
 export class ResultToRuleConverter {
     private readonly ruleIdsToRuleIndices: DictionaryStringTo<number> = {};
-    private readonly rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> = {};
+    private readonly rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> =
+        {};
     private sortedRuleIds: string[] = [];
 
     public static fromRawResults(
@@ -16,7 +17,8 @@ export class ResultToRuleConverter {
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
     ): ResultToRuleConverter {
-        const rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> = {};
+        const rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> =
+            {};
         ResultToRuleConverter.convertResultsToRules(
             results,
             axeTags,
@@ -30,7 +32,8 @@ export class ResultToRuleConverter {
         axeTags: string[],
         wcagTagsToTaxaIndices: DictionaryStringTo<number>,
     ): ResultToRuleConverter {
-        const rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> = {};
+        const rulesDictionary: DictionaryStringTo<Sarif.ReportingDescriptor> =
+            {};
         ResultToRuleConverter.convertV2ResultsToRules(
             results,
             axeTags,
@@ -105,13 +108,12 @@ export class ResultToRuleConverter {
     ): void {
         if (results) {
             for (const result of results) {
-                rulesDictionary[
-                    result.id
-                ] = ResultToRuleConverter.convertAxeResultToSarifRule(
-                    axeTags,
-                    wcagTagsToTaxaIndices,
-                    result,
-                );
+                rulesDictionary[result.id] =
+                    ResultToRuleConverter.convertAxeResultToSarifRule(
+                        axeTags,
+                        wcagTagsToTaxaIndices,
+                        result,
+                    );
             }
         }
     }
@@ -128,11 +130,12 @@ export class ResultToRuleConverter {
                 text: result.description + '.',
             },
             helpUri: result.helpUrl,
-            relationships: ResultToRuleConverter.getRuleRelationshipsFromResultTags(
-                axeTags,
-                wcagTagsToTaxaIndices,
-                result,
-            ),
+            relationships:
+                ResultToRuleConverter.getRuleRelationshipsFromResultTags(
+                    axeTags,
+                    wcagTagsToTaxaIndices,
+                    result,
+                ),
         };
     }
 

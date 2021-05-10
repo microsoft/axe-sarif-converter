@@ -62,8 +62,8 @@ describe('environment-data-provider', () => {
         });
 
         it('contains a timestamp with a valid ISO format', () => {
-            const actualTimestamp = getEnvironmentDataFromEnvironment()
-                .timestamp;
+            const actualTimestamp =
+                getEnvironmentDataFromEnvironment().timestamp;
             const expectedTimestamp = new Date(
                 Date.parse(actualTimestamp),
             ).toISOString();
