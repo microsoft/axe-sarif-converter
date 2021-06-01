@@ -1,3 +1,5 @@
+/** @jest-environment jsdom */
+
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import {
@@ -6,7 +8,7 @@ import {
     RunOptions,
     TestEngine,
     TestEnvironment,
-    TestRunner,
+    TestRunner
 } from 'axe-core';
 import * as fs from 'fs';
 import * as path from 'path';
