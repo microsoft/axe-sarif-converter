@@ -6,7 +6,7 @@ import * as Axe from 'axe-core';
 import { EnvironmentData } from './environment-data';
 import {
     getEnvironmentDataFromEnvironment,
-    getEnvironmentDataFromResults
+    getEnvironmentDataFromResults,
 } from './environment-data-provider';
 
 describe('environment-data-provider', () => {
