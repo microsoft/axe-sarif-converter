@@ -5,15 +5,6 @@ const currentDir = '<rootDir>/';
 
 module.exports = {
     clearMocks: true,
-    testRunner: 'jest-circus/runner',
-    transform: {
-        '^.+\\.(ts)$': 'ts-jest',
-    },
-    verbose: false,
-    coverageDirectory: '../test-results/coverage',
-    displayName: 'unit tests',
-    moduleFileExtensions: ['ts', 'js'],
-    rootDir: rootDir,
     collectCoverage: true,
     collectCoverageFrom: [
         '<rootDir>/**/*.ts',
@@ -23,8 +14,10 @@ module.exports = {
         // processes, so coverage information on this file isn't accurate
         '!<rootDir>/cli.ts',
     ],
+    coverageDirectory: '../test-results/coverage',
     coverageReporters: ['json', 'lcov', 'text', 'cobertura'],
-    testMatch: [`${currentDir}/**/*.test.(ts|js)`],
+    displayName: 'unit tests',
+    moduleFileExtensions: ['ts', 'js'],
     reporters: [
         'default',
         [
@@ -35,4 +28,10 @@ module.exports = {
             },
         ],
     ],
+    rootDir: rootDir,
+    testMatch: [`${currentDir}/**/*.test.(ts|js)`],
+    transform: {
+        '^.+\\.(ts)$': 'ts-jest',
+    },
+    verbose: false,
 };
