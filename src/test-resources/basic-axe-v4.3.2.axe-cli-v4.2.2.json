@@ -1,0 +1,68 @@
+[
+  {
+    "inapplicable": [],
+    "incomplete": [],
+    "passes": [],
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.3.2"
+    },
+    "testEnvironment": {
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/92.0.4515.131 Safari/537.36",
+      "windowHeight": 600,
+      "windowWidth": 800
+    },
+    "testRunner": {
+      "name": "axe"
+    },
+    "timestamp": "2021-08-10T22:29:59.864Z",
+    "toolOptions": {
+      "reporter": "v1",
+      "runOnly": {
+        "type": "rule",
+        "values": [
+          "document-title"
+        ]
+      }
+    },
+    "url": "file:///C:/Users/brock/projects/axe-sarif-converter/src/test-resources/basic.html",
+    "violations": [
+      {
+        "description": "Ensures each HTML document contains a non-empty <title> element",
+        "help": "Documents must have <title> element to aid in navigation",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.3/document-title?application=webdriverjs",
+        "id": "document-title",
+        "impact": "serious",
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "doc-has-title",
+                "impact": "serious",
+                "message": "Document does not have a non-empty <title> element",
+                "relatedNodes": []
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element",
+            "html": "<html class=\"deque-axe-is-ready\"><head></head><body>\n</body><script>document.documentElement.classList.add(\"deque-axe-is-ready\");</script></html>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "html"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242",
+          "ACT"
+        ]
+      }
+    ]
+  }
+]

@@ -16,6 +16,7 @@ const axeSource: string = axe.source
 const testResourcesDir = path.join(__dirname, '../');
 
 const axeReporters: string[] = ['v1', 'v2', 'raw'];
+const disabledRules: string[] = ['scrollable-region-focusable'];
 const testUrls: Record<string, string> = {
     'w3citylights': 'https://www.w3.org/WAI/demos/bad/before/home.html',
     'basic': url.pathToFileURL(path.join(testResourcesDir, 'basic.html')).toString(),
@@ -50,7 +51,9 @@ function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
 }
 
 async function generateResources() {
-    const browser = await Puppeteer.launch();
+    const browser = await Puppeteer.launch(
+    // {headless: false}
+    );
 
     for (const testUrlIdentifier of Object.keys(testUrls)) {
         const testUrl = testUrls[testUrlIdentifier];
@@ -58,7 +61,7 @@ async function generateResources() {
             const page = await newTestPage(browser, testUrl);
     
             const axeSpec: axe.Spec = {
-                reporter: reporter as any,
+                reporter: reporter as axe.ReporterVersion,
             };
 
             const axeOptions: axe.RunOptions = {
@@ -69,7 +72,11 @@ async function generateResources() {
                 axeOptions.runOnly = { type: 'rule', values: ['document-title'] };
             }
 
-            const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).analyze();
+            try {
+            const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).disableRules(disabledRules).analyze();
+            if(axeResults == undefined){
+                console.error(`Axe results failed to return. \nReporter version:  ${reporter}\nUrl: ${testUrl}`);
+            }
 
             normalizeEnvironmentDependentPartsOfAxeResults(axeResults);
 
@@ -81,6 +88,12 @@ async function generateResources() {
                 const sarifResults = convertAxeToSarif(axeResults);
                 await writeResultFile(sarifResults, `${testUrlIdentifier}-axe-v${axeVersion}.sarif`);
             }
+            } catch (e) {
+                console.error(e);
+            }
+         
+
+            await page.close();
         }
     }
     
