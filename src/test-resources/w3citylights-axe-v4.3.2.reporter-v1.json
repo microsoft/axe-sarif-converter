@@ -7,7 +7,7 @@
     "name": "axe"
   },
   "testEnvironment": {
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/93.0.4577.0 Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/91.0.4469.0 Safari/537.36",
     "windowWidth": 800,
     "windowHeight": 600,
     "orientationAngle": 0,
@@ -17,11 +17,6 @@
   "url": "https://www.w3.org/WAI/demos/bad/before/home.html",
   "toolOptions": {
     "xpath": true,
-    "rules": {
-      "scrollable-region-focusable": {
-        "enabled": false
-      }
-    },
     "reporter": "v1"
   },
   "violations": [
@@ -19482,6 +19477,19 @@
       "description": "Ensures the scope attribute is used correctly on tables",
       "help": "scope attribute should be used correctly",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.3/scope-attr-valid?application=axe-puppeteer",
+      "nodes": []
+    },
+    {
+      "id": "scrollable-region-focusable",
+      "impact": null,
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag211"
+      ],
+      "description": "Elements that have scrollable content must be accessible by keyboard",
+      "help": "Ensure that scrollable region has keyboard access",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.3/scrollable-region-focusable?application=axe-puppeteer",
       "nodes": []
     },
     {

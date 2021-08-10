@@ -16,7 +16,6 @@ const axeSource: string = axe.source
 const testResourcesDir = path.join(__dirname, '../');
 
 const axeReporters: string[] = ['v1', 'v2', 'raw'];
-const disabledRules: string[] = ['scrollable-region-focusable'];
 const testUrls: Record<string, string> = {
     'w3citylights': 'https://www.w3.org/WAI/demos/bad/before/home.html',
     'basic': url.pathToFileURL(path.join(testResourcesDir, 'basic.html')).toString(),
@@ -73,7 +72,7 @@ async function generateResources() {
             }
 
             try {
-            const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).disableRules(disabledRules).analyze();
+            const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).analyze();
             if(axeResults == undefined){
                 console.error(`Axe results failed to return. \nReporter version:  ${reporter}\nUrl: ${testUrl}`);
             }

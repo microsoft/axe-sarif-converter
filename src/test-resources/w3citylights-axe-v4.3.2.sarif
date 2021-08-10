@@ -1964,6 +1964,30 @@
               ]
             },
             {
+              "id": "scrollable-region-focusable",
+              "name": "Ensure that scrollable region has keyboard access",
+              "fullDescription": {
+                "text": "Elements that have scrollable content must be accessible by keyboard."
+              },
+              "helpUri": "https://dequeuniversity.com/rules/axe/4.3/scrollable-region-focusable?application=axe-puppeteer",
+              "relationships": [
+                {
+                  "target": {
+                    "id": "wcag211",
+                    "index": 30,
+                    "toolComponent": {
+                      "name": "WCAG",
+                      "index": 0,
+                      "guid": "ca34e0e1-5faf-4f55-a989-cdae42a98f18"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
               "id": "select-name",
               "name": "Select element must have an accessible name",
               "fullDescription": {
@@ -4552,7 +4576,7 @@
         },
         {
           "ruleId": "select-name",
-          "ruleIndex": 75,
+          "ruleIndex": 76,
           "kind": "fail",
           "level": "error",
           "message": {
@@ -25762,7 +25786,7 @@
         },
         {
           "ruleId": "skip-link",
-          "ruleIndex": 77,
+          "ruleIndex": 78,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -25797,7 +25821,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -25832,7 +25856,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -25867,7 +25891,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -25902,7 +25926,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -25937,7 +25961,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -25972,7 +25996,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26007,7 +26031,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26042,7 +26066,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26077,7 +26101,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26112,7 +26136,7 @@
         },
         {
           "ruleId": "table-duplicate-name",
-          "ruleIndex": 80,
+          "ruleIndex": 81,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26147,7 +26171,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26182,7 +26206,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26217,7 +26241,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26252,7 +26276,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26287,7 +26311,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26322,7 +26346,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26357,7 +26381,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26392,7 +26416,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26427,7 +26451,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -26462,7 +26486,7 @@
         },
         {
           "ruleId": "td-headers-attr",
-          "ruleIndex": 81,
+          "ruleIndex": 82,
           "kind": "pass",
           "level": "none",
           "message": {
@@ -27141,8 +27165,18 @@
           "locations": []
         },
         {
+          "ruleId": "scrollable-region-focusable",
+          "ruleIndex": 75,
+          "kind": "notApplicable",
+          "level": "none",
+          "message": {
+            "text": "Elements that have scrollable content must be accessible by keyboard."
+          },
+          "locations": []
+        },
+        {
           "ruleId": "server-side-image-map",
-          "ruleIndex": 76,
+          "ruleIndex": 77,
           "kind": "notApplicable",
           "level": "none",
           "message": {
@@ -27152,7 +27186,7 @@
         },
         {
           "ruleId": "svg-img-alt",
-          "ruleIndex": 78,
+          "ruleIndex": 79,
           "kind": "notApplicable",
           "level": "none",
           "message": {
@@ -27162,7 +27196,7 @@
         },
         {
           "ruleId": "tabindex",
-          "ruleIndex": 79,
+          "ruleIndex": 80,
           "kind": "notApplicable",
           "level": "none",
           "message": {
@@ -27172,7 +27206,7 @@
         },
         {
           "ruleId": "th-has-data-cells",
-          "ruleIndex": 82,
+          "ruleIndex": 83,
           "kind": "notApplicable",
           "level": "none",
           "message": {
@@ -27182,7 +27216,7 @@
         },
         {
           "ruleId": "valid-lang",
-          "ruleIndex": 83,
+          "ruleIndex": 84,
           "kind": "notApplicable",
           "level": "none",
           "message": {
@@ -27192,7 +27226,7 @@
         },
         {
           "ruleId": "video-caption",
-          "ruleIndex": 84,
+          "ruleIndex": 85,
           "kind": "notApplicable",
           "level": "none",
           "message": {

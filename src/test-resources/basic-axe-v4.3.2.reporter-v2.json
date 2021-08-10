@@ -7,7 +7,7 @@
     "name": "axe"
   },
   "testEnvironment": {
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/93.0.4577.0 Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/91.0.4469.0 Safari/537.36",
     "windowWidth": 800,
     "windowHeight": 600,
     "orientationAngle": 0,
@@ -22,11 +22,6 @@
       "values": [
         "document-title"
       ]
-    },
-    "rules": {
-      "scrollable-region-focusable": {
-        "enabled": false
-      }
     },
     "reporter": "v2"
   },
