@@ -50,7 +50,9 @@ function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
 }
 
 async function generateResources() {
-    const browser = await Puppeteer.launch();
+    const browser = await Puppeteer.launch(
+    // {headless: false}
+    );
 
     for (const testUrlIdentifier of Object.keys(testUrls)) {
         const testUrl = testUrls[testUrlIdentifier];
@@ -58,7 +60,7 @@ async function generateResources() {
             const page = await newTestPage(browser, testUrl);
     
             const axeSpec: axe.Spec = {
-                reporter: reporter as any,
+                reporter: reporter as axe.ReporterVersion,
             };
 
             const axeOptions: axe.RunOptions = {
@@ -69,7 +71,11 @@ async function generateResources() {
                 axeOptions.runOnly = { type: 'rule', values: ['document-title'] };
             }
 
+            try {
             const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).analyze();
+            if(axeResults == undefined){
+                console.error(`Axe results failed to return. \nReporter version:  ${reporter}\nUrl: ${testUrl}`);
+            }
 
             normalizeEnvironmentDependentPartsOfAxeResults(axeResults);
 
@@ -81,6 +87,12 @@ async function generateResources() {
                 const sarifResults = convertAxeToSarif(axeResults);
                 await writeResultFile(sarifResults, `${testUrlIdentifier}-axe-v${axeVersion}.sarif`);
             }
+            } catch (e) {
+                console.error(e);
+            }
+         
+
+            await page.close();
         }
     }
     
