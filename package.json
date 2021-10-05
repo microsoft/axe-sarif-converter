@@ -42,7 +42,9 @@
         "minimist": "^1.2.3",
         "acorn": "^7.1.1",
         "kind-of": "^6.0.3",
-        "semantic-release/**/lock-verify/**/yargs": "^15.4.1"
+        "semantic-release/**/lock-verify/**/yargs": "^15.4.1",
+        "ansi-regex": "^5.0.1",
+        "@npmcli/arborist": ">=2.8.2"
     },
     "scripts": {
         "prebuild": "yarn clean",
