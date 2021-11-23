@@ -39,7 +39,7 @@ on:
   schedule:
     # This reads "every 15 minutes on weekdays from 7am-7pm PST (3pm-3am UTC),
     # and hourly outside of that".
-    - cron: '15,30,45 15,16,17,18,19,20,21,22,23,0,1,2,3 * * MON-FRI'
+    - cron: '15,30,45 15,16,17,18,19,20,21,22,23,0,1,2,3 * * 1-5'
     - cron: '0 * * * *'
   # Other repositories can trigger an immediate Renovate update by dispatching a
   # repository event of type "trigger_renovate" to this repository. To do so,
