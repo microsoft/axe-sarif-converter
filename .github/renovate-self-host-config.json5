@@ -1,0 +1,19 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+// Self-hosted options (https://docs.renovatebot.com/self-hosted-configuration/)
+{
+  // Temporary during validation
+  "dryRun": true,
+  // Avoid plain "renovate", it is reserved for the GitHub App version
+  "branchPrefix": "renovate-bot",
+  "autodiscover": false,
+  "platform": "github",
+  "repositories": [
+    "microsoft/axe-sarif-converter",
+  ],
+  "onboardingConfig": {
+    "extends": ["config:base"],
+  },
+  "onboardingConfigFileName": ".github/renovate.json5",
+}
