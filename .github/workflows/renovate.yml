@@ -1,0 +1,92 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# This workflow runs a "self-hosted" Renovate configuration. We're using this
+# instead of the Renovate GitHub App because the app can only be configured
+# at the GitHub organization level, and it's unwieldy for that configuration to
+# be shared across the giant microsoft org.
+#
+# For general documentation on running Self-Hosted Renovate using their GitHub
+# action like this, see:
+#
+#   * https://github.com/renovatebot/github-action
+#   * https://docs.renovatebot.com/self-hosted-configuration
+#
+# This workflow is currently an experiment to test Renovate on a small scale.
+# If we like how it works in this repo, we would probably want to create an
+# independent repo like microsoft/accessibility-insights-renovate-config to
+# contain this workflow + the self-host config + a shared Renovate preset,
+# and have the workflow run once against all our repos rather than repeating
+# the config and CI cost for each repo.
+
+name: Renovate
+
+# Note that the triggers for this workflow only control how often renovate
+# should check to see if there are updates to perform. Certain updates (eg,
+# rebasing open PRs when yarn.lock is updated in main) will happen immediately
+# on the next update check, but new PRs will only be opened according to the
+# schedule property of /.github/renovate.json5
+#
+# Note that this requires a GitHub PAT (secrets.RENOVATE_TOKEN) which has more
+# privileges than is safe to use with PRs from forks. *Do not* add triggers
+# against pull_request (or to "push" with non-protected branches).
+on:
+  push:
+    branches: ['main']
+    paths:
+      - '**/package.json'
+      - '**/yarn.lock'
+  schedule:
+    # This reads "every 15 minutes on weekdays from 7am-7pm PST (3pm-3am UTC),
+    # and hourly outside of that".
+    - cron: '15,30,45 15,16,17,18,19,20,21,22,23,0,1,2,3 * * MON-FRI'
+    - cron: '0 * * * *'
+  # Other repositories can trigger an immediate Renovate update by dispatching a
+  # repository event of type "trigger_renovate" to this repository. To do so,
+  # you'd want to create a workflow that runs the following (probably triggered
+  # on pushes of package.json/yarn.lock/etc files to main) using a PAT with
+  # "repo:public" access to this repository:
+  #
+  # run: |
+  #   curl -XPOST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/microsoft/accessibility-insights-renovate/dispatches --data '{"event_type": "trigger_renovate"}'
+  #
+  # Such a PAT is a sensitive secret, so you'd want to set this up in its own
+  # isolated workflow and make sure it never runs from a fork or untrusted
+  # package update branch.
+  repository_dispatch:
+    types: ['trigger_renovate']
+
+jobs:
+  main:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+
+        # Turnstyle blocks the workflow until all other instances of the same
+        # workflow have completed. This prevents renovate from competing with
+        # other instances of itself if a repository_dispatch trigger occurs
+        # simultaneously with a scheduled trigger.
+      - name: Turnstyle
+        uses: softprops/turnstyle@8db075d65b19bf94e6e8687b504db69938dc3c65 # renovate: tag=v0.1.5
+        with:
+          abort-after-seconds: 180
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Renovate
+        uses: renovate/github-action@91ff5cef6fb318217014678dd09ccb81f3ace5a8 # renovate: tag=v29.17.0
+        with:
+          configurationFile: /.github/renovate-self-host-config.json5
+          # This should be a PAT from our build bot account with these scopes:
+          #
+          #   * repo:public_repo (allows Renovate to create/update PRs in public
+          #     repos)
+          #   * workflow (allows Renovate to propose version updates in
+          #     otherwise-protected /.github/workflows/* files)
+          #   * repo (allows Renovate to create/update PRs in private repos)
+          #
+          # See https://github.com/renovatebot/github-action#token
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        # If you need to debug this action, start by uncommenting this line:
+        # env: { LOG_LEVEL: 'debug' }
