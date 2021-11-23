@@ -39,7 +39,7 @@ on:
   schedule:
     # This reads "every 15 minutes on weekdays from 7am-7pm PST (3pm-3am UTC),
     # and hourly outside of that".
-    - cron: '15,30,45 15,16,17,18,19,20,21,22,23,0,1,2,3 * * MON-FRI'
+    - cron: '15,30,45 15,16,17,18,19,20,21,22,23,0,1,2,3 * * 1-5'
     - cron: '0 * * * *'
   # Other repositories can trigger an immediate Renovate update by dispatching a
   # repository event of type "trigger_renovate" to this repository. To do so,
@@ -48,11 +48,16 @@ on:
   # "repo:public" access to this repository:
   #
   # run: |
-  #   curl -XPOST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/microsoft/accessibility-insights-renovate/dispatches --data '{"event_type": "trigger_renovate"}'
+  #   curl -XPOST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/microsoft/axe-sarif-converter/dispatches --data '{"event_type": "trigger_renovate"}'
   #
   # Such a PAT is a sensitive secret, so you'd want to set this up in its own
   # isolated workflow and make sure it never runs from a fork or untrusted
   # package update branch.
+  #
+  # You can also use this for manual testing of this action using the GitHub CLI
+  # as follows:
+  #
+  #   gh api repos/microsoft/axe-sarif-converter/dispatches -f event_type=trigger_renovate
   repository_dispatch:
     types: ['trigger_renovate']
 
@@ -75,7 +80,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Renovate
-        uses: renovate/github-action@91ff5cef6fb318217014678dd09ccb81f3ace5a8 # renovate: tag=v29.17.0
+        uses: renovatebot/github-action@91ff5cef6fb318217014678dd09ccb81f3ace5a8 # renovate: tag=v29.17.0
         with:
           configurationFile: /.github/renovate-self-host-config.json5
           # This should be a PAT from our build bot account with these scopes:
