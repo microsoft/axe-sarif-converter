@@ -23,8 +23,9 @@
   "prHourlyLimit": 2,
 
   "labels": ["dependencies", "category: engineering"],
-  // This must be unique to just Renovate commits; don't reuse a common bot email
-  "gitAuthor": "Renovate Bot <accessibility-insights-renovatebot@microsoft.com>",
+  // The author as a whole must be unique to just Renovate commits (the email
+  // can be reused so long as the name is distinct)
+  "gitAuthor": "Renovate Bot <a11y-insights-bot@microsoft.com>",
   "semanticCommits": "enabled", // "chore(deps):" commit prefixes
   "baseBranches": ["main"],
 
