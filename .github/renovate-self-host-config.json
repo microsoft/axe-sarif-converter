@@ -1,0 +1,14 @@
+{
+  "dryRun": true,
+
+  "branchPrefix": "renovate-bot",
+  "autodiscover": false,
+  "platform": "github",
+  "repositories": [
+    "microsoft/axe-sarif-converter"
+  ],
+  "onboardingConfig": {
+    "extends": ["config:base"]
+  },
+  "onboardingConfigFileName": ".github/renovate.json5"
+}
