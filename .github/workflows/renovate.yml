@@ -82,7 +82,7 @@ jobs:
       - name: Renovate
         uses: renovatebot/github-action@91ff5cef6fb318217014678dd09ccb81f3ace5a8 # renovate: tag=v29.17.0
         with:
-          configurationFile: /.github/renovate-self-host-config.json5
+          configurationFile: .github/renovate-self-host-config.json5
           # This should be a PAT from our build bot account with these scopes:
           #
           #   * repo:public_repo (allows Renovate to create/update PRs in public
