@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@axe-core/cli@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.2.2.tgz#46daaa3e24c9d4303a62726bca1494dbca8062b4"
-  integrity sha512-B0vrf82sGDSgkk/uG9f63eEV4ehwZHFFxzx/ly6ekZZhKNk4BPdHoAHCaxae1b0eEHzTcHfJrPJlxVZ7VUAV0A==
+"@axe-core/cli@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.3.2.tgz#63c971125223b0ee8105f0b888d9238a373dad79"
+  integrity sha512-c1Es4sOd625dzRzJbO1IyMIbi9/lheRo4+pgZKjcPsDbaKCsS1WhOrc4TzT3RNDSwOs/CwBswoumBBM8GA1uzA==
   dependencies:
-    "@axe-core/webdriverjs" "^4.2.2"
-    axe-core "^4.2.3"
-    chromedriver "^90.0.0"
+    "@axe-core/webdriverjs" "^4.3.2"
+    axe-core "^4.3.3"
+    chromedriver "^96.0.0"
     colors "^1.4.0"
     commander "^7.1.0"
-    selenium-webdriver "^4.0.0-beta.3"
+    selenium-webdriver "^4.0.0-beta.4"
 
 "@axe-core/puppeteer@^4.2.2":
   version "4.2.2"
@@ -21,12 +21,12 @@
   dependencies:
     axe-core "^4.2.3"
 
-"@axe-core/webdriverjs@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.2.2.tgz#430a3caf365e4dfa4314fe4ea644543fd5f868f3"
-  integrity sha512-h3VrFXAHAIinoHQU/u9bmLUET/gAfab3y7VpUt6HOHe4NKsk9wi+6zoM3L8yCZSWriItmK3nuVrn6byeC+/Pcw==
+"@axe-core/webdriverjs@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.3.2.tgz#1eb3e76d4811558ca05cde34c9ef503f51de5fee"
+  integrity sha512-04gjm/+L5X6lue1sikeoJKthEAkxbH6+Cq2HzCctPZ5kTuFOKzNS/cGGgJwlMIFIStnNJ2zUtimiDaUDgiw4bQ==
   dependencies:
-    axe-core "^4.2.3"
+    axe-core "^4.3.3"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -91,10 +91,15 @@ array-union@^2.1.0:
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-2.1.0.tgz#b798420adbeb1de828d84acd8a2e23d3efe85e8d"
   integrity sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==
 
-axe-core@4.3.2, axe-core@^4.2.3:
+axe-core@4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.2.tgz#fcf8777b82c62cfc69c7e9f32c0d2226287680e7"
   integrity sha512-5LMaDRWm8ZFPAEdzTYmgjjEdj1YnQcpfrVajO/sn/LhbpGp0Y0H64c2hLZI1gRMxfA+w1S71Uc/nHaOXgcCvGg==
+
+axe-core@^4.2.3, axe-core@^4.3.3:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.5.tgz#78d6911ba317a8262bfee292aeafcc1e04b49cc5"
+  integrity sha512-WKTW1+xAzhMS5dJsxWkliixlO/PqC4VhmO9T4juNYcaTg9jzWiJsou6m5pxWYGfigWbwzJWeFY6z47a+4neRXA==
 
 axios@^0.21.1:
   version "0.21.4"
@@ -155,7 +160,7 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-chromedriver@>=92.0.0, chromedriver@^90.0.0:
+chromedriver@>=92.0.0, chromedriver@^96.0.0:
   version "92.0.1"
   resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-92.0.1.tgz#3e28b7e0c9fb94d693cf74d51af0c29d57f18dca"
   integrity sha512-LptlDVCs1GgyFNVbRoHzzy948JDVzTgGiVPXjNj385qXKQP3hjAVBIgyvb/Hco0xSEW8fjwJfsm1eQRmu6t4pQ==
@@ -677,13 +682,12 @@ safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
-selenium-webdriver@^4.0.0-beta.3:
-  version "4.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-4.0.0-beta.4.tgz#db4fc7505a515ea3b4a95ded031b738a1544eddd"
-  integrity sha512-+s/CIYkWzmnC9WASBxxVj7Lm0dcyl6OaFxwIJaFCT5WCuACiimEEr4lUnOOFP/QlKfkDQ56m+aRczaq2EvJEJg==
+selenium-webdriver@^4.0.0-beta.4:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-4.1.1.tgz#da083177d811f36614950e809e2982570f67d02e"
+  integrity sha512-Fr9e9LC6zvD6/j7NO8M1M/NVxFX67abHcxDJoP5w2KN/Xb1SyYLjMVPGgD14U2TOiKe4XKHf42OmFw9g2JgCBQ==
   dependencies:
     jszip "^3.6.0"
-    rimraf "^3.0.2"
     tmp "^0.2.1"
     ws ">=7.4.6"
 
