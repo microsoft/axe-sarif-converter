@@ -28,12 +28,12 @@
         "eslint": "^7.8.1",
         "eslint-plugin-security": "^1.4.0",
         "jest": "^27.0.3",
-        "jest-junit": "^12.1.0",
+        "jest-junit": "^13.0.0",
         "license-check-and-add": "^4.0.1",
         "lodash": "^4.17.15",
         "prettier": "^2.0.1",
         "rimraf": "^3.0.0",
-        "semantic-release": "^17.1.1",
+        "semantic-release": "^17.4.7",
         "ts-jest": "^27.0.2",
         "typemoq": "^2.1.0",
         "typescript": "^4.0.2"
@@ -42,7 +42,6 @@
         "minimist": "^1.2.3",
         "acorn": "^7.1.1",
         "kind-of": "^6.0.3",
-        "semantic-release/**/lock-verify/**/yargs": "^15.4.1",
         "ansi-regex": "^5.0.1",
         "@npmcli/arborist": ">=2.8.2"
     },
