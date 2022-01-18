@@ -28,7 +28,7 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-o irrelevant.sarif`);
             fail('Should have returned non-zero exit code');
-        } catch (e) {
+        } catch (e: any) {
             expect(e.stderr).toMatch('Missing required argument: input-files');
         }
     });
@@ -37,7 +37,7 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-i irrelevant.json`);
             fail('Should have returned non-zero exit code');
-        } catch (e) {
+        } catch (e: any) {
             expect(e.stderr).toMatch('Missing required argument: output-file');
         }
     });
@@ -126,7 +126,7 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-i ${basicAxeV2File} -o ${outputFile}`);
             fail('Should have returned non-zero exit code');
-        } catch (e) {
+        } catch (e: any) {
             expect(e.code).toBeGreaterThan(0);
             expect(e.stderr).toMatch('Did you mean to use --force?');
         }
@@ -203,7 +203,7 @@ describe('axe-sarif-converter CLI', () => {
     async function deleteIfExists(path: string): Promise<void> {
         try {
             await unlink(path);
-        } catch (e) {
+        } catch (e: any) {
             if (e.code != 'ENOENT') {
                 throw e;
             }
@@ -213,7 +213,7 @@ describe('axe-sarif-converter CLI', () => {
     async function ensureDirectoryExists(path: string): Promise<void> {
         try {
             await mkdir(path);
-        } catch (e) {
+        } catch (e: any) {
             if (e.code !== 'EEXIST') {
                 throw e;
             }
