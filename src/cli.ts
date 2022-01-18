@@ -109,7 +109,7 @@ try {
         flag: argv.force ? 'w' : 'wx',
     });
 } catch (e) {
-    if (e.code == 'EEXIST') {
+    if (typeof e === 'object' && e != null && (e as any).code === 'EEXIST') {
         exitWithErrorMessage(
             `Error: EEXIST: Output file ${argv['output-file']} already exists. Did you mean to use --force?`,
         );
