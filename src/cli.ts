@@ -54,7 +54,8 @@ const argv: Arguments = yargs
         describe: 'Overwrites the output file if it already exists.',
         default: false,
         type: 'boolean',
-    }).argv;
+    })
+    .parseSync();
 
 const verboseLog = argv.verbose ? console.log : () => {};
 
