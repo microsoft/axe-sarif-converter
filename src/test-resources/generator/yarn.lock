@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@axe-core/cli@^4.3.2":
+"@axe-core/cli@^4.4.2":
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.4.2.tgz#5fd6c7d52d52947f9aa6375c3566d7d8c625c68c"
   integrity sha512-WlrWKvInyAjF6faCGfnYM7aLNFNXHA5DCXItIaaJLJs3n9l3qRzOKAiKAzDAscJ+SR12aiPkRQS2ua+1Y2Im2A==
@@ -160,7 +160,7 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-chromedriver@latest:
+chromedriver@^100.0.0, chromedriver@latest:
   version "100.0.0"
   resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-100.0.0.tgz#1b4bf5c89cea12c79f53bc94d8f5bb5aa79ed7be"
   integrity sha512-oLfB0IgFEGY9qYpFQO/BNSXbPw7bgfJUN5VX8Okps9W2qNT4IqKh5hDwKWtpUIQNI6K3ToWe2/J5NdpurTY02g==
@@ -501,11 +501,6 @@ minimatch@^3.0.4:
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
   dependencies:
     brace-expansion "^1.1.7"
-
-minimist@^1.2.2:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
-  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 mkdirp-classic@^0.5.2:
   version "0.5.3"
