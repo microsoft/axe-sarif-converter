@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@axe-core/cli@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.4.2.tgz#5fd6c7d52d52947f9aa6375c3566d7d8c625c68c"
-  integrity sha512-WlrWKvInyAjF6faCGfnYM7aLNFNXHA5DCXItIaaJLJs3n9l3qRzOKAiKAzDAscJ+SR12aiPkRQS2ua+1Y2Im2A==
+"@axe-core/cli@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.4.3.tgz#4c4d01cec8744b91ee8d0b3819e11fa78273820b"
+  integrity sha512-DWdUAxLVY0amyBSimNnSUbmNgq6wG0LUXBoPpmTdmgrdrHqoBNQCvYxPg0T57S61PCgykorS7YZuTuiRceLL/Q==
   dependencies:
-    "@axe-core/webdriverjs" "^4.4.2"
+    "@axe-core/webdriverjs" "^4.4.3"
     axe-core "^4.4.1"
     chromedriver latest
     colors "^1.4.0"
     commander "^7.1.0"
-    selenium-webdriver "^4.0.0"
+    selenium-webdriver "^4.2.0"
 
 "@axe-core/puppeteer@^4.4.2":
   version "4.4.2"
@@ -21,10 +21,10 @@
   dependencies:
     axe-core "^4.4.1"
 
-"@axe-core/webdriverjs@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.4.2.tgz#01a5a0333f7e5d15d7a67704760a4f642fdd6101"
-  integrity sha512-+dkfu0lXQbIwW6sv331iQLIQ7/DLDzpuQYY5pR5WKwcGyv6/1bePc5kO7TLak2oYDwK8TFbVzZ06yiH0DvnHCQ==
+"@axe-core/webdriverjs@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.4.3.tgz#16039e6b084fccbb3316f8fe6a7ef7276c5cbed8"
+  integrity sha512-LsAlhtZcS+vwvRV/Mz6/5wBqSXwv2YHSIwbKOr2lbukq1B+j4zEHgOiCcVm92A6mtFh4qObxqqBP29evTYjdew==
   dependencies:
     axe-core "^4.4.1"
 
@@ -505,15 +505,15 @@ isarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
 
-jszip@^3.6.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.9.1.tgz#784e87f328450d1e8151003a9c67733e2b901051"
-  integrity sha512-H9A60xPqJ1CuC4Ka6qxzXZeU8aNmgOeP5IFqwJbQQwtu2EUYxota3LdsiZWplF7Wgd9tkAd0mdu36nceSaPuYw==
+jszip@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.10.0.tgz#faf3db2b4b8515425e34effcdbb086750a346061"
+  integrity sha512-LDfVtOLtOxb9RXkYOwPyNBTQDL4eUbqahtoY6x07GiDJHwSYvn8sHHIw8wINImV3MqbMNve2gSuM1DDqEKk09Q==
   dependencies:
     lie "~3.3.0"
     pako "~1.0.2"
     readable-stream "~2.3.6"
-    set-immediate-shim "~1.0.1"
+    setimmediate "^1.0.5"
 
 lie@~3.3.0:
   version "3.3.0"
@@ -745,19 +745,19 @@ safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
-selenium-webdriver@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-4.1.1.tgz#da083177d811f36614950e809e2982570f67d02e"
-  integrity sha512-Fr9e9LC6zvD6/j7NO8M1M/NVxFX67abHcxDJoP5w2KN/Xb1SyYLjMVPGgD14U2TOiKe4XKHf42OmFw9g2JgCBQ==
+selenium-webdriver@^4.2.0:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-4.3.1.tgz#5e9c6c4adee65e57776b5bd4c07c59b65b8f056d"
+  integrity sha512-TjH/ls1WKRQoFEHcqtn6UtwcLnA3yvx08v9cSSFYvyhp8hJWRtbe9ae2I8uXPisEZ2EaGKKoxBZ4EHv0BJM15g==
   dependencies:
-    jszip "^3.6.0"
+    jszip "^3.10.0"
     tmp "^0.2.1"
-    ws ">=7.4.6"
+    ws ">=8.7.0"
 
-set-immediate-shim@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
-  integrity sha1-SysbJ+uAip+NzEgaWOXlb1mfP2E=
+setimmediate@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
+  integrity sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==
 
 slash@^3.0.0:
   version "3.0.0"
@@ -867,10 +867,15 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
-ws@8.5.0, ws@>=7.4.6:
+ws@8.5.0:
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.5.0.tgz#bfb4be96600757fe5382de12c670dab984a1ed4f"
   integrity sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==
+
+ws@>=8.7.0:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
+  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
 
 yauzl@^2.10.0:
   version "2.10.0"
