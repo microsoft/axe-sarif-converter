@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@axe-core/cli@^4.4.3":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.4.3.tgz#4c4d01cec8744b91ee8d0b3819e11fa78273820b"
-  integrity sha512-DWdUAxLVY0amyBSimNnSUbmNgq6wG0LUXBoPpmTdmgrdrHqoBNQCvYxPg0T57S61PCgykorS7YZuTuiRceLL/Q==
+"@axe-core/cli@^4.4.4":
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@axe-core/cli/-/cli-4.4.4.tgz#fadc9fcb0ed6b9521b3454279a6888722cbf88f1"
+  integrity sha512-noPsp5JT0TNclDMwiymhujOKoWNPq7Pz+jS07WC05WQ5JqUX3rRfjNgxn0O1W2NN81IVoZiwDgYXLuwb7yZ9lg==
   dependencies:
-    "@axe-core/webdriverjs" "^4.4.3"
-    axe-core "^4.4.1"
-    chromedriver latest
+    "@axe-core/webdriverjs" "^4.4.4"
+    axe-core "^4.4.2"
+    chromedriver "^104.0.0"
     colors "^1.4.0"
-    commander "^7.1.0"
-    selenium-webdriver "^4.2.0"
+    commander "^9.3.0"
+    selenium-webdriver "4.3.0"
 
 "@axe-core/puppeteer@^4.4.2":
   version "4.4.2"
@@ -21,12 +21,12 @@
   dependencies:
     axe-core "^4.4.1"
 
-"@axe-core/webdriverjs@^4.4.3":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.4.3.tgz#16039e6b084fccbb3316f8fe6a7ef7276c5cbed8"
-  integrity sha512-LsAlhtZcS+vwvRV/Mz6/5wBqSXwv2YHSIwbKOr2lbukq1B+j4zEHgOiCcVm92A6mtFh4qObxqqBP29evTYjdew==
+"@axe-core/webdriverjs@^4.4.4":
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@axe-core/webdriverjs/-/webdriverjs-4.4.4.tgz#11df4242523a7c63502db2cd95b67f829937effd"
+  integrity sha512-CMB3fWc3UnrAaBEwXs0ffGcA/Zf4zwxzaYrNPLMmyeg53CI0XBPdH7D/dI+f4eqUoM6UaTrbrfGhwz+fvRmoZQ==
   dependencies:
-    axe-core "^4.4.1"
+    axe-core "^4.4.2"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -96,17 +96,15 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
-axe-core@4.4.1, axe-core@^4.4.1:
+axe-core@4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.4.1.tgz#7dbdc25989298f9ad006645cd396782443757413"
   integrity sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==
 
-axios@^0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
-  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
-  dependencies:
-    follow-redirects "^1.14.4"
+axe-core@^4.4.1, axe-core@^4.4.2:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.4.3.tgz#11c74d23d5013c0fa5d183796729bc3482bd2f6f"
+  integrity sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==
 
 axios@^0.27.2:
   version "0.27.2"
@@ -181,19 +179,6 @@ chromedriver@^104.0.0:
     proxy-from-env "^1.1.0"
     tcp-port-used "^1.0.1"
 
-chromedriver@latest:
-  version "100.0.0"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-100.0.0.tgz#1b4bf5c89cea12c79f53bc94d8f5bb5aa79ed7be"
-  integrity sha512-oLfB0IgFEGY9qYpFQO/BNSXbPw7bgfJUN5VX8Okps9W2qNT4IqKh5hDwKWtpUIQNI6K3ToWe2/J5NdpurTY02g==
-  dependencies:
-    "@testim/chrome-version" "^1.1.2"
-    axios "^0.24.0"
-    del "^6.0.0"
-    extract-zip "^2.0.1"
-    https-proxy-agent "^5.0.0"
-    proxy-from-env "^1.1.0"
-    tcp-port-used "^1.0.1"
-
 clean-stack@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
@@ -211,10 +196,10 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^7.1.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
-  integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
+commander@^9.3.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.0.tgz#bc4a40918fefe52e22450c111ecd6b7acce6f11c"
+  integrity sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -340,11 +325,6 @@ find-up@^4.0.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
-
-follow-redirects@^1.14.4:
-  version "1.14.9"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
-  integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
 
 follow-redirects@^1.14.9:
   version "1.15.1"
@@ -745,10 +725,10 @@ safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
-selenium-webdriver@^4.2.0:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-4.3.1.tgz#5e9c6c4adee65e57776b5bd4c07c59b65b8f056d"
-  integrity sha512-TjH/ls1WKRQoFEHcqtn6UtwcLnA3yvx08v9cSSFYvyhp8hJWRtbe9ae2I8uXPisEZ2EaGKKoxBZ4EHv0BJM15g==
+selenium-webdriver@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-4.3.0.tgz#00526ddeca3c187c8d889cd3f790926b95d5f044"
+  integrity sha512-9XFr8w95BO7jageR61AtiB83fJNem3fdtOQcUpqIIDHWSxihomyG/yBlL1H4y/shi/dO/Ai3PJMAOG+OW3+JHw==
   dependencies:
     jszip "^3.10.0"
     tmp "^0.2.1"
