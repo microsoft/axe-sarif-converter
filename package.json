@@ -44,7 +44,7 @@
     "scripts": {
         "prebuild": "yarn clean",
         "build": "tsc -p .",
-        "clean": "rimraf dist/* test-results/*",
+        "clean": "rimraf dist test-results",
         "test": "jest",
         "lint": "eslint src/**/*.{js,ts,tsx}",
         "format": "prettier --config prettier.config.js --write \"**/*\"",
