@@ -18,7 +18,8 @@ describe('WCAGTaxonomyProvider', () => {
                 guid: WcagGuid,
             };
 
-            const actualResults: Sarif.ToolComponentReference = getWcagTaxonomyReference();
+            const actualResults: Sarif.ToolComponentReference =
+                getWcagTaxonomyReference();
 
             expect(actualResults).toEqual(expectedResults);
         });

@@ -28,7 +28,7 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-o irrelevant.sarif`);
             fail('Should have returned non-zero exit code');
-        } catch (e) {
+        } catch (e: any) {
             expect(e.stderr).toMatch('Missing required argument: input-files');
         }
     });
@@ -37,7 +37,7 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-i irrelevant.json`);
             fail('Should have returned non-zero exit code');
-        } catch (e) {
+        } catch (e: any) {
             expect(e.stderr).toMatch('Missing required argument: output-file');
         }
     });
@@ -63,6 +63,14 @@ describe('axe-sarif-converter CLI', () => {
         ${'w3citylights-axe-v4.0.1.axe-cli-v3.2.0.json'}
         ${'basic-axe-v4.0.2.axe-cli-v4.0.0.json'}
         ${'w3citylights-axe-v4.0.2.axe-cli-v4.0.0.json'}
+        ${'basic-axe-v4.1.1.axe-cli-v4.1.0.json'}
+        ${'w3citylights-axe-v4.1.1.axe-cli-v4.1.0.json'}
+        ${'basic-axe-v4.2.0.axe-cli-v4.1.1.json'}
+        ${'w3citylights-axe-v4.2.0.axe-cli-v4.1.1.json'}
+        ${'basic-axe-v4.3.2.axe-cli-v4.2.2.json'}
+        ${'w3citylights-axe-v4.3.2.axe-cli-v4.2.2.json'}
+        ${'basic-axe-v4.4.1.axe-cli-v4.4.2.json'}
+        ${'w3citylights-axe-v4.4.1.axe-cli-v4.4.2.json'}
     `(
         'supports conversion from axe-cli output $inputFile',
         async ({ inputFile }) => {
@@ -120,7 +128,7 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-i ${basicAxeV2File} -o ${outputFile}`);
             fail('Should have returned non-zero exit code');
-        } catch (e) {
+        } catch (e: any) {
             expect(e.code).toBeGreaterThan(0);
             expect(e.stderr).toMatch('Did you mean to use --force?');
         }
@@ -181,11 +189,11 @@ describe('axe-sarif-converter CLI', () => {
     const testResultsDir = path.join(__dirname, '..', 'test-results');
     const basicAxeV2File = path.join(
         testResourcesDir,
-        'basic-axe-v4.0.2.reporter-v2.json',
+        'basic-axe-v4.4.1.reporter-v2.json',
     );
     const basicSarifFile = path.join(
         testResourcesDir,
-        'basic-axe-v4.0.2.sarif',
+        'basic-axe-v4.4.1.sarif',
     );
 
     const mkdir = promisify(fs.mkdir);
@@ -197,7 +205,7 @@ describe('axe-sarif-converter CLI', () => {
     async function deleteIfExists(path: string): Promise<void> {
         try {
             await unlink(path);
-        } catch (e) {
+        } catch (e: any) {
             if (e.code != 'ENOENT') {
                 throw e;
             }
@@ -207,7 +215,7 @@ describe('axe-sarif-converter CLI', () => {
     async function ensureDirectoryExists(path: string): Promise<void> {
         try {
             await mkdir(path);
-        } catch (e) {
+        } catch (e: any) {
             if (e.code !== 'EEXIST') {
                 throw e;
             }

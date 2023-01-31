@@ -1,10 +1,13 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+variables:
+    Codeql.Enabled: true
+
 jobs:
     - job: 'tests_and_checks'
 
       pool:
-          vmImage: 'ubuntu-18.04'
+          vmImage: 'ubuntu-22.04'
 
       steps:
           # This is later than the minimum version the package claims support
@@ -12,8 +15,8 @@ jobs:
           # can require of our users without a breaking change
           - task: NodeTool@0
             inputs:
-                versionSpec: '14.15.0'
-            displayName: use node 14.15.0
+                versionSpec: '14.18.3'
+            displayName: use node 14.18.3
 
           - script: yarn install --frozen-lockfile
             displayName: yarn install
@@ -55,8 +58,8 @@ jobs:
             displayName: publish sarif results
 
           - script: yarn semantic-release
-            displayName: yarn semantic-release (master branch only)
+            displayName: yarn semantic-release (main branch only)
             env:
                 GH_TOKEN: $(github-ada-cat-auth-token)
                 NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
-            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['EnableSemanticRelease'], 'true'))
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['EnableSemanticRelease'], 'true'))

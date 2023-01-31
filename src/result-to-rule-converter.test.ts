@@ -66,18 +66,18 @@ describe('ResultToRuleConverter', () => {
                 violations: [
                     {
                         id: 'stub_id',
-                        tags: ([
+                        tags: [
                             'stub_tag_1',
                             'stub_tag_3',
                             'a_tag',
-                        ] as unknown) as Axe.TagValue[],
+                        ] as unknown as Axe.TagValue[],
                         description: 'stub_description',
                         help: 'stub_help_info',
                         helpUrl: 'stub_url',
                     },
                     {
                         id: 'stub_id_2',
-                        tags: (['tag_2'] as unknown) as Axe.TagValue[],
+                        tags: ['tag_2'] as unknown as Axe.TagValue[],
                         description: 'stub_description_2',
                         help: 'stub_help_info_2',
                         helpUrl: 'stub_url_2',
@@ -85,7 +85,7 @@ describe('ResultToRuleConverter', () => {
                     // repeating the same rule id to test that rules are added only once
                     {
                         id: 'stub_id_2',
-                        tags: (['tag_2'] as unknown) as Axe.TagValue[],
+                        tags: ['tag_2'] as unknown as Axe.TagValue[],
                         description: 'stub_description_2',
                         help: 'stub_help_info_2',
                         helpUrl: 'stub_url_2',
@@ -106,7 +106,8 @@ describe('ResultToRuleConverter', () => {
 
         describe('getRulePropertiesFromResults', () => {
             it('returns array of unique axe rules as Sarif.ReportingDescriptor[] from axe results', () => {
-                const actualResults: Sarif.ReportingDescriptor[] = resultToRuleConverter.getRulePropertiesFromResults();
+                const actualResults: Sarif.ReportingDescriptor[] =
+                    resultToRuleConverter.getRulePropertiesFromResults();
 
                 expect(actualResults).toEqual(expectedRuleResults);
             });
@@ -119,7 +120,8 @@ describe('ResultToRuleConverter', () => {
                     stub_id_2: 1,
                 };
 
-                const actualResults: DictionaryStringTo<number> = resultToRuleConverter.getRuleIdsToRuleIndices();
+                const actualResults: DictionaryStringTo<number> =
+                    resultToRuleConverter.getRuleIdsToRuleIndices();
 
                 expect(actualResults).toEqual(expectedResults);
             });
@@ -165,7 +167,8 @@ describe('ResultToRuleConverter', () => {
 
         describe('getRulePropertiesFromResults', () => {
             it('returns array of unique axe rules as Sarif.ReportingDescriptor[] from axe raw results', () => {
-                const actualResults: Sarif.ReportingDescriptor[] = rawResultToRuleConverter.getRulePropertiesFromResults();
+                const actualResults: Sarif.ReportingDescriptor[] =
+                    rawResultToRuleConverter.getRulePropertiesFromResults();
 
                 expect(actualResults).toEqual(expectedRuleResults);
             });
@@ -178,7 +181,8 @@ describe('ResultToRuleConverter', () => {
                     stub_id_2: 1,
                 };
 
-                const actualResults: DictionaryStringTo<number> = rawResultToRuleConverter.getRuleIdsToRuleIndices();
+                const actualResults: DictionaryStringTo<number> =
+                    rawResultToRuleConverter.getRuleIdsToRuleIndices();
 
                 expect(actualResults).toEqual(expectedResults);
             });

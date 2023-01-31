@@ -54,7 +54,8 @@ const argv: Arguments = yargs
         describe: 'Overwrites the output file if it already exists.',
         default: false,
         type: 'boolean',
-    }).argv;
+    })
+    .parseSync();
 
 const verboseLog = argv.verbose ? console.log : () => {};
 
@@ -109,7 +110,7 @@ try {
         flag: argv.force ? 'w' : 'wx',
     });
 } catch (e) {
-    if (e.code == 'EEXIST') {
+    if (typeof e === 'object' && e != null && (e as any).code === 'EEXIST') {
         exitWithErrorMessage(
             `Error: EEXIST: Output file ${argv['output-file']} already exists. Did you mean to use --force?`,
         );

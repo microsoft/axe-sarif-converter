@@ -1,3 +1,5 @@
+/** @jest-environment jsdom */
+
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import * as Axe from 'axe-core';
@@ -62,8 +64,8 @@ describe('environment-data-provider', () => {
         });
 
         it('contains a timestamp with a valid ISO format', () => {
-            const actualTimestamp = getEnvironmentDataFromEnvironment()
-                .timestamp;
+            const actualTimestamp =
+                getEnvironmentDataFromEnvironment().timestamp;
             const expectedTimestamp = new Date(
                 Date.parse(actualTimestamp),
             ).toISOString();

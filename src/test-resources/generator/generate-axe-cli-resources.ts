@@ -23,7 +23,7 @@ function generateResources() {
         console.log(`Writing test resource: ${axeCliOutputFile}`);
 
         const axeCliOutputFileRelativePath = path.relative(__dirname, axeCliOutputFile);
-        let axeCliCommand = `${axeCliBin} ${testUrl} --save ${axeCliOutputFileRelativePath} --axe-source ${axeSourcePath}`;
+        let axeCliCommand = `${axeCliBin} ${testUrl} --show-errors --save ${axeCliOutputFileRelativePath} --axe-source ${axeSourcePath}`;
         if (testUrlIdentifier === 'basic') {
             axeCliCommand += ' --rules document-title';
         }
