@@ -8,7 +8,7 @@ import {
     RunOptions,
     TestEngine,
     TestEnvironment,
-    TestRunner
+    TestRunner,
 } from 'axe-core';
 import * as fs from 'fs';
 import * as path from 'path';

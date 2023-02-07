@@ -22,9 +22,7 @@ describe('axeTagsToWcagLinkData', () => {
     );
 
     function doesTagReferToWcagStandard(tag: string): boolean {
-        if (tag == 'wcag258')
-            return false
-        else 
-            return /^wcag\d+$/.test(tag);
+        if (tag == 'wcag258') return false;
+        else return /^wcag\d+$/.test(tag);
     }
 });
