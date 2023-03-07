@@ -13,7 +13,7 @@
   "devDependencies": {
     "@axe-core/cli": "^4.6.0",
     "@axe-core/puppeteer": "^4.6.0",
-    "@types/node": "^14.18.36",
+    "@types/node": "^14.18.37",
     "axe-core": "4.6.3",
     "chromedriver": "^110.0.0",
     "puppeteer": "^13.7.0",
