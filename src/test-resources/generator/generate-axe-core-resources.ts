@@ -7,13 +7,13 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as Puppeteer from 'puppeteer';
 import * as url from 'url';
-import { convertAxeToSarif } from '../../../dist/index';
-import { testResourceTimestampPlaceholder } from '../../../dist/test-resource-constants';
+import { convertAxeToSarif } from '../../index';
+import { testResourceTimestampPlaceholder } from '../../test-resource-constants';
 
 const axeVersion: string = (axe as any).version;
 const axeSource: string = axe.source
-
-const testResourcesDir = path.join(__dirname, '../');
+const rootDir = path.join(__dirname, '..', '..', '..');
+const testResourcesDir = path.join(rootDir, 'src', 'test-resources');
 
 const axeReporters: string[] = ['v1', 'v2', 'raw'];
 const testUrls: Record<string, string> = {

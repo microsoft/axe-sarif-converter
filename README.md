@@ -102,19 +102,18 @@ change, so we're waiting to change this until we would need to make a breaking c
 
 To update the package and test cases to account for a new axe-core version:
 
-1. Update the version of axe-core in `yarn.lock` (_not_ `package.json`); usually dependabot will cover this. If updating to the latest version, this can be accomplished using `yarn upgrade axe-core`.
+1. Update the versions of @axe-core/cli, @axe-core/puppeteer, and the `devDependencies` entry for axe-core in `package.json`. **DO NOT** update the `dependencies` entry for `axe-core`.
 1. Build the repo with:
+
     ```
     yarn install
     yarn build
     ```
-1. Update the versions of @axe-core/cli, @axe-core/puppeteer, and axe-core in `src/test-resources/generator/package.json`
+
 1. Generate test resource files for the new version with:
 
     ```
-    cd src/test-resources/generator
-    yarn install
-    yarn generate
+    yarn generate-test-resources
     ```
 
 1. Manually compare the diff of `/src/test-resources/basic-axe-vPREVIOUS.sarif` and `/src/test-resources/basic-axe-vNEW.sarif`; the only differences should be the version numbers.
