@@ -45,8 +45,8 @@
         "typescript": "^4.0.2"
     },
     "resolutions": {
-        "ansi-regex": "^5.0.1",
-        "@axe-core/cli/chromedriver": "^111.0.0"
+        "ansi-regex@^4.1.0": "^5.0.1",
+        "@axe-core/cli/chromedriver@^109.0.0": "^111.0.0"
     },
     "scripts": {
         "prebuild": "yarn clean",
