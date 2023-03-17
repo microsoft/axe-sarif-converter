@@ -102,7 +102,12 @@ change, so we're waiting to change this until we would need to make a breaking c
 
 To update the package and test cases to account for a new axe-core version:
 
-1. Update the versions of @axe-core/cli, @axe-core/puppeteer, and the `devDependencies` entry for axe-core in `package.json`. **DO NOT** update the `dependencies` entry for `axe-core`.
+1. In `package.json`, update the version numbers of the following components:
+
+-   `devDependencies` entries for `@axe-core/cli`, `@axe-core/puppeteer`, and `axe-core`
+-   `resolutions` entry for `@axe-core/cli/chromedriver`
+-   **NOT** the `dependencies` entry for `@axe-core`!
+
 1. Build the repo with:
 
     ```
