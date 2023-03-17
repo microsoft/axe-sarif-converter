@@ -33,7 +33,7 @@ jobs:
           - script: yarn build
             displayName: yarn build
 
-          - script: yarn test -- --ci
+          - script: yarn test --ci
             displayName: yarn test
 
           - task: PublishTestResults@2
