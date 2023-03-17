@@ -64,3 +64,12 @@ typings/
 /dist/
 /src/test-resources/generator/*.js
 /test-results/
+
+# yarn non-zero-installs setup
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
