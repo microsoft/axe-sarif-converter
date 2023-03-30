@@ -7,8 +7,8 @@ import * as url from 'url';
 
 const axeCoreVersion = (axe as any).version;
 const axeSourcePath = require.resolve('axe-core/axe.min.js');
-const testResourcesDir = path.join(__dirname, '../');
-const axeCliBin = `${__dirname}/node_modules/.bin/axe`;
+const rootDir = path.join(__dirname, '..', '..', '..');
+const testResourcesDir = path.join(rootDir, 'src', 'test-resources');
 
 const testUrls: Record<string, string> = {
     'w3citylights': 'https://www.w3.org/WAI/demos/bad/before/home.html',
@@ -18,16 +18,16 @@ const testUrls: Record<string, string> = {
 function generateResources() {
     for (const testUrlIdentifier of Object.keys(testUrls)) {
         const testUrl = testUrls[testUrlIdentifier];
-        const axeCliVersion = child_process.execSync(`${axeCliBin} --version`).toString().trim();
+        const axeCliVersion = child_process.execSync(`yarn run axe --version`).toString().trim();
         const axeCliOutputFile = path.join(testResourcesDir, `${testUrlIdentifier}-axe-v${axeCoreVersion}.axe-cli-v${axeCliVersion}.json`);
         console.log(`Writing test resource: ${axeCliOutputFile}`);
 
-        const axeCliOutputFileRelativePath = path.relative(__dirname, axeCliOutputFile);
-        let axeCliCommand = `${axeCliBin} ${testUrl} --show-errors --save ${axeCliOutputFileRelativePath} --axe-source ${axeSourcePath}`;
+        const axeCliOutputFileRelativeToRoot = path.relative(rootDir, axeCliOutputFile);
+        let axeCliCommand = `yarn run axe ${testUrl} --show-errors --save ${axeCliOutputFileRelativeToRoot} --axe-source ${axeSourcePath}`;
         if (testUrlIdentifier === 'basic') {
             axeCliCommand += ' --rules document-title';
         }
-        console.log(`Invoking @axe-core/cli v${axeCliVersion} with: ${axeCliCommand}`);
+        console.log(`Invoking @axe-core/cli v${axeCliVersion} with: ${axeCliCommand}`, { cwd: rootDir });
 
         child_process.execSync(axeCliCommand);
     }
