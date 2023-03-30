@@ -6,6 +6,7 @@
         ".gitattributes",
         ".gitignore",
         ".prettierignore",
+        ".yarn/",
         "src/test-resources/",
         "test-results/",
         "yarn.lock",
