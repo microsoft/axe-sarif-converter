@@ -1670,10 +1670,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.18.38":
-  version: 14.18.42
-  resolution: "@types/node@npm:14.18.42"
-  checksum: 1c92f04a482ab54a21342b3911fc6f0093f04d3314197bc0e2f20012e9efc929c44e2ea41990b9b3cde420d7859c9ed716733f3e65c0cd6c2910a55799465f6b
+"@types/node@npm:^18.16.2":
+  version: 18.16.2
+  resolution: "@types/node@npm:18.16.2"
+  checksum: 7ad66d23b3b93885a9f879bff98e0196790ad35589b47a3d81b52db969ad17ee298082020296df5166c2d72d3cd6a4b9ab34d254483637d967944a4b3e6febdb
   languageName: node
   linkType: hard
 
@@ -2222,7 +2222,7 @@ __metadata:
     "@axe-core/puppeteer": ^4.6.0
     "@types/jest": ^27.4.0
     "@types/lodash": ^4.14.136
-    "@types/node": ^14.18.38
+    "@types/node": ^18.16.2
     "@types/sarif": ">=2.1.1 <=2.1.4"
     "@types/yargs": ^17.0.8
     "@typescript-eslint/eslint-plugin": ^4.0.1
