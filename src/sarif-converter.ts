@@ -176,6 +176,9 @@ export class SarifConverter {
                     physicalLocation: {
                         artifactLocation: getArtifactLocation(environmentData),
                         region: {
+                            startLine: 1,
+                            startColumn: 1,
+                            endColumn: 1,
                             snippet: {
                                 text: node.html,
                             },
