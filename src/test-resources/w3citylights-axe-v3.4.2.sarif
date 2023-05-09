@@ -1866,8 +1866,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<b>Free Penguins</b>"
                   }
@@ -1904,8 +1902,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<b>More City Parks</b>"
                   }
@@ -1942,8 +1938,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -1980,8 +1974,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -2018,8 +2010,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_top.gif\" height=\"10px\">"
                   }
@@ -2056,8 +2046,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -2094,8 +2082,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left.gif\" width=\"10px\">"
                   }
@@ -2132,8 +2118,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_end.gif\" width=\"24px\" height=\"86px\">"
                   }
@@ -2170,8 +2154,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_weather.gif\" width=\"128px\" height=\"86px\">"
                   }
@@ -2208,8 +2190,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_start.gif\" width=\"22px\" height=\"86px\">"
                   }
@@ -2246,8 +2226,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/mark.gif\" width=\"158px\" height=\"7px\">"
                   }
@@ -2284,8 +2262,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\".img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2322,8 +2298,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2360,8 +2334,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1\" height=\"30px\">"
                   }
@@ -2398,8 +2370,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\">"
                   }
@@ -2436,8 +2406,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2474,8 +2442,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\">"
                   }
@@ -2512,8 +2478,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2550,8 +2514,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\">"
                   }
@@ -2588,8 +2550,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2626,8 +2586,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\">"
                   }
@@ -2664,8 +2622,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2702,8 +2658,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -2740,8 +2694,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -2778,8 +2730,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -2816,8 +2766,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -2854,8 +2802,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -2892,8 +2838,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1px\" height=\"30px\">"
                   }
@@ -2930,8 +2874,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2968,8 +2910,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right1.jpg\" width=\"150px\" height=\"106px\">"
                   }
@@ -3006,8 +2946,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -3044,8 +2982,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right2.jpg\" width=\"150px\" height=\"154px\">"
                   }
@@ -3082,8 +3018,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right.gif\" width=\"10px\">"
                   }
@@ -3120,8 +3054,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_left.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -3158,8 +3090,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom.gif\" height=\"10px\">"
                   }
@@ -3196,8 +3126,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_right.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -3234,8 +3162,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -3272,8 +3198,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -3310,8 +3234,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='home.html';\" onfocus=\"blur();\"><img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\"></a>"
                   }
@@ -3348,8 +3270,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='news.html';\" onfocus=\"blur();\"><img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\"></a>"
                   }
@@ -3386,8 +3306,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='tickets.html';\" onfocus=\"blur();\"><img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\"></a>"
                   }
@@ -3424,8 +3342,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='survey.html';\" onfocus=\"blur();\"><img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\"></a>"
                   }
@@ -3462,8 +3378,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>"
                   }
@@ -3500,8 +3414,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>"
                   }
@@ -3538,8 +3450,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>"
                   }
@@ -3576,8 +3486,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -3614,8 +3522,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<body text=\"#000000\" bgcolor=\"#D7D7CD\" leftmargin=\"0px\" topmargin=\"0px\" marginwidth=\"0px\" marginheight=\"0px\" link=\"#226C8E\" vlink=\"#226C8E\" alink=\"#226C8E\">"
                   }
@@ -3652,8 +3558,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div class=\"image\" style=\"background: url(./img/panda-sm.jpg) center center no-repeat #cccccc\" title=\"image\"><div class=\"null\"></div></div>"
                   }
@@ -3690,8 +3594,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div class=\"image\" style=\"background: url(./img/oldenburgstudentviolin34.jpg) center center no-repeat #cccccc\" title=\"image\"><div class=\"null\"></div></div>"
                   }
@@ -3728,8 +3630,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div class=\"image\" style=\"background: url(./img/BrainInJar.jpg) center center no-repeat #cccccc;\" title=\"image\"><div class=\"null\"></div></div>"
                   }
@@ -3766,8 +3666,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -3804,8 +3702,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -3842,8 +3738,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -3880,8 +3774,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -3918,8 +3810,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -3956,8 +3846,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -3994,8 +3882,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<h1><span class=\"subhead\">Inaccessible Home Page</span><span class=\"hidden\"> -</span> Before and After Demonstration</h1>"
                   }
@@ -4032,8 +3918,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<span class=\"subhead\">Inaccessible Home Page</span>"
                   }
@@ -4070,8 +3954,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p class=\"subline\">Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0</p>"
                   }
@@ -4108,8 +3990,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../Overview.html\">Overview</a>"
                   }
@@ -4146,8 +4026,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li class=\"current first\">"
                   }
@@ -4184,8 +4062,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<strong>Inaccessible:</strong>"
                   }
@@ -4222,8 +4098,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a>"
                   }
@@ -4260,8 +4134,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<strong>Accessible:</strong>"
                   }
@@ -4298,8 +4170,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a>"
                   }
@@ -4336,8 +4206,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a>"
                   }
@@ -4374,8 +4242,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\">News</a>"
                   }
@@ -4412,8 +4278,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\">Tickets</a>"
                   }
@@ -4450,8 +4314,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\">Survey</a>"
                   }
@@ -4488,8 +4350,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"template.html\">Template</a>"
                   }
@@ -4526,8 +4386,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -4564,8 +4422,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<font color=\"BLACK\" face=\"Verdana\" size=\"2\">&nbsp;&nbsp;<b>Traffic:</b> Construction work on Main Road</font>"
                   }
@@ -4602,8 +4458,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<b>Traffic:</b>"
                   }
@@ -4640,8 +4494,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<b>Today:</b>"
                   }
@@ -4678,8 +4530,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p class=\"headline\">Welcome to CityLights</p>"
                   }
@@ -4716,8 +4566,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p>Citylights is the new portal for visitors and residents. Find out what's on, book tickets, and get the latest news.</p>"
                   }
@@ -4754,8 +4602,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Heat wave linked to temperatures</a>"
                   }
@@ -4792,8 +4638,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Man Gets Nine Months in Violin Case</a>"
                   }
@@ -4830,8 +4674,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Lack of brains hinders research</a>"
                   }
@@ -4868,8 +4710,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4906,8 +4746,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4944,8 +4782,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4982,8 +4818,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p class=\"subheadline\">Elsewhere on the Web</p>"
                   }
@@ -5020,8 +4854,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -5058,8 +4890,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -5096,8 +4926,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -5134,8 +4962,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -5172,8 +4998,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<b>Artichoke advice telephone hotline: </b>"
                   }
@@ -5210,8 +5034,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div>\"Free penguins\" slogan at zoo benefit concert causes confusion among city rockers. Adjective or verb?<br><a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a></div>"
                   }
@@ -5248,8 +5070,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -5286,8 +5106,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td>More parks and more green throughout the city at the price of already rare car parking spaces, how will this affect you?<br><a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a></td>"
                   }
@@ -5324,8 +5142,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -5362,8 +5178,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<font color=\"BLACK\" face=\"Verdana\" size=\"1\">"
                   }
@@ -5400,8 +5214,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -5438,8 +5250,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"World Wide Web Consortium\">W3C</acronym>"
                   }
@@ -5476,8 +5286,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<sup>®</sup>"
                   }
@@ -5514,8 +5322,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"Massachusetts Institute of Technology\">MIT</acronym>"
                   }
@@ -5552,8 +5358,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym>"
                   }
@@ -5590,8 +5394,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -5628,8 +5430,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -5666,8 +5466,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<strong>Status:</strong>"
                   }
@@ -5704,8 +5502,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../changelog.html\">changelog</a>"
                   }
@@ -5742,8 +5538,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/People/shadi/\">Shadi Abou-Zahra</a>"
                   }
@@ -5780,8 +5574,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/EO/\">Education and Outreach Working Group (EOWG)</a>"
                   }
@@ -5818,8 +5610,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"Web Accessibility Initiative: Training, Implementation, Education, Support\">WAI-TIES</acronym>"
                   }
@@ -5856,8 +5646,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"Web Accessibility Initiative: Ageing Education and Harmonisation\">WAI-AGE</acronym>"
                   }
@@ -5894,8 +5682,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"Information Society Technologies\">IST</acronym>"
                   }
@@ -5932,8 +5718,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../acks.html\">Acknowledgements</a>"
                   }
@@ -5970,8 +5754,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -6008,8 +5790,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitemap.html\" shape=\"rect\">WAI Site Map</a>"
                   }
@@ -6046,8 +5826,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitehelp.html\" shape=\"rect\">Help with WAI Website</a>"
                   }
@@ -6084,8 +5862,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/search.php\" shape=\"rect\">Search</a>"
                   }
@@ -6122,8 +5898,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/contacts\" shape=\"rect\">Contacting WAI</a>"
                   }
@@ -6160,8 +5934,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<strong>Feedback welcome to <a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a></strong>"
                   }
@@ -6198,8 +5970,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a>"
                   }
@@ -6236,8 +6006,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai@w3.org\" shape=\"rect\">wai@w3.org</a>"
                   }
@@ -6274,8 +6042,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -6312,8 +6078,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -6350,8 +6114,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"World Wide Web Consortium\">W3C</acronym>"
                   }
@@ -6388,8 +6150,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<sup>®</sup>"
                   }
@@ -6426,8 +6186,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"Massachusetts Institute of Technology\">MIT</acronym>"
                   }
@@ -6464,8 +6222,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym>"
                   }
@@ -6502,8 +6258,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -6540,8 +6294,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer\">liability</a>"
                   }
@@ -6578,8 +6330,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks\">trademark</a>"
                   }
@@ -6616,8 +6366,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-documents\">document use</a>"
                   }
@@ -6654,8 +6402,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-software\">software licensing</a>"
                   }
@@ -6692,8 +6438,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Public\">public</a>"
                   }
@@ -6730,8 +6474,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Members\">Member</a>"
                   }
@@ -6768,8 +6510,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -6806,8 +6546,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div id=\"meta-header\">"
                   }
@@ -6844,8 +6582,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p id=\"skipnav\"><a href=\"#page\">Skip to inaccessible demo page</a></p>"
                   }
@@ -6882,8 +6618,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p id=\"logos\"><a href=\"http://www.w3.org/\" title=\"W3C Home\"><img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\"></a><a href=\"http://www.w3.org/WAI/\" title=\"WAI Home\"><img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\"></a></p>"
                   }
@@ -6920,8 +6654,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div id=\"mnav\" class=\"inaccessible\">"
                   }
@@ -6958,8 +6690,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div id=\"page\">"
                   }
@@ -6996,8 +6726,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<p class=\"skip\" id=\"startcontent\">Demo starts here</p>"
                   }
@@ -7034,8 +6762,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td bgcolor=\"#EDEDED\" align=\"RIGHT\" id=\"WEATHER\">"
                   }
@@ -7072,8 +6798,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"home\" onmouseover=\"switchImage('nav_home', './img/nav_home2.gif'); ChangeColor('home','#FFF')\" onmouseout=\"switchImage('nav_home', './img/nav_home.gif'); ChangeColor('home','#EDEDED')\">"
                   }
@@ -7110,8 +6834,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"news\" onmouseover=\"switchImage('nav_news', './img/nav_news2.gif'); ChangeColor('news','#FFF')\" onmouseout=\"switchImage('nav_news', './img/nav_news.gif'); ChangeColor('news','#EDEDED')\">"
                   }
@@ -7148,8 +6870,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"tickets\" onmouseover=\"switchImage('nav_facts', './img/nav_facts2.gif'); ChangeColor('tickets','#FFF')\" onmouseout=\"switchImage('nav_facts', './img/nav_facts.gif'); ChangeColor('tickets','#EDEDED')\">"
                   }
@@ -7186,8 +6906,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"survey\" onmouseover=\"switchImage('nav_survey', './img/nav_survey2.gif'); ChangeColor('survey','#FFF')\" onmouseout=\"switchImage('nav_survey', './img/nav_survey.gif'); ChangeColor('survey','#EDEDED')\">"
                   }
@@ -7224,8 +6942,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<td width=\"434px\" height=\"600px\" valign=\"TOP\" id=\"main\">"
                   }
@@ -7262,8 +6978,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div id=\"content\">"
                   }
@@ -7300,8 +7014,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<div id=\"meta-footer\" class=\"meta\">"
                   }
@@ -7338,8 +7050,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<h1><span class=\"subhead\">Inaccessible Home Page</span><span class=\"hidden\"> -</span> Before and After Demonstration</h1>"
                   }
@@ -7376,8 +7086,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -7414,8 +7122,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<h1><span class=\"subhead\">Inaccessible Home Page</span><span class=\"hidden\"> -</span> Before and After Demonstration</h1>"
                   }
@@ -7452,8 +7158,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\">"
                   }
@@ -7490,8 +7194,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\">"
                   }
@@ -7528,8 +7230,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo.gif\" width=\"443px\" height=\"86px\" alt=\"Red dot with a white letter 'C' that symbolizes a moon crescent as well as the sun. This logo is followed by a black banner that says 'CITYLIGHTS' which is the name of this online portal. Finally, the slogan of the portal, 'your access to the city', follows in a turquoise green handwriting style and with a slight slant across the top banner.\">"
                   }
@@ -7566,8 +7266,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -7604,8 +7302,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -7642,8 +7338,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -7680,8 +7374,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -7718,8 +7410,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -7756,8 +7446,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/telefon_white_bg.gif\" alt=\"1234 56789\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -7794,8 +7482,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\">"
                   }
@@ -7832,8 +7518,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\">"
                   }
@@ -7870,8 +7554,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -7908,8 +7590,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_top.gif\" height=\"10px\">"
                   }
@@ -7946,8 +7626,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -7984,8 +7662,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left.gif\" width=\"10px\">"
                   }
@@ -8022,8 +7698,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo.gif\" width=\"443px\" height=\"86px\" alt=\"Red dot with a white letter 'C' that symbolizes a moon crescent as well as the sun. This logo is followed by a black banner that says 'CITYLIGHTS' which is the name of this online portal. Finally, the slogan of the portal, 'your access to the city', follows in a turquoise green handwriting style and with a slight slant across the top banner.\">"
                   }
@@ -8060,8 +7734,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_end.gif\" width=\"24px\" height=\"86px\">"
                   }
@@ -8098,8 +7770,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_weather.gif\" width=\"128px\" height=\"86px\">"
                   }
@@ -8136,8 +7806,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_start.gif\" width=\"22px\" height=\"86px\">"
                   }
@@ -8174,8 +7842,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/mark.gif\" width=\"158px\" height=\"7px\">"
                   }
@@ -8212,8 +7878,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\".img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8250,8 +7914,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8288,8 +7950,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1\" height=\"30px\">"
                   }
@@ -8326,8 +7986,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\">"
                   }
@@ -8364,8 +8022,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8402,8 +8058,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\">"
                   }
@@ -8440,8 +8094,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8478,8 +8130,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\">"
                   }
@@ -8516,8 +8166,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8554,8 +8202,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\">"
                   }
@@ -8592,8 +8238,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8630,8 +8274,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -8668,8 +8310,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -8706,8 +8346,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -8744,8 +8382,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -8782,8 +8418,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -8820,8 +8454,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -8858,8 +8490,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -8896,8 +8526,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -8934,8 +8562,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -8972,8 +8598,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/telefon_white_bg.gif\" alt=\"1234 56789\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -9010,8 +8634,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -9048,8 +8670,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1px\" height=\"30px\">"
                   }
@@ -9086,8 +8706,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -9124,8 +8742,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right1.jpg\" width=\"150px\" height=\"106px\">"
                   }
@@ -9162,8 +8778,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -9200,8 +8814,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right2.jpg\" width=\"150px\" height=\"154px\">"
                   }
@@ -9238,8 +8850,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right.gif\" width=\"10px\">"
                   }
@@ -9276,8 +8886,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_left.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -9314,8 +8922,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom.gif\" height=\"10px\">"
                   }
@@ -9352,8 +8958,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_right.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -9390,8 +8994,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -9428,8 +9030,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -9466,8 +9066,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -9504,8 +9102,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"#page\">Skip to inaccessible demo page</a>"
                   }
@@ -9542,8 +9138,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/\" title=\"W3C Home\"><img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\"></a>"
                   }
@@ -9580,8 +9174,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/\" title=\"WAI Home\"><img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\"></a>"
                   }
@@ -9618,8 +9210,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../Overview.html\">Overview</a>"
                   }
@@ -9656,8 +9246,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a>"
                   }
@@ -9694,8 +9282,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a>"
                   }
@@ -9732,8 +9318,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a>"
                   }
@@ -9770,8 +9354,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"./annotated/home.html\" class=\"annotoggle\">Show <br>Annotations</a>"
                   }
@@ -9808,8 +9390,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\">News</a>"
                   }
@@ -9846,8 +9426,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\">Tickets</a>"
                   }
@@ -9884,8 +9462,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\">Survey</a>"
                   }
@@ -9922,8 +9498,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"template.html\">Template</a>"
                   }
@@ -9960,8 +9534,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"home.html\">"
                   }
@@ -9998,8 +9570,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Heat wave linked to temperatures</a>"
                   }
@@ -10036,8 +9606,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Man Gets Nine Months in Violin Case</a>"
                   }
@@ -10074,8 +9642,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Lack of brains hinders research</a>"
                   }
@@ -10112,8 +9678,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -10150,8 +9714,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -10188,8 +9750,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -10226,8 +9786,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -10264,8 +9822,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -10302,8 +9858,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/\"><acronym title=\"World Wide Web Consortium\">W3C</acronym></a>"
                   }
@@ -10340,8 +9894,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.csail.mit.edu/\"><acronym title=\"Massachusetts Institute of Technology\">MIT</acronym></a>"
                   }
@@ -10378,8 +9930,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.ercim.org/\"><acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym></a>"
                   }
@@ -10416,8 +9966,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -10454,8 +10002,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../changelog.html\">changelog</a>"
                   }
@@ -10492,8 +10038,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/People/shadi/\">Shadi Abou-Zahra</a>"
                   }
@@ -10530,8 +10074,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/EO/\">Education and Outreach Working Group (EOWG)</a>"
                   }
@@ -10568,8 +10110,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/TIES/\"><acronym title=\"Web Accessibility Initiative: Training, Implementation, Education, Support\">WAI-TIES</acronym></a>"
                   }
@@ -10606,8 +10146,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/WAI-AGE/\"><acronym title=\"Web Accessibility Initiative: Ageing Education and Harmonisation\">WAI-AGE</acronym></a>"
                   }
@@ -10644,8 +10182,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"../acks.html\">Acknowledgements</a>"
                   }
@@ -10682,8 +10218,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitemap.html\" shape=\"rect\">WAI Site Map</a>"
                   }
@@ -10720,8 +10254,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitehelp.html\" shape=\"rect\">Help with WAI Website</a>"
                   }
@@ -10758,8 +10290,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/search.php\" shape=\"rect\">Search</a>"
                   }
@@ -10796,8 +10326,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/contacts\" shape=\"rect\">Contacting WAI</a>"
                   }
@@ -10834,8 +10362,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a>"
                   }
@@ -10872,8 +10398,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai@w3.org\" shape=\"rect\">wai@w3.org</a>"
                   }
@@ -10910,8 +10434,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -10948,8 +10470,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/\"><acronym title=\"World Wide Web Consortium\">W3C</acronym></a>"
                   }
@@ -10986,8 +10506,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.csail.mit.edu/\"><acronym title=\"Massachusetts Institute of Technology\">MIT</acronym></a>"
                   }
@@ -11024,8 +10542,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.ercim.org/\"><acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym></a>"
                   }
@@ -11062,8 +10578,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -11100,8 +10614,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer\">liability</a>"
                   }
@@ -11138,8 +10650,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks\">trademark</a>"
                   }
@@ -11176,8 +10686,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-documents\">document use</a>"
                   }
@@ -11214,8 +10722,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-software\">software licensing</a>"
                   }
@@ -11252,8 +10758,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Public\">public</a>"
                   }
@@ -11290,8 +10794,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Members\">Member</a>"
                   }
@@ -11328,8 +10830,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<ul>"
                   }
@@ -11366,8 +10866,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<ul>"
                   }
@@ -11404,8 +10902,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li class=\"first\"><a href=\"../Overview.html\">Overview</a></li>"
                   }
@@ -11442,8 +10938,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li class=\"current first\">"
                   }
@@ -11480,8 +10974,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li class=\"inaccessible\"><strong>Inaccessible:</strong><a class=\"page current\"><span class=\"hidden\">Inaccessible </span>Home Page</a><a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a></li>"
                   }
@@ -11518,8 +11010,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li class=\"accessible\"><strong>Accessible:</strong><a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a><a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a></li>"
                   }
@@ -11556,8 +11046,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li><a href=\"news.html\">News</a></li>"
                   }
@@ -11594,8 +11082,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li><a href=\"tickets.html\">Tickets</a></li>"
                   }
@@ -11632,8 +11118,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li><a href=\"survey.html\">Survey</a></li>"
                   }
@@ -11670,8 +11154,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<li><a href=\"template.html\">Template</a></li>"
                   }
@@ -11708,8 +11190,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -11746,8 +11226,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"#page\">Skip to inaccessible demo page</a>"
                   }
@@ -11784,8 +11262,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"100%\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#D7D7CD\">"
                   }
@@ -11822,8 +11298,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"800px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11860,8 +11334,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"144px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11898,8 +11370,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -11936,8 +11406,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11974,8 +11442,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"155px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12012,8 +11478,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"151px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12050,8 +11514,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -12088,8 +11550,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -12126,8 +11586,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"17px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#EDEDED\">"
                   }
@@ -12164,8 +11622,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"100%\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#D7D7CD\">"
                   }
@@ -12202,8 +11658,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"800px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -12240,8 +11694,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"144px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -12278,8 +11730,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12316,8 +11766,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -12354,8 +11802,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"155px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12392,8 +11838,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"151px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12430,8 +11874,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -12468,8 +11910,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -12506,8 +11946,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"17px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#EDEDED\">"
                   }
@@ -12544,8 +11982,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a class=\"page current\"><span class=\"hidden\">Inaccessible </span>Home Page</a>"
                   }
@@ -12582,8 +12018,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<a href=\"./annotated/home.html\" class=\"annotoggle\">Show <br>Annotations</a>"
                   }
@@ -12620,8 +12054,6 @@
                 },
                 "region": {
                   "startLine": 1,
-                  "startColumn": 1,
-                  "endColumn": 1,
                   "snippet": {
                     "text": "<font color=\"BLACK\" face=\"Verdana\" size=\"2\">"
                   }
