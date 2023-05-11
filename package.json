@@ -29,7 +29,7 @@
         "@types/yargs": "^17.0.8",
         "@typescript-eslint/eslint-plugin": "^4.0.1",
         "@typescript-eslint/parser": "^5.58.0",
-        "eslint": "^7.8.1",
+        "eslint": "^8.40.0",
         "eslint-plugin-security": "^1.4.0",
         "jest": "^27.0.3",
         "jest-junit": "^16.0.0",
