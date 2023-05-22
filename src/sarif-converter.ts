@@ -15,7 +15,7 @@ import { getEnvironmentDataFromResults } from './environment-data-provider';
 import { getInvocations } from './invocation-provider';
 import { ResultToRuleConverter } from './result-to-rule-converter';
 import { formatSarifResultMessage } from './sarif-result-message-formatter';
-import { axeTagsToWcagLinkData, WCAGLinkData } from './wcag-link-data';
+import { WCAGLinkData, axeTagsToWcagLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 import { getWcagTaxonomy } from './wcag-taxonomy-provider';
 
@@ -176,6 +176,7 @@ export class SarifConverter {
                     physicalLocation: {
                         artifactLocation: getArtifactLocation(environmentData),
                         region: {
+                            startLine: 1,
                             snippet: {
                                 text: node.html,
                             },

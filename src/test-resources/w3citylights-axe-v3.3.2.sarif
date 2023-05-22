@@ -1961,6 +1961,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<b>Free Penguins</b>"
                   }
@@ -1996,6 +1997,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<b>More City Parks</b>"
                   }
@@ -2031,6 +2033,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -2066,6 +2069,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -2101,6 +2105,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_top.gif\" height=\"10px\">"
                   }
@@ -2136,6 +2141,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -2171,6 +2177,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left.gif\" width=\"10px\">"
                   }
@@ -2206,6 +2213,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_end.gif\" width=\"24px\" height=\"86px\">"
                   }
@@ -2241,6 +2249,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_weather.gif\" width=\"128px\" height=\"86px\">"
                   }
@@ -2276,6 +2285,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_start.gif\" width=\"22px\" height=\"86px\">"
                   }
@@ -2311,6 +2321,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/mark.gif\" width=\"158px\" height=\"7px\">"
                   }
@@ -2346,6 +2357,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\".img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2381,6 +2393,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2416,6 +2429,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1\" height=\"30px\">"
                   }
@@ -2451,6 +2465,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\">"
                   }
@@ -2486,6 +2501,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2521,6 +2537,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\">"
                   }
@@ -2556,6 +2573,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2591,6 +2609,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\">"
                   }
@@ -2626,6 +2645,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2661,6 +2681,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\">"
                   }
@@ -2696,6 +2717,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2731,6 +2753,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -2766,6 +2789,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -2801,6 +2825,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -2836,6 +2861,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -2871,6 +2897,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -2906,6 +2933,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1px\" height=\"30px\">"
                   }
@@ -2941,6 +2969,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -2976,6 +3005,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right1.jpg\" width=\"150px\" height=\"106px\">"
                   }
@@ -3011,6 +3041,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -3046,6 +3077,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right2.jpg\" width=\"150px\" height=\"154px\">"
                   }
@@ -3081,6 +3113,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right.gif\" width=\"10px\">"
                   }
@@ -3116,6 +3149,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_left.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -3151,6 +3185,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom.gif\" height=\"10px\">"
                   }
@@ -3186,6 +3221,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_right.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -3221,6 +3257,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -3256,6 +3293,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -3291,6 +3329,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='home.html';\" onfocus=\"blur();\"><img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\"></a>"
                   }
@@ -3326,6 +3365,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='news.html';\" onfocus=\"blur();\"><img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\"></a>"
                   }
@@ -3361,6 +3401,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='tickets.html';\" onfocus=\"blur();\"><img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\"></a>"
                   }
@@ -3396,6 +3437,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"javascript:location.href='survey.html';\" onfocus=\"blur();\"><img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\"></a>"
                   }
@@ -3431,6 +3473,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>"
                   }
@@ -3466,6 +3509,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>"
                   }
@@ -3501,6 +3545,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\"><img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\"></a>"
                   }
@@ -3536,6 +3581,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -3571,6 +3617,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<body text=\"#000000\" bgcolor=\"#D7D7CD\" leftmargin=\"0px\" topmargin=\"0px\" marginwidth=\"0px\" marginheight=\"0px\" link=\"#226C8E\" vlink=\"#226C8E\" alink=\"#226C8E\">"
                   }
@@ -3606,6 +3653,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div class=\"image\" style=\"background: url(./img/panda-sm.jpg) center center no-repeat #cccccc\" title=\"image\"><div class=\"null\"></div></div>"
                   }
@@ -3641,6 +3689,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div class=\"image\" style=\"background: url(./img/oldenburgstudentviolin34.jpg) center center no-repeat #cccccc\" title=\"image\"><div class=\"null\"></div></div>"
                   }
@@ -3676,6 +3725,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div class=\"image\" style=\"background: url(./img/BrainInJar.jpg) center center no-repeat #cccccc;\" title=\"image\"><div class=\"null\"></div></div>"
                   }
@@ -3711,6 +3761,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -3746,6 +3797,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -3781,6 +3833,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -3816,6 +3869,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -3851,6 +3905,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -3886,6 +3941,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -3921,6 +3977,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<h1><span class=\"subhead\">Inaccessible Home Page</span><span class=\"hidden\"> -</span> Before and After Demonstration</h1>"
                   }
@@ -3956,6 +4013,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<span class=\"subhead\">Inaccessible Home Page</span>"
                   }
@@ -3991,6 +4049,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p class=\"subline\">Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0</p>"
                   }
@@ -4026,6 +4085,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../Overview.html\">Overview</a>"
                   }
@@ -4061,6 +4121,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li class=\"current first\">"
                   }
@@ -4096,6 +4157,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<strong>Inaccessible:</strong>"
                   }
@@ -4131,6 +4193,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a>"
                   }
@@ -4166,6 +4229,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<strong>Accessible:</strong>"
                   }
@@ -4201,6 +4265,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a>"
                   }
@@ -4236,6 +4301,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a>"
                   }
@@ -4271,6 +4337,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\">News</a>"
                   }
@@ -4306,6 +4373,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\">Tickets</a>"
                   }
@@ -4341,6 +4409,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\">Survey</a>"
                   }
@@ -4376,6 +4445,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"template.html\">Template</a>"
                   }
@@ -4411,6 +4481,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -4446,6 +4517,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<font color=\"BLACK\" face=\"Verdana\" size=\"2\">&nbsp;&nbsp;<b>Traffic:</b> Construction work on Main Road</font>"
                   }
@@ -4481,6 +4553,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<b>Traffic:</b>"
                   }
@@ -4516,6 +4589,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<b>Today:</b>"
                   }
@@ -4551,6 +4625,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p class=\"headline\">Welcome to CityLights</p>"
                   }
@@ -4586,6 +4661,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p>Citylights is the new portal for visitors and residents. Find out what's on, book tickets, and get the latest news.</p>"
                   }
@@ -4621,6 +4697,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Heat wave linked to temperatures</a>"
                   }
@@ -4656,6 +4733,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Man Gets Nine Months in Violin Case</a>"
                   }
@@ -4691,6 +4769,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Lack of brains hinders research</a>"
                   }
@@ -4726,6 +4805,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4761,6 +4841,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4796,6 +4877,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4831,6 +4913,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p class=\"subheadline\">Elsewhere on the Web</p>"
                   }
@@ -4866,6 +4949,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -4901,6 +4985,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<span>"
                   }
@@ -4936,6 +5021,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -4971,6 +5057,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -5006,6 +5093,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<b>Artichoke advice telephone hotline: </b>"
                   }
@@ -5041,6 +5129,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div>\"Free penguins\" slogan at zoo benefit concert causes confusion among city rockers. Adjective or verb?<br><a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a></div>"
                   }
@@ -5076,6 +5165,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -5111,6 +5201,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td>More parks and more green throughout the city at the price of already rare car parking spaces, how will this affect you?<br><a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a></td>"
                   }
@@ -5146,6 +5237,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -5181,6 +5273,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<font color=\"BLACK\" face=\"Verdana\" size=\"1\">"
                   }
@@ -5216,6 +5309,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -5251,6 +5345,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"World Wide Web Consortium\">W3C</acronym>"
                   }
@@ -5286,6 +5381,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<sup>®</sup>"
                   }
@@ -5321,6 +5417,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"Massachusetts Institute of Technology\">MIT</acronym>"
                   }
@@ -5356,6 +5453,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym>"
                   }
@@ -5391,6 +5489,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -5426,6 +5525,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -5461,6 +5561,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<strong>Status:</strong>"
                   }
@@ -5496,6 +5597,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../changelog.html\">changelog</a>"
                   }
@@ -5531,6 +5633,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/People/shadi/\">Shadi Abou-Zahra</a>"
                   }
@@ -5566,6 +5669,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/EO/\">Education and Outreach Working Group (EOWG)</a>"
                   }
@@ -5601,6 +5705,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"Web Accessibility Initiative: Training, Implementation, Education, Support\">WAI-TIES</acronym>"
                   }
@@ -5636,6 +5741,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"Web Accessibility Initiative: Ageing Education and Harmonisation\">WAI-AGE</acronym>"
                   }
@@ -5671,6 +5777,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"Information Society Technologies\">IST</acronym>"
                   }
@@ -5706,6 +5813,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../acks.html\">Acknowledgements</a>"
                   }
@@ -5741,6 +5849,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -5776,6 +5885,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitemap.html\" shape=\"rect\">WAI Site Map</a>"
                   }
@@ -5811,6 +5921,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitehelp.html\" shape=\"rect\">Help with WAI Website</a>"
                   }
@@ -5846,6 +5957,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/search.php\" shape=\"rect\">Search</a>"
                   }
@@ -5881,6 +5993,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/contacts\" shape=\"rect\">Contacting WAI</a>"
                   }
@@ -5916,6 +6029,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<strong>Feedback welcome to <a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a></strong>"
                   }
@@ -5951,6 +6065,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a>"
                   }
@@ -5986,6 +6101,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai@w3.org\" shape=\"rect\">wai@w3.org</a>"
                   }
@@ -6021,6 +6137,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p>"
                   }
@@ -6056,6 +6173,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -6091,6 +6209,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"World Wide Web Consortium\">W3C</acronym>"
                   }
@@ -6126,6 +6245,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<sup>®</sup>"
                   }
@@ -6161,6 +6281,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"Massachusetts Institute of Technology\">MIT</acronym>"
                   }
@@ -6196,6 +6317,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym>"
                   }
@@ -6231,6 +6353,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -6266,6 +6389,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer\">liability</a>"
                   }
@@ -6301,6 +6425,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks\">trademark</a>"
                   }
@@ -6336,6 +6461,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-documents\">document use</a>"
                   }
@@ -6371,6 +6497,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-software\">software licensing</a>"
                   }
@@ -6406,6 +6533,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Public\">public</a>"
                   }
@@ -6441,6 +6569,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Members\">Member</a>"
                   }
@@ -6476,6 +6605,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -6511,6 +6641,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div id=\"meta-header\">"
                   }
@@ -6546,6 +6677,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p id=\"skipnav\"><a href=\"#page\">Skip to inaccessible demo page</a></p>"
                   }
@@ -6581,6 +6713,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p id=\"logos\"><a href=\"http://www.w3.org/\" title=\"W3C Home\"><img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\"></a><a href=\"http://www.w3.org/WAI/\" title=\"WAI Home\"><img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\"></a></p>"
                   }
@@ -6616,6 +6749,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div id=\"mnav\" class=\"inaccessible\">"
                   }
@@ -6651,6 +6785,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div id=\"page\">"
                   }
@@ -6686,6 +6821,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<p class=\"skip\" id=\"startcontent\">Demo starts here</p>"
                   }
@@ -6721,6 +6857,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td bgcolor=\"#EDEDED\" align=\"RIGHT\" id=\"WEATHER\">"
                   }
@@ -6756,6 +6893,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"home\" onmouseover=\"switchImage('nav_home', './img/nav_home2.gif'); ChangeColor('home','#FFF')\" onmouseout=\"switchImage('nav_home', './img/nav_home.gif'); ChangeColor('home','#EDEDED')\">"
                   }
@@ -6791,6 +6929,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"news\" onmouseover=\"switchImage('nav_news', './img/nav_news2.gif'); ChangeColor('news','#FFF')\" onmouseout=\"switchImage('nav_news', './img/nav_news.gif'); ChangeColor('news','#EDEDED')\">"
                   }
@@ -6826,6 +6965,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"tickets\" onmouseover=\"switchImage('nav_facts', './img/nav_facts2.gif'); ChangeColor('tickets','#FFF')\" onmouseout=\"switchImage('nav_facts', './img/nav_facts.gif'); ChangeColor('tickets','#EDEDED')\">"
                   }
@@ -6861,6 +7001,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td width=\"154px\" bgcolor=\"#EDEDED\" id=\"survey\" onmouseover=\"switchImage('nav_survey', './img/nav_survey2.gif'); ChangeColor('survey','#FFF')\" onmouseout=\"switchImage('nav_survey', './img/nav_survey.gif'); ChangeColor('survey','#EDEDED')\">"
                   }
@@ -6896,6 +7037,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<td width=\"434px\" height=\"600px\" valign=\"TOP\" id=\"main\">"
                   }
@@ -6931,6 +7073,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div id=\"content\">"
                   }
@@ -6966,6 +7109,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<div id=\"meta-footer\" class=\"meta\">"
                   }
@@ -7001,6 +7145,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<h1><span class=\"subhead\">Inaccessible Home Page</span><span class=\"hidden\"> -</span> Before and After Demonstration</h1>"
                   }
@@ -7036,6 +7181,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -7071,6 +7217,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<h1><span class=\"subhead\">Inaccessible Home Page</span><span class=\"hidden\"> -</span> Before and After Demonstration</h1>"
                   }
@@ -7106,6 +7253,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\">"
                   }
@@ -7141,6 +7289,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\">"
                   }
@@ -7176,6 +7325,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo.gif\" width=\"443px\" height=\"86px\" alt=\"Red dot with a white letter 'C' that symbolizes a moon crescent as well as the sun. This logo is followed by a black banner that says 'CITYLIGHTS' which is the name of this online portal. Finally, the slogan of the portal, 'your access to the city', follows in a turquoise green handwriting style and with a slight slant across the top banner.\">"
                   }
@@ -7211,6 +7361,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -7246,6 +7397,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -7281,6 +7433,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -7316,6 +7469,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -7351,6 +7505,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -7386,6 +7541,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/telefon_white_bg.gif\" alt=\"1234 56789\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -7421,6 +7577,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\">"
                   }
@@ -7456,6 +7613,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\">"
                   }
@@ -7491,6 +7649,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -7526,6 +7685,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_top.gif\" height=\"10px\">"
                   }
@@ -7561,6 +7721,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right_top.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -7596,6 +7757,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_left.gif\" width=\"10px\">"
                   }
@@ -7631,6 +7793,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo.gif\" width=\"443px\" height=\"86px\" alt=\"Red dot with a white letter 'C' that symbolizes a moon crescent as well as the sun. This logo is followed by a black banner that says 'CITYLIGHTS' which is the name of this online portal. Finally, the slogan of the portal, 'your access to the city', follows in a turquoise green handwriting style and with a slight slant across the top banner.\">"
                   }
@@ -7666,6 +7829,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_end.gif\" width=\"24px\" height=\"86px\">"
                   }
@@ -7701,6 +7865,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_weather.gif\" width=\"128px\" height=\"86px\">"
                   }
@@ -7736,6 +7901,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/top_logo_next_start.gif\" width=\"22px\" height=\"86px\">"
                   }
@@ -7771,6 +7937,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/mark.gif\" width=\"158px\" height=\"7px\">"
                   }
@@ -7806,6 +7973,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\".img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -7841,6 +8009,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -7876,6 +8045,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1\" height=\"30px\">"
                   }
@@ -7911,6 +8081,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img name=\"nav_home\" src=\"./img/nav_home.gif\" width=\"88\" height=\"27\" hspace=\"15\" border=\"0px\">"
                   }
@@ -7946,6 +8117,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -7981,6 +8153,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_news.gif\" name=\"nav_news\" width=\"90\" height=\"21\" hspace=\"12\" border=\"0px\">"
                   }
@@ -8016,6 +8189,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8051,6 +8225,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img name=\"nav_facts\" src=\"./img/nav_facts.gif\" width=\"105\" height=\"23\" hspace=\"9\" border=\"0px\">"
                   }
@@ -8086,6 +8261,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8121,6 +8297,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/nav_survey.gif\" name=\"nav_survey\" width=\"107\" height=\"32\" hspace=\"8\" border=\"0px\">"
                   }
@@ -8156,6 +8333,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8191,6 +8369,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -8226,6 +8405,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -8261,6 +8441,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -8296,6 +8477,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/headline_middle.gif\" width=\"23\" height=\"24\" align=\"absmiddle\">"
                   }
@@ -8331,6 +8513,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -8366,6 +8549,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -8401,6 +8585,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/morearrow.gif\" width=\"48\" height=\"10\" alt=\"\" border=\"0\" onmouseover=\"this.src='./img/morearrow_a.gif'\" onmouseout=\"this.src='./img/morearrow.gif'\" style=\"vertical-align: bottom\">"
                   }
@@ -8436,6 +8621,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -8471,6 +8657,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/list_bullets.gif\" alt=\"bullet\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -8506,6 +8693,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/telefon_white_bg.gif\" alt=\"1234 56789\" border=\"0\" align=\"absmiddle\">"
                   }
@@ -8541,6 +8729,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/blank_5x5.gif\" width=\"20px\" height=\"5px\">"
                   }
@@ -8576,6 +8765,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_t.gif\" width=\"1px\" height=\"30px\">"
                   }
@@ -8611,6 +8801,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8646,6 +8837,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right1.jpg\" width=\"150px\" height=\"106px\">"
                   }
@@ -8681,6 +8873,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/marker2_w.gif\" width=\"78px\" height=\"1px\">"
                   }
@@ -8716,6 +8909,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/teaser_right2.jpg\" width=\"150px\" height=\"154px\">"
                   }
@@ -8751,6 +8945,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_right.gif\" width=\"10px\">"
                   }
@@ -8786,6 +8981,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_left.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -8821,6 +9017,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom.gif\" height=\"10px\">"
                   }
@@ -8856,6 +9053,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<img src=\"./img/border_bottom_right.gif\" width=\"10px\" height=\"10px\">"
                   }
@@ -8891,6 +9089,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<select onchange=\"location.href = this.value;\">"
                   }
@@ -8926,6 +9125,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -8961,6 +9161,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -8996,6 +9197,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"100%\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#D7D7CD\">"
                   }
@@ -9031,6 +9233,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"800px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -9066,6 +9269,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"144px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -9101,6 +9305,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -9136,6 +9341,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -9171,6 +9377,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"155px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -9206,6 +9413,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"151px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -9241,6 +9449,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -9276,6 +9485,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -9311,6 +9521,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"17px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#EDEDED\">"
                   }
@@ -9346,6 +9557,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"#page\">Skip to inaccessible demo page</a>"
                   }
@@ -9381,6 +9593,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/\" title=\"W3C Home\"><img alt=\"W3C logo\" src=\"../img/w3c.png\" height=\"48\" width=\"72\"></a>"
                   }
@@ -9416,6 +9629,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/\" title=\"WAI Home\"><img alt=\"Web Accessibility Initiative (WAI) logo\" src=\"../img/wai.png\" height=\"48\"></a>"
                   }
@@ -9451,6 +9665,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../Overview.html\">Overview</a>"
                   }
@@ -9486,6 +9701,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a>"
                   }
@@ -9521,6 +9737,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a>"
                   }
@@ -9556,6 +9773,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a>"
                   }
@@ -9591,6 +9809,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"./annotated/home.html\" class=\"annotoggle\">Show <br>Annotations</a>"
                   }
@@ -9626,6 +9845,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\">News</a>"
                   }
@@ -9661,6 +9881,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\">Tickets</a>"
                   }
@@ -9696,6 +9917,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\">Survey</a>"
                   }
@@ -9731,6 +9953,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"template.html\">Template</a>"
                   }
@@ -9766,6 +9989,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"home.html\">"
                   }
@@ -9801,6 +10025,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Heat wave linked to temperatures</a>"
                   }
@@ -9836,6 +10061,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Man Gets Nine Months in Violin Case</a>"
                   }
@@ -9871,6 +10097,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"news.html\" onfocus=\"blur();\">Lack of brains hinders research</a>"
                   }
@@ -9906,6 +10133,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -9941,6 +10169,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a onfocus=\"blur();\" href=\"../offsite.html\" target=\"_blank\">Click here</a>"
                   }
@@ -9976,6 +10205,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"tickets.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -10011,6 +10241,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"survey.html\" onfocus=\"blur();\" style=\"text-decoration:none;\">Read More...</a>"
                   }
@@ -10046,6 +10277,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -10081,6 +10313,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/\"><acronym title=\"World Wide Web Consortium\">W3C</acronym></a>"
                   }
@@ -10116,6 +10349,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.csail.mit.edu/\"><acronym title=\"Massachusetts Institute of Technology\">MIT</acronym></a>"
                   }
@@ -10151,6 +10385,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.ercim.org/\"><acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym></a>"
                   }
@@ -10186,6 +10421,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -10221,6 +10457,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../changelog.html\">changelog</a>"
                   }
@@ -10256,6 +10493,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/People/shadi/\">Shadi Abou-Zahra</a>"
                   }
@@ -10291,6 +10529,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/EO/\">Education and Outreach Working Group (EOWG)</a>"
                   }
@@ -10326,6 +10565,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/TIES/\"><acronym title=\"Web Accessibility Initiative: Training, Implementation, Education, Support\">WAI-TIES</acronym></a>"
                   }
@@ -10361,6 +10601,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/WAI-AGE/\"><acronym title=\"Web Accessibility Initiative: Ageing Education and Harmonisation\">WAI-AGE</acronym></a>"
                   }
@@ -10396,6 +10637,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"../acks.html\">Acknowledgements</a>"
                   }
@@ -10431,6 +10673,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitemap.html\" shape=\"rect\">WAI Site Map</a>"
                   }
@@ -10466,6 +10709,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/sitehelp.html\" shape=\"rect\">Help with WAI Website</a>"
                   }
@@ -10501,6 +10745,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/search.php\" shape=\"rect\">Search</a>"
                   }
@@ -10536,6 +10781,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/WAI/contacts\" shape=\"rect\">Contacting WAI</a>"
                   }
@@ -10571,6 +10817,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai-eo-editors@w3.org\" shape=\"rect\">wai-eo-editors@w3.org</a>"
                   }
@@ -10606,6 +10853,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"mailto:wai@w3.org\" shape=\"rect\">wai@w3.org</a>"
                   }
@@ -10641,6 +10889,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Copyright\">Copyright</a>"
                   }
@@ -10676,6 +10925,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/\"><acronym title=\"World Wide Web Consortium\">W3C</acronym></a>"
                   }
@@ -10711,6 +10961,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.csail.mit.edu/\"><acronym title=\"Massachusetts Institute of Technology\">MIT</acronym></a>"
                   }
@@ -10746,6 +10997,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.ercim.org/\"><acronym title=\"European Research Consortium for Informatics and Mathematics\">ERCIM</acronym></a>"
                   }
@@ -10781,6 +11033,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.keio.ac.jp/\">Keio</a>"
                   }
@@ -10816,6 +11069,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer\">liability</a>"
                   }
@@ -10851,6 +11105,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks\">trademark</a>"
                   }
@@ -10886,6 +11141,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-documents\">document use</a>"
                   }
@@ -10921,6 +11177,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a rel=\"Copyright\" href=\"http://www.w3.org/Consortium/Legal/copyright-software\">software licensing</a>"
                   }
@@ -10956,6 +11213,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Public\">public</a>"
                   }
@@ -10991,6 +11249,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"http://www.w3.org/Consortium/Legal/privacy-statement#Members\">Member</a>"
                   }
@@ -11026,6 +11285,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<ul>"
                   }
@@ -11061,6 +11321,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<ul>"
                   }
@@ -11096,6 +11357,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li class=\"first\"><a href=\"../Overview.html\">Overview</a></li>"
                   }
@@ -11131,6 +11393,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li class=\"current first\">"
                   }
@@ -11166,6 +11429,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li class=\"inaccessible\"><strong>Inaccessible:</strong><a class=\"page current\"><span class=\"hidden\">Inaccessible </span>Home Page</a><a href=\"./reports/home.html\" class=\"report\"><span class=\"hidden\">Inaccessible Home Page </span> Report</a></li>"
                   }
@@ -11201,6 +11465,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li class=\"accessible\"><strong>Accessible:</strong><a href=\"../after/home.html\" class=\"page\"><span class=\"hidden\">Accessible </span>Home Page</a><a href=\"../after/reports/home.html\" class=\"report\"><span class=\"hidden\">Accessible Home Page </span> Report</a></li>"
                   }
@@ -11236,6 +11501,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li><a href=\"news.html\">News</a></li>"
                   }
@@ -11271,6 +11537,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li><a href=\"tickets.html\">Tickets</a></li>"
                   }
@@ -11306,6 +11573,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li><a href=\"survey.html\">Survey</a></li>"
                   }
@@ -11341,6 +11609,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<li><a href=\"template.html\">Template</a></li>"
                   }
@@ -11376,6 +11645,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html>"
                   }
@@ -11411,6 +11681,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"#page\">Skip to inaccessible demo page</a>"
                   }
@@ -11446,6 +11717,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"100%\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#D7D7CD\">"
                   }
@@ -11481,6 +11753,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"800px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11516,6 +11789,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"144px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11551,6 +11825,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -11586,6 +11861,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11621,6 +11897,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"155px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -11656,6 +11933,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"151px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -11691,6 +11969,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -11726,6 +12005,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -11761,6 +12041,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"17px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#EDEDED\">"
                   }
@@ -11796,6 +12077,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"100%\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#D7D7CD\">"
                   }
@@ -11831,6 +12113,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"800px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11866,6 +12149,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"144px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11901,6 +12185,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -11936,6 +12221,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"WHITE\">"
                   }
@@ -11971,6 +12257,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"155px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12006,6 +12293,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"151px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\">"
                   }
@@ -12041,6 +12329,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -12076,6 +12365,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"150px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"3px\">"
                   }
@@ -12111,6 +12401,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<table width=\"780px\" height=\"17px\" border=\"0px\" cellspacing=\"0px\" cellpadding=\"0px\" bgcolor=\"#EDEDED\">"
                   }
@@ -12146,6 +12437,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a class=\"page current\"><span class=\"hidden\">Inaccessible </span>Home Page</a>"
                   }
@@ -12181,6 +12473,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<a href=\"./annotated/home.html\" class=\"annotoggle\">Show <br>Annotations</a>"
                   }
@@ -12216,6 +12509,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<font color=\"BLACK\" face=\"Verdana\" size=\"2\">"
                   }

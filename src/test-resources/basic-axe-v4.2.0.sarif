@@ -101,6 +101,7 @@
                   "index": 0
                 },
                 "region": {
+                  "startLine": 1,
                   "snippet": {
                     "text": "<html><head></head><body>\n</body></html>"
                   }
