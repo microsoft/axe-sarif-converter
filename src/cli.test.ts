@@ -76,7 +76,7 @@ describe('axe-sarif-converter CLI', () => {
     `(
         'supports conversion from axe-cli output $inputFile',
         async ({ inputFile }) => {
-            const inputFilePath = path.join(testResourcesDir, inputFile);
+            const inputFilePath = path.join(testResourcesDir, inputFile as string);
             const outputFile = path.join(testResultsDir, `${inputFile}.sarif`);
             await deleteIfExists(outputFile);
 

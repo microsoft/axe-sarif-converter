@@ -2,6 +2,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+import { AxeResults } from 'axe-core';
 import * as fs from 'fs';
 import { Log } from 'sarif';
 import * as yargs from 'yargs';
@@ -88,7 +89,7 @@ const sarifLogs: Log[] = flatten(
         } else {
             // Treating as a single axe results object, like
             // JSON.stringify(await axe.run(...)) would produce
-            return [convertAxeToSarif(inputFileJson)];
+            return [convertAxeToSarif(inputFileJson as any as AxeResults)];
         }
     }),
 );
