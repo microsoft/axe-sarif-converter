@@ -15,7 +15,9 @@ export function formatSarifResultMessage(
     const markdownArray: string[] = [];
 
     if (kind === 'fail') {
-        const allAndNone = (node.all as any).concat(node.none) as CheckResultArray;
+        const allAndNone = (node.all as any).concat(
+            node.none,
+        ) as CheckResultArray;
         formatSarifCheckResultsMessage(
             'Fix all of the following:',
             allAndNone,
@@ -29,7 +31,9 @@ export function formatSarifResultMessage(
             markdownArray,
         );
     } else {
-        const allNodes = (node.all as any).concat(node.none).concat(node.any) as CheckResultArray;
+        const allNodes = (node.all as any)
+            .concat(node.none)
+            .concat(node.any) as CheckResultArray;
         formatSarifCheckResultsMessage(
             'The following tests passed:',
             allNodes,

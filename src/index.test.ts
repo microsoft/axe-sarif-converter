@@ -115,7 +115,9 @@ describe('public convertAxeToSarif API', () => {
         'converts pinned v1/v2 input $inputFile to pinned output $outputFile',
         ({ inputFile, outputFile }) => {
             const input: AxeResults = readTestResourceJSON(inputFile as string);
-            const expectedOutput: SarifLog = readTestResourceJSON(outputFile as string);
+            const expectedOutput: SarifLog = readTestResourceJSON(
+                outputFile as string,
+            );
 
             const actualOutput: SarifLog = convertAxeToSarif(input);
 
@@ -160,9 +162,12 @@ describe('public sarifReporter API', () => {
         'converts pinned raw input $inputFile to pinned output $outputFile',
         async ({ inputFile, outputFile }) => {
             return new Promise<void>((resolve) => {
-                const input: AxeRawResult[] = readTestResourceJSON(inputFile as string);
-                const expectedOutput: SarifLog =
-                    readTestResourceJSON(outputFile as string);
+                const input: AxeRawResult[] = readTestResourceJSON(
+                    inputFile as string,
+                );
+                const expectedOutput: SarifLog = readTestResourceJSON(
+                    outputFile as string,
+                );
 
                 function callback(convertedSarifResults: SarifLog) {
                     normalizeEnvironmentDerivedSarifProperties(
