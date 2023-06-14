@@ -6,10 +6,10 @@ __metadata:
   cacheKey: 8
 
 "@axe-core/cli@npm:^4.6.0":
-  version: 4.7.2
-  resolution: "@axe-core/cli@npm:4.7.2"
+  version: 4.7.3
+  resolution: "@axe-core/cli@npm:4.7.3"
   dependencies:
-    "@axe-core/webdriverjs": ^4.7.2
+    "@axe-core/webdriverjs": ^4.7.3
     axe-core: ^4.7.0
     chromedriver: ^113.0.0
     colors: ^1.4.0
@@ -17,7 +17,7 @@ __metadata:
     selenium-webdriver: ^4.8.1
   bin:
     axe: dist/src/bin/cli.js
-  checksum: 7467763c98b92253402e26c668f9d085a5a837e8eea1d2a88fa79d3b2cd8ca8ad402db116aee7384c85a61ec5ac411e3aa64a80159db4949de17d4cc2f62ca0f
+  checksum: d2928941c1c12c3c3c3d7788fe839bdf97841d808ebd23ef46dabee3293c06197f901a2522785289d948c41928fa9b9fa48f77bfaee968d50e3d742e511ec7b7
   languageName: node
   linkType: hard
 
@@ -32,14 +32,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.7.2":
-  version: 4.7.2
-  resolution: "@axe-core/webdriverjs@npm:4.7.2"
+"@axe-core/webdriverjs@npm:^4.7.3":
+  version: 4.7.3
+  resolution: "@axe-core/webdriverjs@npm:4.7.3"
   dependencies:
     axe-core: ^4.7.0
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 3ac75729f1f00089d3f7c45599b6a24594a24fc746e59fb1c33cf9865de01a39f758971a47abd8ec3e7d2f7749fecfdf101da346fc9764b6419299910061031a
+  checksum: 01cc49a677dda5c01400153f058772872abfef8441efe5617ea6621d625127db8522d5261161f920a04230f72752eeb0737d3c5617a4ddd957a9906849ec27ee
   languageName: node
   linkType: hard
 
