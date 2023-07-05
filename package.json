@@ -35,7 +35,7 @@
         "jest-junit": "^16.0.0",
         "license-check-and-add": "^4.0.1",
         "lodash": "^4.17.15",
-        "prettier": "^2.0.1",
+        "prettier": "^3.0.0",
         "puppeteer": "^13.7.0",
         "rimraf": "^5.0.0",
         "semantic-release": "^21.0.1",
