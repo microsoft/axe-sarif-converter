@@ -21,8 +21,8 @@
         "yargs": "^17.0.0"
     },
     "devDependencies": {
-        "@axe-core/cli": "^4.6.0",
-        "@axe-core/puppeteer": "^4.6.0",
+        "@axe-core/cli": "^4.7.0",
+        "@axe-core/puppeteer": "^4.7.0",
         "@types/jest": "^27.4.0",
         "@types/lodash": "^4.14.136",
         "@types/node": "^18.16.2",
@@ -46,7 +46,7 @@
     "resolutions": {
         "@axe-core/cli/chromedriver@^109.0.0": "^111.0.0",
         "ansi-regex@^4.1.0": "^5.0.1",
-        "axe-core": "4.6.3"
+        "axe-core": "4.7.2"
     },
     "scripts": {
         "prebuild": "yarn clean",
