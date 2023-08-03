@@ -1,0 +1,54 @@
+[
+  {
+    "id": "document-title",
+    "result": "failed",
+    "pageLevel": false,
+    "impact": "serious",
+    "tags": [
+      "cat.text-alternatives",
+      "wcag2a",
+      "wcag242",
+      "ACT",
+      "TTv5",
+      "TT12.a"
+    ],
+    "description": "Ensures each HTML document contains a non-empty <title> element",
+    "help": "Documents must have <title> element to aid in navigation",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.7/document-title?application=axe-puppeteer",
+    "inapplicable": [],
+    "passes": [],
+    "incomplete": [],
+    "violations": [
+      {
+        "node": {
+          "selector": [
+            "html"
+          ],
+          "source": "<html><head></head><body>\n</body></html>",
+          "xpath": [
+            "/html"
+          ],
+          "ancestry": [
+            "html"
+          ],
+          "nodeIndexes": [
+            0
+          ]
+        },
+        "any": [
+          {
+            "id": "doc-has-title",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "serious",
+            "message": "Document does not have a non-empty <title> element"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "result": "failed"
+      }
+    ]
+  }
+]
