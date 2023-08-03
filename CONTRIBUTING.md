@@ -79,12 +79,14 @@ To update the package and test cases to account for a new axe-core version:
 
         ```
         yarn generate-chrome-resources [version-number]
+        yarn generate-test-resources
         ```
 
         for example:
 
         ```
         yarn generate-chrome-resources 113.0.5672.0
+        yarn generate-test-resources
         ```
 
         This script installs the Chrome binary for the specified version of Chrome in the location that ChromeDriver expects it to be (`C:\Users\[username]\AppData\Local\Google\Chrome\Application` on Windows). This will allow you to successfully run the script to generate test resources.
