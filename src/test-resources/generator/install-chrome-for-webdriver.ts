@@ -14,9 +14,9 @@ const path = require('path')
 const { promises: fs, Dirent } = require('fs');
 let chromeVersion = process.argv.length > 2 ? process.argv[2] : '115.0.5755.0';
 const rootDir = path.join(__dirname, '..', '..', '..');
-const destDir = path.join(process.env.HOMEDRIVE, 'Users', process.env.USERNAME, 'AppData', 'Local', 'Google', 'Chrome', 'Application');
-const cacheDir = path.join(rootDir, 'dist');
-const srcDir = path.join(cacheDir, 'chrome', `win64-${chromeVersion}`, 'chrome-win64');
+const destDir: string = path.join(process.env.HOMEDRIVE!, 'Users', process.env.USERNAME!, 'AppData', 'Local', 'Google', 'Chrome', 'Application');
+const cacheDir: string = path.join(rootDir, 'dist');
+const srcDir: string = path.join(cacheDir, 'chrome', `win64-${chromeVersion}`, 'chrome-win64');
 
 async function installChrome(){
 
@@ -40,8 +40,8 @@ async function copyContentsToExpectedLoc(src: string, dest: string){
     await fs.mkdir(dest, {recursive: true});
     let files = await fs.readdir(src, {withFileTypes: true});
     files.forEach(async (file: typeof Dirent) => {
-        let srcPath = path.join(src, file.name);
-        let destPath = path.join(dest, file.name);
+        let srcPath: string = path.join(src, file.name);
+        let destPath: string = path.join(dest, file.name);
         if(file.isDirectory()){
             await copyContentsToExpectedLoc(srcPath, destPath);
         }else{
