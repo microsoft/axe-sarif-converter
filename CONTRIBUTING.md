@@ -53,7 +53,7 @@ To update the package and test cases to account for a new axe-core version:
 1. In `package.json`, update the version numbers of the following components:
 
 -   `devDependencies` entries for `@axe-core/cli` and `@axe-core/puppeteer`
--   `resolutions` entries for `axe-core` and `@axe-core/cli/chromedriver`
+-   `resolutions` entries for `axe-core`
 -   **NOT** the `dependencies` entry for `@axe-core`!
 
 1. Build the repo with:
@@ -68,6 +68,28 @@ To update the package and test cases to account for a new axe-core version:
     ```
     yarn generate-test-resources
     ```
+
+    - If this fails with an error message saying it cannot find the Chrome binary, run:
+
+        ```
+        yarn generate-chrome-resources
+        ```
+
+    - If this fails with an error message saying "This version of ChromeDriver only supports Chrome version X", then find a version number that starts with X from [this list](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json) and then run:
+
+        ```
+        yarn generate-chrome-resources [version-number]
+        yarn generate-test-resources
+        ```
+
+        for example:
+
+        ```
+        yarn generate-chrome-resources 113.0.5672.0
+        yarn generate-test-resources
+        ```
+
+        This script installs the Chrome binary for the specified version of Chrome in the location that ChromeDriver expects it to be (`C:\Users\[username]\AppData\Local\Google\Chrome\Application` on Windows). This will allow you to successfully run the script to generate test resources.
 
 1. Manually compare the diff of `/src/test-resources/basic-axe-vPREVIOUS.sarif` and `/src/test-resources/basic-axe-vNEW.sarif`; the only differences should be the version numbers.
 1. Manually compare the diff of `/src/test-resources/w3citylights-axe-vPREVIOUS.sarif` and `/src/test-resources/w3citylights-axe-vNEW.sarif`; in addition to version number differences, you should see some differences based on new/removed rules between the axe versions.
