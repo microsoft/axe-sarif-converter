@@ -15,8 +15,8 @@ jobs:
           # can require of our users without a breaking change
           - task: NodeTool@0
             inputs:
-                versionSpec: '18.16.0'
-            displayName: use node 18.16.0
+                versionSpec: '18.17.0'
+            displayName: use node 18.17.0
 
           - script: yarn install --immutable
             displayName: yarn install
