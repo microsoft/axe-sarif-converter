@@ -13,18 +13,18 @@ __metadata:
   linkType: hard
 
 "@axe-core/cli@npm:^4.7.0":
-  version: 4.7.3
-  resolution: "@axe-core/cli@npm:4.7.3"
+  version: 4.8.0
+  resolution: "@axe-core/cli@npm:4.8.0"
   dependencies:
-    "@axe-core/webdriverjs": ^4.7.3
-    axe-core: ^4.7.0
-    chromedriver: ^113.0.0
+    "@axe-core/webdriverjs": ^4.8.0
+    axe-core: ~4.8.2
+    chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
     selenium-webdriver: ^4.8.1
   bin:
     axe: dist/src/bin/cli.js
-  checksum: d2928941c1c12c3c3c3d7788fe839bdf97841d808ebd23ef46dabee3293c06197f901a2522785289d948c41928fa9b9fa48f77bfaee968d50e3d742e511ec7b7
+  checksum: b4466b227ae2159419c6422ca0caaa7ad4f09068d5350402832ab56b46efc5928f8225cf0c496dae817084131021637769f071dedda0f400404aba1b9cbac579
   languageName: node
   linkType: hard
 
@@ -39,14 +39,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.7.3":
-  version: 4.7.3
-  resolution: "@axe-core/webdriverjs@npm:4.7.3"
+"@axe-core/webdriverjs@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "@axe-core/webdriverjs@npm:4.8.0"
   dependencies:
-    axe-core: ^4.7.0
+    axe-core: ~4.8.2
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 01cc49a677dda5c01400153f058772872abfef8441efe5617ea6621d625127db8522d5261161f920a04230f72752eeb0737d3c5617a4ddd957a9906849ec27ee
+  checksum: 1a15928543ed9dc5dd79327b366831753b1520fe1c78186b92969a690a350f4ca82f6da18977f21d2f1a56845e0d6bce174747d60221394ca3df0c4e0333b2d5
   languageName: node
   linkType: hard
 
@@ -2401,14 +2401,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"axios@npm:^1.2.1":
-  version: 1.4.0
-  resolution: "axios@npm:1.4.0"
+"axios@npm:^1.4.0":
+  version: 1.5.1
+  resolution: "axios@npm:1.5.1"
   dependencies:
     follow-redirects: ^1.15.0
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: 7fb6a4313bae7f45e89d62c70a800913c303df653f19eafec88e56cea2e3821066b8409bc68be1930ecca80e861c52aa787659df0ffec6ad4d451c7816b9386b
+  checksum: 4444f06601f4ede154183767863d2b8e472b4a6bfc5253597ed6d21899887e1fd0ee2b3de792ac4f8459fe2e359d2aa07c216e45fd8b9e4e0688a6ebf48a5a8d
   languageName: node
   linkType: hard
 
@@ -2850,20 +2850,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromedriver@npm:^113.0.0":
-  version: 113.0.0
-  resolution: "chromedriver@npm:113.0.0"
+"chromedriver@npm:latest":
+  version: 117.0.3
+  resolution: "chromedriver@npm:117.0.3"
   dependencies:
     "@testim/chrome-version": ^1.1.3
-    axios: ^1.2.1
-    compare-versions: ^5.0.1
+    axios: ^1.4.0
+    compare-versions: ^6.0.0
     extract-zip: ^2.0.1
     https-proxy-agent: ^5.0.1
     proxy-from-env: ^1.1.0
     tcp-port-used: ^1.0.1
   bin:
     chromedriver: bin/chromedriver
-  checksum: 7b5e600797f785d7c23226be4865e724e4f9a77435140f71d44422b0e90046d7ecddddf90563d4660424c94b757c7eb3099ff307300188f8a876b3f11696a286
+  checksum: 7ac47de10af353a46c0ed49170dca225fcd3471245846cfe47f04d41e8a67ea28cb88a28b57709c09809fb860aa904ccea81e9124fd0b1a0a3e0e5c15a0b7ef1
   languageName: node
   linkType: hard
 
@@ -3111,10 +3111,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compare-versions@npm:^5.0.1":
-  version: 5.0.3
-  resolution: "compare-versions@npm:5.0.3"
-  checksum: f66a4bb6ef8ff32031cc92c04dea4bbead039e72a7f6c7df7ef05f5a42ddca9202f8875b7449add54181e73b89f039662a8760c8db0ab036c4e8f653a7cd29c1
+"compare-versions@npm:^6.0.0":
+  version: 6.1.0
+  resolution: "compare-versions@npm:6.1.0"
+  checksum: d4e2a45706a023d8d0b6680338b66b79e20bd02d1947f0ac6531dab634cbed89fa373b3f03d503c5e489761194258d6e1bae67a07f88b1efc61648454f2d47e7
   languageName: node
   linkType: hard
 
