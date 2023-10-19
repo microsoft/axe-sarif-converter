@@ -1940,9 +1940,9 @@ __metadata:
   linkType: hard
 
 "@types/sarif@npm:>=2.1.1 <=2.1.6":
-  version: 2.1.5
-  resolution: "@types/sarif@npm:2.1.5"
-  checksum: 6fb813f6988b3416dfd38388dd6af07eedf7d62b288b8cd576f0eb9bd2b26523d7905cee78f4f6316eb3181472bb028caac282e4eb1b2d0042dc7ee2cbbf37c5
+  version: 2.1.6
+  resolution: "@types/sarif@npm:2.1.6"
+  checksum: 51ab1ea2caa79e4ac047a949c7fd1791b992727fff33ff5507eaac89842010635415eb606701f28abccadbfb39a9b8b9c4e964e5d50df8c6247edb62da6776bc
   languageName: node
   linkType: hard
 
