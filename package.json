@@ -12,7 +12,7 @@
         "README.md"
     ],
     "engines": {
-        "node": ">= 8"
+        "node": ">= 20"
     },
     "packageManager": "yarn@3.5.0",
     "dependencies": {
