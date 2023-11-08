@@ -17,7 +17,7 @@
     "packageManager": "yarn@3.5.0",
     "dependencies": {
         "@puppeteer/browsers": "^1.5.0",
-        "@types/sarif": ">=2.1.1 <=2.1.6",
+        "@types/sarif": ">=2.1.1 <=2.1.8",
         "axe-core": "^3.2.2 || ^4.0.0",
         "yargs": "^17.0.0"
     },

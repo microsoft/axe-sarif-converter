@@ -1946,10 +1946,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sarif@npm:>=2.1.1 <=2.1.6":
-  version: 2.1.6
-  resolution: "@types/sarif@npm:2.1.6"
-  checksum: 51ab1ea2caa79e4ac047a949c7fd1791b992727fff33ff5507eaac89842010635415eb606701f28abccadbfb39a9b8b9c4e964e5d50df8c6247edb62da6776bc
+"@types/sarif@npm:>=2.1.1 <=2.1.8":
+  version: 2.1.7
+  resolution: "@types/sarif@npm:2.1.7"
+  checksum: ee5d30f5a2678091502343fba7905e85d25dbb545f920de9fc8a7c6693509b491a043168970a16325730cc0c88de54d2b6b3de0c2caa31645c8ebf558c5553af
   languageName: node
   linkType: hard
 
@@ -2481,7 +2481,7 @@ __metadata:
     "@types/jest": ^27.4.0
     "@types/lodash": ^4.14.136
     "@types/node": ^18.16.2
-    "@types/sarif": ">=2.1.1 <=2.1.6"
+    "@types/sarif": ">=2.1.1 <=2.1.8"
     "@types/yargs": ^17.0.8
     "@typescript-eslint/eslint-plugin": ^6.7.4
     "@typescript-eslint/parser": ^6.4.0
