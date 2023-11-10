@@ -46,7 +46,8 @@
     },
     "resolutions": {
         "ansi-regex@^4.1.0": "^5.0.1",
-        "axe-core": "4.7.2"
+        "axe-core": "4.7.2",
+        "chromedriver": "^119.0.1"
     },
     "scripts": {
         "prebuild": "yarn clean",
