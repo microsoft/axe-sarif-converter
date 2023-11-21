@@ -1975,20 +1975,20 @@ __metadata:
   linkType: hard
 
 "@types/yargs@npm:^16.0.0":
-  version: 16.0.8
-  resolution: "@types/yargs@npm:16.0.8"
+  version: 16.0.9
+  resolution: "@types/yargs@npm:16.0.9"
   dependencies:
     "@types/yargs-parser": "*"
-  checksum: 3e82590f930fed262580fec5878336e975934a758b10961e0b403b8883c59b472225f38959399612edb7a2a9783d9edd244d1f9c2b5e7d072b21372646e888d2
+  checksum: 00d9276ed4e0f17a78c1ed57f644a8c14061959bd5bfab113d57f082ea4b663ba97f71b89371304a34a2dba5061e9ae4523e357e577ba61834d661f82c223bf8
   languageName: node
   linkType: hard
 
 "@types/yargs@npm:^17.0.8":
-  version: 17.0.31
-  resolution: "@types/yargs@npm:17.0.31"
+  version: 17.0.32
+  resolution: "@types/yargs@npm:17.0.32"
   dependencies:
     "@types/yargs-parser": "*"
-  checksum: a7f4fe5b05162790cbcbccceb22821e2cb3e49d95a4d8403352f258744cd504124f3ab502eddb2262f5d2d9cc6a0547851ae44621b14fe4c505d8f1434c2a19e
+  checksum: 4505bdebe8716ff383640c6e928f855b5d337cb3c68c81f7249fc6b983d0aa48de3eee26062b84f37e0d75a5797bc745e0c6e76f42f81771252a758c638f36ba
   languageName: node
   linkType: hard
 
