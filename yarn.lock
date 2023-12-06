@@ -1572,8 +1572,8 @@ __metadata:
   linkType: hard
 
 "@puppeteer/browsers@npm:^1.5.0":
-  version: 1.8.0
-  resolution: "@puppeteer/browsers@npm:1.8.0"
+  version: 1.9.0
+  resolution: "@puppeteer/browsers@npm:1.9.0"
   dependencies:
     debug: 4.3.4
     extract-zip: 2.0.1
@@ -1584,7 +1584,7 @@ __metadata:
     yargs: 17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: 94bd9ba2c9b33bf41a5d7ae7c4c7384afd09c54aa5356b6e2e2ed67d7f3f2d76941e3cb431f270baa9e572701f12289ae58bcb63a46b251deaff4030c64f2426
+  checksum: 9a1cad8b760333a46f6ea69f07b1049b9b5da3aef3354da76089176998018aa10c4eeb5adb965405c9a899da81205cf60e845beca643bfe5a4a63410328fe131
   languageName: node
   linkType: hard
 
