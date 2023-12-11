@@ -10,11 +10,11 @@ extends:
   # The pipeline extends the 1ES PT which will inject different SDL and compliance tasks.
   # For non-production pipelines, use "Unofficial" as defined below.
   # For productions pipelines, use "Official".
-  template: v1/1ES.Official.PipelineTemplate.yml@1esPipelines
+  template: v1/1ES.Unofficial.PipelineTemplate.yml@1esPipelines
   parameters:
     # Update the pool with your team's 1ES hosted pool.
     pool:
-      name: a11y-insights-pool-prod  # Name of your hosted pool
+      name: a11y-insights-pool-dev  # Name of your hosted pool
       image: windows-2022-secure  # Name of the image in your pool. If not specified, first image of the pool is used
       os: windows  # OS of the image. Allowed values: windows, linux, macOS
 
