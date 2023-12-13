@@ -14,6 +14,11 @@ extends:
     parameters:
         # Update the pool with your team's 1ES hosted pool.
         pool:
+          name: a11y-insights-pool-dev
+          image: 'ubuntu-22.04'
+          os: linux
+        sdl:
+          sourceAnalysisPool:
             name: a11y-insights-pool-dev # Name of your hosted pool
             image: windows-2022-secure # Name of the image in your pool. If not specified, first image of the pool is used
             os: windows # OS of the image. Allowed values: windows, linux, macOS
@@ -27,10 +32,6 @@ extends:
                             - output: buildArtifacts
                               PathtoPublish: $(System.DefaultWorkingDirectory)/test-results/
                               ArtifactName: CodeAnalysisLogs
-                    pool:
-                        name: a11y-insights-pool-dev
-                        vmImage: 'ubuntu-22.04'
-                        os: linux
                     steps:
                         # This is later than the minimum version the package claims support
                         # for because semantic-release requires a later LTS version that we
