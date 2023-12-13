@@ -15,7 +15,7 @@ extends:
         # Update the pool with your team's 1ES hosted pool.
         pool:
           name: a11y-insights-pool-dev
-          image: 'ubuntu-22.04'
+          image: ubuntu-22.04-secure
           os: linux
         sdl:
           sourceAnalysisPool:
