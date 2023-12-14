@@ -35,6 +35,7 @@ extends:
                             - output: buildArtifacts
                               PathtoPublish: $(System.DefaultWorkingDirectory)/test-results/
                               ArtifactName: CodeAnalysisLogs
+                              condition: always()
                               displayName: publish sarif results
                     steps:
                         # This is later than the minimum version the package claims support
