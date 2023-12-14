@@ -40,7 +40,7 @@
     "editor.formatOnSave": true,
     "editor.rulers": [80],
     "editor.codeActionsOnSave": {
-        "source.fixAll.tslint": "explicit",
-        "source.organizeImports": "explicit"
+        "source.fixAll.tslint": true,
+        "source.organizeImports": true
     }
 }
