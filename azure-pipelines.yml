@@ -1,65 +1,86 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-variables:
-    Codeql.Enabled: true
+# The `resources` specify the location and version of the 1ES PT.
+resources:
+    repositories:
+        - repository: 1esPipelines
+          type: git
+          name: 1ESPipelineTemplates/1ESPipelineTemplates
+          ref: refs/tags/release
+extends:
+    # The pipeline extends the 1ES PT which will inject different SDL and compliance tasks.
+    # For non-production pipelines, use "Unofficial" as defined below.
+    # For productions pipelines, use "Official".
+    template: v1/1ES.Unofficial.PipelineTemplate.yml@1esPipelines
+    parameters:
+        # Update the pool with your team's 1ES hosted pool.
+        pool:
+            name: a11y-insights-pool-dev
+            image: ubuntu-22.04-secure
+            os: linux
+        sdl:
+            sourceAnalysisPool:
+                name: a11y-insights-pool-dev # Name of your hosted pool
+                image: windows-2022-secure # Name of the image in your pool. If not specified, first image of the pool is used
+                os: windows # OS of the image. Allowed values: windows, linux, macOS
+            codeql:
+                compiled:
+                    enabled: true
+        stages:
+            - stage: Stage
+              jobs:
+                  - job: 'tests_and_checks'
+                    templateContext:
+                        outputs:
+                            - output: buildArtifacts
+                              PathtoPublish: $(System.DefaultWorkingDirectory)/test-results/
+                              ArtifactName: CodeAnalysisLogs
+                              condition: always()
+                              displayName: publish sarif results
+                    steps:
+                        # This is later than the minimum version the package claims support
+                        # for because semantic-release requires a later LTS version that we
+                        # can require of our users without a breaking change
+                        - task: NodeTool@0
+                          inputs:
+                              versionSpec: '18.17.0'
+                          displayName: use node 18.17.0
 
-jobs:
-    - job: 'tests_and_checks'
+                        - script: yarn install --immutable
+                          displayName: yarn install
 
-      pool:
-          vmImage: 'ubuntu-22.04'
+                        - script: yarn lint
+                          displayName: yarn lint
 
-      steps:
-          # This is later than the minimum version the package claims support
-          # for because semantic-release requires a later LTS version that we
-          # can require of our users without a breaking change
-          - task: NodeTool@0
-            inputs:
-                versionSpec: '18.17.0'
-            displayName: use node 18.17.0
+                        - script: yarn format-check
+                          displayName: yarn format-check
 
-          - script: yarn install --immutable
-            displayName: yarn install
+                        - script: yarn copyrightheaders
+                          displayName: yarn copyrightheaders
 
-          - script: yarn lint
-            displayName: yarn lint
+                        - script: yarn build
+                          displayName: yarn build
 
-          - script: yarn format-check
-            displayName: yarn format-check
+                        - script: yarn test --ci
+                          displayName: yarn test
 
-          - script: yarn copyrightheaders
-            displayName: yarn copyrightheaders
+                        - task: PublishTestResults@2
+                          inputs:
+                              testResultsFiles: $(System.DefaultWorkingDirectory)/test-results/junit.xml
+                              testRunTitle: axe-sarif-converter
+                          condition: always()
+                          displayName: publish test results
 
-          - script: yarn build
-            displayName: yarn build
+                        - task: PublishCodeCoverageResults@1
+                          inputs:
+                              codeCoverageTool: Cobertura
+                              summaryFileLocation: $(System.DefaultWorkingDirectory)/test-results/coverage/cobertura-coverage.xml
+                              failIfCoverageEmpty: true
+                          displayName: publish code coverage
 
-          - script: yarn test --ci
-            displayName: yarn test
-
-          - task: PublishTestResults@2
-            inputs:
-                testResultsFiles: $(System.DefaultWorkingDirectory)/test-results/junit.xml
-                testRunTitle: axe-sarif-converter
-            condition: always()
-            displayName: publish test results
-
-          - task: PublishCodeCoverageResults@1
-            inputs:
-                codeCoverageTool: Cobertura
-                summaryFileLocation: $(System.DefaultWorkingDirectory)/test-results/coverage/cobertura-coverage.xml
-                failIfCoverageEmpty: true
-            displayName: publish code coverage
-
-          - task: PublishBuildArtifacts@1
-            inputs:
-                pathtoPublish: '$(System.DefaultWorkingDirectory)/test-results/'
-                artifactName: 'CodeAnalysisLogs'
-            condition: always()
-            displayName: publish sarif results
-
-          - script: yarn semantic-release
-            displayName: yarn semantic-release (main branch only)
-            env:
-                GH_TOKEN: $(github-ada-cat-auth-token)
-                NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
-            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['EnableSemanticRelease'], 'true'))
+                        - script: yarn semantic-release
+                          displayName: yarn semantic-release (main branch only)
+                          env:
+                              GH_TOKEN: $(github-ada-cat-auth-token)
+                              NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
+                          condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['EnableSemanticRelease'], 'true'))
