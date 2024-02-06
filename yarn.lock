@@ -1571,9 +1571,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@puppeteer/browsers@npm:^1.5.0":
-  version: 1.9.1
-  resolution: "@puppeteer/browsers@npm:1.9.1"
+"@puppeteer/browsers@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@puppeteer/browsers@npm:2.0.0"
   dependencies:
     debug: 4.3.4
     extract-zip: 2.0.1
@@ -1584,7 +1584,7 @@ __metadata:
     yargs: 17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: 1ea82e34af882dc6d7e8392a88ec4196e206a7f65743be39c196c7068d66b9bdfa370e28c6ab09946bd2baa2182adbcbf445e79cc9bcc5242f05878ae7045b27
+  checksum: fd58600bc04775715716ec69130a639e5c5c4c7b21b5b1390c490322954ee1c351d2875021b33a64839e354823a05fda9a11ea0d4280ec18bcaa91f8d934aa7a
   languageName: node
   linkType: hard
 
@@ -2522,7 +2522,7 @@ __metadata:
   dependencies:
     "@axe-core/cli": ^4.7.0
     "@axe-core/puppeteer": ^4.7.0
-    "@puppeteer/browsers": ^1.5.0
+    "@puppeteer/browsers": ^2.0.0
     "@types/jest": ^27.4.0
     "@types/lodash": ^4.14.136
     "@types/node": ^18.16.2
