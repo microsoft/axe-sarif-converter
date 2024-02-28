@@ -77,6 +77,8 @@ describe('axe-sarif-converter CLI', () => {
         ${'w3citylights-axe-v4.7.2.axe-cli-v4.7.3.json'}
         ${'basic-axe-v4.7.2.axe-cli-v4.8.4.json'}
         ${'w3citylights-axe-v4.7.2.axe-cli-v4.8.4.json'}
+        ${'basic-axe-v4.7.2.axe-cli-v4.8.5.json'}
+        ${'w3citylights-axe-v4.7.2.axe-cli-v4.8.5.json'}
     `(
         'supports conversion from axe-cli output $inputFile',
         async ({ inputFile }) => {
