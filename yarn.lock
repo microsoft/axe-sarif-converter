@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/cli@npm:^4.7.0":
+"@axe-core/cli@npm:^4.8.0":
   version: 4.8.5
   resolution: "@axe-core/cli@npm:4.8.5"
   dependencies:
@@ -28,7 +28,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/puppeteer@npm:^4.7.0":
+"@axe-core/puppeteer@npm:^4.8.0":
   version: 4.8.5
   resolution: "@axe-core/puppeteer@npm:4.8.5"
   dependencies:
@@ -2510,10 +2510,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:4.7.2":
-  version: 4.7.2
-  resolution: "axe-core@npm:4.7.2"
-  checksum: 5d86fa0f45213b0e54cbb5d713ce885c4a8fe3a72b92dd915a47aa396d6fd149c4a87fec53aa978511f6d941402256cfeb26f2db35129e370f25a453c688655a
+"axe-core@npm:4.8.4":
+  version: 4.8.4
+  resolution: "axe-core@npm:4.8.4"
+  checksum: 644da2fec17bcf6f834edaab1baa5a75a9a3ee370c323215c73da6d7e45fac11d01470d92d0a3d5f26695e15c1d9b781733dfbe1fe09d505076c58f09ed74e02
   languageName: node
   linkType: hard
 
@@ -2521,8 +2521,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
-    "@axe-core/cli": ^4.7.0
-    "@axe-core/puppeteer": ^4.7.0
+    "@axe-core/cli": ^4.8.0
+    "@axe-core/puppeteer": ^4.8.0
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^27.4.0
     "@types/lodash": ^4.14.136
