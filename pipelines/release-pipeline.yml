@@ -11,6 +11,6 @@ variables:
     - group: a11y-insights-axe-sarif-converter-release
 
 extends:
-    template: pipelines/build-shared.yaml@self
+    template: pipelines/shared-template.yaml@self
     parameters:
         templateType: Official
