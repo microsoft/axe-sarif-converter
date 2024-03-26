@@ -1,0 +1,16 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+parameters:
+    - name: enableSemanticRelease
+      type: boolean
+      default: false
+
+variables:
+    - name: EnableSemanticRelease
+      value: ${{ parameters.enableSemanticRelease }}
+    - group: a11y-insights-axe-sarif-converter-release
+
+extends:
+    template: pipelines/build-shared.yaml@self
+    parameters:
+        templateType: Official
