@@ -26,7 +26,6 @@ extends:
     parameters:
         settings:
             skipBuildTagsForGitHubPullRequests: true
-        # Update the pool with your team's 1ES hosted pool.
         pool:
             name: $(a11yInsightsPool)
             image: ubuntu-22.04-secure

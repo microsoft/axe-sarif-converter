@@ -2,6 +2,6 @@
 # Licensed under the MIT License.
 
 extends:
-    template: pipelines/shared-template.yml@self
+    template: shared-template.yml@self
     parameters:
         templateType: UnOfficial
