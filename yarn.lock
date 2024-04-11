@@ -2533,7 +2533,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.4.0
     axe-core: ^3.2.2 || ^4.0.0
     eslint: ^8.42.0
-    eslint-plugin-security: ^1.4.0
+    eslint-plugin-security: ^3.0.0
     jest: ^27.0.3
     jest-junit: ^16.0.0
     license-check-and-add: ^4.0.1
@@ -3851,12 +3851,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-security@npm:^1.4.0":
-  version: 1.7.1
-  resolution: "eslint-plugin-security@npm:1.7.1"
+"eslint-plugin-security@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "eslint-plugin-security@npm:3.0.0"
   dependencies:
     safe-regex: ^2.1.1
-  checksum: 3a650e2482e108bb4b9c3b9ac64adefcf1dfda069cd43f89a7d3b84822da2417c9d1b764ec5e1acf4c193b48edc630c7ef2d0a5279a478a8672f9030bc78a8c0
+  checksum: c3cc9452a5948cea99af83b3301f9e51d28b3ca274662d8ec13ae175036157e5a1597055cb9e98a5e346f09d4dae88e4498516146a0aa4aa178017dfd3af91a9
   languageName: node
   linkType: hard
 
