@@ -12,23 +12,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/cli@npm:^4.8.0":
-  version: 4.9.0
-  resolution: "@axe-core/cli@npm:4.9.0"
+"@axe-core/cli@npm:^4.9.1":
+  version: 4.9.1
+  resolution: "@axe-core/cli@npm:4.9.1"
   dependencies:
-    "@axe-core/webdriverjs": ^4.9.0
-    axe-core: ~4.9.0
+    "@axe-core/webdriverjs": ^4.9.1
+    axe-core: ~4.9.1
     chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
-    selenium-webdriver: ~4.17.0
+    selenium-webdriver: ~4.20.0
   bin:
     axe: dist/src/bin/cli.js
-  checksum: 9d28099bf3f1c8c281e7ed2c3fb06f006c19fb7823db8a72e758ce795b3f5cf556417d3b000c272b45fa0ea8e397caebcf917a505ccc85150abd00ca47b096b8
+  checksum: 8266cd857c08c7cf8aae0f294f398cf47a624050d2a759fecc11d41804572b16d3b000885c840443754425f9009c9d510062ef0e8148efc3070103b0ad0d58c8
   languageName: node
   linkType: hard
 
-"@axe-core/puppeteer@npm:^4.8.0":
+"@axe-core/puppeteer@npm:^4.9.1":
   version: 4.9.1
   resolution: "@axe-core/puppeteer@npm:4.9.1"
   dependencies:
@@ -39,14 +39,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.9.0":
-  version: 4.9.0
-  resolution: "@axe-core/webdriverjs@npm:4.9.0"
+"@axe-core/webdriverjs@npm:^4.9.1":
+  version: 4.9.1
+  resolution: "@axe-core/webdriverjs@npm:4.9.1"
   dependencies:
-    axe-core: ~4.9.0
+    axe-core: ~4.9.1
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: b2478211c611457c3b9c67ff6fabdd3bebc1ad52e1466353c1cf5933975f45c8d1e0f17d4eeb8e0c8ab9151c3da4178db5088d4b8cb93bdb7af784b5ce59dc7f
+  checksum: 15dbcaef6bbad203e308392df46d9c3d3788c91fd2815a0e023796ba0716908679720f196b1bfdea1ff3f718f14fefeac0ad4f961e7d6e78ae5113ec31cdad78
   languageName: node
   linkType: hard
 
@@ -2521,8 +2521,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
-    "@axe-core/cli": ^4.8.0
-    "@axe-core/puppeteer": ^4.8.0
+    "@axe-core/cli": ^4.9.1
+    "@axe-core/puppeteer": ^4.9.1
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^27.4.0
     "@types/lodash": ^4.14.136
@@ -8433,14 +8433,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"selenium-webdriver@npm:~4.17.0":
-  version: 4.17.0
-  resolution: "selenium-webdriver@npm:4.17.0"
+"selenium-webdriver@npm:~4.20.0":
+  version: 4.20.0
+  resolution: "selenium-webdriver@npm:4.20.0"
   dependencies:
     jszip: ^3.10.1
-    tmp: ^0.2.1
-    ws: ">=8.14.2"
-  checksum: 0f559c8cf5b3e6c366083fb8822305f7fb7beac58a40ea4f536ff2a2f9a8adbdd93d68ad78c965c34a3814bc0ce2efbbcde23faa8686d01914ec32596bcde0de
+    tmp: ^0.2.3
+    ws: ">=8.16.0"
+  checksum: 0831eaa9ac77eb65b6af786cf822b32bd6e92dc44911a22e1e0270d30be2746687e9a594407c0df72e95a7377848142772ebe72858c3e4e7955adc0df6b661b5
   languageName: node
   linkType: hard
 
@@ -9219,12 +9219,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tmp@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "tmp@npm:0.2.1"
-  dependencies:
-    rimraf: ^3.0.0
-  checksum: 8b1214654182575124498c87ca986ac53dc76ff36e8f0e0b67139a8d221eaecfdec108c0e6ec54d76f49f1f72ab9325500b246f562b926f85bcdfca8bf35df9e
+"tmp@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "tmp@npm:0.2.3"
+  checksum: 73b5c96b6e52da7e104d9d44afb5d106bb1e16d9fa7d00dbeb9e6522e61b571fbdb165c756c62164be9a3bbe192b9b268c236d370a2a0955c7689cd2ae377b95
   languageName: node
   linkType: hard
 
@@ -9885,9 +9883,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:>=8.14.2":
-  version: 8.16.0
-  resolution: "ws@npm:8.16.0"
+"ws@npm:>=8.16.0":
+  version: 8.17.1
+  resolution: "ws@npm:8.17.1"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -9896,7 +9894,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: feb3eecd2bae82fa8a8beef800290ce437d8b8063bdc69712725f21aef77c49cb2ff45c6e5e7fce622248f9c7abaee506bae0a9064067ffd6935460c7357321b
+  checksum: 442badcce1f1178ec87a0b5372ae2e9771e07c4929a3180321901f226127f252441e8689d765aa5cfba5f50ac60dd830954afc5aeae81609aefa11d3ddf5cecf
   languageName: node
   linkType: hard
 
