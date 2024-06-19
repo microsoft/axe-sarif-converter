@@ -41,7 +41,7 @@ This repo uses [semantic release](https://github.com/semantic-release/semantic-r
 
 ### Updating axe-core version
 
-This package attempts to maintain backwards compatibility with axe-core versions ^4.9.1. We maintain
+This package attempts to maintain backwards compatibility with axe-core versions ^3.2.2. We maintain
 test cases using pinned output from multiple axe-core versions under `/src/test-resources/`, so updating
 the version of axe-core we support involves generating new output for the new versions.
 
