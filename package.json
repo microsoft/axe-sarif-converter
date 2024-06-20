@@ -31,7 +31,7 @@
         "@typescript-eslint/eslint-plugin": "^6.7.4",
         "@typescript-eslint/parser": "^6.4.0",
         "eslint": "^8.42.0",
-        "eslint-plugin-security": "^1.4.0",
+        "eslint-plugin-security": "^3.0.1",
         "jest": "^27.0.3",
         "jest-junit": "^16.0.0",
         "license-check-and-add": "^4.0.1",
