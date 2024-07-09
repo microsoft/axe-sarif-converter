@@ -38,7 +38,7 @@
         "lodash": "^4.17.15",
         "prettier": "^3.0.0",
         "puppeteer": "^13.7.0",
-        "rimraf": "^5.0.0",
+        "rimraf": "^6.0.0",
         "semantic-release": "^22.0.0",
         "ts-jest": "^27.0.2",
         "typemoq": "^2.1.0",
