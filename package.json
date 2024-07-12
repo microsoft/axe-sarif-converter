@@ -42,7 +42,7 @@
         "semantic-release": "^22.0.0",
         "ts-jest": "^27.0.2",
         "typemoq": "^2.1.0",
-        "typescript": "^4.0.2"
+        "typescript": "^5.5.3"
     },
     "resolutions": {
         "ansi-regex@^4.1.0": "^5.0.1",
