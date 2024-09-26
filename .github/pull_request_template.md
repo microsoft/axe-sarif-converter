@@ -16,6 +16,7 @@
 <!-- If a checklist item is not applicable to this change, write "n/a" in the checkbox -->
 - [ ] PR title respects [Conventional Commits](https://www.conventionalcommits.org) (starts with `fix:`, `feat:`, etc, and is suitable for user-facing release notes)
 - [ ] PR contains no breaking changes, **OR** description of both PR **and final merge commit** starts with `BREAKING CHANGE:`
+- [ ] Verify PR title and final merge commit contain space after `:` for example `feat(feature): feature title` otherwise it will not be considered by semantic-release for release.
 - [ ] (if applicable) Addresses issue: #0000
 - [ ] Added relevant unit tests for your changes
 - [ ] Ran `yarn precheckin`
