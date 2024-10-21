@@ -2109,10 +2109,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.2":
-  version: 18.16.2
-  resolution: "@types/node@npm:18.16.2"
-  checksum: 7ad66d23b3b93885a9f879bff98e0196790ad35589b47a3d81b52db969ad17ee298082020296df5166c2d72d3cd6a4b9ab34d254483637d967944a4b3e6febdb
+"@types/node@npm:^18.19.57":
+  version: 18.19.57
+  resolution: "@types/node@npm:18.19.57"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: d7be072513df5f6b14384dc284561ddf4e6393ce85b8fd3cc9ab0c0a7abd03bfdab6519548dab7c743ec9dfca9ce686dde2db0fbbf1d357e0822b4f99a54b193
   languageName: node
   linkType: hard
 
@@ -2707,7 +2709,7 @@ __metadata:
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^29.5.12
     "@types/lodash": ^4.14.136
-    "@types/node": ^18.16.2
+    "@types/node": ^18.19.57
     "@types/sarif": ">=2.1.1 <=2.1.8"
     "@types/yargs": ^17.0.8
     "@typescript-eslint/eslint-plugin": ^6.7.4
@@ -9678,6 +9680,13 @@ __metadata:
     buffer: ^5.2.1
     through: ^2.3.8
   checksum: 0e67c4a91f4fa0fc7b4045f8b914d3498c2fc2e8c39c359977708ec85ac6d6029840e97f508675fdbdf21fcb8d276ca502043406f3682b70f075e69aae626d1d
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
   languageName: node
   linkType: hard
 
