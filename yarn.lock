@@ -23,18 +23,19 @@ __metadata:
   linkType: hard
 
 "@axe-core/cli@npm:^4.9.0":
-  version: 4.9.1
-  resolution: "@axe-core/cli@npm:4.9.1"
+  version: 4.10.0
+  resolution: "@axe-core/cli@npm:4.10.0"
   dependencies:
-    "@axe-core/webdriverjs": ^4.9.1
-    axe-core: ~4.9.1
+    "@axe-core/webdriverjs": ^4.10.0
+    axe-core: ~4.10.0
     chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
-    selenium-webdriver: ~4.20.0
+    dotenv: ^16.4.5
+    selenium-webdriver: ~4.22.0
   bin:
     axe: dist/src/bin/cli.js
-  checksum: 8266cd857c08c7cf8aae0f294f398cf47a624050d2a759fecc11d41804572b16d3b000885c840443754425f9009c9d510062ef0e8148efc3070103b0ad0d58c8
+  checksum: 4c765367923b6a628669dcb64ca75d19420cbbb945c58b55428fbe9fe29d5733d4af4089b2bc171e0848224dbb84ff2924cea56ac033607d3a49d43e9042b005
   languageName: node
   linkType: hard
 
@@ -49,14 +50,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.9.1":
-  version: 4.9.1
-  resolution: "@axe-core/webdriverjs@npm:4.9.1"
+"@axe-core/webdriverjs@npm:^4.10.0":
+  version: 4.10.0
+  resolution: "@axe-core/webdriverjs@npm:4.10.0"
   dependencies:
-    axe-core: ~4.9.1
+    axe-core: ~4.10.0
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 15dbcaef6bbad203e308392df46d9c3d3788c91fd2815a0e023796ba0716908679720f196b1bfdea1ff3f718f14fefeac0ad4f961e7d6e78ae5113ec31cdad78
+  checksum: 0bfd0f8fe095cc2666f0c7c437d8b04459f0e7e19caf7d512cb0215c802e25e5c8f5cf59541526f93ae46b7e9884e939000590bd16d1d8b020ee93e245c73344
   languageName: node
   linkType: hard
 
@@ -3856,6 +3857,13 @@ __metadata:
   dependencies:
     is-obj: ^2.0.0
   checksum: d5775790093c234ef4bfd5fbe40884ff7e6c87573e5339432870616331189f7f5d86575c5b5af2dcf0f61172990f4f734d07844b1f23482fff09e3c4bead05ea
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
   languageName: node
   linkType: hard
 
@@ -8664,14 +8672,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"selenium-webdriver@npm:~4.20.0":
-  version: 4.20.0
-  resolution: "selenium-webdriver@npm:4.20.0"
+"selenium-webdriver@npm:~4.22.0":
+  version: 4.22.0
+  resolution: "selenium-webdriver@npm:4.22.0"
   dependencies:
     jszip: ^3.10.1
     tmp: ^0.2.3
     ws: ">=8.16.0"
-  checksum: 0831eaa9ac77eb65b6af786cf822b32bd6e92dc44911a22e1e0270d30be2746687e9a594407c0df72e95a7377848142772ebe72858c3e4e7955adc0df6b661b5
+  checksum: 6643ab004995c90f1747f1ffe5d305adf9b4d6360cb7d98c8335d4c3bef143a69ed153861dfa36c68d2e3433aa93bef5eb1c5f34cc8995dd4d2a526bcb1ec863
   languageName: node
   linkType: hard
 
