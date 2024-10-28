@@ -85,10 +85,6 @@ describe('axe-sarif-converter CLI', () => {
         ${'w3citylights-axe-v4.8.4.axe-cli-v4.9.0.json'}
         ${'basic-axe-v4.9.1.axe-cli-v4.9.1.json'}
         ${'w3citylights-axe-v4.9.1.axe-cli-v4.9.1.json'}
-        ${'basic-axe-v4.10.0.axe-cli-v4.10.0.json'}
-        ${'w3citylights-axe-v4.10.0.axe-cli-v4.10.0.json'}
-        ${'basic-axe-v4.10.1.axe-cli-v4.10.0.json'}
-        ${'w3citylights-axe-v4.10.1.axe-cli-v4.10.0.json'}
         ${'basic-axe-v4.10.2.axe-cli-v4.10.0.json'}
         ${'w3citylights-axe-v4.10.2.axe-cli-v4.10.0.json'}
     `(

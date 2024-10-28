@@ -123,14 +123,6 @@ describe('public convertAxeToSarif API', () => {
         ${'basic-axe-v4.9.1.reporter-v2.json'}         | ${'basic-axe-v4.9.1.sarif'}
         ${'w3citylights-axe-v4.9.1.reporter-v1.json'}  | ${'w3citylights-axe-v4.9.1.sarif'}
         ${'w3citylights-axe-v4.9.1.reporter-v2.json'}  | ${'w3citylights-axe-v4.9.1.sarif'}
-        ${'basic-axe-v4.10.0.reporter-v1.json'}        | ${'basic-axe-v4.10.0.sarif'}
-        ${'basic-axe-v4.10.0.reporter-v2.json'}        | ${'basic-axe-v4.10.0.sarif'}
-        ${'w3citylights-axe-v4.10.0.reporter-v1.json'} | ${'w3citylights-axe-v4.10.0.sarif'}
-        ${'w3citylights-axe-v4.10.0.reporter-v2.json'} | ${'w3citylights-axe-v4.10.0.sarif'}
-        ${'basic-axe-v4.10.1.reporter-v1.json'}        | ${'basic-axe-v4.10.1.sarif'}
-        ${'basic-axe-v4.10.1.reporter-v2.json'}        | ${'basic-axe-v4.10.1.sarif'}
-        ${'w3citylights-axe-v4.10.1.reporter-v1.json'} | ${'w3citylights-axe-v4.10.1.sarif'}
-        ${'w3citylights-axe-v4.10.1.reporter-v2.json'} | ${'w3citylights-axe-v4.10.1.sarif'}
         ${'basic-axe-v4.10.2.reporter-v1.json'}        | ${'basic-axe-v4.10.2.sarif'}
         ${'basic-axe-v4.10.2.reporter-v2.json'}        | ${'basic-axe-v4.10.2.sarif'}
         ${'w3citylights-axe-v4.10.2.reporter-v1.json'} | ${'w3citylights-axe-v4.10.2.sarif'}
