@@ -26,7 +26,7 @@
         "@axe-core/puppeteer": "^4.9.0",
         "@types/jest": "^29.5.12",
         "@types/lodash": "^4.14.136",
-        "@types/node": "^18.16.2",
+        "@types/node": "^18.19.57",
         "@types/yargs": "^17.0.8",
         "@typescript-eslint/eslint-plugin": "^6.7.4",
         "@typescript-eslint/parser": "^6.4.0",
@@ -43,7 +43,7 @@
         "semantic-release": "^22.0.0",
         "ts-jest": "^29.2.3",
         "typemoq": "^2.1.0",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.3"
     },
     "resolutions": {
         "ansi-regex@^4.1.0": "^5.0.1",
