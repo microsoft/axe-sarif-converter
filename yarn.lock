@@ -40,13 +40,13 @@ __metadata:
   linkType: hard
 
 "@axe-core/puppeteer@npm:^4.10.0":
-  version: 4.10.0
-  resolution: "@axe-core/puppeteer@npm:4.10.0"
+  version: 4.10.1
+  resolution: "@axe-core/puppeteer@npm:4.10.1"
   dependencies:
-    axe-core: ~4.10.0
+    axe-core: ~4.10.2
   peerDependencies:
     puppeteer: ">=1.10.0"
-  checksum: 6dbf293ed7afc66c0afc812a0ae4d66e01be00ef14ff8d491de7101b79875d4a391360334efc8e73ff5107f170cd52e665be9e22228ab0daf395729ab0cda3ef
+  checksum: d7f2f65978cac9082f03a9ca746b5775a398a4c894f824674ab0e1dc77a9f5c45e09fc26e141e2ca5344b5d45c3db1d803c5b086cca92fab7d52de70fa7fc7f5
   languageName: node
   linkType: hard
 
