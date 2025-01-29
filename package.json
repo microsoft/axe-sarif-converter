@@ -11,9 +11,9 @@
         "LICENSE",
         "README.md"
     ],
-  "engines": {
-    "node": ">= 20.17.0"
-  },
+    "engines": {
+        "node": ">= 20.17.0"
+    },
     "packageManager": "yarn@3.5.0",
     "dependencies": {
         "@puppeteer/browsers": "^2.1.0",
