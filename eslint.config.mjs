@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 import tseslint from 'typescript-eslint';
 import parser from '@typescript-eslint/parser';
 import security from 'eslint-plugin-security';
