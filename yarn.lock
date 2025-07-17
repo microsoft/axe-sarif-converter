@@ -1752,19 +1752,19 @@ __metadata:
   linkType: hard
 
 "@puppeteer/browsers@npm:^2.1.0":
-  version: 2.10.0
-  resolution: "@puppeteer/browsers@npm:2.10.0"
+  version: 2.10.6
+  resolution: "@puppeteer/browsers@npm:2.10.6"
   dependencies:
-    debug: ^4.4.0
+    debug: ^4.4.1
     extract-zip: ^2.0.1
     progress: ^2.0.3
     proxy-agent: ^6.5.0
-    semver: ^7.7.1
-    tar-fs: ^3.0.8
+    semver: ^7.7.2
+    tar-fs: ^3.1.0
     yargs: ^17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: a8f8fcb1d2a660ca1d45e29e4bfe072923f51e5a2b2c28df010f22d563bd90e236f2eb0fdc043e638148d7308584cd15010373412a225dc849b6c95df2808f74
+  checksum: c3ea191ebc733cbc367328f537974300a05b8d11a8bc5aa58498ab6ee5a6b3b321b0821178298aa13f28264f1937b4fdae732dd903f99d6d8b89b9d6b4071a03
   languageName: node
   linkType: hard
 
@@ -3713,15 +3713,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "debug@npm:4.4.0"
+"debug@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "debug@npm:4.4.1"
   dependencies:
     ms: ^2.1.3
   peerDependenciesMeta:
     supports-color:
       optional: true
-  checksum: fb42df878dd0e22816fc56e1fdca9da73caa85212fbe40c868b1295a6878f9101ae684f4eeef516c13acfc700f5ea07f1136954f43d4cd2d477a811144136479
+  checksum: a43826a01cda685ee4cec00fb2d3322eaa90ccadbef60d9287debc2a886be3e835d9199c80070ede75a409ee57828c4c6cd80e4b154f2843f0dc95a570dc0729
   languageName: node
   linkType: hard
 
@@ -8847,15 +8847,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.7.1":
-  version: 7.7.1
-  resolution: "semver@npm:7.7.1"
-  bin:
-    semver: bin/semver.js
-  checksum: 586b825d36874007c9382d9e1ad8f93888d8670040add24a28e06a910aeebd673a2eb9e3bf169c6679d9245e66efb9057e0852e70d9daa6c27372aab1dda7104
-  languageName: node
-  linkType: hard
-
 "semver@npm:^7.7.2":
   version: 7.7.2
   resolution: "semver@npm:7.7.2"
@@ -9415,9 +9406,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar-fs@npm:^3.0.8":
-  version: 3.0.8
-  resolution: "tar-fs@npm:3.0.8"
+"tar-fs@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "tar-fs@npm:3.1.0"
   dependencies:
     bare-fs: ^4.0.1
     bare-path: ^3.0.0
@@ -9428,7 +9419,7 @@ __metadata:
       optional: true
     bare-path:
       optional: true
-  checksum: 5bebadd68e7a10cc3aa9c30b579c295e158cef7b1f42a73ee1bb1992925027aa8ef6cbcdb0d03e202e7f3850799391de30adf2585f7f240b606faa65df1a6b68
+  checksum: 279c6c4ee1c53593bad4e5ae044ff14b2210d68f559097ac48bf0638698f740f4b894ab22fa1860f5f9f0be8c4003bf16c3614759aeebf50ee3593c49213c357
   languageName: node
   linkType: hard
 
