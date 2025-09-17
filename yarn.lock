@@ -22,12 +22,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/cli@npm:^4.10.0":
-  version: 4.10.1
-  resolution: "@axe-core/cli@npm:4.10.1"
+"@axe-core/cli@npm:4.10.2":
+  version: 4.10.2
+  resolution: "@axe-core/cli@npm:4.10.2"
   dependencies:
-    "@axe-core/webdriverjs": ^4.10.1
-    axe-core: ~4.10.2
+    "@axe-core/webdriverjs": ^4.10.2
+    axe-core: ~4.10.3
     chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
@@ -35,11 +35,11 @@ __metadata:
     selenium-webdriver: ~4.22.0
   bin:
     axe: dist/src/bin/cli.js
-  checksum: 6948fb5fa45581e9293f89c16e8aea8513eb9a7da9ff81d73bd430b8296e810b92222491ba1c497c8bbf6650c1c3cdd5a9f7eccb28d867452bdfdc50a87e6f70
+  checksum: a1137d0169be97f073467b0670e70f4925a019d7118f5b567c46165ccfc2cc880258fa5dc8787621b1775fcf12b1d6954c1e7aff883bdc1ed0b44374561e18df
   languageName: node
   linkType: hard
 
-"@axe-core/puppeteer@npm:^4.10.0":
+"@axe-core/puppeteer@npm:4.10.2":
   version: 4.10.2
   resolution: "@axe-core/puppeteer@npm:4.10.2"
   dependencies:
@@ -50,14 +50,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.10.1":
-  version: 4.10.1
-  resolution: "@axe-core/webdriverjs@npm:4.10.1"
+"@axe-core/webdriverjs@npm:^4.10.2":
+  version: 4.10.2
+  resolution: "@axe-core/webdriverjs@npm:4.10.2"
   dependencies:
-    axe-core: ~4.10.2
+    axe-core: ~4.10.3
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 4bb05b77d1424293f791d15e1e660a41cfc6171ff4aba456f8ab098889abd07ab931d89060791677e473d042265aba004f711056bdc9606cb5a37e91074d0eb7
+  checksum: 16afa3ab8be4c155105624540dfaa8d954d6f6bf530883069d42221274a62d2c4c6bb052de6838eced942365890c3bb5b26bc567625b2ad3c4a524a7e7485495
   languageName: node
   linkType: hard
 
@@ -2711,8 +2711,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
-    "@axe-core/cli": ^4.10.0
-    "@axe-core/puppeteer": ^4.10.0
+    "@axe-core/cli": 4.10.2
+    "@axe-core/puppeteer": 4.10.2
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^29.5.12
     "@types/lodash": ^4.14.136
