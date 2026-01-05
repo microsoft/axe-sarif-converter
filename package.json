@@ -52,7 +52,7 @@
         "ansi-regex@^4.1.0": "^5.0.1",
         "axe-core": "4.10.2",
         "chromedriver": "^119.0.1",
-        "license-check-and-add/globby": "^14.0.0"
+        "license-check-and-add/globby": "^11.0.0"
     },
     "scripts": {
         "prebuild": "yarn clean",

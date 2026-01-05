@@ -10,17 +10,14 @@ Licensed under the MIT License.
 To get started working on the project:
 
 1. Install dependencies:
-
     - Install [Node.js](https://nodejs.org/en/download/) (LTS version)
     - `npm install -g yarn`
     - `yarn install`
 
 1. Run all build, lint, and test steps:
-
     - `yarn precheckin`
 
 1. Run the CLI tool with your changes:
-
     - `yarn build`
     - `node dist/cli.js`
     - Alternately, register a linked global `axe-sarif-converter` command with `npm install && npm link` (yarn doesn't work for this; see [yarnpkg/yarn#1585](https://github.com/yarnpkg/yarn/issues/1585))
