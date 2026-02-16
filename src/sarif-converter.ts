@@ -193,9 +193,10 @@ export class SarifConverter {
         const logicalLocations: Sarif.LogicalLocation[] = [
             this.formatLogicalLocation(selector),
         ];
-        // casting node as "any" works around axe-core/#1636
-        if ((node as any).xpath) {
-            const nodeXpath: string = (node as any).xpath.join(';');
+        // casting node works around axe-core/#1636
+        const nodeWithXpath = node as unknown as { xpath?: string[] };
+        if (nodeWithXpath.xpath) {
+            const nodeXpath: string = nodeWithXpath.xpath.join(';');
             logicalLocations.push(this.formatLogicalLocation(nodeXpath));
         }
         return logicalLocations;

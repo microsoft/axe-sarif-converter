@@ -5,7 +5,7 @@ import * as child_process from 'child_process';
 import * as path from 'path';
 import * as url from 'url';
 
-const axeCoreVersion = (axe as any).version;
+const axeCoreVersion = (axe as unknown as { version: string }).version;
 const axeSourcePath = require.resolve('axe-core/axe.min.js');
 const rootDir = path.join(__dirname, '..', '..', '..');
 const testResourcesDir = path.join(rootDir, 'src', 'test-resources');

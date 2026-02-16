@@ -9,11 +9,21 @@
  * team members.
  */
 
-/* eslint-disable @typescript-eslint/no-require-imports */
-const { Browser, install } = require('@puppeteer/browsers');
-const path = require('path');
-const { promises: fs } = require('fs');
-/* eslint-enable @typescript-eslint/no-require-imports */
+import { Dirent, promises as fs } from 'fs';
+import * as path from 'path';
+
+// Using require for @puppeteer/browsers because its .d.ts files
+// require esModuleInterop which this project doesn't enable
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { Browser, install } = require('@puppeteer/browsers') as {
+    Browser: { CHROME: string };
+    install: (options: {
+        browser: string;
+        cacheDir: string;
+        buildId: string;
+    }) => Promise<{ buildId: string }>;
+};
+
 let chromeVersion = process.argv.length > 2 ? process.argv[2] : '115.0.5755.0';
 const rootDir = path.join(__dirname, '..', '..', '..');
 const homeDrive = process.env.HOMEDRIVE ?? 'C:';
@@ -23,14 +33,11 @@ const cacheDir: string = path.join(rootDir, 'dist');
 const srcDir: string = path.join(cacheDir, 'chrome', `win64-${chromeVersion}`, 'chrome-win64');
 
 async function installChrome(): Promise<void> {
-
-    const options = {
+    const browser = await install({
         browser: Browser.CHROME,
         cacheDir,
-        buildId: chromeVersion
-    } as any;
-
-    const browser = await install(options);
+        buildId: chromeVersion,
+    });
     chromeVersion = browser.buildId;
 }
 
@@ -40,15 +47,10 @@ export async function installAndRelocateChrome(): Promise<void> {
     await copyContentsToExpectedLoc(srcDir, destDir);
 }
 
-interface DirEntry {
-    name: string;
-    isDirectory(): boolean;
-}
-
 async function copyContentsToExpectedLoc(src: string, dest: string): Promise<void> {
     await fs.mkdir(dest, {recursive: true});
-    const files = await fs.readdir(src, {withFileTypes: true});
-    for (const file of files as DirEntry[]) {
+    const files: Dirent[] = await fs.readdir(src, {withFileTypes: true});
+    for (const file of files) {
         const srcPath: string = path.join(src, file.name);
         const destPath: string = path.join(dest, file.name);
         if(file.isDirectory()){
@@ -57,7 +59,6 @@ async function copyContentsToExpectedLoc(src: string, dest: string): Promise<voi
             await fs.copyFile(srcPath, destPath);
         }
     }
-
 }
 
 void installAndRelocateChrome();

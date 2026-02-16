@@ -7,7 +7,9 @@ describe('converter-property-provider', () => {
     describe('getConverterProperties', () => {
         it('returns the converter properties as a Sarif.Run["conversion"', () => {
             // eslint-disable-next-line @typescript-eslint/no-require-imports
-            const packagejson = require('../package.json');
+            const packagejson = require('../package.json') as {
+                version: string;
+            };
             const version = packagejson.version;
             const expectedResults: Sarif.Run['conversion'] = {
                 tool: {

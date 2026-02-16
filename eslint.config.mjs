@@ -28,12 +28,6 @@ export default tseslint.config(
                 'error',
                 { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
             ],
-            // These rules are disabled because the codebase intentionally
-            // uses `any` in several places (test utilities, type converters).
-            '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/no-unsafe-assignment': 'off',
-            '@typescript-eslint/no-unsafe-member-access': 'off',
-            '@typescript-eslint/no-unsafe-call': 'off',
             // These security rules produce false positives for this codebase.
             'security/detect-object-injection': 'off',
             'security/detect-non-literal-fs-filename': 'off',

@@ -44,12 +44,16 @@ describe('environment-data-provider', () => {
     });
 
     describe('getEnvironmentDataFromEnvironment in axe-like environment', () => {
+        const globalWithAxe = global as unknown as {
+            axe?: { version: string };
+        };
+
         beforeAll(() => {
-            (global as any).axe = { version: 'stub_axe_version' };
+            globalWithAxe.axe = { version: 'stub_axe_version' };
         });
 
         afterAll(() => {
-            delete (global as any).axe;
+            delete globalWithAxe.axe;
         });
 
         it('returns an EnvironmentData object from environment data extracted from the environment', () => {

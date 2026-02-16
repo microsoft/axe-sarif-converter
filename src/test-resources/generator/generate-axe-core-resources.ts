@@ -10,7 +10,7 @@ import * as url from 'url';
 import { convertAxeToSarif } from '../../index';
 import { testResourceTimestampPlaceholder } from '../../test-resource-constants';
 
-const axeVersion: string = (axe as any).version;
+const axeVersion: string = (axe as unknown as { version: string }).version;
 const axeSource: string = axe.source
 const rootDir = path.join(__dirname, '..', '..', '..');
 const testResourcesDir = path.join(rootDir, 'src', 'test-resources');
@@ -28,18 +28,21 @@ async function newTestPage(browser: Puppeteer.Browser, url: string): Promise<Pup
     return page;
 }
 
-async function writeAxeResultFile(results: any, axeVersion: string, reporter: string, testUrlIdentifier: string) {
+async function writeAxeResultFile(results: unknown, axeVersion: string, reporter: string, testUrlIdentifier: string) {
     await writeResultFile(results, `${testUrlIdentifier}-axe-v${axeVersion}.reporter-${reporter}.json`);
 }
 
-async function writeResultFile(results: any, outputFileName: string) {
+async function writeResultFile(results: unknown, outputFileName: string) {
     const outputPath = path.join(testResourcesDir, outputFileName);
     console.log(`Writing test resource: ${outputPath}`);
     const resultsAsJson = JSON.stringify(results, null, 2);
     await fs.promises.writeFile(outputPath, resultsAsJson, {encoding: 'utf8'});
 }
 
-function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
+function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: {
+    timestamp?: string;
+    url?: string;
+}) {
     if (axeResults.timestamp != undefined) {
         axeResults.timestamp = testResourceTimestampPlaceholder;
     }

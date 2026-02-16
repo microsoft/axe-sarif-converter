@@ -82,10 +82,12 @@ const sarifLogs: Log[] = flatten(
 
         // tslint:disable-next-line: non-literal-fs-path
         const rawInputFileContents = fs.readFileSync(inputFilePath);
-        const inputFileJson = JSON.parse(rawInputFileContents.toString());
+        const inputFileJson: unknown = JSON.parse(
+            rawInputFileContents.toString(),
+        );
         if (Array.isArray(inputFileJson)) {
             // Treating as array of axe results, like @axe-core/cli produces
-            return inputFileJson.map(convertAxeToSarif);
+            return (inputFileJson as AxeResults[]).map(convertAxeToSarif);
         } else {
             // Treating as a single axe results object, like
             // JSON.stringify(await axe.run(...)) would produce
@@ -111,7 +113,12 @@ try {
         flag: argv.force ? 'w' : 'wx',
     });
 } catch (e) {
-    if (typeof e === 'object' && e != null && (e as any).code === 'EEXIST') {
+    if (
+        typeof e === 'object' &&
+        e !== null &&
+        'code' in e &&
+        e.code === 'EEXIST'
+    ) {
         exitWithErrorMessage(
             `Error: EEXIST: Output file ${argv['output-file']} already exists. Did you mean to use --force?`,
         );

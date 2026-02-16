@@ -16,6 +16,7 @@ import { AxeRawResult } from './axe-raw-result';
 import { SarifLog, convertAxeToSarif, sarifReporter } from './index';
 import { testResourceTimestampPlaceholder } from './test-resource-constants';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function readTestResourceJSON(testResourceFileName: string): any {
     const rawFileContents: string = fs.readFileSync(
         // Allowing for test-only code
@@ -130,10 +131,12 @@ describe('public convertAxeToSarif API', () => {
     `(
         'converts pinned v1/v2 input $inputFile to pinned output $outputFile',
         ({ inputFile, outputFile }) => {
-            const input: AxeResults = readTestResourceJSON(inputFile as string);
+            const input: AxeResults = readTestResourceJSON(
+                inputFile as string,
+            ) as AxeResults;
             const expectedOutput: SarifLog = readTestResourceJSON(
                 outputFile as string,
-            );
+            ) as SarifLog;
 
             const actualOutput: SarifLog = convertAxeToSarif(input);
 
@@ -181,10 +184,10 @@ describe('public sarifReporter API', () => {
             return new Promise<void>((resolve) => {
                 const input: AxeRawResult[] = readTestResourceJSON(
                     inputFile as string,
-                );
+                ) as AxeRawResult[];
                 const expectedOutput: SarifLog = readTestResourceJSON(
                     outputFile as string,
-                );
+                ) as SarifLog;
 
                 function callback(convertedSarifResults: SarifLog) {
                     normalizeEnvironmentDerivedSarifProperties(

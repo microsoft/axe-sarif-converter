@@ -27,7 +27,7 @@ export interface AxeRawNodeResult {
 
 export interface AxeRawCheckResult {
     id: string;
-    data?: any;
+    data?: unknown;
     relatedNodes: AxeRawNode[];
     impact: ImpactValue;
     message?: string;

@@ -28,8 +28,10 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-o irrelevant.sarif`);
             fail('Should have returned non-zero exit code');
-        } catch (e: any) {
-            expect(e.stderr).toMatch('Missing required argument: input-files');
+        } catch (e) {
+            expect((e as { stderr: string }).stderr).toMatch(
+                'Missing required argument: input-files',
+            );
         }
     });
 
@@ -37,8 +39,10 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-i irrelevant.json`);
             fail('Should have returned non-zero exit code');
-        } catch (e: any) {
-            expect(e.stderr).toMatch('Missing required argument: output-file');
+        } catch (e) {
+            expect((e as { stderr: string }).stderr).toMatch(
+                'Missing required argument: output-file',
+            );
         }
     });
 
@@ -110,7 +114,7 @@ describe('axe-sarif-converter CLI', () => {
 
             const outputJson = JSON.parse(
                 (await readFile(outputFile)).toString(),
-            );
+            ) as { runs: unknown[] };
             expect(outputJson.runs.length).toBe(1);
         },
     );
@@ -151,9 +155,10 @@ describe('axe-sarif-converter CLI', () => {
         try {
             await invokeCliWith(`-i ${basicAxeV2File} -o ${outputFile}`);
             fail('Should have returned non-zero exit code');
-        } catch (e: any) {
-            expect(e.code).toBeGreaterThan(0);
-            expect(e.stderr).toMatch('Did you mean to use --force?');
+        } catch (e) {
+            const execError = e as { code: number; stderr: string };
+            expect(execError.code).toBeGreaterThan(0);
+            expect(execError.stderr).toMatch('Did you mean to use --force?');
         }
 
         const outputFileContent = (await readFile(outputFile)).toString();
@@ -228,8 +233,8 @@ describe('axe-sarif-converter CLI', () => {
     async function deleteIfExists(path: string): Promise<void> {
         try {
             await unlink(path);
-        } catch (e: any) {
-            if (e.code != 'ENOENT') {
+        } catch (e) {
+            if ((e as NodeJS.ErrnoException).code != 'ENOENT') {
                 throw e;
             }
         }
@@ -238,8 +243,8 @@ describe('axe-sarif-converter CLI', () => {
     async function ensureDirectoryExists(path: string): Promise<void> {
         try {
             await mkdir(path);
-        } catch (e: any) {
-            if (e.code !== 'EEXIST') {
+        } catch (e) {
+            if ((e as NodeJS.ErrnoException).code !== 'EEXIST') {
                 throw e;
             }
         }
@@ -250,10 +255,12 @@ describe('axe-sarif-converter CLI', () => {
         expectedFile: string,
     ) {
         const actualContentBuffer = await readFile(actualFile);
-        const actualJSONContent = JSON.parse(actualContentBuffer.toString());
+        const actualJSONContent: unknown = JSON.parse(
+            actualContentBuffer.toString(),
+        );
 
         const expectedContentBuffer = await readFile(expectedFile);
-        const expectedJSONContent = JSON.parse(
+        const expectedJSONContent: unknown = JSON.parse(
             expectedContentBuffer.toString(),
         );
 

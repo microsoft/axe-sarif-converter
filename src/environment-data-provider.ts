@@ -19,7 +19,10 @@ export function getEnvironmentDataFromEnvironment(): EnvironmentData {
     // version of axe that is invoking us, which will usually be a *peer*
     // dependency, rather than using the version that axe-sarif-converter built
     // against as a child dependency.
-    const globalAxeVersion = (global as any).axe && (global as any).axe.version;
+    const globalWithAxe = global as unknown as {
+        axe?: { version: string };
+    };
+    const globalAxeVersion = globalWithAxe.axe?.version;
     if (!globalAxeVersion) {
         throw Error(
             'Could not infer axe version from global axe object. Are you running from the context of an axe reporter?',
