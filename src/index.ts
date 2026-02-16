@@ -18,9 +18,9 @@ export function convertAxeToSarif(axeResults: Axe.AxeResults): SarifLog {
 
 export function sarifReporter(
     rawResults: AxeRawResult[],
-    runOptions: Axe.RunOptions,
+    _runOptions: Axe.RunOptions,
     callback: (sarifResults: SarifLog) => void,
-) {
+): void {
     const converterOptions: ConverterOptions = {};
     const environmentData: EnvironmentData =
         getEnvironmentDataFromEnvironment();

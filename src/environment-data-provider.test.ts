@@ -12,9 +12,9 @@ import {
 describe('environment-data-provider', () => {
     describe('getEnvironmentDataFromResults', () => {
         it('returns an EnvironmentData object from environment data extracted from AxeResults', () => {
-            const stubTimestamp: string = 'stub_timestamp';
-            const stubTargetPageUrl: string = 'https://example.com';
-            const stubAxeVersion: string = 'stub_axe_version';
+            const stubTimestamp = 'stub_timestamp';
+            const stubTargetPageUrl = 'https://example.com';
+            const stubAxeVersion = 'stub_axe_version';
 
             const stubAxeResults: Axe.AxeResults = {
                 url: stubTargetPageUrl,

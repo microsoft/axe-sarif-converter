@@ -89,7 +89,7 @@ const sarifLogs: Log[] = flatten(
         } else {
             // Treating as a single axe results object, like
             // JSON.stringify(await axe.run(...)) would produce
-            return [convertAxeToSarif(inputFileJson as any as AxeResults)];
+            return [convertAxeToSarif(inputFileJson as AxeResults)];
         }
     }),
 );

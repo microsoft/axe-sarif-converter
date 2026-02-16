@@ -23,26 +23,20 @@ export default tseslint.config(
             },
         },
         rules: {
+            // Allow underscore-prefixed unused args (e.g., _options)
+            '@typescript-eslint/no-unused-vars': [
+                'error',
+                { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+            ],
+            // These rules are disabled because the codebase intentionally
+            // uses `any` in several places (test utilities, type converters).
             '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/no-inferrable-types': 'off',
-            '@typescript-eslint/no-unnecessary-type-assertion': 'off',
-            '@typescript-eslint/no-non-null-assertion': 'off',
-            '@typescript-eslint/no-unsafe-member-access': 'off',
-            '@typescript-eslint/restrict-template-expressions': 'off',
             '@typescript-eslint/no-unsafe-assignment': 'off',
-            '@typescript-eslint/no-floating-promises': 'off',
-            '@typescript-eslint/no-empty-function': 'off',
-            '@typescript-eslint/no-var-requires': 'off',
-            '@typescript-eslint/no-require-imports': 'off',
-            '@typescript-eslint/restrict-plus-operands': 'off',
-            '@typescript-eslint/no-unsafe-return': 'off',
-            '@typescript-eslint/explicit-module-boundary-types': 'off',
-            '@typescript-eslint/no-unused-vars': 'off',
+            '@typescript-eslint/no-unsafe-member-access': 'off',
             '@typescript-eslint/no-unsafe-call': 'off',
+            // These security rules produce false positives for this codebase.
             'security/detect-object-injection': 'off',
             'security/detect-non-literal-fs-filename': 'off',
-            'no-var': 'off',
-            'prefer-const': 'off',
         },
     },
 );

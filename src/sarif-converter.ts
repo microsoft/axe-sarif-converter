@@ -60,7 +60,7 @@ export class SarifConverter {
 
     private convertRun(
         results: Axe.AxeResults,
-        options: ConverterOptions,
+        _options: ConverterOptions,
     ): Sarif.Run {
         const resultToRuleConverter: ResultToRuleConverter =
             ResultToRuleConverter.fromV2Results(
@@ -195,7 +195,7 @@ export class SarifConverter {
         ];
         // casting node as "any" works around axe-core/#1636
         if ((node as any).xpath) {
-            let nodeXpath: string = (node as any).xpath.join(';');
+            const nodeXpath: string = (node as any).xpath.join(';');
             logicalLocations.push(this.formatLogicalLocation(nodeXpath));
         }
         return logicalLocations;

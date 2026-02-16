@@ -125,7 +125,7 @@ describe('axe-sarif-converter CLI', () => {
 
         expect(output.stderr).toBe('');
         expect(output.stdout).toBe('');
-        expectSameJSONContent(outputFile, basicSarifFile);
+        await expectSameJSONContent(outputFile, basicSarifFile);
     });
 
     it('supports basic conversion with long-form i/o args', async () => {
@@ -138,7 +138,7 @@ describe('axe-sarif-converter CLI', () => {
 
         expect(output.stderr).toBe('');
         expect(output.stdout).toBe('');
-        expectSameJSONContent(outputFile, basicSarifFile);
+        await expectSameJSONContent(outputFile, basicSarifFile);
     });
 
     it("doesn't overwrite existing files by default", async () => {
@@ -166,7 +166,7 @@ describe('axe-sarif-converter CLI', () => {
 
         await invokeCliWith(`-i ${basicAxeV2File} -o ${outputFile} ${arg}`);
 
-        expectSameJSONContent(outputFile, basicSarifFile);
+        await expectSameJSONContent(outputFile, basicSarifFile);
     });
 
     it.each(['-v', '--verbose'])('emits verbose output', async (verboseArg) => {
@@ -184,7 +184,7 @@ describe('axe-sarif-converter CLI', () => {
         expect(output.stdout).toContain(basicAxeV2File);
         expect(output.stdout).toContain(outputFile);
 
-        expectSameJSONContent(outputFile, basicSarifFile);
+        await expectSameJSONContent(outputFile, basicSarifFile);
     });
 
     it.each(['-p', '--pretty'])('pretty-prints', async (prettyArg) => {

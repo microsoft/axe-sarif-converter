@@ -143,6 +143,7 @@ describe('public convertAxeToSarif API', () => {
 });
 
 // This initializes global state that the reporter API assumes is available
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 require('axe-core');
 
 describe('public sarifReporter API', () => {
@@ -150,7 +151,7 @@ describe('public sarifReporter API', () => {
 
     // Normalized values are the pinned expectations from generated test-resources files
     function normalizeEnvironmentDerivedSarifProperties(sarif: SarifLog): void {
-        sarif.runs[0]!.invocations!.forEach((i) => {
+        sarif.runs[0].invocations?.forEach((i) => {
             i.endTimeUtc = testResourceTimestampPlaceholder;
             i.startTimeUtc = testResourceTimestampPlaceholder;
         });

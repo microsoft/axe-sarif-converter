@@ -20,7 +20,7 @@ export class WCAGLinkDataIndexer {
     }
 
     private mapWcagTagToTaxaIndex(): DictionaryStringTo<number> {
-        let wcagTagsToTaxaIndices: DictionaryStringTo<number> = {};
+        const wcagTagsToTaxaIndices: DictionaryStringTo<number> = {};
         for (let i = 0; i < this.sortedWcagTags.length; i++) {
             wcagTagsToTaxaIndices[this.sortedWcagTags[i]] = i;
         }

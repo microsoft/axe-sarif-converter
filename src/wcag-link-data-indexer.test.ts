@@ -5,8 +5,8 @@ import { WCAGLinkData } from './wcag-link-data';
 import { WCAGLinkDataIndexer } from './wcag-link-data-indexer';
 
 describe('WCAGLinkDataIndexer', () => {
-    var tagsToWcagLinkDataStub: DictionaryStringTo<WCAGLinkData>;
-    var wcagLinkDataIndexer: WCAGLinkDataIndexer;
+    let tagsToWcagLinkDataStub: DictionaryStringTo<WCAGLinkData>;
+    let wcagLinkDataIndexer: WCAGLinkDataIndexer;
     beforeAll(() => {
         tagsToWcagLinkDataStub = {
             wcag1: createWcagLinkDataObject('1', 'stub_url_1', 'stub_title_1'),

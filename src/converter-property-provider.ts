@@ -3,7 +3,8 @@
 import * as Sarif from 'sarif';
 
 export function getConverterProperties(): Sarif.Run['conversion'] {
-    var packagejson = require('../package.json');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const packagejson = require('../package.json');
     const version = packagejson.version;
     return {
         tool: {

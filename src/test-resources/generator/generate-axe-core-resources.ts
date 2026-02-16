@@ -99,4 +99,4 @@ async function generateResources() {
     await browser.close();
 }
 
-generateResources();
+void generateResources();

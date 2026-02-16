@@ -32,9 +32,9 @@ describe('SarifConverter', () => {
         const stubArtifactProperties: Sarif.Artifact[] = [
             { encoding: 'stub_encoding' },
         ];
-        const stubTimestamp: string = 'stub_timestamp';
-        const stubTargetPageUrl: string = 'stub_url';
-        const stubAxeVersion: string = 'stub_axe_version';
+        const stubTimestamp = 'stub_timestamp';
+        const stubTargetPageUrl = 'stub_url';
+        const stubAxeVersion = 'stub_axe_version';
         const stubEnvironmentData: EnvironmentData = {
             timestamp: stubTimestamp,
             targetPageUrl: stubTargetPageUrl,

@@ -43,7 +43,7 @@ function getIndividualTaxaFromWcagLinkData(
     tag: string,
     wcagLinkData: WCAGLinkData,
 ): Sarif.ReportingDescriptor {
-    var taxa: Sarif.ReportingDescriptor = {
+    let taxa: Sarif.ReportingDescriptor = {
         id: tag,
         name: wcagLinkData.text,
     };
