@@ -22,7 +22,7 @@
             "prepend": "<!--",
             "append": "-->"
         },
-        "ts|d.ts|js": {
+        "ts|d.ts|js|mjs": {
             "eachLine": {
                 "prepend": "// "
             }
