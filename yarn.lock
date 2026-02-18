@@ -35,20 +35,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/cli@npm:4.10.2":
-  version: 4.10.2
-  resolution: "@axe-core/cli@npm:4.10.2"
+"@axe-core/cli@npm:4.11.1":
+  version: 4.11.1
+  resolution: "@axe-core/cli@npm:4.11.1"
   dependencies:
-    "@axe-core/webdriverjs": ^4.10.2
-    axe-core: ~4.10.3
+    "@axe-core/webdriverjs": ^4.11.1
+    axe-core: ~4.11.1
     chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
-    dotenv: ^16.4.5
-    selenium-webdriver: ~4.22.0
+    dotenv: ^17.2.2
+    selenium-webdriver: ~4.39.0
   bin:
     axe: dist/src/bin/cli.js
-  checksum: a1137d0169be97f073467b0670e70f4925a019d7118f5b567c46165ccfc2cc880258fa5dc8787621b1775fcf12b1d6954c1e7aff883bdc1ed0b44374561e18df
+  checksum: 0074925398e0e6ea511744e59b046513684a7fa65a29f975399232b3d49523e1872b1bd8f5396377bcf6b2f0bf8ca171fd29b5f91132346396d30fcf24954beb
   languageName: node
   linkType: hard
 
@@ -63,14 +63,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.10.2":
-  version: 4.10.2
-  resolution: "@axe-core/webdriverjs@npm:4.10.2"
+"@axe-core/webdriverjs@npm:^4.11.1":
+  version: 4.11.1
+  resolution: "@axe-core/webdriverjs@npm:4.11.1"
   dependencies:
-    axe-core: ~4.10.3
+    axe-core: ~4.11.1
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 16afa3ab8be4c155105624540dfaa8d954d6f6bf530883069d42221274a62d2c4c6bb052de6838eced942365890c3bb5b26bc567625b2ad3c4a524a7e7485495
+  checksum: b209c12ee67ae7719dc740b35f919139ec726ce8e3acbd6f909b746f9c3feb82eacd717f128430cf1da6792015ff4dc722dbe40072c9a7c68881931ccc99ed36
   languageName: node
   linkType: hard
 
@@ -892,6 +892,13 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.19.1
     to-fast-properties: ^2.0.0
   checksum: b750274718ba9cefd0b81836c464009bb6ba339fccce51b9baff497a0a2d96c044c61dc90cf203cec0adc770454b53a9681c3f7716883c802b85ab84c365ba35
+  languageName: node
+  linkType: hard
+
+"@bazel/runfiles@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "@bazel/runfiles@npm:6.5.0"
+  checksum: df1958efd2f6b8c8ed2abb7e4f321af2f989ddb86bb954475e8bc4ef2dfa311b99e3f05440fc2913ff30d458ec6b74b5d8b05da6d7b674bca8a77008a7927661
   languageName: node
   linkType: hard
 
@@ -2873,7 +2880,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
-    "@axe-core/cli": 4.10.2
+    "@axe-core/cli": 4.11.1
     "@axe-core/puppeteer": 4.10.2
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^29.5.12
@@ -4040,10 +4047,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.4.5":
-  version: 16.4.5
-  resolution: "dotenv@npm:16.4.5"
-  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
+"dotenv@npm:^17.2.2":
+  version: 17.3.1
+  resolution: "dotenv@npm:17.3.1"
+  checksum: 3723ef6766ce91b0b9fa68fd5bf0fd6b77e316daa2ac8746bacbe301608b311b4abae63e475cacd5901cb3ad9cb6b07d0719fd1a030162fe09c56a583dd1ec50
   languageName: node
   linkType: hard
 
@@ -9070,14 +9077,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"selenium-webdriver@npm:~4.22.0":
-  version: 4.22.0
-  resolution: "selenium-webdriver@npm:4.22.0"
+"selenium-webdriver@npm:~4.39.0":
+  version: 4.39.0
+  resolution: "selenium-webdriver@npm:4.39.0"
   dependencies:
+    "@bazel/runfiles": ^6.5.0
     jszip: ^3.10.1
-    tmp: ^0.2.3
-    ws: ">=8.16.0"
-  checksum: 6643ab004995c90f1747f1ffe5d305adf9b4d6360cb7d98c8335d4c3bef143a69ed153861dfa36c68d2e3433aa93bef5eb1c5f34cc8995dd4d2a526bcb1ec863
+    tmp: ^0.2.5
+    ws: ^8.18.3
+  checksum: 0bb03b76a222cb14c7d1937b5876ceb98c13095cb86f234081a3e1c1b2eaef028505888d06b8466db5868ec1d044b07287f62585cd6eec7705552f5958484c33
   languageName: node
   linkType: hard
 
@@ -9893,7 +9901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tmp@npm:^0.2.3":
+"tmp@npm:^0.2.5":
   version: 0.2.5
   resolution: "tmp@npm:0.2.5"
   checksum: 9d18e58060114154939930457b9e198b34f9495bcc05a343bc0a0a29aa546d2c1c2b343dae05b87b17c8fde0af93ab7d8fe8574a8f6dc2cd8fd3f2ca1ad0d8e1
@@ -10528,21 +10536,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:>=8.16.0":
-  version: 8.17.1
-  resolution: "ws@npm:8.17.1"
-  peerDependencies:
-    bufferutil: ^4.0.1
-    utf-8-validate: ">=5.0.2"
-  peerDependenciesMeta:
-    bufferutil:
-      optional: true
-    utf-8-validate:
-      optional: true
-  checksum: 442badcce1f1178ec87a0b5372ae2e9771e07c4929a3180321901f226127f252441e8689d765aa5cfba5f50ac60dd830954afc5aeae81609aefa11d3ddf5cecf
-  languageName: node
-  linkType: hard
-
 "ws@npm:^8.18.0":
   version: 8.18.3
   resolution: "ws@npm:8.18.3"
@@ -10555,6 +10548,21 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: d64ef1631227bd0c5fe21b3eb3646c9c91229402fb963d12d87b49af0a1ef757277083af23a5f85742bae1e520feddfb434cb882ea59249b15673c16dc3f36e0
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.18.3":
+  version: 8.19.0
+  resolution: "ws@npm:8.19.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 7a426122c373e053a65a2affbcdcdbf8f643ba0265577afd4e08595397ca244c05de81570300711e2363a9dab5aea3ae644b445bc7468b1ebbb51bfe2efb20e1
   languageName: node
   linkType: hard
 
