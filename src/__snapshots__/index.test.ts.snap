@@ -1388,15 +1388,15 @@ exports[`public sarifReporter API converts empty/minimal axe rawObject input wit
       ],
       "tool": {
         "driver": {
-          "downloadUri": "https://www.npmjs.com/package/axe-core/v/4.10.2",
-          "fullName": "axe for Web v4.10.2",
+          "downloadUri": "https://www.npmjs.com/package/axe-core/v/4.11.1",
+          "fullName": "axe for Web v4.11.1",
           "informationUri": "https://www.deque.com/axe/axe-for-web/",
           "name": "axe-core",
           "properties": {
             "microsoft/qualityDomain": "Accessibility",
           },
           "rules": [],
-          "semanticVersion": "4.10.2",
+          "semanticVersion": "4.11.1",
           "shortDescription": {
             "text": "An open source accessibility rules library for automated testing.",
           },
@@ -1407,7 +1407,7 @@ exports[`public sarifReporter API converts empty/minimal axe rawObject input wit
               "name": "WCAG",
             },
           ],
-          "version": "4.10.2",
+          "version": "4.11.1",
         },
       },
     },
