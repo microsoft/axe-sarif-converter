@@ -218,7 +218,7 @@ describe('axe-sarif-converter CLI', () => {
     );
     const basicSarifFile = path.join(
         testResourcesDir,
-        'basic-axe-v4.11.3.sarif',
+        'basic-axe-v4.11.3-v2.sarif',
     );
 
     const mkdir = promisify(fs.mkdir);
