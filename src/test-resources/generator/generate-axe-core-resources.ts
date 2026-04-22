@@ -36,7 +36,7 @@ async function writeResultFile(results: any, outputFileName: string) {
     const outputPath = path.join(testResourcesDir, outputFileName);
     console.log(`Writing test resource: ${outputPath}`);
     const resultsAsJson = JSON.stringify(results, null, 2);
-    await fs.promises.writeFile(outputPath, resultsAsJson, {encoding: 'utf8'});
+    await fs.promises.writeFile(outputPath, resultsAsJson, { encoding: 'utf8' });
 }
 
 function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
@@ -51,14 +51,14 @@ function normalizeEnvironmentDependentPartsOfAxeResults(axeResults: any) {
 
 async function generateResources() {
     const browser = await Puppeteer.launch(
-    // {headless: false}
+        // {headless: false}
     );
 
     for (const testUrlIdentifier of Object.keys(testUrls)) {
         const testUrl = testUrls[testUrlIdentifier];
         for (const reporter of axeReporters) {
             const page = await newTestPage(browser, testUrl);
-    
+
             const axeSpec: axe.Spec = {
                 reporter: reporter as axe.ReporterVersion,
             };
@@ -72,30 +72,34 @@ async function generateResources() {
             }
 
             try {
-            const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).analyze();
-            if(axeResults == undefined){
-                console.error(`Axe results failed to return. \nReporter version:  ${reporter}\nUrl: ${testUrl}`);
-            }
+                const axeResults = await new AxePuppeteer(page, axeSource).configure(axeSpec).options(axeOptions).analyze();
+                if (axeResults == undefined) {
+                    console.error(`Axe results failed to return. \nReporter version:  ${reporter}\nUrl: ${testUrl}`);
+                }
 
-            normalizeEnvironmentDependentPartsOfAxeResults(axeResults);
+                normalizeEnvironmentDependentPartsOfAxeResults(axeResults);
 
-            await writeAxeResultFile(axeResults, axeVersion, reporter, testUrlIdentifier);
+                await writeAxeResultFile(axeResults, axeVersion, reporter, testUrlIdentifier);
 
-            // We pin .sarif output against 'v1' because it's the default axe-core reporter,
-            // so it's the baseline we want to measure other outputs against.
-            if (reporter === 'v1') {
-                const sarifResults = convertAxeToSarif(axeResults);
-                await writeResultFile(sarifResults, `${testUrlIdentifier}-axe-v${axeVersion}.sarif`);
-            }
+                // We pin .sarif output against 'v1' because it's the default axe-core reporter,
+                // so it's the baseline we want to measure other outputs against.
+                if (reporter === 'v1') {
+                    const sarifResults = convertAxeToSarif(axeResults);
+                    await writeResultFile(sarifResults, `${testUrlIdentifier}-axe-v${axeVersion}-v1.sarif`);
+                }
+                else if (reporter === 'v2') {
+                    const sarifResults = convertAxeToSarif(axeResults);
+                    await writeResultFile(sarifResults, `${testUrlIdentifier}-axe-v${axeVersion}-v2.sarif`);
+                }
             } catch (e) {
                 console.error(e);
             }
-         
+
 
             await page.close();
         }
     }
-    
+
     await browser.close();
 }
 
