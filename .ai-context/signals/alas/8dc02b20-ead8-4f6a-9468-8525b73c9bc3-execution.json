@@ -1,0 +1,24 @@
+{
+  "mode": "interactive",
+  "program": "SFI",
+  "kpi_id": "ES-4.2.4",
+  "agent_name": "s360-breeze-orchestrator",
+  "invoked_skills": [
+    "sfi-es424-central-feed-services"
+  ],
+  "session_summary": {
+    "developer_accepted": true,
+    "turns_taken": 8,
+    "escalation_needed": true,
+    "changes_applied": true,
+    "developer_modified": false,
+    "pr_url": null,
+    "changes_proposed": "Added Azure Artifacts npm registry to yarn config and pipeline networkIsolationPolicy CFSClean, with npmAuthenticate task. Noted semantic-release publish requires npmjs.org exception.",
+    "full_journey": "Developer requested ES-4.2.4 CFS remediation. Fast-path routing to dedicated skill. Repo scan found Yarn 3.5.0 with no registry redirect. Violation: yarn install defaults to public yarnpkg.com registry. Complication: semantic-release publishes to npmjs.org (intentional). Developer provided Azure Artifacts feed URL and selected exception approach for publish step. Applied: npmRegistryServer in yarnrc, new npmrc file, CFSClean policy in 1ESPT pipeline settings, npmAuthenticate task before yarn install. Committed to working branch. Developer advised to file npmjs.org exception before release pipeline runs.",
+    "escape_hatch_used": null,
+    "improvisation_needed": false
+  },
+  "run_id": "8dc02b20-ead8-4f6a-9468-8525b73c9bc3",
+  "kpi_name": "Network Isolation for CFS endpoints",
+  "skill_used": "sfi-es424-central-feed-services"
+}
