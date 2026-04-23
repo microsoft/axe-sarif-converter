@@ -26,6 +26,7 @@ extends:
     parameters:
         settings:
             skipBuildTagsForGitHubPullRequests: true
+            networkIsolationPolicy: Permissive,CFSClean
         pool:
             name: $(a11yInsightsPool)
             image: ubuntu-22.04-secure
@@ -57,6 +58,11 @@ extends:
                           inputs:
                               versionSpec: '20.17.0'
                           displayName: use node 20.17.0
+
+                        - task: npmAuthenticate@0
+                          inputs:
+                              workingFile: '.npmrc'
+                          displayName: authenticate npm feed
 
                         - script: yarn install --immutable
                           displayName: yarn install
