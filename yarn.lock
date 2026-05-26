@@ -2126,9 +2126,9 @@ __metadata:
   linkType: hard
 
 "@tootallnate/once@npm:2":
-  version: 2.0.0
-  resolution: "@tootallnate/once@npm:2.0.0"
-  checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
+  version: 2.0.1
+  resolution: "@tootallnate/once@npm:2.0.1"
+  checksum: 487b59b5adb8458dc13394a5aae997bf9705c51fa1e2396c50cd967019d06b273faba3c4d9e7895a996b9e9b055f1c55e53d822e54b3e9c298bcb4f6967cd0d5
   languageName: node
   linkType: hard
 
@@ -9138,11 +9138,11 @@ __metadata:
   linkType: hard
 
 "semver@npm:^7.8.0":
-  version: 7.8.0
-  resolution: "semver@npm:7.8.0"
+  version: 7.8.1
+  resolution: "semver@npm:7.8.1"
   bin:
     semver: bin/semver.js
-  checksum: 68e38bc26ed1191d7c78d2b711bdffc2f8b1d05a1caadda41a1d7e1a9d32e1da5ae5b645de5c5f2b27bde830d7e9c1cbeeafcb8fda091830411df7d40be405b1
+  checksum: c6486ac12dc85120fc1daac8001350a4cd8126933720da496b0e8b841f170a35d4856b898b5288dfe7c1771bcadbf32c582254eade40ba16f8b6d296625d2b33
   languageName: node
   linkType: hard
 
@@ -9944,8 +9944,8 @@ __metadata:
   linkType: hard
 
 "ts-jest@npm:^29.2.3":
-  version: 29.4.10
-  resolution: "ts-jest@npm:29.4.10"
+  version: 29.4.11
+  resolution: "ts-jest@npm:29.4.11"
   dependencies:
     bs-logger: ^0.2.6
     fast-json-stable-stringify: ^2.1.0
@@ -9979,7 +9979,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 26611c61167bb998ac1f574ac158e7fba7f34d260b7084eeed7d41850b83d4322082fb6d2700ec41be177b28b21c099cf6d33bf10e34125db18bc69b819f2fb6
+  checksum: 47ddb0db6193f8fb5aee5d493881daa14a005286ef9ec844ea56e02074900cf89d85ee51eac59a92a90b6a2656d92fe7b20a8dc496aefa658e90bfffb498752c
   languageName: node
   linkType: hard
 
