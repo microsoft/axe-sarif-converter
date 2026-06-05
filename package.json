@@ -22,7 +22,7 @@
         "yargs": "^17.0.0"
     },
     "devDependencies": {
-        "@axe-core/cli": "4.11.2",
+        "@axe-core/cli": "4.11.3",
         "@axe-core/puppeteer": "4.11.2",
         "@types/jest": "^30.0.0",
         "@types/lodash": "^4.14.136",
