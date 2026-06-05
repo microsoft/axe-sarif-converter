@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`axe-sarif-converter CLI prints help info with --help: help_stdout 1`] = `
 "axe-sarif-converter: Converts JSON files containing axe-core Result object(s)
