@@ -34,7 +34,7 @@
         "eslint-plugin-security": "^1.4.0",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
-        "jest-junit": "^16.0.0",
+        "jest-junit": "^17.0.0",
         "license-check-and-add": "^4.0.1",
         "lodash": "^4.17.15",
         "prettier": "^3.0.0",
