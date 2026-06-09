@@ -8,9 +8,11 @@
  * This script only works on Windows, as that is the default developer environment for Accessibility Insights
  * team members.
  */
-
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { Browser, install } = require('@puppeteer/browsers');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require('path')
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { promises: fs, Dirent } = require('fs');
 let chromeVersion = process.argv.length > 2 ? process.argv[2] : '115.0.5755.0';
 const rootDir = path.join(__dirname, '..', '..', '..');
