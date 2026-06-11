@@ -52,14 +52,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/puppeteer@npm:4.11.2":
-  version: 4.11.2
-  resolution: "@axe-core/puppeteer@npm:4.11.2"
+"@axe-core/puppeteer@npm:4.11.3":
+  version: 4.11.3
+  resolution: "@axe-core/puppeteer@npm:4.11.3"
   dependencies:
-    axe-core: ~4.11.3
+    axe-core: ~4.11.4
   peerDependencies:
     puppeteer: ">=1.10.0"
-  checksum: ed7bb05e3bda2635540eaa54c9986c9a5107d88d34d2ac3a594d738a127de964468bcbf3223432a0c9c0c2913e80aab50309bcabf85eda2c45565c09563bcbdb
+  checksum: ffe0ed0df2d4240ce415510736181cf2205360b32fc8c8137add564b1c9b0592cf1948804f64b9682d44d16105927abc977c122d3ef6a98a8d02094097c99cef
   languageName: node
   linkType: hard
 
@@ -2949,7 +2949,7 @@ __metadata:
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
     "@axe-core/cli": 4.11.2
-    "@axe-core/puppeteer": 4.11.2
+    "@axe-core/puppeteer": 4.11.3
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^30.0.0
     "@types/lodash": ^4.14.136
