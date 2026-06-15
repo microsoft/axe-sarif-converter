@@ -6,6 +6,7 @@ import { AxeResults } from 'axe-core';
 import * as fs from 'fs';
 import { Log } from 'sarif';
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import { convertAxeToSarif } from '.';
 
 type Arguments = {
@@ -16,7 +17,7 @@ type Arguments = {
     force: boolean;
 };
 
-const argv: Arguments = yargs
+const argv: Arguments = yargs(hideBin(process.argv))
     .scriptName('axe-sarif-converter')
     .version() // inferred from package.json
     .usage(
