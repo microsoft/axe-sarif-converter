@@ -5,7 +5,7 @@
 import { AxeResults } from 'axe-core';
 import * as fs from 'fs';
 import { Log } from 'sarif';
-import * as yargs from 'yargs';
+import yargs from 'yargs';
 import { convertAxeToSarif } from '.';
 
 type Arguments = {
