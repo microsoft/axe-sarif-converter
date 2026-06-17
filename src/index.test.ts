@@ -147,7 +147,6 @@ describe('public convertAxeToSarif API', () => {
 });
 
 // This initializes global state that the reporter API assumes is available
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 require('axe-core');
 
 describe('public sarifReporter API', () => {

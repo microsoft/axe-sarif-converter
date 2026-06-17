@@ -8,7 +8,7 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/recommended-type-checked',
         'plugin:security/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -30,7 +30,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/no-empty-function': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
         '@typescript-eslint/restrict-plus-operands': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',

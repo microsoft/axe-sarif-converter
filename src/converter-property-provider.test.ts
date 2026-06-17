@@ -6,7 +6,6 @@ import { getConverterProperties } from './converter-property-provider';
 describe('converter-property-provider', () => {
     describe('getConverterProperties', () => {
         it('returns the converter properties as a Sarif.Run["conversion"', () => {
-            // eslint-disable-next-line @typescript-eslint/no-require-imports
             var packagejson = require('../package.json');
             const version = packagejson.version;
             const expectedResults: Sarif.Run['conversion'] = {
