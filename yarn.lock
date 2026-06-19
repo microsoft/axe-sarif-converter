@@ -35,12 +35,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/cli@npm:4.11.2":
-  version: 4.11.2
-  resolution: "@axe-core/cli@npm:4.11.2"
+"@axe-core/cli@npm:4.11.3":
+  version: 4.11.3
+  resolution: "@axe-core/cli@npm:4.11.3"
   dependencies:
-    "@axe-core/webdriverjs": ^4.11.2
-    axe-core: ~4.11.3
+    "@axe-core/webdriverjs": ^4.11.3
+    axe-core: ~4.11.4
     chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
@@ -48,7 +48,7 @@ __metadata:
     selenium-webdriver: ~4.41.0
   bin:
     axe: dist/src/bin/cli.js
-  checksum: 93aa5cfb1238b7cd170ce3360b9d98703cd45ead7edb91b19229ac4218004b508df5e7c304803db379d5b347f1d30ec8adf2582d36f53918d02fd933b330fb52
+  checksum: ac10c2b54778373e10d888dc3c388af5a5e414a3653e5645e05f59ef7e79ff23dd3c38874aad3c663fc6268a294428d547aac546e97b18a24666097aab9b2093
   languageName: node
   linkType: hard
 
@@ -63,14 +63,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.11.2":
-  version: 4.11.2
-  resolution: "@axe-core/webdriverjs@npm:4.11.2"
+"@axe-core/webdriverjs@npm:^4.11.3":
+  version: 4.11.3
+  resolution: "@axe-core/webdriverjs@npm:4.11.3"
   dependencies:
-    axe-core: ~4.11.3
+    axe-core: ~4.11.4
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 53916fba8872b7e5d63f1bf7d37ab8cd6faf1656d1f9cb0fc1035f45e8b418a701e553518ad42931beaa4a3043e3afbc8df01372ba3cdbab23fc2c0745bb2956
+  checksum: 27195cc13df1a37fc9e157490301d0023fc9648fd636c3146cc6d6ba1cdd82817b83123ed115b8db736bfd0ac53bdbeddf49dc6a7d5e2fba47d665d7d51e155a
   languageName: node
   linkType: hard
 
@@ -2981,7 +2981,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
-    "@axe-core/cli": 4.11.2
+    "@axe-core/cli": 4.11.3
     "@axe-core/puppeteer": 4.11.2
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^30.0.0
