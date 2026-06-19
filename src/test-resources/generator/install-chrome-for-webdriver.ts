@@ -8,7 +8,6 @@
  * This script only works on Windows, as that is the default developer environment for Accessibility Insights
  * team members.
  */
-
 const { Browser, install } = require('@puppeteer/browsers');
 const path = require('path')
 const { promises: fs, Dirent } = require('fs');
