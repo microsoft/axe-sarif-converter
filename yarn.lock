@@ -35,42 +35,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@axe-core/cli@npm:4.11.2":
-  version: 4.11.2
-  resolution: "@axe-core/cli@npm:4.11.2"
+"@axe-core/cli@npm:4.12.1":
+  version: 4.12.1
+  resolution: "@axe-core/cli@npm:4.12.1"
   dependencies:
-    "@axe-core/webdriverjs": ^4.11.2
-    axe-core: ~4.11.3
+    "@axe-core/webdriverjs": ^4.12.1
+    axe-core: ~4.12.1
     chromedriver: latest
     colors: ^1.4.0
     commander: ^9.4.1
     dotenv: ^17.2.2
-    selenium-webdriver: ~4.41.0
+    selenium-webdriver: ~4.44.0
   bin:
     axe: dist/src/bin/cli.js
-  checksum: 93aa5cfb1238b7cd170ce3360b9d98703cd45ead7edb91b19229ac4218004b508df5e7c304803db379d5b347f1d30ec8adf2582d36f53918d02fd933b330fb52
+  checksum: c1a753cd18cdfcaa7bb65157bcd85ffb910d5e0baee6c8bd17c64542b95fe98d658867b39fd13fc62456e5258f1668f459d96c319fa3df2b47f5011d2450a169
   languageName: node
   linkType: hard
 
-"@axe-core/puppeteer@npm:4.11.2":
-  version: 4.11.2
-  resolution: "@axe-core/puppeteer@npm:4.11.2"
+"@axe-core/puppeteer@npm:4.12.1":
+  version: 4.12.1
+  resolution: "@axe-core/puppeteer@npm:4.12.1"
   dependencies:
-    axe-core: ~4.11.3
+    axe-core: ~4.12.1
   peerDependencies:
     puppeteer: ">=1.10.0"
-  checksum: ed7bb05e3bda2635540eaa54c9986c9a5107d88d34d2ac3a594d738a127de964468bcbf3223432a0c9c0c2913e80aab50309bcabf85eda2c45565c09563bcbdb
+  checksum: cf8db72989fc8f5fe2d0261906880cc55090368be29829c8c4b3f8820af2796a263e8e8e693106920f14d960640261e0253633edc8bed9992b80834f9ff070c2
   languageName: node
   linkType: hard
 
-"@axe-core/webdriverjs@npm:^4.11.2":
-  version: 4.11.2
-  resolution: "@axe-core/webdriverjs@npm:4.11.2"
+"@axe-core/webdriverjs@npm:^4.12.1":
+  version: 4.12.1
+  resolution: "@axe-core/webdriverjs@npm:4.12.1"
   dependencies:
-    axe-core: ~4.11.3
+    axe-core: ~4.12.1
   peerDependencies:
     selenium-webdriver: ">3.0.0-beta  || >=2.53.1 || >4.0.0-alpha"
-  checksum: 53916fba8872b7e5d63f1bf7d37ab8cd6faf1656d1f9cb0fc1035f45e8b418a701e553518ad42931beaa4a3043e3afbc8df01372ba3cdbab23fc2c0745bb2956
+  checksum: 9801f1d68fc2ab5aaf07dc2529a0fa8435896ebaaae8a57557e79ab1cadfc8e93d69cd80c2327c75b97207556522517eb2f5fbb3954126960051ea036a80faca
   languageName: node
   linkType: hard
 
@@ -2937,10 +2937,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:4.11.3":
-  version: 4.11.3
-  resolution: "axe-core@npm:4.11.3"
-  checksum: b01fc82cd0e809db09166a90bbb8942a978eefab5ba1ebab8faebd94969e0bd36df9848e4e510520cd08cde9800a6d14888ebbca380dfc4594db48e9b494d399
+"axe-core@npm:4.12.1":
+  version: 4.12.1
+  resolution: "axe-core@npm:4.12.1"
+  checksum: 6d70292d01c71fe0be09bbd6f65b6ddde5a8875e1c480fd10575f123bd1cb14982c92aac1459a6c25494fe0090003de702482aac041ee70255b945ef55dcc8b0
   languageName: node
   linkType: hard
 
@@ -2948,8 +2948,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "axe-sarif-converter@workspace:."
   dependencies:
-    "@axe-core/cli": 4.11.2
-    "@axe-core/puppeteer": 4.11.2
+    "@axe-core/cli": 4.12.1
+    "@axe-core/puppeteer": 4.12.1
     "@puppeteer/browsers": ^2.1.0
     "@types/jest": ^30.0.0
     "@types/lodash": ^4.14.136
@@ -8999,15 +8999,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"selenium-webdriver@npm:~4.41.0":
-  version: 4.41.0
-  resolution: "selenium-webdriver@npm:4.41.0"
+"selenium-webdriver@npm:~4.44.0":
+  version: 4.44.0
+  resolution: "selenium-webdriver@npm:4.44.0"
   dependencies:
     "@bazel/runfiles": ^6.5.0
     jszip: ^3.10.1
     tmp: ^0.2.5
-    ws: ^8.19.0
-  checksum: 729e71fbcebaf922535ad9d34cf1fcc5d943735b53cdf9841ac36d33a3d7a157dd6387d2fce02f58e2c0c4a5002e9d9ff096304866af2d36bc70447ca5b99dd1
+    ws: ^8.20.1
+  checksum: 35f4c0a2cdfab0984a2760de0f83c5b38a5e172be54e179f74198d6d5a4460df4a089e2ac8fab785c242b6989f58675f0146698fb92f7cf5033d57c146a536b6
   languageName: node
   linkType: hard
 
@@ -10546,9 +10546,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.19.0":
-  version: 8.20.0
-  resolution: "ws@npm:8.20.0"
+"ws@npm:^8.20.1":
+  version: 8.21.0
+  resolution: "ws@npm:8.21.0"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -10557,7 +10557,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 2b31d24a53690770564a033c21ea48390f84d23fbc5abc14b2bbec4e112846f2f3ca66caee769a73fb8bc89ba16b452a6911a553e9742bbc75bccb79e203953e
+  checksum: 83ff89ae011bc5c3c5605a45a0d50e12589143c7500ca4de83a8d43b3cd26e71f422cb3206fd1a9e6d541d666eeb66255c30d095d62d413b3c7afe5d2c5cb928
   languageName: node
   linkType: hard
 
