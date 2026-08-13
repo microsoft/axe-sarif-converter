@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-# parameters required for private feed and Azure subscription:
-# feedServiceConnection and azureSubscription are used in the npmAuthenticate task to authenticate to the private feed and to run tests that require Azure subscription access.
+# Azure subscription used to acquire an access token for the cross-organization
+# Azure Artifacts feed.
 parameters:
   - name: templateType
     type: string
@@ -9,15 +9,12 @@ parameters:
     values:
       - UnOfficial
       - Official
-  - name: feedServiceConnection
-    type: string
-    default: "a11y-insights-public-npm-feed-axe-sarif-converter"
-  - name: feedServiceConnectionId
-    type: string
-    default: "8eedced9-8dc3-4a52-8f54-d9cce38bce81"
   - name: azureSubscription
     type: string
     default: "a11y-insights-public-feed-identity-axe-sarif-converter"
+  - name: networkIsolationPolicy
+    type: string
+    default: "Permissive,CFSClean"
 
 # The `resources` specify the location and version of the 1ES PT.
 resources:
@@ -37,7 +34,7 @@ extends:
   parameters:
     settings:
       skipBuildTagsForGitHubPullRequests: true
-      networkIsolationPolicy: Permissive,CFSClean
+      networkIsolationPolicy: ${{ parameters.networkIsolationPolicy }}
     pool:
       name: $(a11yInsightsPool)
       image: ubuntu-22.04-secure
@@ -69,8 +66,6 @@ extends:
                 inputs:
                   versionSpec: "20.17.0"
                   displayName: use node 20.17.0
-              # Cross-org pipelines: Service connection
-              - ${{ if ne(parameters.feedServiceConnection, '') }}:
               - task: AzureCLI@2
                 displayName: Mint feed access token from managed identity
                 inputs:
@@ -82,16 +77,12 @@ extends:
                   # work across org boundaries.
                   inlineScript: |
                     $accessToken = az account get-access-token --resource 499b84ac-1321-427f-aa17-267ca6975798 --query "accessToken" --output tsv
-                    write-host "##vso[task.setsecret]$accessToken"
-                    write-host "##vso[task.setendpoint id=${{ parameters.feedServiceConnectionId }};field=authParameter;key=apitoken]$accessToken"
-              - task: npmAuthenticate@0
-                displayName: Authenticate the CFS npm feed
-                inputs:
-                  workingFile: "$(Build.SourcesDirectory)/pipelines/.npmrc"
-                  customEndpoint: ${{ parameters.feedServiceConnection }}
+                    write-host "##vso[task.setvariable variable=feedAccessToken;issecret=true]$accessToken"
 
               - script: yarn install --immutable
                 displayName: yarn install
+                env:
+                  YARN_NPM_AUTH_TOKEN: $(feedAccessToken)
 
               - script: yarn lint
                 displayName: yarn lint
@@ -127,4 +118,5 @@ extends:
                 env:
                   GH_TOKEN: $(github-ada-cat-auth-token)
                   NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
+                  NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
                 condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['EnableSemanticRelease'], 'true'))
