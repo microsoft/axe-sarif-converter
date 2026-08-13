@@ -1,5 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+# Azure subscription used to acquire an access token for the cross-organization
+# Azure Artifacts feed.
 parameters:
     - name: templateType
       type: string
@@ -7,6 +9,12 @@ parameters:
       values:
           - UnOfficial
           - Official
+    - name: azureSubscription
+      type: string
+      default: 'a11y-insights-public-feed-identity-axe-sarif-converter'
+    - name: networkIsolationPolicy
+      type: string
+      default: 'Permissive,CFSClean'
 
 # The `resources` specify the location and version of the 1ES PT.
 resources:
@@ -26,6 +34,7 @@ extends:
     parameters:
         settings:
             skipBuildTagsForGitHubPullRequests: true
+            networkIsolationPolicy: ${{ parameters.networkIsolationPolicy }}
         pool:
             name: $(a11yInsightsPool)
             image: ubuntu-22.04-secure
@@ -54,12 +63,26 @@ extends:
                         # for because semantic-release requires a later LTS version that we
                         # can require of our users without a breaking change
                         - task: NodeTool@0
+                          displayName: use node 20.17.0
                           inputs:
                               versionSpec: '20.17.0'
-                          displayName: use node 20.17.0
+                        - task: AzureCLI@2
+                          displayName: Mint feed access token from managed identity
+                          inputs:
+                              azureSubscription: ${{ parameters.azureSubscription }}
+                              scriptType: pscore
+                              scriptLocation: 'inlineScript'
+                              # 499b84ac-... is the Azure DevOps Services resource ID. The token
+                              # authenticates the IDENTITY, not the org, which is what makes it
+                              # work across org boundaries.
+                              inlineScript: |
+                                  $accessToken = az account get-access-token --resource 499b84ac-1321-427f-aa17-267ca6975798 --query "accessToken" --output tsv
+                                  write-host "##vso[task.setvariable variable=feedAccessToken;issecret=true]$accessToken"
 
                         - script: yarn install --immutable
                           displayName: yarn install
+                          env:
+                              YARN_NPM_AUTH_TOKEN: $(feedAccessToken)
 
                         - script: yarn lint
                           displayName: yarn lint
@@ -95,4 +118,5 @@ extends:
                           env:
                               GH_TOKEN: $(github-ada-cat-auth-token)
                               NPM_TOKEN: $(npmjs-accessibility-insights-team-publish-auth-token)
+                              NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
                           condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['EnableSemanticRelease'], 'true'))

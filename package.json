@@ -2,6 +2,10 @@
     "name": "axe-sarif-converter",
     "version": "0.0.0-managed-by-semantic-release",
     "description": "Convert axe-core accessibility scan results to the SARIF format",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
     "main": "dist/index.js",
     "bin": "dist/cli.js",
     "types": "dist/index.d.js",
